@@ -8,7 +8,10 @@
   font-family: 'Arenq';
   src: url('./fonts/arenq.otf');
 }
+.backNav{
+  background-color: #00000021;
 
+}
 @font-face {
   font-family: 'Mova';
   src: url('./fonts/mova.otf');

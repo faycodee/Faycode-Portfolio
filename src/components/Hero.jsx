@@ -28,7 +28,7 @@ const Hero = () => {
           style={{ zIndex: -5 }}
           loop
           muted
-          className="absolute inset-0 h-full  w-full sm:block hidden  h-full object-cover"
+          className="absolute inset-0   w-full sm:block hidden  h-full object-cover"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1 }}
