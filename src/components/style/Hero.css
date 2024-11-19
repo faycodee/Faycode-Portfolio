@@ -1,0 +1,23 @@
+.heroMe{
+transition: .5s;
+transform: scale(1.2);
+filter: grayscale(65%);
+
+
+}
+.heroMe:hover{
+
+filter: saturate(70%);
+transform: scale(1.180);
+
+
+}
+.translate{
+    transition: .5s ease ;
+    transform: translate(0px);
+}
+.srcChange{
+    transform: rotate(90deg);
+    transition: .5s ease ;
+    src: "hhhhh";
+}
