@@ -219,13 +219,3 @@
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
   }
 }
-.translate{
-  
-  transition: .5s ease ;
-  transform: translate(-150px);
-}
-.srcChange{
-  transform: rotate(90deg);
-  transition: .5s ease ;
-  src: "hhhhh";
-}

@@ -3,15 +3,14 @@ import nairobi from './backgrounds/nairobi.png';
 import whiteabstract from './backgrounds/white-abstract.png';
 import worldmap from './backgrounds/world-map.png';
 
-import logo from './logo/mylogo.png';
+import logo from './logo/logo-black.png';
+import logotext from './logo/logo-text-black.png';
 
-
-import fay from './personal/profil0.png';
+import shaq from './personal/shaq.png';
 
 import backend from './icons/backend.png';
 import ux from './icons/ux.png';
 import frontend from './icons/frontend.png';
-import bootstrap from './icons/bootstrap.png';
 import prototyping from './icons/prototyping.png';
 import github from './icons/github.png';
 import close from './icons/close.png';
@@ -57,7 +56,8 @@ export {
   whiteabstract,
   worldmap,
   logo,
-  fay,
+  logotext,
+  shaq,
   backend,
   ux,
   frontend,
@@ -73,7 +73,6 @@ export {
   send,
   sendHover,
   css,
-  bootstrap,
   docker,
   figma,
   git,

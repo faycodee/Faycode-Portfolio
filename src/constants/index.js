@@ -2,6 +2,7 @@ import {
   frontend,
   backend,
   ux,
+  prototyping,
   javascript,
   typescript,
   html,
@@ -11,7 +12,6 @@ import {
   tailwind,
   nodejs,
   git,
-  bootstrap,
   figma,
   docker,
   postgresql,
@@ -35,12 +35,8 @@ export const navLinks = [
     title: 'About',
   },
   {
-    id: 'skills',
-    title: 'Skills',
-  },
-  {
-    id: 'work',
-    title: 'Experience',
+    id: 'projects',
+    title: 'Projects',
   },
   {
     id: 'contact',
@@ -61,7 +57,10 @@ const services = [
     title: 'UI/UX Design',
     icon: ux,
   },
- 
+  {
+    title: 'Software Prototyping',
+    icon: prototyping,
+  },
 ];
 
 const technologies = [
@@ -86,8 +85,8 @@ const technologies = [
     icon: reactjs,
   },
   {
-    name: 'Bootstrap',
-    icon: bootstrap,
+    name: 'Redux Toolkit',
+    icon: redux,
   },
   {
     name: 'Tailwind CSS',
@@ -97,71 +96,61 @@ const technologies = [
     name: 'Node JS',
     icon: nodejs,
   },
-  // {
-  //   name: 'Rails',
-  //   icon: rubyrails,
-  // },
-  // {
-  //   name: 'graphql',
-  //   icon: graphql,
-  // },
-  // {
-  //   name: 'postgresql',
-  //   icon: postgresql,
-  // },
+  {
+    name: 'Rails',
+    icon: rubyrails,
+  },
+  {
+    name: 'graphql',
+    icon: graphql,
+  },
+  {
+    name: 'postgresql',
+    icon: postgresql,
+  },
   {
     name: 'git',
     icon: git,
   },
-  // {
-  //   name: 'figma',
-  //   icon: figma,
-  // },
-  // {
-  //   name: 'docker',
-  //   icon: docker,
-  // },
+  {
+    name: 'figma',
+    icon: figma,
+  },
+  {
+    name: 'docker',
+    icon: docker,
+  },
 ];
 
 const experiences = [
   {
-    title: 'Full Stack Developer',
-    company_name: 'Diversity Cyber Council',
-    icon: dcc,
+    title: 'Front-End Developer',
+    company_name: 'Cover Hunt',
+    icon: coverhunt,
     iconBg: '#333333',
-    date: 'Oct 2024 - Present',
+    date: 'Aug 2021 - Feb 2022',
+  },
+  {
+    title: 'Mentor (Volunteer)',
+    company_name: 'Microverse',
+    icon: microverse,
+    iconBg: '#333333',
+    date: 'Mar 2022 - May 2022',
   },
   {
     title: 'Junior Software Engineer',
     company_name: 'Kelhel',
     icon: kelhel,
     iconBg: '#333333',
-    date: 'May 2024 - Oct 2024',
+    date: 'May 2022 - Oct 2022',
   },
   {
-    title: `Project Ecommerc (html+js+php)`,
-    
-    icon: microverse,
+    title: 'Full Stack Developer',
+    company_name: 'Diversity Cyber Council',
+    icon: dcc,
     iconBg: '#333333',
-    date: 'Mar 2024 - Jul 2024',
+    date: 'Sep 2022 - Present',
   },
-  
-  {
-    title: `javascript,jquery,
-    php,ajax`,
-    icon: microverse,
-    iconBg: '#333333',
-    date: 'Mar 2024 - Jul 2024',
-  },
-
-  {
-    title: `Html,css,bootstrap,
-    python,algo`,
-    icon: coverhunt,
-    iconBg: '#333333',
-    date: 'Oct 2023 -  Mar 2024',
-  },
-
 ];
 
 const projects = [

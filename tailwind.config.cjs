@@ -32,7 +32,6 @@ export default {
         card: '0px 35px 120px -15px #1f1f1f',
         cardLight: '0px 19px 38px #eaeaec, 0px 15px 12px #eaeaec',
       },
-      
       screens: {
         xs: '450px',
         sm: '640px',
