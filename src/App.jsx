@@ -7,8 +7,9 @@ import {
   Navbar,
   Tech,
   Projects,
+  Cursor
 } from './components';
-import Cursor from "./Cursor";
+
 const App = () => {
   return (
     <BrowserRouter>
