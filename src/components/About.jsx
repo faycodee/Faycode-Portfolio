@@ -1,22 +1,24 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { styles } from '../styles';
-import { services } from '../constants';
-import { fadeIn, textVariant } from '../utils/motion';
-import { SectionWrapper } from '../hoc';
+import React from "react";
+import { motion } from "framer-motion";
+import { styles } from "../styles";
+import { services } from "../constants";
+import { fadeIn, textVariant } from "../utils/motion";
+import { SectionWrapper } from "../hoc";
 
 const ServiceCard = ({ index, title, icon }) => {
   return (
     <motion.div
-      variants={fadeIn('right', 'spring', 0.5 * index, 0.75)}
-      className="xs:w-[250px] w-full card-gradient p-[1px] rounded-[20px] shadow-card">
+      variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
+      className="xs:w-[250px] w-full card-gradient p-[1px] rounded-[20px] shadow-card"
+    >
       <div
         options={{
           max: 45,
           scale: 1,
           speed: 450,
         }}
-        className="bg-jetLight rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col">
+        className="bg-jetLight rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
+      >
         <img src={icon} alt={title} className="w-16 h-16 object-contain" />
         <h3 className="text-taupe text-[18px] font-bold text-center">
           {title}
@@ -35,14 +37,16 @@ const About = () => {
       </motion.div>
 
       <motion.p
-        variants={fadeIn('', '', 0.1, 1)}
-        className="mt-4 text-taupe text-[18px] max-w-3xl leading-[30px]">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis
-        sapiente ipsum dolorum dicta eaque cumque inventore molestias, beatae ea
-        quaerat alias accusamus voluptas autem! Alias odit voluptates in totam
-        vitae dignissimos minus eaque culpa unde tempore dolore aperiam
-        obcaecati voluptatum aliquam corrupti, suscipit accusamus! Odit unde
-        veniam dolorum ipsum doloribus.
+        variants={fadeIn("", "", 0.1, 1)}
+        className="mt-4 text-taupe text-[18px] max-w-3xl leading-[30px]"
+      >
+        Hello! I’m Faycal, a web developer with a passion for problem-solving.
+        My journey began as a fun challenge—solving issues felt like completing
+        puzzles, and the more complex they were, the more rewarding the
+        solutions became. Now, I’m studying at OFPPT, where I’ve gained strong
+        skills in the MERN stack (MongoDB, Express, React, Node.js), allowing me
+        to create dynamic and efficient web applications. I love turning ideas
+        into functional, user-friendly experiences online!
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">
@@ -54,4 +58,4 @@ const About = () => {
   );
 };
 
-export default SectionWrapper(About, 'about');
+export default SectionWrapper(About, "about");
