@@ -8,7 +8,7 @@ body{
 }
 /* For modern browsers */
 ::-webkit-scrollbar {
-  width: 12px; /* Scrollbar width */
+  width: 18px; /* Scrollbar width */
   background-color: gray; /* Scrollbar background */
 }
 
