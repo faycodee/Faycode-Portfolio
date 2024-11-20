@@ -6,6 +6,7 @@ import { shaq, bwmap, worldmap } from "../assets";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
+
 const Hero = () => {
   useGSAP(() => {
     gsap.from("#worldVid", {

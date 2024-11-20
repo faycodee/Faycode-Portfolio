@@ -8,10 +8,11 @@ import {
   Tech,
   Projects,
 } from './components';
-
+import Cursor from "./Cursor";
 const App = () => {
   return (
     <BrowserRouter>
+       <Cursor />
       <div className="relative z-0">
         <div>
           <Navbar />
