@@ -3,25 +3,61 @@ import { Link } from "react-router-dom";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { shaq, bwmap, worldmap } from "../assets";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Hero = () => {
+  useGSAP(() => {
+    gsap.from("#worldVid", {
+      scale: 5,
+      duration: 6,
+      rotatE: -30,
+      ease: "power2.in",
+    });
+    gsap.from("#btn", {
+      opacity: 0,
+      ease: "power1.in",
+      delay: 4.5,
+      duration: 1,
+    });
+
+    gsap.from("#me", {
+      // opacity: 0,
+      x:500 ,
+      ease: "back.inOut",
+      delay: 7.8,
+      duration: 2,
+    });
+
+    gsap.fromTo(
+      ".para",
+      { opacity: 0, y: 20 },
+      {
+        ease: "power1.inOut",
+        opacity: 1,
+        y: 0,
+        delay: 5.8,
+        duration: 3,
+        stagger: {
+          amount: "6ms",
+          // tartib bach atmchi bjoj wla whda whda fhal step schrittemuster
+          // grid:[4,3]  ,
+          // axis:"y",
+          ease: "circ.inOut",
+          from: "center",
+        },
+      }
+    );
+  }, []);
   return (
     <>
-      {/* <div className="absolute top-0 left-0 z-0 h-[100vh] w-screen"> */}
-
-      {/* </div> */}
-      {/* <div className="absolute top-0 left-0 z-0 h-[100vh] w-screen">
-        <img
-          src={worldmap}
-          alt="world map"
-          className="w-full h-full sm:hidden block object-cover"
-        />
-      </div> */}
       <section
+        style={{ overflow: "hidden" }}
         className="relative flex sm:flex-row flex-col w-full h-screen mx-auto 
         overflow-x-hidden"
       >
         <motion.video
+          id="worldVid"
           src="./vid.mp4"
           alt="world map"
           autoPlay
@@ -29,9 +65,6 @@ const Hero = () => {
           loop
           muted
           className="absolute inset-0   w-full sm:block hidden  h-full object-cover"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1 }}
         ></motion.video>
         <div
           className={`absolute inset-0 sm:top-[250px] top-[150px] 
@@ -39,12 +72,7 @@ const Hero = () => {
           max-w-7xl mx-auto flex flex-row items-start
           justify-between gap-3`}
         >
-          {/* <div className="flex flex-col justify-center items-center mt-5 ml-3">
-            <div className="w-5 h-5 rounded-full bg-[#0a0a0a] sm:hidden" />
-            <div className="w-1 sm:h-80 h-40 bw-gradient sm:hidden" />
-          </div> */}
-
-          <div>
+          <div className="para">
             <h1
               className={`${styles.heroHeadText} text-eerieBlack font-poppins uppercase`}
             >
@@ -52,14 +80,18 @@ const Hero = () => {
               <span
                 className="sm:text-battleGray sm:text-[90px] 
                 text-eerieBlack text-[50px] font-mova
-                font-extrabold uppercase"
+                font-extrabold uppercase "
               >
                 Faycode
               </span>
             </h1>
-            <p className={`${styles.heroSubText} mt-2 text-eerieBlack`}>
-              Lorem ipsum dolor sit amet. <br className="sm:block hidden" />
-              consectetur adipisicing elit deleniti, voluptas.
+            <p
+              className={`${styles.heroSubText} mt-2 text-white text-[1px] para`}
+            >
+              <br className="sm:block hidden " />
+              My passion for web development grew from the thrill of solving
+              increasingly complex problems, which brings me great satisfaction
+              .
             </p>
           </div>
           <div
@@ -76,6 +108,7 @@ const Hero = () => {
         >
           <a href="#about">
             <div
+              id="btn"
               className="w-[35px] h-[64px] rounded-3xl border-4 
             border-frenc flex
             justify-center items-start p-2"
@@ -95,14 +128,15 @@ const Hero = () => {
           </a>
         </div>
 
-        {/* Your image comes here. Feel free to remove image if you don't plan to have one.*/}
-        <div>
+        <div style={{ width: "500px" }}>
           <img
-            className="absolute bottom-0 ml-[50vw] 
+            id="me"
+            style={{ filter: "grayscale(100%) " }}
+            className="absolute bottom-[-20px]  right-[-150px]  ml-[50vw] 
             lg:ml-[75vw] md:ml-[60vw] xmd:ml-[60vw] 2xl:ml-[83vw]
-            sm:h-[90vh] md:h-[70vh] xl:h-[80vh]"
-            src={shaq}
-            alt="shaquille"
+            sm:h-[90vh] md:h-[80vh] xl:h-[80vh]"
+            src="./p.png"
+            alt="Faycode"
           />
         </div>
       </section>

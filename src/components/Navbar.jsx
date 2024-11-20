@@ -3,14 +3,25 @@ import { Link } from "react-router-dom";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { close, menu, logo } from "../assets";
-
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
-
+  useGSAP(() => {
+    gsap.from("#nav", {
+      opacity: 0,
+      y: -30,
+      ease: "power1.in",
+      delay: 2.5,
+      duration: 2,
+    });
+  }, []);
   return (
     <nav
-      className={`${styles.paddingX} w-full flex items-center py-2 fixed 
+      id="nav"
+      style={{ backdropFilter: "blur(8px)" }}
+      className={`${styles.paddingX} w-full flex items-center py-2 fixed  
       top-0 z-20 bg-transparent sm:opacity-[0.97] xxs:h-[6vh] rounded-3xl backNav`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
