@@ -6,7 +6,6 @@ import { shaq, bwmap, worldmap } from "../assets";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-
 const Hero = () => {
   useGSAP(() => {
     gsap.from("#worldVid", {
@@ -24,9 +23,9 @@ const Hero = () => {
 
     gsap.from("#me", {
       // opacity: 0,
-      x:500 ,
+      x: 500,
       ease: "back.inOut",
-      delay: 7.8,
+      delay: 6.3,
       duration: 2,
     });
 

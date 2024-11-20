@@ -13,8 +13,8 @@ const Navbar = () => {
       opacity: 0,
       y: -30,
       ease: "power1.in",
-      delay: 2.5,
-      duration: 2,
+      delay: 5.4,
+      duration: .5,
     });
   }, []);
   return (
