@@ -6,32 +6,20 @@ import { fadeIn, textVariant } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { Environment, OrbitControls ,ContactShadows } from "@react-three/drei";
 import Model from "../../public/Spider";
 
-const ServiceCard = ({ index, title, icon }) => {
-  return (
-    <motion.div
-      variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
-      className="xs:w-[250px] w-full card-gradient p-[1px] rounded-[20px] shadow-card"
-    >
-      <div
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className="bg-jetLight rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
-      >
-        <img src={icon} alt={title} className="w-16 h-16 object-contain" />
-        <h3 className="text-taupe text-[18px] font-bold text-center">
-          {title}
-        </h3>
-      </div>
-    </motion.div>
-  );
-};
 
+<Canvas style={{height:"500vh"}}>
+<ambientLight  intensity={2}/>
+<OrbitControls enableZoom />
+<Suspense fallback={null}>
+  <Model />
+</Suspense>
+<Environment preset="sunset"/>
+<ContactShadows position={[0,-2.5,0]} opacity={0.5}  scale={50} blur={1} color="#00000"/>
+
+</Canvas>
 const About = () => {
   return (
     <div>
@@ -53,12 +41,11 @@ const About = () => {
           allowing me to create dynamic and efficient web applications. I love
           turning ideas into functional, user-friendly experiences online!
         </motion.p>
-
-        <div className="mt-20 flex flex-wrap gap-10">
-          {services.map((service, index) => (
-            <ServiceCard key={service.title} index={index} {...service} />
-          ))}
+        <div className="text-black">
+     
         </div>
+
+       
       </div>
     </div>
   );
