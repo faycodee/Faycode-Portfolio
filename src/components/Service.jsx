@@ -9,7 +9,6 @@ import { Canvas } from "@react-three/fiber";
 import { Environment, OrbitControls, ContactShadows } from "@react-three/drei";
 import Model from "../../public/Spider";
 
-
 const Services = () => {
   return (
     <div>
@@ -21,24 +20,26 @@ const Services = () => {
 
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-4 text-taupe text-[18px] max-w-3xl leading-[30px]"
+          className="mt-4 text-taupe text-[18px] max-w-3xl leading-[30px] mb-8"
         >
-          Hello! I’m Faycal, a web developer with a passion for problem-solving.
-          My journey began as a fun challenge—solving issues felt like
-          completing puzzles, and the more complex they were, the more rewarding
-          the solutions became. Now, I’m studying at OFPPT, where I’ve gained
-          strong skills in the MERN stack (MongoDB, Express, React, Node.js),
-          allowing me to create dynamic and efficient web applications. I love
-          turning ideas into functional, user-friendly experiences online!
+          Hey ,I will assist you in the same way that{" "}
+          <span className="font-mono font-extrabold ">Spider-Man</span> helps
+          others .
+          <br />
+          Let’s get creative and make something together !
         </motion.p>
         <div className="text-black">
-          <Canvas gl={{ alpha: true }} className="rounded-3xl" style={{ height: "100vh"  , scale:5,backgroundColor:"black" }}>
+          <Canvas
+            gl={{ alpha: true }}
+            className="rounded-3xl"
+            style={{ height: "100vh", scale: 5, backgroundColor: "black" }}
+          >
             <ambientLight intensity={2} />
             <OrbitControls enableZoom />
             <Suspense fallback={null}>
-              <Model position={[0, -7, 0]} />
+              <Model position={[0, -7, 0]}  />
             </Suspense>
-            <Environment preset="sunset" />
+            <Environment preset="city" />
             <ContactShadows
               position={[0, 0, 0]}
               opacity={0.5}
@@ -53,4 +54,4 @@ const Services = () => {
   );
 };
 
-export default SectionWrapper(Services, "services");
+export default SectionWrapper(Services, "service");

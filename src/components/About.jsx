@@ -4,10 +4,10 @@ import { styles } from "../styles";
 import { services } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
-import { Suspense } from "react";
+import {Suspense} from "react" ;
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import Model from "../../public/Spider";
+import Model from '../../public/Spider'
 
 const ServiceCard = ({ index, title, icon }) => {
   return (
@@ -34,32 +34,35 @@ const ServiceCard = ({ index, title, icon }) => {
 
 const About = () => {
   return (
+  
     <div>
-      <div className="-mt-[6rem]">
-        <motion.div variants={textVariant()}>
-          <p className={styles.sectionSubText}>Introduction</p>
-          <h2 className={styles.sectionHeadText}>Overview.</h2>
-        </motion.div>
+   
+    <div className="-mt-[6rem]">
+      <motion.div variants={textVariant()}>
+        <p className={styles.sectionSubText}>Introduction</p>
+        <h2 className={styles.sectionHeadText}>Overview.</h2>
+      </motion.div>
 
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className="mt-4 text-taupe text-[18px] max-w-3xl leading-[30px]"
-        >
-          Hello! I’m Faycal, a web developer with a passion for problem-solving.
-          My journey began as a fun challenge—solving issues felt like
-          completing puzzles, and the more complex they were, the more rewarding
-          the solutions became. Now, I’m studying at OFPPT, where I’ve gained
-          strong skills in the MERN stack (MongoDB, Express, React, Node.js),
-          allowing me to create dynamic and efficient web applications. I love
-          turning ideas into functional, user-friendly experiences online!
-        </motion.p>
+      <motion.p
+        variants={fadeIn("", "", 0.1, 1)}
+        className="mt-4 text-taupe text-[18px] max-w-3xl leading-[30px]"
+      >
+        Hello! I’m Faycal, a web developer with a passion for problem-solving.
+        My journey began as a fun challengeSolving issues felt like completing
+        puzzles, and the more complex they were, the more rewarding the
+        solutions became. Now, I’m studying at OFPPT, where I’ve gained strong
+        skills in the MERN stack (MongoDB, Express, React, Node.js), allowing me
+        to create dynamic and efficient web applications. I love turning ideas
+        into functional, user-friendly experiences online!
+      </motion.p>
+ 
 
-        <div className="mt-20 flex flex-wrap gap-10">
-          {services.map((service, index) => (
-            <ServiceCard key={service.title} index={index} {...service} />
-          ))}
-        </div>
+      <div className="mt-20 flex flex-wrap gap-10">
+        {services.map((service, index) => (
+          <ServiceCard key={service.title} index={index} {...service} />
+        ))}
       </div>
+    </div>
     </div>
   );
 };

@@ -23,7 +23,7 @@ const Hero = () => {
 
     gsap.from("#me", {
       // opacity: 0,
-      x: 500,
+      x: 700,
       ease: "back.inOut",
       delay: 6.3,
       duration: 2,

@@ -14,13 +14,13 @@ const Navbar = () => {
       y: -30,
       ease: "power1.in",
       delay: 5.4,
-      duration: .5,
+      duration: 0.5,
     });
   }, []);
   return (
     <nav
       id="nav"
-      style={{ backdropFilter: "blur(8px)" ,height:"8vh" }}
+      style={{ backdropFilter: "blur(8px)", height: "8vh" }}
       className={`${styles.paddingX} w-full flex items-center py-2 fixed  
       top-0 z-20 bg-transparent sm:opacity-[0.97] xxs:h-[6vh] rounded-se-3xl backNav`}
     >
