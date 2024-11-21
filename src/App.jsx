@@ -1,6 +1,7 @@
 import { BrowserRouter } from 'react-router-dom';
 import {
   About,
+  Service,
   Contact,
   Experience,
   Hero,
@@ -22,6 +23,9 @@ const App = () => {
 
         <div className="bg-about bg-cover bg-center bg-no-repeat">
           <About />
+        </div>
+        <div className="bg-about bg-cover bg-center bg-no-repeat">
+          <Service />
         </div>
 
         <div className="bg-tech bg-cover bg-center bg-no-repeat pb-10">
