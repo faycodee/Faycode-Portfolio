@@ -8,8 +8,29 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useRef } from "react";
 const Hero = () => {
-  const scrollRef = useRef();
+  gsap.registerPlugin(ScrollTrigger);
+  // const scrollRef = useRef();
   useGSAP(() => {
+    gsap.to("#me", {
+      scrollTrigger: {
+        trigger: "#me",
+        start: "top 15%",
+        end: "bottom 15%",
+        scrub: 1.2,
+        markers: 1,
+        toggleActions: "restart pause reverse pause",
+      },
+      x: 500,
+      duration: 5,
+    });
+    gsap.from("#me", {
+      // opacity: 0,
+      x: 700,
+      ease: "back.inOut",
+      delay: 6.3,
+      duration: 2,
+    });
+
     gsap.from("#worldVid", {
       scale: 5,
       duration: 6,
@@ -21,14 +42,6 @@ const Hero = () => {
       ease: "power1.in",
       delay: 4.5,
       duration: 1,
-    });
-
-    gsap.from("#me", {
-      // opacity: 0,
-      x: 700,
-      ease: "back.inOut",
-      delay: 6.3,
-      duration: 2,
     });
 
     gsap.fromTo(
