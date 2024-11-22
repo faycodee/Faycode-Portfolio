@@ -20,12 +20,13 @@ const Hero = () => {
         trigger: "#me",
         start: "top 15%",
         end: "bottom 15%",
-        scrub: 1.2,
+        scrub: 4.2,
         // markers: 1,
         toggleActions: "restart pause reverse pause",
       },
       x: 500,
       duration: 5,
+      ease: "power1",
     });
 
     gsap.from("#me", {
@@ -33,7 +34,7 @@ const Hero = () => {
       x: 700,
       ease: "back.inOut",
       delay: 6.3,
-      duration: 2,
+      duration: 3,
     });
 
     gsap.from("#worldVid", {
@@ -43,15 +44,14 @@ const Hero = () => {
       ease: "power2.in",
     });
     gsap.to(".para", {
-      
       scale: 0,
- 
+
       ease: "power1.inOut",
       opacity: 0,
       duration: 1,
       stagger: {
         amount: "1",
-        
+
         ease: "circ.inOut",
         from: "center",
       },
