@@ -7,24 +7,47 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { xor } from "three/examples/jsm/nodes/Nodes.js";
 
-
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
- 
+  const timeline = gsap.timeline({
+    repeat: -1,
+    repeatDelay: 0.2,
+    yoyo: 1,
+  });
   useGSAP(() => {
-
-    gsap.from("#logo", {
+    timeline.to("#logo", {
       opacity: 0.5,
       x: -10,
       y: 7,
-      
       ease: "power1.in",
-      delay: 1.4,
+
       duration: 2.5,
-      repeat:-1,
-      yoyo:1,
-      
+    });
+   
+    timeline.to("#logo", {
+      opacity: 0.5,
+      x: 5,
+      y: -8,
+      ease: "power1.in",
+
+      duration: 6.5,
+    });
+    timeline.to("#logo", {
+      opacity: 0.5,
+      x: 10,
+      y: 7,
+      ease: "elastic",
+     
+      duration: 2.5,
+    });
+    timeline.to("#logo", {
+      opacity: 0.5,
+      x: 7,
+      y: 2,
+      ease: "bounce.in",
+
+      duration: 3.5,
     });
     gsap.from("#nav", {
       opacity: 0,
@@ -33,9 +56,6 @@ const Navbar = () => {
       delay: 5.4,
       duration: 0.5,
     });
-
-    
-
   }, []);
   return (
     <nav
