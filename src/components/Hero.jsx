@@ -60,7 +60,6 @@ const Hero = () => {
         start: "top 18%",
         end: "bottom 38%",
         scrub: 7,
-        markers: 1,
         toggleActions: "restart pause reverse pause",
       },
       ease: "power2.in",
