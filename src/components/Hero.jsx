@@ -42,14 +42,25 @@ const Hero = () => {
       rotatE: -30,
       ease: "power2.in",
     });
-    gsap.to("#worldVid", {
+    gsap.to(".para", {
+      
+      scale: 0,
+ 
+      ease: "power1.inOut",
+      opacity: 0,
       duration: 1,
+      stagger: {
+        amount: "1",
+        
+        ease: "circ.inOut",
+        from: "center",
+      },
       scrollTrigger: {
-        trigger: "#worldVid",
-        start: "top ",
-        end: "bottom ",
-        scrub: 1.2,
-        // markers: 1,
+        trigger: ".para",
+        start: "top 18%",
+        end: "bottom 38%",
+        scrub: 7,
+        markers: 1,
         toggleActions: "restart pause reverse pause",
       },
       ease: "power2.in",
