@@ -5,8 +5,10 @@ import { navLinks } from "../constants";
 import { shaq, bwmap, worldmap } from "../assets";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-
+import { ScrollTrigger } from "gsap/all";
+import { useRef } from "react";
 const Hero = () => {
+  const scrollRef = useRef();
   useGSAP(() => {
     gsap.from("#worldVid", {
       scale: 5,

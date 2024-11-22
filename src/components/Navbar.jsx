@@ -5,10 +5,27 @@ import { navLinks } from "../constants";
 import { close, menu, logo } from "../assets";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { xor } from "three/examples/jsm/nodes/Nodes.js";
+
+
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+ 
   useGSAP(() => {
+
+    gsap.from("#logo", {
+      opacity: 0.5,
+      x: -10,
+      y: 7,
+      
+      ease: "power1.in",
+      delay: 1.4,
+      duration: 2.5,
+      repeat:-1,
+      yoyo:1,
+      
+    });
     gsap.from("#nav", {
       opacity: 0,
       y: -30,
@@ -16,6 +33,9 @@ const Navbar = () => {
       delay: 5.4,
       duration: 0.5,
     });
+
+    
+
   }, []);
   return (
     <nav
@@ -36,6 +56,7 @@ const Navbar = () => {
           <img
             src={logo}
             alt="logo"
+            id="logo"
             className=" rounded-3xl sm:w-[35px] sm:h-[50px] w-[45px] h-[45px] object-contain"
           />
         </Link>
