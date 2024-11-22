@@ -11,18 +11,23 @@ const Hero = () => {
   gsap.registerPlugin(ScrollTrigger);
   // const scrollRef = useRef();
   useGSAP(() => {
+    document.body.style.overflow = "hidden";
+    setTimeout(() => {
+      document.body.style.overflow = "auto";
+    }, 7000);
     gsap.to("#me", {
       scrollTrigger: {
         trigger: "#me",
         start: "top 15%",
         end: "bottom 15%",
         scrub: 1.2,
-        markers: 1,
+        // markers: 1,
         toggleActions: "restart pause reverse pause",
       },
       x: 500,
       duration: 5,
     });
+
     gsap.from("#me", {
       // opacity: 0,
       x: 700,
@@ -35,6 +40,18 @@ const Hero = () => {
       scale: 5,
       duration: 6,
       rotatE: -30,
+      ease: "power2.in",
+    });
+    gsap.to("#worldVid", {
+      duration: 1,
+      scrollTrigger: {
+        trigger: "#worldVid",
+        start: "top ",
+        end: "bottom ",
+        scrub: 1.2,
+        // markers: 1,
+        toggleActions: "restart pause reverse pause",
+      },
       ease: "power2.in",
     });
     gsap.from("#btn", {
