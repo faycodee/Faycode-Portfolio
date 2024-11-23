@@ -18,14 +18,14 @@ const App = () => {
   gsap.registerPlugin(ScrollTrigger);
 
   useGSAP(() => {
-    gsap.utils.toArray(".panel").forEach((panel, i) => {
-      ScrollTrigger.create({
-        trigger: panel, // العنصر الذي يتم تثبيته
-        start: "top top", // يبدأ التثبيت عندما يصل أعلى العنصر إلى أعلى الصفحة
-        pin: true, // تفعيل التثبيت
-        pinSpacing: false, // إزالة المسافة الإضافية بعد التثبيت
-      });
-    });
+    // gsap.utils.toArray(".panel").forEach((panel, i) => {
+    //   ScrollTrigger.create({
+    //     trigger: panel,
+    //     start: "top top",
+    //     pin: true,
+    //     pinSpacing: false,
+    //   });
+    // });
   }, []);
   return (
     <BrowserRouter>
