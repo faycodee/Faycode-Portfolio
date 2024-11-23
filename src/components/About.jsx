@@ -71,17 +71,15 @@ const About = () => {
   }, []);
   return (
     <div>
-      <div>
-        <img
-          style={{ position: "absolute" }}
-          src="./paper.png"
-          id="paper"
-          className="w-[50px]"
-        />
-      </div>
+      <div></div>
       <div className="-mt-[6rem] conti">
         <motion.div variants={textVariant()}>
           <p id="pAbout" className={styles.sectionSubText}>
+            <img
+              src="./paper.png"
+              id="paper"
+              className="w-[50px] translate-y-60"
+            />
             Introduction
           </p>
           <h2 id="h2About" className={styles.sectionHeadText}>
