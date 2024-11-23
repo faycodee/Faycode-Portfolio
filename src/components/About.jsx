@@ -4,10 +4,14 @@ import { styles } from "../styles";
 import { services } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
-import {Suspense} from "react" ;
+import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import Model from '../../public/Spider'
+import Model from "../../public/Spider";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+import { useRef } from "react";
 
 const ServiceCard = ({ index, title, icon }) => {
   return (
@@ -33,36 +37,91 @@ const ServiceCard = ({ index, title, icon }) => {
 };
 
 const About = () => {
+  const tm = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#paper",
+      start: "top bottom",
+      end: "bottom 15%",
+      scrub: 7.2,
+      toggleActions: "restart pause reverse pause",
+    },
+  });
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  useGSAP(() => {
+    tm.fromTo(
+      "#paper",
+      {
+        x: 0,
+        duration: 5,
+        ease:"none"
+      },
+      {
+        x: 500,
+        ease:"none",
+        y: -150,
+        duration: 5,
+
+        rotation: "30deg",
+      }
+    )
+      .to("#paper", {
+        x: 700,
+        y: -50,
+        ease:"none",
+        duration: 5,
+        rotation: "70deg",
+      })
+      .to("#paper", {
+        ease:"none",
+        x: 900,
+        y: 200,
+        duration: 5,
+        rotation: "90deg",
+      })
+      .to("#paper", {
+        ease:"none",
+        x: 900,
+        y: 800,
+        duration: 8,
+        rotation: "150deg",
+      })
+     
+
+     
+    
+  }, []);
   return (
-  
     <div>
-   
-    <div className="-mt-[6rem]">
-      <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
-      </motion.div>
-
-      <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-taupe text-[18px] max-w-3xl leading-[30px]"
-      >
-        Hello! I’m Faycal, a web developer with a passion for problem-solving.
-        My journey began as a fun challengeSolving issues felt like completing
-        puzzles, and the more complex they were, the more rewarding the
-        solutions became. Now, I’m studying at OFPPT, where I’ve gained strong
-        skills in the MERN stack (MongoDB, Express, React, Node.js), allowing me
-        to create dynamic and efficient web applications. I love turning ideas
-        into functional, user-friendly experiences online!
-      </motion.p>
- 
-
-      <div className="mt-20 flex flex-wrap gap-10">
-        {services.map((service, index) => (
-          <ServiceCard key={service.title} index={index} {...service} />
-        ))}
+      <div>
+        <img src="./paper.png" id="paper" className="w-[50px]" />
       </div>
-    </div>
+      <div className="-mt-[6rem]">
+        <motion.div variants={textVariant()}>
+          <p className={styles.sectionSubText}>Introduction</p>
+          <h2 className={styles.sectionHeadText}>Overview.</h2>
+        </motion.div>
+
+        <motion.p
+          variants={fadeIn("", "", 0.1, 1)}
+          className="mt-4 text-taupe text-[18px] max-w-3xl leading-[30px]"
+        >
+          Hello! I’m Faycal, a web developer with a passion for problem-solving.
+          My journey began as a fun challengeSolving issues felt like completing
+          puzzles, and the more complex they were, the more rewarding the
+          solutions became. Now, I’m studying at OFPPT, where I’ve gained strong
+          skills in the MERN stack (MongoDB, Express, React, Node.js), allowing
+          me to create dynamic and efficient web applications. I love turning
+          ideas into functional, user-friendly experiences online!
+        </motion.p>
+
+        <div className="mt-20 flex flex-wrap gap-10">
+          {services.map((service, index) => (
+            <ServiceCard key={service.title} index={index} {...service} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
