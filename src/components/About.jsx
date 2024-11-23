@@ -43,12 +43,13 @@ const About = () => {
   useGSAP(() => {
     gsap.fromTo(
       "#paper",
-      { x: 0 },
+      { x: 20,y:-20 },
       {
+        
         motionPath: {
           path: [
-            { x: 150, y: -50 },
-            { x: 500, y: -100 },
+            { x: 150, y: -10 },
+            { x: 500, y: -30 },
             { x: 800, y: 0 },
             { x: 1000, y: 200 },
             { x: 1000, y: 400 },
@@ -56,10 +57,12 @@ const About = () => {
           ],
         },
         scrollTrigger: {
-          trigger: "#paper",
+          trigger: ".conti",
           start: "top 80%",
+          end:"bottom 30%",
           scrub: 4,
-          
+          markers:true,
+
           toggleActions: "restart pause reverse pause",
         },
         rotation: "150deg",

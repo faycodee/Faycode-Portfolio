@@ -19,14 +19,15 @@ const Services = () => {
       opacity: 0,
       ease: "expo",
       duration: 9,
-      scale:0,
-      scrollTrigger:"#canvas"
+      scale: 0,
+      scrollTrigger: {
+        trigger:"#canvas",
+      },
     });
-    
   }, []);
   return (
     <div>
-      <div style={{overflow:"none"}} className="-mt-[6rem] ">
+      <div style={{ overflow: "none" }} className="-mt-[6rem] ">
         <motion.div variants={textVariant()}>
           <p className={styles.sectionSubText}>Introduction</p>
           <h2 className={styles.sectionHeadText}>Services.</h2>
@@ -43,6 +44,7 @@ const Services = () => {
           Let’s get creative and make something together !
         </motion.p>
         <div className="text-black">
+          <div>kkkkkkkkkkkk</div>
           <Canvas
             gl={{ alpha: true }}
             id="canvas"
@@ -52,7 +54,7 @@ const Services = () => {
             <ambientLight intensity={2} />
             <OrbitControls enableZoom />
             <Suspense fallback={null}>
-              <Model  position={[0, -7, 0]} />
+              <Model position={[0, -7, 0]} />
             </Suspense>
             <Environment preset="city" />
             <ContactShadows
