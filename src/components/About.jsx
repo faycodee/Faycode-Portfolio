@@ -40,9 +40,10 @@ const About = () => {
   const tm = gsap.timeline({
     scrollTrigger: {
       trigger: "#paper",
-      start: "top bottom",
-      end: "bottom 15%",
-      scrub: 7.2,
+      start: "top 80%",
+      end: "bottom",
+      markers: true,
+      scrub: 10,
       toggleActions: "restart pause reverse pause",
     },
   });
@@ -53,44 +54,54 @@ const About = () => {
     tm.fromTo(
       "#paper",
       {
-        x: 0,
+        x: 150,
+        y: -50,
         duration: 5,
-        ease:"none"
+        ease: "none",
       },
       {
         x: 500,
-        ease:"none",
+        ease: "none",
         y: -150,
         duration: 5,
 
         rotation: "30deg",
       }
-    )
-      .to("#paper", {
-        x: 700,
-        y: -50,
-        ease:"none",
-        duration: 5,
-        rotation: "70deg",
-      })
-      .to("#paper", {
-        ease:"none",
-        x: 900,
-        y: 200,
-        duration: 5,
-        rotation: "90deg",
-      })
-      .to("#paper", {
-        ease:"none",
-        x: 900,
-        y: 800,
-        duration: 8,
-        rotation: "150deg",
-      })
-     
-
-     
-    
+    ).to("#paper", {
+      x: 900,
+      y: -50,
+      ease: "none",
+      duration: 5,
+      rotation: "70deg",
+    }
+    ).to("#paper", {
+      x: 1000,
+      y: 150,
+      ease: "none",
+      duration: 5,
+      rotation: "130deg",
+    }
+    ).to("#paper", {
+      x: 1050,
+      y: 350,
+      ease: "none",
+      duration: 5,
+      rotation: "160deg",
+    }
+    ).to("#paper", {
+      x: 900,
+      y: 750,
+      ease: "none",
+      duration: 5,
+      rotation: "150deg",
+    }
+    ).to("#paper", {
+      x: 900,
+      y: 950,
+      ease: "none",
+      duration: 2,
+      rotation: "100deg",
+    });
   }, []);
   return (
     <div>
