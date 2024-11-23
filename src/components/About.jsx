@@ -10,7 +10,7 @@ import { OrbitControls } from "@react-three/drei";
 import Model from "../../public/Spider";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
+import { MotionPathPlugin, ScrollTrigger } from "gsap/all";
 import { useRef } from "react";
 
 const ServiceCard = ({ index, title, icon }) => {
@@ -37,85 +37,54 @@ const ServiceCard = ({ index, title, icon }) => {
 };
 
 const About = () => {
-  const tm = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#paper",
-      start: "top bottom",
-      end: "bottom",
-      // markers: true,
-      scrub: 10,
-      toggleActions: "restart pause reverse pause",
-    },
-  });
+ 
 
   gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(MotionPathPlugin);
 
   useGSAP(() => {
-    tm.fromTo(
+    gsap.fromTo(
       "#paper",
+      { x: 0 },
       {
-        x: 150,
-        y: -50,
-        duration: 5,
-        ease: "none",
-      },
-      {
-        x: 500,
-        ease: "none",
-        y: -150,
-        duration: 5,
-
-        rotation: "30deg",
+        motionPath: {
+          path: [
+            { x: 150, y: -50 },
+            { x: 500, y: -100 },
+            { x: 800, y: 0 },
+            { x: 1000, y: 200 },
+            { x: 1200, y: 400 },
+          ],
+        },
+        scrollTrigger: {
+          trigger: "#paper",
+          start: "top 80%",
+          scrub: 4,
+          toggleActions: "restart pause reverse pause",
+        },
+        rotation: "90deg",
+        duration: 20,
+        ease: "power1.inOut",
       }
-    )
-      .to("#paper", {
-        x: 900,
-        y: -50,
-        ease: "none",
-        duration: 5,
-        rotation: "70deg",
-      })
-      .to("#paper", {
-        x: 1000,
-        y: 150,
-        ease: "none",
-        duration: 5,
-        rotation: "130deg",
-      })
-      .to("#paper", {
-        x: 1050,
-        y: 350,
-        ease: "none",
-        duration: 5,
-        rotation: "160deg",
-      })
-      .to("#paper", {
-        x: 900,
-        y: 750,
-        ease: "none",
-        duration: 5,
-        rotation: "150deg",
-      })
-      .to("#paper", {
-        x: 900,
-        y: 950,
-        ease: "none",
-        duration: 2,
-        rotation: "100deg",
-      });
+    );
   }, []);
   return (
     <div>
       <div>
         <img src="./paper.png" id="paper" className="w-[50px]" />
       </div>
-      <div className="-mt-[6rem]">
+      <div className="-mt-[6rem] conti">
         <motion.div variants={textVariant()}>
-          <p className={styles.sectionSubText}>Introduction</p>
-          <h2 className={styles.sectionHeadText}>Overview.</h2>
+          <p id="pAbout" className={styles.sectionSubText}>
+            Introduction
+          </p>
+          <h2 id="h2About" className={styles.sectionHeadText}>
+            Overview.
+          </h2>
         </motion.div>
 
         <motion.p
+          id="pAbout"
           variants={fadeIn("", "", 0.1, 1)}
           className="mt-4 text-taupe text-[18px] max-w-3xl leading-[30px]"
         >
