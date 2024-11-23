@@ -11,9 +11,18 @@ const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const timeline = gsap.timeline({
+    // scrollTrigger: {
+    //     trigger: "#logo",
+    //     start: "top ",
+    //     end: "bottom ",
+    //     scrub: 4.2,
+    //     markers: 1,
+    //     toggleActions: "restart pause reverse pause",
+    //   },
     repeat: -1,
     repeatDelay: 0.2,
     yoyo: 1,
+    
   });
   useGSAP(() => {
     timeline.to("#logo", {
@@ -21,13 +30,13 @@ const Navbar = () => {
       x: -10,
       y: 7,
       ease: "power1.in",
-
+      
       duration: 2.5,
     });
    
     timeline.to("#logo", {
       opacity: 0.5,
-      x: 5,
+      x: 30,
       y: -8,
       ease: "power1.in",
 

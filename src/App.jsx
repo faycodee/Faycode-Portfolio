@@ -15,49 +15,54 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 const App = () => {
   gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger);
+
   useGSAP(() => {
-    // ScrollTrigger.create({
-    //   trigger:"#p2",
-    //   start:"top ",
-    //   end:"+=1000px",
-    //   pinSpacing:false,
-    //   pin:true
-    // });
+    gsap.utils.toArray(".panel").forEach((panel, i) => {
+      ScrollTrigger.create({
+        trigger: panel, // العنصر الذي يتم تثبيته
+        start: "top top", // يبدأ التثبيت عندما يصل أعلى العنصر إلى أعلى الصفحة
+        pin: true, // تفعيل التثبيت
+        pinSpacing: false, // إزالة المسافة الإضافية بعد التثبيت
+      });
+    });
   }, []);
   return (
     <BrowserRouter>
       <Cursor />
       <div className="relative z-0">
-        <div id="p1">
+        <div id="p1" className=" panel">
           <Navbar />
           <Hero />
         </div>
 
-        <div id="p2" className="bg-about bg-cover bg-center bg-no-repeat">
+        <div id="p2" className="bg-about bg-cover bg-center bg-no-repeat panel">
           <About />
         </div>
-        <div className="bg-about bg-black bg-cover bg-center bg-no-repeat">
+        <div className="bg-about bg-black bg-cover bg-center bg-no-repeat panel">
           <Service />
         </div>
 
-        <div className="bg-tech bg-cover bg-center bg-no-repeat pb-10">
+        <div className="bg-tech bg-cover bg-center bg-no-repeat pb-10 panel">
           <Tech />
         </div>
 
-        <Projects />
+        <div className="panel">
+          <Projects />
+        </div>
 
         <div
           className="bg-experience bg-cover bg-center bg-no-repeat 
-            rounded-tl-[150px] rounded-br-[150px]"
+            rounded-tl-[150px] rounded-br-[150px] panel"
         >
           <div
             className="bg-experienceLight bg-cover bg-center 
-            bg-no-repeat rounded-tl-[150px] rounded-br-[130px]"
+            bg-no-repeat rounded-tl-[150px] rounded-br-[130px] panel"
           >
             <Experience />
           </div>
         </div>
-        <div className="relative z-0">
+        <div className="relative z-0 panel">
           <Contact />
         </div>
       </div>
