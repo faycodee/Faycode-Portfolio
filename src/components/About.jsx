@@ -43,9 +43,8 @@ const About = () => {
   useGSAP(() => {
     gsap.fromTo(
       "#paper",
-      { x: 20,y:-20 },
+      { x: 20, y: -20 },
       {
-        
         motionPath: {
           path: [
             { x: 150, y: -10 },
@@ -59,9 +58,8 @@ const About = () => {
         scrollTrigger: {
           trigger: ".conti",
           start: "top 80%",
-          end:"bottom 30%",
+          end: "bottom 30%",
           scrub: 4,
-          markers:true,
 
           toggleActions: "restart pause reverse pause",
         },
@@ -74,7 +72,12 @@ const About = () => {
   return (
     <div>
       <div>
-        <img style={{position:"absolute"}} src="./paper.png" id="paper" className="w-[50px]" />
+        <img
+          style={{ position: "absolute" }}
+          src="./paper.png"
+          id="paper"
+          className="w-[50px]"
+        />
       </div>
       <div className="-mt-[6rem] conti">
         <motion.div variants={textVariant()}>

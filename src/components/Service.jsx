@@ -19,11 +19,51 @@ const Services = () => {
       opacity: 0,
       ease: "expo",
       duration: 9,
-      scale: 0,
       scrollTrigger: {
-        trigger:"#canvas",
+        trigger: "#canvas",
       },
     });
+    gsap
+    .timeline({
+      delay:.1,
+      scrollTrigger: {
+        trigger: "#canvas",
+      },
+    })
+    .from(
+      "#para1",
+      {
+        delay:2,
+        opacity: 0,
+        duration: 7,
+        
+      }
+    )
+    .from(
+      "#para2",
+      {
+        opacity: 0,
+        duration: 4,
+        
+      }
+    )
+    .from(
+      "#para3",
+      {
+        opacity: 0,
+        duration: 4,
+        
+      }
+    )
+    .from(
+      "#para4",
+      {
+        opacity: 0,
+        duration: 4,
+        
+      }
+    );
+ 
   }, []);
   return (
     <div>
@@ -44,7 +84,47 @@ const Services = () => {
           Let’s get creative and make something together !
         </motion.p>
         <div className="text-black">
-          <div>kkkkkkkkkkkk</div>
+          <div id="para">
+            <div
+            id="para1"
+              className="absolute font-beckman  text-zinc-200 flying-text z-20 text-center"
+              style={{ bottom: "60%", left: "14%" }}
+            >
+              " I am here to assist you <br />
+              in developing your{" "}
+              <span className="font-mono font-extrabold ">PORTFOLIO</span> "
+            </div>
+            <div
+            id="para2"
+              className="absolute font-beckman  text-zinc-200 flying-text z-20 "
+              style={{ bottom: "60%", right: "14%" }}
+            >
+              "I’ll assist you in building the{" "}
+              <span className="font-mono font-extrabold text-center">
+                WEBSITE
+              </span>{" "}
+              you need. "
+            </div>
+            <div
+            id="para3"
+              className="absolute font-beckman  text-zinc-200 flying-text z-20 "
+              style={{ bottom: "36%", left: "10%" }}
+            >
+              " I’ll help you creatively design <br /> a standout{" "}
+              <span className="font-mono font-extrabold text-center">
+                PORTFOLIO
+              </span>{" "}
+              that shines. "
+            </div>
+            <div
+            id="para4"
+              className="absolute  font-beckman  text-zinc-200 flying-text z-20 "
+              style={{ bottom: "45%", right: "20%" }}
+            >
+              " I help you bring your visions <br /> to life, whatever they are.
+              "
+            </div>
+          </div>
           <Canvas
             gl={{ alpha: true }}
             id="canvas"
