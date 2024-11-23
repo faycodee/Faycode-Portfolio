@@ -8,11 +8,25 @@ import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Environment, OrbitControls, ContactShadows } from "@react-three/drei";
 import Model from "../../public/Spider";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { MotionPathPlugin, ScrollTrigger } from "gsap/all";
 
 const Services = () => {
+  gsap.registerPlugin(ScrollTrigger);
+  useGSAP(() => {
+    gsap.from("#canvas", {
+      opacity: 0,
+      ease: "expo",
+      duration: 9,
+      scale:0,
+      scrollTrigger:"#canvas"
+    });
+    
+  }, []);
   return (
     <div>
-      <div className="-mt-[6rem]">
+      <div style={{overflow:"none"}} className="-mt-[6rem] ">
         <motion.div variants={textVariant()}>
           <p className={styles.sectionSubText}>Introduction</p>
           <h2 className={styles.sectionHeadText}>Services.</h2>
@@ -31,13 +45,14 @@ const Services = () => {
         <div className="text-black">
           <Canvas
             gl={{ alpha: true }}
+            id="canvas"
             className="rounded-3xl"
             style={{ height: "100vh", scale: 5, backgroundColor: "black" }}
           >
             <ambientLight intensity={2} />
             <OrbitControls enableZoom />
             <Suspense fallback={null}>
-              <Model position={[0, -7, 0]}  />
+              <Model  position={[0, -7, 0]} />
             </Suspense>
             <Environment preset="city" />
             <ContactShadows

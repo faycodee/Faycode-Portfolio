@@ -37,8 +37,6 @@ const ServiceCard = ({ index, title, icon }) => {
 };
 
 const About = () => {
- 
-
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(MotionPathPlugin);
 
@@ -53,16 +51,18 @@ const About = () => {
             { x: 500, y: -100 },
             { x: 800, y: 0 },
             { x: 1000, y: 200 },
-            { x: 1200, y: 400 },
+            { x: 1000, y: 400 },
+            { x: 1000, y: 900 },
           ],
         },
         scrollTrigger: {
           trigger: "#paper",
           start: "top 80%",
           scrub: 4,
+          
           toggleActions: "restart pause reverse pause",
         },
-        rotation: "90deg",
+        rotation: "150deg",
         duration: 20,
         ease: "power1.inOut",
       }
@@ -71,7 +71,7 @@ const About = () => {
   return (
     <div>
       <div>
-        <img src="./paper.png" id="paper" className="w-[50px]" />
+        <img style={{position:"absolute"}} src="./paper.png" id="paper" className="w-[50px]" />
       </div>
       <div className="-mt-[6rem] conti">
         <motion.div variants={textVariant()}>
