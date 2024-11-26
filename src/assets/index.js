@@ -7,6 +7,7 @@ import shaq from "./personal/shaq.png";
 import backend from "./icons/backend.png";
 import ux from "./icons/ux.png";
 import frontend from "./icons/frontend.png";
+import datamanagement from "./icons/datamanagement.png";
 import prototyping from "./icons/prototyping.png";
 import github from "./icons/github.png";
 import close from "./icons/close.png";
@@ -63,6 +64,7 @@ export {
   logo,
   shaq,
   backend,
+  datamanagement,
   ux,
   frontend,
   prototyping,

@@ -2,6 +2,7 @@ import {
   frontend,
   backend,
   ux,
+  datamanagement,
   prototyping,
   javascript,
   typescript,
@@ -69,6 +70,10 @@ const services = [
   {
     title: "Backend Developer",
     icon: backend,
+  },
+  {
+    title: "Data Management",
+    icon: datamanagement,
   },
 ];
 
