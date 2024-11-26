@@ -17,7 +17,7 @@ const Services = () => {
   useGSAP(() => {
     gsap.from("#canvas", {
       opacity: 0,
-      scale:.6,
+      scale: 0.6,
       ease: "expo",
       duration: 9,
       scrollTrigger: {
@@ -25,46 +25,29 @@ const Services = () => {
       },
     });
     gsap
-    .timeline({
-      delay:.1,
-      scrollTrigger: {
-        trigger: "#canvas",
-      },
-    })
-    .from(
-      "#para1",
-      {
-        delay:2,
+      .timeline({
+        delay: 0.1,
+        scrollTrigger: {
+          trigger: "#canvas",
+        },
+      })
+      .from("#para1", {
+        delay: 2,
         opacity: 0,
         duration: 7,
-        
-      }
-    )
-    .from(
-      "#para2",
-      {
+      })
+      .from("#para2", {
         opacity: 0,
         duration: 4,
-        
-      }
-    )
-    .from(
-      "#para3",
-      {
+      })
+      .from("#para3", {
         opacity: 0,
         duration: 4,
-        
-      }
-    )
-    .from(
-      "#para4",
-      {
+      })
+      .from("#para4", {
         opacity: 0,
         duration: 4,
-        
-      }
-    );
- 
+      });
   }, []);
   return (
     <div>
@@ -87,7 +70,7 @@ const Services = () => {
         <div className="text-black">
           <div id="para">
             <div
-            id="para1"
+              id="para1"
               className="absolute font-beckman  text-zinc-200 flying-text z-20 text-center"
               style={{ bottom: "60%", left: "14%" }}
             >
@@ -96,7 +79,7 @@ const Services = () => {
               <span className="font-mono font-extrabold ">PORTFOLIO</span> "
             </div>
             <div
-            id="para2"
+              id="para2"
               className="absolute font-beckman  text-zinc-200 flying-text z-20 "
               style={{ bottom: "60%", right: "14%" }}
             >
@@ -107,7 +90,7 @@ const Services = () => {
               you need. "
             </div>
             <div
-            id="para3"
+              id="para3"
               className="absolute font-beckman  text-zinc-200 flying-text z-20 "
               style={{ bottom: "36%", left: "10%" }}
             >
@@ -118,7 +101,7 @@ const Services = () => {
               that shines. "
             </div>
             <div
-            id="para4"
+              id="para4"
               className="absolute  font-beckman  text-zinc-200 flying-text z-20 "
               style={{ bottom: "45%", right: "20%" }}
             >
