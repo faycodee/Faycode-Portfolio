@@ -101,7 +101,7 @@ const technologies = [
     name: "Tailwind CSS",
     icon: tailwind,
   },
-  
+
   {
     name: "Bootstrap ",
     icon: bootstrap,
@@ -122,12 +122,12 @@ const technologies = [
     name: "My SQL",
     icon: mysql,
   },
-  
+
   {
     name: "Agile",
     icon: agile,
   },
-  
+
   {
     name: "Python",
     icon: python,
