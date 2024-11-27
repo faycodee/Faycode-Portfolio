@@ -56,7 +56,7 @@ const App = () => {
           <Projects />
         </div>
 
-        <div
+        {/* <div
           className="bg-experience bg-cover bg-center bg-no-repeat 
             rounded-tl-[150px] rounded-br-[150px] panel"
         >
@@ -66,7 +66,7 @@ const App = () => {
           >
             <Experience />
           </div>
-        </div>
+        </div> */}
         <div className="relative z-0 panel">
           <Contact />
         </div>
