@@ -31,6 +31,12 @@ import {
   dcc,
   kelhel,
   microverse,
+  employee,
+  fayshop,
+  getmat,
+  parallax,
+  porthtml,
+  timepro,
 } from "../assets";
 
 export const navLinks = [
@@ -84,10 +90,7 @@ const technologies = [
     name: "JavaScript",
     icon: javascript,
   },
-  // {
-  //   name: 'TypeScript',
-  //   icon: typescript,
-  // },
+
   {
     name: "React JS",
     icon: reactjs,
@@ -131,6 +134,14 @@ const technologies = [
     name: "Python",
     icon: python,
   },
+  {
+    name: "Framer",
+    icon: framerm,
+  },
+    // {
+  //   name: 'TypeScript',
+  //   icon: typescript,
+  // },
 
   // {
   //   name: 'Rails',
@@ -144,10 +155,7 @@ const technologies = [
   //   name: 'postgresql',
   //   icon: postgresql,
   // },
-  {
-    name: "Framer",
-    icon: framerm,
-  },
+
   // {
   //   name: 'figma',
   //   icon: figma,

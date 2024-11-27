@@ -42,12 +42,17 @@ import php from "./tech/php.png";
 import python from "./tech/python.png";
 import three from "./tech/three.png";
 
+import employee from "./projects/employee.jpg";
+import fayshop from "./projects/fayshopjs.png";
+import getmat from "./projects/getmat.png";
+import parallax from "./projects/paralax.png";
+import porthtml from "./projects/porthtml.png";
+import timepro from "./projects/timepro.jpg";
+
 import coverhunt from "./company/coverhunt.png";
 import dcc from "./company/dcc.png";
 import kelhel from "./company/kelhel.png";
 import microverse from "./company/microverse.png";
-
-
 
 export {
   bwmap,
@@ -96,4 +101,10 @@ export {
   dcc,
   kelhel,
   microverse,
+  employee,
+  fayshop,
+  getmat,
+  parallax,
+  porthtml,
+  timepro,
 };
