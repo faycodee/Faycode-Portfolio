@@ -138,7 +138,7 @@ const technologies = [
     name: "Framer",
     icon: framerm,
   },
-    // {
+  // {
   //   name: 'TypeScript',
   //   icon: typescript,
   // },
@@ -200,26 +200,27 @@ const experiences = [
 const projects = [
   {
     id: "project-1",
-    name: "KomiKult",
-    description: "A comic characters list app that displays Marvel characters.",
+    name: "TimePro",
+    description:
+      " TimePro a small project in which I tried to solve the problem of organizing time and tasks. I tried to focus on a comfortable and calm user interface capable of removing stress and anxiety, and this is what I did not find in most sites of this type..",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
-        color: "green-text-gradient",
+        name: "redux",
+        color: "purple-text-gradient",
       },
       {
         name: "tailwind",
         color: "pink-text-gradient",
       },
     ],
-    // image: komikult,
-    repo: "https://github.com/shaqdeff/KomiKult",
-    demo: "https://shaqdeff.github.io/KomiKult/",
-  }
+    image: timepro,
+    repo: "https://github.com/faycodee/TimePro-todoList-Redux",
+    demo: "https://timepro.netlify.app/",
+  },
 ];
 
 export { services, technologies, experiences, projects };
