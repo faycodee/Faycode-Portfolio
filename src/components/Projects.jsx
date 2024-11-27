@@ -11,6 +11,7 @@ const ProjectCard = ({
   name,
   description,
   image,
+  vidpro,
   repo,
   demo,
   index,
@@ -21,7 +22,7 @@ const ProjectCard = ({
     <motion.div
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
       className={`relative ${
-        active === id ? "lg:flex-[3.5] flex-[10]" : "lg:flex-[0.5] flex-[2]"
+        active === id ? "lg:flex-[3.5] flex-[10] " : "lg:flex-[0.5] flex-[2]"
       } flex items-center justify-center min-w-[170px] 
       h-[420px] cursor-pointer card-shadow`}
       onClick={() => handleClick(id)}
@@ -34,16 +35,18 @@ const ProjectCard = ({
       <img
         src={image}
         alt={name}
-        className="absolute w-full h-full object-cover rounded-[24px]"
+        className={`absolute w-full h-full object-cover rounded-[24px] ${
+          active === id ? "" : "filter grayscale "
+        }`}
       />
 
       {active !== id ? (
-        <div className="flex items-center justify-start pr-[4.5rem]">
+        <div className="flex items-center justify-start pr-[4.5rem] ">
           <h3
             className="font-extrabold font-beckman uppercase w-[200px] h-[30px] 
         whitespace-nowrap sm:text-[27px] text-[18px] text-timberWolf tracking-[1px]
         absolute  lg:bottom-[7rem] lg:rotate-[-90deg] lg:origin-[0,0]
-        leading-none z-20"
+        leading-none z-20 "
           >
             {name}
           </h3>
@@ -119,7 +122,7 @@ const ProjectCard = ({
 };
 
 const Projects = () => {
-  const [active, setActive] = useState("project-2");
+  const [active, setActive] = useState("project-1");
 
   return (
     <div className="-mt-[6rem]">

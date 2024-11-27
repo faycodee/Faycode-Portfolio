@@ -201,6 +201,7 @@ const projects = [
   {
     id: "project-1",
     name: "TimePro",
+    vidpro: "",
     description: " TimePro a solve the problem of organizing time and tasks.",
     tags: [
       {
@@ -223,6 +224,7 @@ const projects = [
   {
     id: "project-2",
     name: "employee",
+    vidpro: "",
     description:
       "In the application utilizes Axios to make API requests for retrieving and manipulating employee data. ",
     tags: [
@@ -250,6 +252,7 @@ const projects = [
   {
     id: "project-3",
     name: "fayshop",
+    vidpro: "",
     description:
       "Hi, I built this Ecommerc T-shirts project using only JavaScript in order to develop my skills in this great language.",
     tags: [
@@ -280,6 +283,7 @@ const projects = [
   {
     id: "project-4",
     name: "Faycss Portfolio",
+    vidpro: "./porthtml.mp4",
     description:
       "This is MY first site I created after learning CSS and HTML .",
     tags: [
@@ -299,6 +303,7 @@ const projects = [
   {
     id: "project-6",
     name: "GetMat ",
+    vidpro: "",
     description: "this website is an online learning using CRUD JS ",
     tags: [
       {
