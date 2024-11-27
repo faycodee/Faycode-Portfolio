@@ -201,8 +201,7 @@ const projects = [
   {
     id: "project-1",
     name: "TimePro",
-    description:
-      " TimePro a small project in which I tried to solve the problem of organizing time and tasks. I tried to focus on a comfortable and calm user interface capable of removing stress and anxiety, and this is what I did not find in most sites of this type..",
+    description: " TimePro a solve the problem of organizing time and tasks.",
     tags: [
       {
         name: "react",
@@ -220,6 +219,100 @@ const projects = [
     image: timepro,
     repo: "https://github.com/faycodee/TimePro-todoList-Redux",
     demo: "https://timepro.netlify.app/",
+  },
+  {
+    id: "project-2",
+    name: "employee",
+    description:
+      "In the application utilizes Axios to make API requests for retrieving and manipulating employee data. ",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "axios",
+        color: "purple-text-gradient",
+      },
+      {
+        name: "tailwind",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "framermotion",
+        color: "green-text-gradient",
+      },
+    ],
+    image: employee,
+    repo: "https://github.com/faycodee/Employee-crude-api-axios",
+    demo: "https://employee-sage.vercel.app/",
+  },
+  {
+    id: "project-3",
+    name: "fayshop",
+    description:
+      "Hi, I built this Ecommerc T-shirts project using only JavaScript in order to develop my skills in this great language.",
+    tags: [
+      {
+        name: "javascript",
+        color: "yellow-text-gradient",
+      },
+    ],
+    image: fayshop,
+    repo: "https://github.com/faycodee/Ecommerce-T-shirts-website-Fayshop-JS",
+    demo: "https://ecommerc-fayshop.netlify.app/",
+  },
+  // {
+  //   id: "project-0",
+  //   name: "Parallax",
+  //   description:
+  //     "After watching a video on YouTube explaining the parallax effect, I liked it a lot and this was the attempt.",
+  //   tags: [
+  //     {
+  //       name: "javascript",
+  //       color: "yellow-text-gradient",
+  //     },
+  //   ],
+  //   image: parallax,
+  //   repo: "https://github.com/faycodee/parallax-Effect-JS",
+  //   demo: "https://faycodee.github.io/parallax-Effect-JS/",
+  // },
+  {
+    id: "project-4",
+    name: "Faycss Portfolio",
+    description:
+      "This is MY first site I created after learning CSS and HTML .",
+    tags: [
+      {
+        name: "html",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "css",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: porthtml,
+    repo: "https://github.com/faycodee/Portfolio-Faycss",
+    demo: "https://faycodee.github.io/Portfolio-Faycss/",
+  },
+  {
+    id: "project-6",
+    name: "GetMat ",
+    description: "this website is an online learning using CRUD JS ",
+    tags: [
+      {
+        name: "html",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "css",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: getmat,
+    repo: "https://github.com/faycodee/CRUD-cssAnimation-slider-getMatierr",
+    demo: "https://faycodee.github.io/CRUD-cssAnimation-slider-getMatierr/",
   },
 ];
 
