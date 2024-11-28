@@ -21,10 +21,9 @@ const Certifications = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className="mt-4 text-taupe text-[18px] max-w-3xl leading-[30px]"
         >
-          These projects highlight my experience through practical examples,
-          including brief descriptions, repository links, and live demos. They
-          demonstrate my ability to tackle complex challenges, adapt to various
-          technologies, and manage projects efficiently.
+          Highlighting key certifications that validate my expertise and
+          commitment to professional development. Each certification reflects
+          skills gained and dedication to staying updated in my field.
         </motion.p>
       </div>
 
