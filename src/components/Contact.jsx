@@ -13,7 +13,6 @@ const Contact = () => {
   gsap.registerPlugin(ScrollTrigger);
   const video = document.getElementById("vid0");
   useGSAP(() => {
-
     gsap.from("#vid0", {
       opacity: 0,
       duration: 4,
