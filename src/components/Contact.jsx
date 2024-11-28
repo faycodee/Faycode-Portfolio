@@ -3,16 +3,51 @@ import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 // import emailjs from '@emailjs/browser';
 // import { send, sendHover } from '../assets';
 
 const Contact = () => {
+  gsap.registerPlugin(ScrollTrigger);
+  const video = document.getElementById("vid0");
+  useGSAP(() => {
+
+    gsap.from("#vid0", {
+      opacity: 0,
+      duration: 4,
+      onUpdate: (self) => {
+        requestAnimationFrame(() => {
+          video.currentTime = video.duration * self.progress;
+        });
+      },
+      scrollTrigger: {
+        trigger: "#vid0",
+        start: "top center",
+        end: "bottom center",
+        scrub: true,
+      },
+    });
+  }, []);
   return (
     <div className="-mt-[8rem] xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
+      {" "}
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
         className="flex-[0.75] bg-jet p-8 rounded-2xl"
       >
+        {" "}
+        <motion.video
+          id="vid0"
+          src="./vid0.mp4"
+          alt=""
+          autoPlay
+          style={{ zIndex: -5 }}
+          loop
+          muted
+          className="absolute inset-0   w-full sm:block hidden  h-full object-cover"
+        ></motion.video>
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadTextLight}>Contact.</h3>
         <div className="mt-10">
@@ -34,7 +69,6 @@ const Contact = () => {
             +212 6 13 48 78 14
           </a>
         </div>
-
         <div className="flex gap-6 mt-10">
           <a
             href="https://www.linkedin.com/in/faycal-oumzil-b97888250/"
