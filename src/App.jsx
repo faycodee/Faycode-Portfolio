@@ -10,6 +10,7 @@ import {
   Experience,
   Hero,
   Navbar,
+  Certifications,
   Tech,
   Projects,
   Cursor,
@@ -54,6 +55,9 @@ const App = () => {
 
         <div className="panel">
           <Projects />
+        </div>
+        <div className="panel">
+          <Certifications />
         </div>
 
         {/* <div
