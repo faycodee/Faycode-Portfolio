@@ -37,6 +37,10 @@ import {
   parallax,
   porthtml,
   timepro,
+  datacer,
+  gitcer,
+  jscer,
+  pythoncer,
 } from "../assets";
 
 export const navLinks = [
@@ -320,5 +324,35 @@ const projects = [
     demo: "https://faycodee.github.io/CRUD-cssAnimation-slider-getMatierr/",
   },
 ];
+const certifications = [
+  {
+    id: 1,
+    name: "Intro to Data and Data Science",
+    image: datacer,
+    company: "learn.365datascience.com",
+    link: "https://learn.365datascience.com/c/1f5681348f/",
+  },
+  {
+    id: 2,
+    name: "Git and GitHub",
+    image: gitcer,
+    company: "learn.365datascience.com",
+    link: "https://learn.365datascience.com/certificates/CC-848F5C8F60/",
+  },
+  {
+    id: 3,
+    name: "Python Essentials",
+    image: pythoncer,
+    company: "credly.com",
+    link: "https://www.credly.com/badges/6438ea77-9d04-4747-8f40-3ff32d9f9b59/linked_in?t=smdukb",
+  },
+  {
+    id: 4,
+    name: "Programming with JavaScript",
+    image: jscer,
+    company: "coursera.org",
+    link: "https://www.coursera.org/account/accomplishments/verify/RPKT4P8MLE8M?utm_source=ln&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course",
+  },
+];
 
-export { services, technologies, experiences, projects };
+export { services, technologies, experiences, projects ,certifications};
