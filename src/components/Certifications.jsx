@@ -10,7 +10,7 @@ const Certifications = () => {
   const [active, setActive] = useState("project-1");
 
   return (
-    <div className="-mt-[6rem]">
+    <div className="-mt-[6rem]" >
       <motion.div variants={textVariant()}>
         <p className={`${styles.sectionSubText} `}>Case Studies</p>
         <h2 className={`${styles.sectionHeadTextLight}`}>Certifications.</h2>
