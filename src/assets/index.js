@@ -54,6 +54,10 @@ import dcc from "./company/dcc.png";
 import kelhel from "./company/kelhel.png";
 import microverse from "./company/microverse.png";
 
+import datacer from "./certifications/datacer.png";
+import gitcer from "./certifications/gitcer.png";
+import jscer from "./certifications/jscer.png";
+import pythoncer from "./certifications/pythoncer.png";
 export {
   bwmap,
   nairobi,
@@ -107,4 +111,8 @@ export {
   parallax,
   porthtml,
   timepro,
+  datacer,
+  gitcer,
+  jscer,
+  pythoncer,
 };
