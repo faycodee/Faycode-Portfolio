@@ -49,7 +49,7 @@ const App = () => {
           <Service />
         </div>
 
-        <div className=" bg-cover bg-center bg-no-repeat pb-10 panel">
+        <div className=" bg-cover bg-center bg-no-repeat panel bg-black" style={{overflow:"none"}}>
           <Tech />
         </div>
 

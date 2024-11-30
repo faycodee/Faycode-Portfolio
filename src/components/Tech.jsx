@@ -11,6 +11,14 @@ import { ScrollTrigger } from "gsap/all";
 const Tech = () => {
   gsap.registerPlugin(ScrollTrigger);
   useGSAP(() => {
+    // gsap.to("#techvid", {
+    //   opacity:.1,
+    //   duration: 7,
+    //   yoyo: true,
+    //   repeat: -1,
+    //   ScrollTrigger: "#techvid",
+    //   ease: "power1.inOut",
+    // });
     // gsap.from(".tech", {
     //   opacity: 0.5,
     //   scale: 0.6,
@@ -29,27 +37,29 @@ const Tech = () => {
   }, []);
   return (
     <>
-      <motion.video
-        id="techvid"
-        src="./vid2.mp4"
-        alt="Tech Video"
-        autoPlay
-        style={{ zIndex: -5 }}
-        loop
-        muted
-        className="absolute inset-0   w-full sm:block hidden  h-full object-cover"
-      ></motion.video>
-      <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubTextLight}>My skills</p>
-        <h2 className={styles.sectionHeadTextLight}>Technologies.</h2>
-      </motion.div>
+      <div style={{ overflow: "none" }}>
+        <motion.video
+          id="techvid"
+          src="./vid2.mp4"
+          alt="Tech Video"
+          autoPlay
+          style={{ zIndex: -5 }}
+          loop
+          muted
+          className="absolute inset-0   w-full sm:block hidden  h-full object-cover"
+        ></motion.video>
+        <motion.div variants={textVariant()}>
+          <p className={styles.sectionSubTextLight}>My skills</p>
+          <h2 className={styles.sectionHeadTextLight}>Technologies.</h2>
+        </motion.div>
 
-      <div className="flex flex-wrap justify-center gap-10 mt-14 conti2">
-        {technologies.map((technology) => (
-          <div className="w-28 h-28 tech" key={technology.name}>
-            <BallCanvas icon={technology.icon} />
-          </div>
-        ))}
+        <div className="flex flex-wrap justify-center gap-10 mt-14 conti2">
+          {technologies.map((technology) => (
+            <div className="w-28 h-28 tech" key={technology.name}>
+              <BallCanvas icon={technology.icon} />
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
