@@ -16,7 +16,7 @@ const Services = () => {
   useGSAP(() => {
     gsap.from("#canvas", {
       opacity: 0,
-      scale: 0.6,
+      
       ease: "expo",
       duration: 9,
       scrollTrigger: {
