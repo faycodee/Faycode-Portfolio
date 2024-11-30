@@ -62,7 +62,7 @@ const ProjectCard = ({
                 onClick={() => window.open(repo, "_blank")}
                 className="bg-night sm:w-11 sm:h-11 w-10 h-10 rounded-full 
                   flex justify-center items-center cursor-pointer
-                  sm:opacity-[0.9] opacity-[0.8]"
+                  sm:opacity-[0.9] opacity-[0.8] "
               >
                 <img
                   src={github}

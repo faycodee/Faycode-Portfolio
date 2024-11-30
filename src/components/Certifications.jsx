@@ -8,8 +8,15 @@ import { fadeIn, textVariant, staggerContainer } from "../utils/motion";
 import { certifications } from "../constants";
 
 const Certifications = () => {
-  const [active, setActive] = useState("project-1");
-
+  // const goVerify = (what, e) => {
+  //   let mytimout;
+  //   what = "verify"
+  //     ? (mytimout = setInterval(() => {
+  //         alert("make sure BY CLICKING");
+  //         // return confirm("I think you want to make sure ?")?(window.open(`${e.link}`, "_blank"),clearTimeout(mytimout)):clearTimeout(mytimout)
+  //       }, 7000))
+  //     : clearInterval(mytimout);
+  // };
   return (
     <div className="-mt-[6rem]">
       <motion.div variants={textVariant()}>
@@ -38,34 +45,49 @@ const Certifications = () => {
         {certifications.map((e, i) => {
           return (
             <div
-              className=" card-shadow cursor-pointer group relative flex
-             flex-col my-6 ml-5 bg-white shadow-sm
-             border border-slate-200 rounded-lg w-96 
+              className=" card-shadow cursor-grab group relative flex
+             flex-col my-6 ml-5 bg-jet shadow-sm scah
+             rounded-lg w-96 
              hover:shadow-lg transition-shadow duration-300"
             >
-              <div className="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
+              <div className="relative min-h-[230px]  max-h-[230px] m-2.5 overflow-hidden text-white rounded-md">
                 <img
-                  className="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] transform group-hover:scale-110"
+                  className="transition-transform duration-500 transform group-hover:scale-40"
                   src={e.image}
                   alt="investment-seed-round"
+                  onClick={() => {
+                    return window.open(`${e.link}`, "_blank");
+                  }}
+                  onMouseMove={() => {
+                    goVerify("verify", e);
+                  }}
+                  onMouseLeave={() => {
+                    goVerify("nooo", e);
+                  }}
                 />
               </div>
-              <div className="p-4">
-                <h6 className="mb-2 text-slate-800 text-xl font-semibold"></h6>
-                <p className="text-slate-600 leading-normal font-light">
-                  We are thrilled to announce the completion of our seed round,
-                  securing $2M in investment to fuel product development and
-                  market expansion.
-                </p>
-              </div>
-              <div className="px-4 pb-4 pt-0 mt-2">
-                <button
-                  className="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                  type="button"
+              <div className="px-4">
+                <p
+                  onClick={() => {
+                    return window.open(`${e.link}`, "_blank");
+                  }}
+                  className="text-gray-500 sm:text-[14px] text-[12px] 
+              max-w-3xl sm:leading-[24px] leading-[18px]
+              font-poppins tracking-[1px]"
                 >
-                  Read article
-                </button>
+                  {e.disc}
+                </p>
+                <span>
+                  From :{" "}
+                  <a
+                    className="text-blue-300 cursor-pointer"
+                    href={`https://${e.company}`}
+                  >
+                    {e.company}
+                  </a>
+                </span>
               </div>
+              <div className="px-4 pb-4 pt-0 mt-2"></div>
             </div>
           );
         })}

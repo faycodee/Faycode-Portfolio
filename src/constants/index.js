@@ -330,6 +330,8 @@ const certifications = [
     name: "Intro to Data and Data Science",
     image: datacer,
     company: "learn.365datascience.com",
+    disc: "my diiiii iiiiiiiiii iiiiiiiii iiiiiiiiiiiiii iiiiiiiiii iiiiiiiiiisc",
+
     link: "https://learn.365datascience.com/c/1f5681348f/",
   },
   {
@@ -337,6 +339,8 @@ const certifications = [
     name: "Git and GitHub",
     image: gitcer,
     company: "learn.365datascience.com",
+    disc: "my diiiiiiiiiii iiiiiiiiii  iiiiiiiiii iiiiiiiii iiiiii iiiiiiii iiiisc",
+
     link: "https://learn.365datascience.com/certificates/CC-848F5C8F60/",
   },
   {
@@ -344,6 +348,7 @@ const certifications = [
     name: "Python Essentials",
     image: pythoncer,
     company: "credly.com",
+    disc: "my diiiiiiiii iiiii iiiiiiiiiiii iiiiiiii iiii iiiiiiiii iiiiiiiiiiisc my diiiiiiiii iiiii iiiiiiiiiiii iiiiiiii iiii iiiiiiiii iiiiiiiiiiisc",
     link: "https://www.credly.com/badges/6438ea77-9d04-4747-8f40-3ff32d9f9b59/linked_in?t=smdukb",
   },
   {
@@ -351,8 +356,10 @@ const certifications = [
     name: "Programming with JavaScript",
     image: jscer,
     company: "coursera.org",
+    disc: "my diiiiiiii iiiiiiii iiiiiii iiiiiiiiiiiiiiii iiiiii iiiiiiii iiiiisc",
+
     link: "https://www.coursera.org/account/accomplishments/verify/RPKT4P8MLE8M?utm_source=ln&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course",
   },
 ];
 
-export { services, technologies, experiences, projects ,certifications};
+export { services, technologies, experiences, projects, certifications };
