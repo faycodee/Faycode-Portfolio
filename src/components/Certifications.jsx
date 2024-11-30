@@ -48,39 +48,37 @@ const Certifications = () => {
               className=" card-shadow cursor-grab group relative flex
              flex-col my-6 ml-5 bg-jet shadow-sm scah
              rounded-lg w-96 
-             hover:shadow-lg transition-shadow duration-300"
+             hover:shadow-lg transition-shadow duration-300 min-h-[400px]  max-h-[430px]  "
             >
-              <div className="relative min-h-[230px]  max-h-[230px] m-2.5 overflow-hidden text-white rounded-md">
+              <img src="./pin.png"  alt="" className="absolute z-10 w-[70px] rotate-[-30deg] top-2 left-[-11px]"/>
+              <div className="relative m-2.5 overflow-hidden text-white rounded-md flex justify-start items-start">
                 <img
-                  className="transition-transform duration-500 transform group-hover:scale-40"
+                  className=" transition-transform duration-500 rotate-2 transform-gpu m-1 group-hover:scale-40 "
                   src={e.image}
                   alt="investment-seed-round"
                   onClick={() => {
                     return window.open(`${e.link}`, "_blank");
                   }}
-                  onMouseMove={() => {
-                    goVerify("verify", e);
-                  }}
-                  onMouseLeave={() => {
-                    goVerify("nooo", e);
-                  }}
-                />
+                >
+                 </img>
+                    <img src="./pin.png" alt="" className="absolute z-10 w-[70px] rotate-[-12deg] bottom-0 right-[-11px]"/>
               </div>
               <div className="px-4">
+                <h3 className="font-mova mb-1">{e.name}</h3>
                 <p
                   onClick={() => {
                     return window.open(`${e.link}`, "_blank");
                   }}
                   className="text-gray-500 sm:text-[14px] text-[12px] 
               max-w-3xl sm:leading-[24px] leading-[18px]
-              font-poppins tracking-[1px]"
+              font-poppins tracking-[1px] mb-8"
                 >
                   {e.disc}
                 </p>
-                <span>
-                  From :{" "}
+                <span className="absolute bottom-3 font-thin">
+                  from :{" "}
                   <a
-                    className="text-blue-300 cursor-pointer"
+                    className="text-blue-300 cursor-pointer text-[10px] hover:text-blue-500"
                     href={`https://${e.company}`}
                   >
                     {e.company}
