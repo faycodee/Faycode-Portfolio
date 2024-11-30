@@ -360,6 +360,33 @@ const certifications = [
 
     link: "https://www.coursera.org/account/accomplishments/verify/RPKT4P8MLE8M?utm_source=ln&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course",
   },
+  {
+    id: 4,
+    name: "Programming with JavaScript",
+    image: jscer,
+    company: "coursera.org",
+    disc: "my diiiiiiii iiiiiiii iiiiiii iiiiiiiiiiiiiiii iiiiii iiiiiiii iiiiisc",
+
+    link: "https://www.coursera.org/account/accomplishments/verify/RPKT4P8MLE8M?utm_source=ln&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course",
+  },
+  {
+    id: 4,
+    name: "Programming with JavaScript",
+    image: jscer,
+    company: "coursera.org",
+    disc: "my diiiiiiii iiiiiiii iiiiiii iiiiiiiiiiiiiiii iiiiii iiiiiiii iiiiisc",
+
+    link: "https://www.coursera.org/account/accomplishments/verify/RPKT4P8MLE8M?utm_source=ln&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course",
+  },
+  {
+    id: 4,
+    name: "Programming with JavaScript",
+    image: jscer,
+    company: "coursera.org",
+    disc: "my diiiiiiii iiiiiiii iiiiiii iiiiiiiiiiiiiiii iiiiii iiiiiiii iiiiisc",
+
+    link: "https://www.coursera.org/account/accomplishments/verify/RPKT4P8MLE8M?utm_source=ln&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course",
+  },
 ];
 
 export { services, technologies, experiences, projects, certifications };

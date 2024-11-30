@@ -4,6 +4,13 @@ import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { certifications } from "../constants";
 import { fadeIn, textVariant, staggerContainer } from "../utils/motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
+// import { EffectCoverflow, Pagination, Navigation }
 
 const Certificat = ({ obj, pos }) => {
   return (
@@ -44,7 +51,7 @@ const Certificat = ({ obj, pos }) => {
         <span className="absolute bottom-3 font-thin">
           from:{" "}
           <a
-            className="text-blue-300 cursor-pointer text-[10px] hover:text-blue-500"
+            className="text-blue-300 cursor-pointer text-[12px] hover:text-blue-500"
             href={`https://${obj.company}`}
             target="_blank"
             rel="noopener noreferrer"
@@ -82,9 +89,25 @@ const Certifications = () => {
         viewport={{ once: false, amount: 0.25 }}
         className={`${styles.innerWidth} mx-auto flex flex-row`}
       >
-        {certifications.map((e, i) => (
-          <Certificat key={i} obj={e} pos={i} />
-        ))}
+        {" "}
+        <Swiper
+          className="w-full"
+          effect={"coverflow"}
+          grabCursor={true}
+          centeredSlides={2}
+          initialSlide={1}
+          slidesPerView={3}
+          pagination={{ el: ".swiper-pagination", clickable: true }}
+          coverflowEffect={{ rotate: 0, stretch: 0, depth: 100, modifier: 2.5 }}
+          modules={[EffectCoverflow, Pagination, Navigation]}
+        >
+          {certifications.map((e, i) => (
+            <SwiperSlide key={i}>
+              <Certificat key={i} obj={e} pos={i} />
+            </SwiperSlide>
+          ))}
+          <div className="swiper-pagination "></div>
+        </Swiper>
       </motion.div>
     </div>
   );
