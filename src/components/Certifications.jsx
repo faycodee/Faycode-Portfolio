@@ -6,8 +6,14 @@ import { github, pineapple, pineappleHover } from "../assets";
 // import { certifications } from "../constants";
 import { fadeIn, textVariant, staggerContainer } from "../utils/motion";
 import { certifications } from "../constants";
+import { Swiper, SwiperSlide } from "swiper";
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 const Certifications = () => {
+  
   // const goVerify = (what, e) => {
   //   let mytimout;
   //   what = "verify"
