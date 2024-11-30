@@ -64,7 +64,7 @@ const Certifications = () => {
                     <img src="./pin.png" alt="" className="absolute z-10 w-[70px] rotate-[-12deg] bottom-0 right-[-11px]"/>
               </div>
               <div className="px-4">
-                <h3 className="font-mova mb-1">{e.name}</h3>
+                <h3 className="font-mova mb-1 mt-3">{e.name}</h3>
                 <p
                   onClick={() => {
                     return window.open(`${e.link}`, "_blank");
