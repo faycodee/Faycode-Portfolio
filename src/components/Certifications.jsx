@@ -50,7 +50,11 @@ const Certifications = () => {
              rounded-lg w-96 
              hover:shadow-lg transition-shadow duration-300 min-h-[400px]  max-h-[430px]  "
             >
-              <img src="./pin.png"  alt="" className="absolute z-10 w-[70px] rotate-[-30deg] top-2 left-[-11px]"/>
+              <img
+                src="./pin.png"
+                alt=""
+                className="absolute z-10 w-[70px] rotate-[-30deg] top-2 left-[-11px]"
+              />
               <div className="relative m-2.5 overflow-hidden text-white rounded-md flex justify-start items-start">
                 <img
                   className=" transition-transform duration-500 rotate-2 transform-gpu m-1 group-hover:scale-40 "
@@ -59,9 +63,12 @@ const Certifications = () => {
                   onClick={() => {
                     return window.open(`${e.link}`, "_blank");
                   }}
-                >
-                 </img>
-                    <img src="./pin.png" alt="" className="absolute z-10 w-[70px] rotate-[-12deg] bottom-0 right-[-11px]"/>
+                ></img>
+                <img
+                  src="./pin.png"
+                  alt=""
+                  className="absolute z-10 w-[70px] rotate-[-12deg] bottom-0 right-[-11px]"
+                />
               </div>
               <div className="px-4">
                 <h3 className="font-mova mb-1 mt-3">{e.name}</h3>
