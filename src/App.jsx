@@ -24,6 +24,11 @@ const App = () => {
   gsap.registerPlugin(ScrollTrigger);
 
   useGSAP(() => {
+    gsap.fromTo(
+      ".cursor-outline",
+      { rotate: 360 },
+      { rotate: -360, repeat: -1, yoyo: 1, duration: 5, ease: "circ" }
+    );
     // gsap.utils.toArray(".panel").forEach((panel, i) => {
     //   ScrollTrigger.create({
     //     trigger: panel,
@@ -49,7 +54,10 @@ const App = () => {
           <Service />
         </div>
 
-        <div className=" bg-cover bg-center bg-no-repeat panel bg-black" style={{overflow:"none"}}>
+        <div
+          className=" bg-cover bg-center bg-no-repeat panel bg-black"
+          style={{ overflow: "none" }}
+        >
           <Tech />
         </div>
 
