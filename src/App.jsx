@@ -27,7 +27,7 @@ const App = () => {
     gsap.fromTo(
       ".cursor-outline",
       { rotate: 360 },
-      { rotate: -360, repeat: -1, yoyo: 1, duration: 5, ease: "circ" }
+      { rotate: -360, repeat: -1, yoyo: 1, duration: 15, ease: "circ" }
     );
     // gsap.utils.toArray(".panel").forEach((panel, i) => {
     //   ScrollTrigger.create({
