@@ -23,7 +23,7 @@ const Cursor = () => {
     <>
       <div ref={cursorDot} className="cursor-dot"></div>
       <div ref={cursorOutline} className="cursor-outline" >
-        <img src="./logo.png" className="rounded-full"  alt="" srcset="" />
+        <img src="./logo2.png" className="rounded-full"  alt="" srcset="" />
       </div>
       {/* className="cursor-outline" */}
     </>
