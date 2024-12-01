@@ -16,38 +16,36 @@ const Services = () => {
   useGSAP(() => {
     gsap.from("#canvas", {
       opacity: 0,
-      
       ease: "expo",
       duration: 9,
       scrollTrigger: {
         trigger: "#canvas",
       },
     });
-    gsap
-      .timeline({
-        delay: 0.1,
-        scrollTrigger: {
-          trigger: "#canvas",
-        },
-      })
-      .from("#para1", {
-        delay: 2,
-        opacity: 0,
-        duration: 7,
-      })
-      .from("#para2", {
-        opacity: 0,
-        duration: 4,
-      })
-      .from("#para3", {
-        opacity: 0,
-        duration: 4,
-      })
-      .from("#para4", {
-        opacity: 0,
-        duration: 4,
-      });
+    gsap.from("#para1", {
+      delay: 2,
+      opacity: 0,
+      duration: 7,
+    });
+    gsap.from("#para2", {
+      opacity: 0,
+      duration: 4,
+    });
+    gsap.from("#para3", {
+      opacity: 0,
+      duration: 4,
+    });
+    gsap.from("#para4", {
+      opacity: 0,
+      duration: 4,
+    });
   }, []);
+  window.addEventListener("mousemove",(e)=>{
+    const posX =e.clientX
+    const posY =e.clientY
+    
+   
+  })
   return (
     <div>
       <div style={{ overflow: "none" }} className="-mt-[6rem] ">
