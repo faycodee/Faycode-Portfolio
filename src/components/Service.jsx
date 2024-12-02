@@ -43,7 +43,7 @@ const Services = () => {
           }),
           gsap.to("#para2", {
             opacity: 0,
-            duration:,
+            duration: 2,
           }));
       posX > 700 && posX < 1100
         ? (gsap.to("#para3", {
