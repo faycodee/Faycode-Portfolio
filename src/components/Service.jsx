@@ -45,7 +45,7 @@ const Services = () => {
             opacity: 0,
             duration: 5,
           }));
-      posX > 700 && posX < 900
+      posX > 700 && posX < 1000
         ? (gsap.to("#para3", {
             opacity: 1,
             duration: 7,
@@ -126,26 +126,46 @@ const Services = () => {
               "
             </div>
           </div>
-          <Canvas
-            gl={{ alpha: true }}
-            id="canvas"
-            className="rounded-3xl"
-            style={{ height: "100vh", scale: 5, backgroundColor: "black" }}
-          >
-            <ambientLight intensity={2} />
-            <OrbitControls enableZoom />
-            <Suspense fallback={null}>
-              <Model position={[0, -7, 0]} />
-            </Suspense>
-            <Environment preset="city" />
-            <ContactShadows
-              position={[0, 0, 0]}
-              opacity={0.5}
-              scale={50}
-              blur={1}
-              color="#00000"
-            />
-          </Canvas>
+          <div className=" flex justify-center">
+            <div
+              id="btn"
+              className="w-[35px] h-[64px] rounded-3xl border-4  rotate-[90deg] absolute mt-[30px] z-40
+            border-frenc flex
+            justify-center items-start p-2"
+            >
+              <motion.div
+                animate={{
+                  y: [0, 24, 0],
+                }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                }}
+                className="w-3 h-3 rounded-full bg-taupe mb-1"
+              />
+            </div>{" "}
+            <Canvas
+              gl={{ alpha: true }}
+              id="canvas"
+              className="rounded-3xl"
+              style={{ height: "100vh", scale: 5, backgroundColor: "black" }}
+            >
+              <ambientLight intensity={2} />
+              <OrbitControls enableZoom />
+              <Suspense fallback={null}>
+                <Model position={[0, -7, 0]} />
+              </Suspense>
+              <Environment preset="city" />
+              <ContactShadows
+                position={[0, 0, 0]}
+                opacity={0.5}
+                scale={50}
+                blur={1}
+                color="#00000"
+              />
+            </Canvas>
+          </div>
         </div>
       </div>
     </div>
