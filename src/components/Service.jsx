@@ -30,7 +30,7 @@ const Services = () => {
       // cursorDot.current.style.top = `${posY}px`;
       posX > 0 && posX < 600
         ? (gsap.to("#para1", {
-            opacity: 1,
+            opacity: .5,
             duration: 9,
           }),
           gsap.to("#para2", {
@@ -51,7 +51,7 @@ const Services = () => {
             duration: 7,
           }),
           gsap.to("#para4", {
-            opacity: 1,
+            opacity: .5,
             duration: 9,
           }))
         : (gsap.to("#para3", {
@@ -87,7 +87,7 @@ const Services = () => {
           <div id="para">
             <div
               id="para1"
-              className="absolute font-beckman  text-zinc-200 flying-text z-20 text-center opacity-0 "
+              className="absolute font-beckman  text-zinc-200 text-[10px] flying-text z-20 text-center opacity-0 "
               style={{ bottom: "60%", left: "14%" }}
             >
               " I am here to assist you <br />
@@ -119,7 +119,7 @@ const Services = () => {
 
             <div
               id="para4"
-              className="absolute  font-beckman opacity-0  text-zinc-200 flying-text z-20 "
+              className="absolute  font-beckman opacity-0 text-[10px]  text-zinc-200 flying-text z-20 "
               style={{ bottom: "45%", right: "20%" }}
             >
               " I help you bring your visions <br /> to life, whatever they are.
