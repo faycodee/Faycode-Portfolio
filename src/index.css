@@ -269,9 +269,8 @@ body {
   height: 30px;
   background-color: white;
   padding: 3px;
-  /* border: 2px solid hsla(0, 0%, 100%, 0.507); */
+  
 }
-
 .cursor-dot,
 .cursor-outline {
   position: fixed;
