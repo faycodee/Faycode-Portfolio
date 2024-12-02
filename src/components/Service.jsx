@@ -39,13 +39,13 @@ const Services = () => {
           }))
         : (gsap.to("#para1", {
             opacity: 0,
-            duration: 5,
+            duration: 3,
           }),
           gsap.to("#para2", {
             opacity: 0,
-            duration: 5,
+            duration:,
           }));
-      posX > 700 && posX < 1000
+      posX > 700 && posX < 1100
         ? (gsap.to("#para3", {
             opacity: 1,
             duration: 7,
@@ -56,11 +56,11 @@ const Services = () => {
           }))
         : (gsap.to("#para3", {
             opacity: 0,
-            duration: 5,
+            duration: 3,
           }),
           gsap.to("#para4", {
             opacity: 0,
-            duration: 5,
+            duration: 2,
           }));
     });
   }, []);
