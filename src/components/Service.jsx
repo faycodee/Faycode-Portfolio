@@ -22,6 +22,13 @@ const Services = () => {
         trigger: "#canvas",
       },
     });
+
+  }, []);
+  window.addEventListener("mousemove",(e)=>{
+    const posX = e.clientX;
+    const posY = e.clientY;
+    cursorDot.current.style.left = `${posX}px`;
+    cursorDot.current.style.top = `${posY}px`;
     gsap.from("#para1", {
       delay: 2,
       opacity: 0,
@@ -39,12 +46,7 @@ const Services = () => {
       opacity: 0,
       duration: 4,
     });
-  }, []);
-  window.addEventListener("mousemove",(e)=>{
-    const posX =e.clientX
-    const posY =e.clientY
     
-   
   })
   return (
     <div>
