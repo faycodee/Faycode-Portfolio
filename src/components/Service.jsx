@@ -22,42 +22,57 @@ const Services = () => {
         trigger: "#canvas",
       },
     });
-  }, []);
-  window.addEventListener("mousemove", (e) => {
-    const posX = e.clientX;
-    const posY = e.clientY;
-    // alert(posX)
-    // cursorDot.current.style.left = `${posX}px`;
-    // cursorDot.current.style.top = `${posY}px`;
     window.addEventListener("mousemove", (e) => {
       const posX = e.clientX;
       const posY = e.clientY;
-
-      if (posX > 0 && posX < 500) {
-        gsap.to("#para2", {
-          opacity: 1,
-          duration: 4,
-        });
-      } else {
-        gsap.to("#para2", {
-          opacity: 0,
-          duration: 4,
-        });
-      }
+      // alert(posX)
+      // cursorDot.current.style.left = `${posX}px`;
+      // cursorDot.current.style.top = `${posY}px`;
+      posX > 0 && posX < 500
+        ? (
+          gsap.to("#para1", {
+            opacity: 1,
+            duration: 9,
+          }),
+          gsap.to("#para2", {
+            opacity: 1,
+            duration: 7,
+          })
+        )
+        : (
+          gsap.to("#para1", {
+            opacity: 0,
+            duration: 5,
+          }),
+          gsap.to("#para2", {
+            opacity: 0,
+            duration: 5,
+          })
+        );
+       posX > 700
+        ? (
+          gsap.to("#para3", {
+            opacity: 1,
+            duration: 7,
+          }),
+          gsap.to("#para4", {
+            opacity: 1,
+            duration: 9,
+          })
+        )
+        : (
+          gsap.to("#para3", {
+            opacity: 0,
+            duration: 5,
+          }),
+          gsap.to("#para4", {
+            opacity: 0,
+            duration: 5,
+          })
+        );
     });
-    // gsap.from("#para2", {
-    //   opacity: 0,
-    //   duration: 4,
-    // });
-    // gsap.from("#para3", {
-    //   opacity: 0,
-    //   duration: 4,
-    // });
-    // gsap.from("#para4", {
-    //   opacity: 0,
-    //   duration: 4,
-    // });
-  });
+  }, []);
+
   return (
     <div>
       <div style={{ overflow: "none" }} className="-mt-[6rem] ">
@@ -80,7 +95,7 @@ const Services = () => {
           <div id="para">
             <div
               id="para1"
-              className="absolute font-beckman  text-zinc-200 flying-text z-20 text-center"
+              className="absolute font-beckman  text-zinc-200 flying-text z-20 text-center opacity-0 "
               style={{ bottom: "60%", left: "14%" }}
             >
               " I am here to assist you <br />
@@ -89,29 +104,30 @@ const Services = () => {
             </div>
             <div
               id="para2"
-              className="absolute font-beckman  text-zinc-200 flying-text z-20 "
-              style={{ bottom: "60%", right: "14%" }}
-            >
-              "I’ll assist you in building the{" "}
-              <span className="font-mono font-extrabold text-center">
-                WEBSITE
-              </span>{" "}
-              you need. "
-            </div>
-            <div
-              id="para3"
-              className="absolute font-beckman  text-zinc-200 flying-text z-20 "
+              className="absolute font-beckman  text-zinc-200 flying-text z-20 opacity-0"
               style={{ bottom: "36%", left: "10%" }}
             >
               " I’ll help you creatively design <br /> a standout{" "}
-              <span className="font-mono font-extrabold text-center">
+              <span className="font-mono font-extrabold text-center ">
                 PORTFOLIO
               </span>{" "}
               that shines. "
             </div>
             <div
+              id="para3"
+              className="absolute font-beckman opacity-0  text-zinc-200 flying-text z-20 "
+              style={{ bottom: "60%", right: "14%" }}
+            >
+              "I’ll assist you in building the{" "}
+              <span className="font-mono font-extrabold text-center ">
+                WEBSITE
+              </span>{" "}
+              you need. "
+            </div>
+
+            <div
               id="para4"
-              className="absolute  font-beckman  text-zinc-200 flying-text z-20 "
+              className="absolute  font-beckman opacity-0  text-zinc-200 flying-text z-20 "
               style={{ bottom: "45%", right: "20%" }}
             >
               " I help you bring your visions <br /> to life, whatever they are.
