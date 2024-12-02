@@ -10,13 +10,37 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
-// import { EffectCoverflow, Pagination, Navigation }
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
 const Certificat = ({ obj, pos }) => {
+  gsap.registerPlugin(ScrollTrigger);
+  
+  useGSAP(() => {
+    gsap.fromTo("#swiperr", {  opacity: 0,},{
+      opacity: 1,
+      scrollTrigger:{
+        trigger: "#swiperr",
+        start: "top 80%",
+        end: "center 15%",
+        scrub: 4.2,
+        markers: 1,
+        // toggleActions: "restart pause reverse pause",
+      },
+      duration: 8, // Added duration for clarity
+    });
+  }, []);
+
+  const handleImageClick = (link) => {
+    window.open(link, "_blank");
+  };
+
   return (
     <div
       key={pos}
-      className="card-shadow cursor-grab group relative flex flex-col my-6 ml-5 bg-jet shadow-sm scah rounded-lg w-96 hover:shadow-lg transition-shadow duration-300 min-h-[400px] max-h-[430px]"
+      
+      className="  card-shadow cursor-grab group relative flex flex-col my-6 ml-5 bg-jet shadow-sm scah rounded-lg w-96 hover:shadow-lg transition-shadow duration-300 min-h-[400px] max-h-[430px]"
     >
       <img
         src="./pin.png"
@@ -28,9 +52,7 @@ const Certificat = ({ obj, pos }) => {
           className="transition-transform duration-500 rotate-2 transform-gpu m-1 group-hover:scale-40"
           src={obj.image}
           alt={obj.name}
-          onClick={() => {
-            window.open(`${obj.link}`, "_blank");
-          }}
+          onClick={() => handleImageClick(obj.link)}
         />
         <img
           src="./pin.png"
@@ -41,9 +63,7 @@ const Certificat = ({ obj, pos }) => {
       <div className="px-4">
         <h3 className="font-mova mb-1 mt-3">{obj.name}</h3>
         <p
-          onClick={() => {
-            window.open(`${obj.link}`, "_blank");
-          }}
+          onClick={() => handleImageClick(obj.link)}
           className="text-gray-500 sm:text-[14px] text-[12px] max-w-3xl sm:leading-[24px] leading-[18px] font-poppins tracking-[1px] mb-8"
         >
           {obj.disc}
@@ -89,12 +109,12 @@ const Certifications = () => {
         viewport={{ once: false, amount: 0.25 }}
         className={`${styles.innerWidth} mx-auto flex flex-row`}
       >
-        {" "}
         <Swiper
-          className="w-full"
+        id="swiperr"
+          className="w-full "
           effect={"coverflow"}
           grabCursor={true}
-          centeredSlides={2}
+          centeredSlides={true}
           initialSlide={1}
           slidesPerView={3}
           pagination={{ el: ".swiper-pagination", clickable: true }}
@@ -102,11 +122,14 @@ const Certifications = () => {
           modules={[EffectCoverflow, Pagination, Navigation]}
         >
           {certifications.map((e, i) => (
-            <SwiperSlide key={i}>
-              <Certificat key={i} obj={e} pos={i} />
+            <SwiperSlide key={i} >
+              
+
+              <Certificat obj={e} pos={i} />
+              
             </SwiperSlide>
           ))}
-          <div className="swiper-pagination "></div>
+          <div className="swiper-pagination"></div>
         </Swiper>
       </motion.div>
     </div>
