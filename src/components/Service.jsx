@@ -22,18 +22,19 @@ const Services = () => {
         trigger: "#canvas",
       },
     });
-
   }, []);
-  window.addEventListener("mousemove",(e)=>{
+  window.addEventListener("mousemove", (e) => {
     const posX = e.clientX;
     const posY = e.clientY;
-    cursorDot.current.style.left = `${posX}px`;
-    cursorDot.current.style.top = `${posY}px`;
-    gsap.from("#para1", {
-      delay: 2,
-      opacity: 0,
-      duration: 7,
-    });
+    // alert(posX)
+    // cursorDot.current.style.left = `${posX}px`;
+    // cursorDot.current.style.top = `${posY}px`;
+    posX > 0 && posX < 500
+      ? gsap.to("#para2", {
+          opacity: 1,
+          duration: 4,
+        })
+      : "";
     gsap.from("#para2", {
       opacity: 0,
       duration: 4,
@@ -46,8 +47,7 @@ const Services = () => {
       opacity: 0,
       duration: 4,
     });
-    
-  })
+  });
   return (
     <div>
       <div style={{ overflow: "none" }} className="-mt-[6rem] ">
