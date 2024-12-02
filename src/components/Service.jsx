@@ -23,31 +23,51 @@ const Services = () => {
       },
     });
   }, []);
+  let isMouseDown = false;
+
+  // Track mouse button state
+  window.addEventListener("mousedown", () => {
+    // alert("down")
+    isMouseDown = true;
+  });
+  
+  window.addEventListener("mouseup", () => {
+    // alert("notdown")
+    isMouseDown = false;
+  });
+
+  // Trigger action on mouse move only when the mouse button is down
   window.addEventListener("mousemove", (e) => {
-    const posX = e.clientX;
-    const posY = e.clientY;
-    // alert(posX)
-    // cursorDot.current.style.left = `${posX}px`;
-    // cursorDot.current.style.top = `${posY}px`;
-    posX > 0 && posX < 500
-      ? gsap.to("#para2", {
+    if (isMouseDown) {
+      const posX = e.clientX;
+      const posY = e.clientY;
+      if (posX > 0 && posX < 500) {
+        // alert("work")
+        gsap.to("#para2", {
           opacity: 1,
           duration: 4,
-        })
-      : "";
-    gsap.from("#para2", {
-      opacity: 0,
-      duration: 4,
-    });
-    gsap.from("#para3", {
-      opacity: 0,
-      duration: 4,
-    });
-    gsap.from("#para4", {
-      opacity: 0,
-      duration: 4,
-    });
+        });
+      } else {
+        gsap.to("#para2", {
+          opacity: 0,
+          duration: 4,
+        });
+      }
+    }
   });
+  // gsap.from("#para2", {
+  //   opacity: 0,
+  //   duration: 4,
+  // });
+  // gsap.from("#para3", {
+  //   opacity: 0,
+  //   duration: 4,
+  // });
+  // gsap.from("#para4", {
+  //   opacity: 0,
+  //   duration: 4,
+  // });
+
   return (
     <div>
       <div style={{ overflow: "none" }} className="-mt-[6rem] ">
@@ -67,7 +87,7 @@ const Services = () => {
           Let’s get creative and make something together !
         </motion.p>
         <div className="text-black">
-          <div id="para">
+          <div className="para">
             <div
               id="para1"
               className="absolute font-beckman  text-zinc-200 flying-text z-20 text-center"
@@ -78,7 +98,7 @@ const Services = () => {
               <span className="font-mono font-extrabold ">PORTFOLIO</span> "
             </div>
             <div
-              id="para2"
+              id="para3"
               className="absolute font-beckman  text-zinc-200 flying-text z-20 "
               style={{ bottom: "60%", right: "14%" }}
             >
@@ -89,7 +109,7 @@ const Services = () => {
               you need. "
             </div>
             <div
-              id="para3"
+              id="para2"
               className="absolute font-beckman  text-zinc-200 flying-text z-20 "
               style={{ bottom: "36%", left: "10%" }}
             >
