@@ -28,48 +28,40 @@ const Services = () => {
       // alert(posX)
       // cursorDot.current.style.left = `${posX}px`;
       // cursorDot.current.style.top = `${posY}px`;
-      posX > 0 && posX < 500
-        ? (
-          gsap.to("#para1", {
+      posX > 0 && posX < 600
+        ? (gsap.to("#para1", {
             opacity: 1,
             duration: 9,
           }),
           gsap.to("#para2", {
             opacity: 1,
             duration: 7,
-          })
-        )
-        : (
-          gsap.to("#para1", {
+          }))
+        : (gsap.to("#para1", {
             opacity: 0,
             duration: 5,
           }),
           gsap.to("#para2", {
             opacity: 0,
             duration: 5,
-          })
-        );
-       posX > 700
-        ? (
-          gsap.to("#para3", {
+          }));
+      posX > 700 && posX < 900
+        ? (gsap.to("#para3", {
             opacity: 1,
             duration: 7,
           }),
           gsap.to("#para4", {
             opacity: 1,
             duration: 9,
-          })
-        )
-        : (
-          gsap.to("#para3", {
+          }))
+        : (gsap.to("#para3", {
             opacity: 0,
             duration: 5,
           }),
           gsap.to("#para4", {
             opacity: 0,
             duration: 5,
-          })
-        );
+          }));
     });
   }, []);
 
