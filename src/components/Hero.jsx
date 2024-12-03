@@ -5,7 +5,7 @@ import { navLinks } from "../constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 const Hero = () => {
   gsap.registerPlugin(ScrollTrigger);
   // const scrollRef = useRef();
