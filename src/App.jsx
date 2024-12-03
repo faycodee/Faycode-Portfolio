@@ -19,15 +19,22 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
 const App = () => {
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(ScrollTrigger);
-
+  const cursorr = useSelector((state) => state.cursor);
   useGSAP(() => {
     gsap.fromTo(
       ".cursor-outline",
-      { rotate: 360 },
-      { rotate: -360, repeat: -1, yoyo: 1, duration: 10, ease: "circ" }
+      { rotate: `${cursorr.rotate}` },
+      {
+        rotate: `-${cursorr.rotate}deg`,
+        repeat: -1,
+        yoyo: 1,
+        duration: 10,
+        ease: "circ",
+      }
     );
     // gsap.utils.toArray(".panel").forEach((panel, i) => {
     //   ScrollTrigger.create({

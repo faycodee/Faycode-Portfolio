@@ -13,8 +13,8 @@ const Cursor = () => {
     // cursorOutline.current.style.top = `${posY}px`
 
     cursorOutline.current.animate(
-      {/* background-color: white; */
-        left: `${posX}px`,
+      {
+        /* background-color: white; */ left: `${posX}px`,
         top: `${posY}px`,
       },
       { duration: 500, fill: "forwards" }
@@ -24,16 +24,16 @@ const Cursor = () => {
     <>
       <div ref={cursorDot} className="cursor-dot"></div>
       <div ref={cursorOutline} className="cursor-outline">
-      <img
-  src={cursorr.src}
-  className={`rounded-full`}
-  alt=""
-  style={{
-    width: cursorr.scale,
-    height: cursorr.scale,
-    filter: "hue-rotate(120deg)", 
-  }}
-/>
+        <img
+          src={cursorr.src}
+          className={`rounded-full`}
+          alt=""
+          style={{
+            width: cursorr.width,
+            height: cursorr.height,
+            filter: cursorr.filter,
+          }}
+        />
       </div>
       {/* className="cursor-outline" */}
     </>
