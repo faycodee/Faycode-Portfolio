@@ -16,20 +16,24 @@ import { ScrollTrigger } from "gsap/all";
 
 const Certificat = ({ obj, pos }) => {
   gsap.registerPlugin(ScrollTrigger);
-  
+
   useGSAP(() => {
-    gsap.fromTo("#swiperr", {  opacity: 0,},{
-      opacity: 1,
-      scrollTrigger:{
-        trigger: "#swiperr",
-        start: "top 80%",
-        end: "center 15%",
-        scrub: 4.2,
-        markers: 1,
-        // toggleActions: "restart pause reverse pause",
-      },
-      duration: 8, // Added duration for clarity
-    });
+    gsap.fromTo(
+      "#swiperr",
+      { opacity: 0 },
+      {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: "#swiperr",
+          start: "top 80%",
+          end: "center 15%",
+          scrub: 4.2,
+          // markers: 1,
+          // toggleActions: "restart pause reverse pause",
+        },
+        duration: 8, // Added duration for clarity
+      }
+    );
   }, []);
 
   const handleImageClick = (link) => {
@@ -39,7 +43,6 @@ const Certificat = ({ obj, pos }) => {
   return (
     <div
       key={pos}
-      
       className="  card-shadow cursor-grab group relative flex flex-col my-6 ml-5 bg-jet shadow-sm scah rounded-lg w-96 hover:shadow-lg transition-shadow duration-300 min-h-[400px] max-h-[430px]"
     >
       <img
@@ -110,7 +113,7 @@ const Certifications = () => {
         className={`${styles.innerWidth} mx-auto flex flex-row`}
       >
         <Swiper
-        id="swiperr"
+          id="swiperr"
           className="w-full "
           effect={"coverflow"}
           grabCursor={true}
@@ -122,11 +125,8 @@ const Certifications = () => {
           modules={[EffectCoverflow, Pagination, Navigation]}
         >
           {certifications.map((e, i) => (
-            <SwiperSlide key={i} >
-              
-
+            <SwiperSlide key={i}>
               <Certificat obj={e} pos={i} />
-              
             </SwiperSlide>
           ))}
           <div className="swiper-pagination"></div>
