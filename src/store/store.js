@@ -3,11 +3,11 @@ import { produce } from "immer";
 // return `${year}-${month}-${day+Math.floor(Math.random() * 4) + 1}`;
 const mystate = {
   cursor: {
-    width: 300,
-    heigth: 300,
+    width: 30,
+    height: 30,
     rotate:360,
     filter:"hue-rotate(100deg)",
-    src:"./pin.png",
+    src:"./logo.png",
   },
 };
 const Render = (state = mystate, action) => {

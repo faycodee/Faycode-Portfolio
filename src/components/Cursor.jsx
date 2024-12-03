@@ -29,8 +29,9 @@ const Cursor = () => {
           className={`rounded-full`}
           alt=""
           style={{
-            width: cursorr.width,
-            height: cursorr.height,
+            width: `${cursorr.width}px`,
+            height: `${cursorr.height}px`,
+           
             filter: cursorr.filter,
           }}
         />
