@@ -18,6 +18,7 @@ const ProjectCard = ({
   active,
   handleClick,
 }) => {
+  
   return (
     <motion.div
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}

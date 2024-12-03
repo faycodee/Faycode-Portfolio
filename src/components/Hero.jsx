@@ -4,11 +4,11 @@ import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import store from "../store/store";
 import { ScrollTrigger } from "gsap/all";
 import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 const Hero = () => {
-  
 
   gsap.registerPlugin(ScrollTrigger);
   // const scrollRef = useRef();
@@ -93,7 +93,7 @@ const Hero = () => {
       }
     );
   }, []);
-  const scaleValue = useSelector((state) => state);
+  const scaleValue = useSelector((state) => state.cursor.scale);
   console.log(scaleValue)
   // const dispatch = useDispatch();
 
