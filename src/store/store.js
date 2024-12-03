@@ -3,7 +3,9 @@ import { produce } from "immer";
 // return `${year}-${month}-${day+Math.floor(Math.random() * 4) + 1}`;
 const mystate = {
   cursor: {
-    scale: 1,
+    scale: 300,
+    filter:"",
+    src:"./pin.png",
   },
 };
 const Render = (state = mystate, action) => {

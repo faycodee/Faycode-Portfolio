@@ -93,8 +93,7 @@ const Hero = () => {
       }
     );
   }, []);
-  const scaleValue = useSelector((state) => state.cursor.scale);
-  console.log(scaleValue)
+  const cursor = useSelector((state) => state.cursor);
   // const dispatch = useDispatch();
 
   return (
@@ -179,6 +178,8 @@ const Hero = () => {
         <div style={{ width: "500px" }}>
           <img
             id="me"
+            onMouseEnter={()=>{}}
+            // onMouseLeave={}
             style={{ filter: "grayscale(100%) " }}
             className="absolute bottom-[-20px]  right-[-150px]  ml-[50vw] 
             lg:ml-[75vw] md:ml-[60vw] xmd:ml-[60vw] 2xl:ml-[83vw]
