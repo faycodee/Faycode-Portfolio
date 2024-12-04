@@ -12,9 +12,13 @@ const mystate = {
 };
 const Render = (state = mystate, action) => {
   switch (action.type) {
-    case "UPDATECURSORSCALE":
+    case "UPDATECURSORWIDTH":
       return produce(state, (draftState) => {
-        // draftState.cursor.scale = action.scale;
+        draftState.cursor.width = action.wi;
+      });
+    case "  ":
+      return produce(state, (draftState) => {
+        draftState.cursor.height = action.he;
       });
     default:
       return state;

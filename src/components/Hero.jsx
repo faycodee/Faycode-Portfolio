@@ -9,7 +9,6 @@ import { ScrollTrigger } from "gsap/all";
 import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 const Hero = () => {
-
   gsap.registerPlugin(ScrollTrigger);
   // const scrollRef = useRef();
   useGSAP(() => {
@@ -94,7 +93,8 @@ const Hero = () => {
     );
   }, []);
   const cursor = useSelector((state) => state.cursor);
-  // const dispatch = useDispatch();
+
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -178,7 +178,10 @@ const Hero = () => {
         <div style={{ width: "500px" }}>
           <img
             id="me"
-            onMouseEnter={()=>{}}
+            onMouseEnter={() => {
+              dispatch({ type: "UPDATECURSORWIDTH", wi: "200" });
+              dispatch({ type: "UPDATECURSORHEIGTH", he: "200" });
+            }}
             // onMouseLeave={}
             style={{ filter: "grayscale(100%) " }}
             className="absolute bottom-[-20px]  right-[-150px]  ml-[50vw] 
