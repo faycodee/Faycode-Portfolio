@@ -182,13 +182,13 @@ const Hero = () => {
               dispatch({ type: "UPDATECURSORWIDTH", wi: "200" });
               dispatch({ type: "UPDATECURSORHEIGTH", he: "200" });
               dispatch({ type: "UPDATECURSORSRC", sr: "./msghello.png" });
-              dispatch({ type: "UPDATECURSORROTATE", rt: 0 });
+              dispatch({ type: "UPDATECURSORANIMATION", an: false });
             }}
             onMouseLeave={() => {
               dispatch({ type: "UPDATECURSORWIDTH", wi: "30" });
               dispatch({ type: "UPDATECURSORHEIGTH", he: "30" });
               dispatch({ type: "UPDATECURSORSRC", sr: "./logo.png" });
-              dispatch({ type: "UPDATECURSORROTATE", rt: 360 });
+              dispatch({ type: "UPDATECURSORANIMATION", an: true });
             }}
             // ={}
             style={{ filter: "grayscale(100%) " }}

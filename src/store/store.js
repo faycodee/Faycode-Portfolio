@@ -8,6 +8,7 @@ const mystate = {
     rotate: 360,
     filter: "hue-rotate(100deg)",
     src: "./logo.png",
+    animation:true
     
   },
 };
@@ -27,7 +28,11 @@ const Render = (state = mystate, action) => {
       });
     case "UPDATECURSORROTATE":
       return produce(state, (draftState) => {
-        draftState.cursor.rotate = action.rt;
+        draftState.cursor.rotate = action.rr;
+      });
+    case "UPDATECURSORANIMATION":
+      return produce(state, (draftState) => {
+        draftState.cursor.animation = action.an;
       });
     default:
       return state;
