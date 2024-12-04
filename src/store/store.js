@@ -5,10 +5,9 @@ const mystate = {
   cursor: {
     width: 30,
     height: 30,
-    rotate: 360,
     filter: "hue-rotate(100deg)",
     src: "./logo.png",
-    animation:true
+   
     
   },
 };
@@ -25,14 +24,6 @@ const Render = (state = mystate, action) => {
     case "UPDATECURSORSRC":
       return produce(state, (draftState) => {
         draftState.cursor.src = action.sr;
-      });
-    case "UPDATECURSORROTATE":
-      return produce(state, (draftState) => {
-        draftState.cursor.rotate = action.rr;
-      });
-    case "UPDATECURSORANIMATION":
-      return produce(state, (draftState) => {
-        draftState.cursor.animation = action.an;
       });
     default:
       return state;

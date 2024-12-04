@@ -26,7 +26,7 @@ const App = () => {
   const cursorr = useSelector((state) => state.cursor);
   useGSAP(() => {
 
-    cursorr.animation ? gsap.fromTo(
+     gsap.fromTo(
       ".cursor-outline",
       { rotate: `${cursorr.rotate}` },
       {
@@ -36,7 +36,7 @@ const App = () => {
         duration: 10,
         ease: "circ",
       }
-    ):""
+    )
     // gsap.utils.toArray(".panel").forEach((panel, i) => {
     //   ScrollTrigger.create({
     //     trigger: panel,

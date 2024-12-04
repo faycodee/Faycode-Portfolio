@@ -179,16 +179,16 @@ const Hero = () => {
           <img
             id="me"
             onMouseEnter={() => {
-              dispatch({ type: "UPDATECURSORWIDTH", wi: "200" });
-              dispatch({ type: "UPDATECURSORHEIGTH", he: "200" });
-              dispatch({ type: "UPDATECURSORSRC", sr: "./msghello.png" });
-              dispatch({ type: "UPDATECURSORANIMATION", an: false });
+              dispatch({ type: "UPDATECURSORWIDTH", wi: "40" });
+              dispatch({ type: "UPDATECURSORHEIGTH", he: "40" });
+
+              
             }}
             onMouseLeave={() => {
               dispatch({ type: "UPDATECURSORWIDTH", wi: "30" });
               dispatch({ type: "UPDATECURSORHEIGTH", he: "30" });
-              dispatch({ type: "UPDATECURSORSRC", sr: "./logo.png" });
-              dispatch({ type: "UPDATECURSORANIMATION", an: true });
+             
+              
             }}
             // ={}
             style={{ filter: "grayscale(100%) " }}
