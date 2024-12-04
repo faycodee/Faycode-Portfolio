@@ -5,9 +5,9 @@ const mystate = {
   cursor: {
     width: 30,
     height: 30,
-    rotate:360,
-    filter:"hue-rotate(100deg)",
-    src:"./logo.png",
+    rotate: 360,
+    filter: "hue-rotate(100deg)",
+    src: "./logo.png",
   },
 };
 const Render = (state = mystate, action) => {
@@ -16,8 +16,8 @@ const Render = (state = mystate, action) => {
       return produce(state, (draftState) => {
         // draftState.cursor.scale = action.scale;
       });
-      default:
-        return state; 
+    default:
+      return state;
   }
 };
 const store = createStore(Render);
