@@ -181,8 +181,16 @@ const Hero = () => {
             onMouseEnter={() => {
               dispatch({ type: "UPDATECURSORWIDTH", wi: "200" });
               dispatch({ type: "UPDATECURSORHEIGTH", he: "200" });
+              dispatch({ type: "UPDATECURSORSRC", sr: "./msghello.png" });
+              dispatch({ type: "UPDATECURSORROTATE", rt: 0 });
             }}
-            // onMouseLeave={}
+            onMouseLeave={() => {
+              dispatch({ type: "UPDATECURSORWIDTH", wi: "30" });
+              dispatch({ type: "UPDATECURSORHEIGTH", he: "30" });
+              dispatch({ type: "UPDATECURSORSRC", sr: "./logo.png" });
+              dispatch({ type: "UPDATECURSORROTATE", rt: 360 });
+            }}
+            // ={}
             style={{ filter: "grayscale(100%) " }}
             className="absolute bottom-[-20px]  right-[-150px]  ml-[50vw] 
             lg:ml-[75vw] md:ml-[60vw] xmd:ml-[60vw] 2xl:ml-[83vw]

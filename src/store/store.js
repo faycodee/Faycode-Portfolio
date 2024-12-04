@@ -8,6 +8,7 @@ const mystate = {
     rotate: 360,
     filter: "hue-rotate(100deg)",
     src: "./logo.png",
+    
   },
 };
 const Render = (state = mystate, action) => {
@@ -16,9 +17,17 @@ const Render = (state = mystate, action) => {
       return produce(state, (draftState) => {
         draftState.cursor.width = action.wi;
       });
-    case "  ":
+    case "UPDATECURSORHEIGTH":
       return produce(state, (draftState) => {
         draftState.cursor.height = action.he;
+      });
+    case "UPDATECURSORSRC":
+      return produce(state, (draftState) => {
+        draftState.cursor.src = action.sr;
+      });
+    case "UPDATECURSORROTATE":
+      return produce(state, (draftState) => {
+        draftState.cursor.rotate = action.rt;
       });
     default:
       return state;
