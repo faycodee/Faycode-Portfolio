@@ -178,18 +178,15 @@ const Hero = () => {
         <div style={{ width: "100px" }}>
           <img
             id="me"
-            // onMouseEnter={() => {
-            //   dispatch({ type: "UPDATECURSORWIDTH", wi: "40" });
-            //   dispatch({ type: "UPDATECURSORHEIGTH", he: "200" });
-
-              
-            // }}
-            // onMouseLeave={() => {
-            //   dispatch({ type: "UPDATECURSORWIDTH", wi: "30" });
-            //   dispatch({ type: "UPDATECURSORHEIGTH", he: "30" });
-            // }}
-            // ={}
-            style={{ filter: "grayscale(100%) " , borderRadius:"50% 0  0 0"}}
+            onMouseEnter={() => {
+              dispatch({ type: "UPDATECURSORWIDTH", wi: "40" });
+              dispatch({ type: "UPDATECURSORHEIGTH", he: "40" });
+            }}
+            onMouseLeave={() => {
+              dispatch({ type: "UPDATECURSORWIDTH", wi: "30" });
+              dispatch({ type: "UPDATECURSORHEIGTH", he: "30" });
+            }}
+            style={{ filter: "grayscale(100%) ", borderRadius: "50% 0  0 0" }}
             className="absolute bottom-[-20px]  right-[-150px]  ml-[50vw] 
             lg:ml-[75vw] md:ml-[60vw] xmd:ml-[60vw] 2xl:ml-[83vw]
             sm:h-[90vh] md:h-[80vh] xl:h-[80vh]"
