@@ -192,7 +192,7 @@ const Hero = () => {
             // }}
             // ={}
             style={{ filter: "grayscale(100%) " }}
-            className="absolute bottom-[-20px]  right-[-150px]  ml-[50vw] 
+            className=" absolute bottom-[-20px]  right-[-150px]  ml-[50vw] 
             lg:ml-[75vw] md:ml-[60vw] xmd:ml-[60vw] 2xl:ml-[83vw]
             sm:h-[90vh] md:h-[80vh] xl:h-[80vh]"
             src="./p.png"
