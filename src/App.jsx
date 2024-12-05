@@ -34,7 +34,7 @@ const App = () => {
         repeat: -1,
         yoyo: 1,
         duration: 10,
-        ease: "circ",
+        
       }
     )
     // gsap.utils.toArray(".panel").forEach((panel, i) => {

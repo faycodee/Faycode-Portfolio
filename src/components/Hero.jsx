@@ -175,7 +175,7 @@ const Hero = () => {
           </a>
         </div>
 
-        <div style={{ width: "500px" }}>
+        <div style={{ width: "100px" }}>
           <img
             id="me"
             // onMouseEnter={() => {
