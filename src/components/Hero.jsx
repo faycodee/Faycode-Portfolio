@@ -175,7 +175,7 @@ const Hero = () => {
           </a>
         </div>
 
-        {/* <div style={{ width: "500px" }}> */}
+        <div style={{ width: "500px" }}>
           <img
             id="me"
             // onMouseEnter={() => {
@@ -189,14 +189,14 @@ const Hero = () => {
             //   dispatch({ type: "UPDATECURSORHEIGTH", he: "30" });
             // }}
             // ={}
-            style={{ filter: "grayscale(100%) " , borderRadius:"100% 0  0 0"}}
+            style={{ filter: "grayscale(100%) " , borderRadius:"50% 0  0 0"}}
             className="absolute bottom-[-20px]  right-[-150px]  ml-[50vw] 
             lg:ml-[75vw] md:ml-[60vw] xmd:ml-[60vw] 2xl:ml-[83vw]
             sm:h-[90vh] md:h-[80vh] xl:h-[80vh]"
             src="./p.png"
             alt="Faycode"
           />
-        {/* </div> */}
+        </div>
       </section>
     </>
   );
