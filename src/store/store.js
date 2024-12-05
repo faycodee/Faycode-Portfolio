@@ -7,6 +7,7 @@ const mystate = {
     height: 30,
     filter: "hue-rotate(100deg)",
     src: "./logo.png",
+    rotate:360
    
     
   },
