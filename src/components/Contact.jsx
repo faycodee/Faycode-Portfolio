@@ -45,7 +45,7 @@ const Contact = () => {
           style={{ zIndex: -5 }}
           loop
           muted
-          className="absolute inset-0   w-full sm:block hidden  h-full object-cover"
+          className="absolute inset-0   w-full sm:block hidden  h-full object-cover rounded-2xl"
         ></motion.video>
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadTextLight}>Contact.</h3>

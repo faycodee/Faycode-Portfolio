@@ -182,13 +182,10 @@ const Hero = () => {
             //   dispatch({ type: "UPDATECURSORWIDTH", wi: "40" });
             //   dispatch({ type: "UPDATECURSORHEIGTH", he: "200" });
 
-              
             // }}
             // onMouseLeave={() => {
             //   dispatch({ type: "UPDATECURSORWIDTH", wi: "30" });
             //   dispatch({ type: "UPDATECURSORHEIGTH", he: "30" });
-             
-              
             // }}
             // ={}
             style={{ filter: "grayscale(100%) " }}

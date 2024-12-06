@@ -114,7 +114,7 @@ const Certifications = () => {
       >
         <Swiper
           id="swiperr"
-          className="w-full "
+          className="w-full mb-[50px] bg-"
           effect={"coverflow"}
           grabCursor={true}
           centeredSlides={true}
@@ -129,7 +129,7 @@ const Certifications = () => {
               <Certificat obj={e} pos={i} />
             </SwiperSlide>
           ))}
-          <div className="swiper-pagination"></div>
+          <div className="swiper-pagination" style={{position:"absolute", bottom:"-8"}}></div>
         </Swiper>
       </motion.div>
     </div>
