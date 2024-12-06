@@ -110,11 +110,11 @@ const Certifications = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        className={`${styles.innerWidth} mx-auto flex flex-row`}
+        className={`${styles.innerWidth} mx-auto flex flex-row `}
       >
         <Swiper
           id="swiperr"
-          className="w-full mb-[50px] bg-"
+          className="w-full   h-[510px]"
           effect={"coverflow"}
           grabCursor={true}
           centeredSlides={true}
@@ -129,7 +129,10 @@ const Certifications = () => {
               <Certificat obj={e} pos={i} />
             </SwiperSlide>
           ))}
-          <div className="swiper-pagination" style={{position:"absolute", bottom:"-8"}}></div>
+          <div
+            className="swiper-pagination"
+            style={{ position: "absolute", bottom: "-8" }}
+          ></div>
         </Swiper>
       </motion.div>
     </div>
