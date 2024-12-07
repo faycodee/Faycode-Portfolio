@@ -16,15 +16,16 @@ const Contact = () => {
     gsap.from("#vid0", {
       opacity: 0,
       duration: 4,
-      onUpdate: (self) => {
-        requestAnimationFrame(() => {
-          video.currentTime = video.duration * self.progress;
-        });
-      },
+      // onUpdate: (self) => {
+      //   requestAnimationFrame(() => {
+      //     video.currentTime = video.duration * self.progress;
+      //   });
+      // },
       scrollTrigger: {
         trigger: "#vid0",
-        start: "top center",
-        end: "bottom center",
+        start: "top 30%",
+        end: "bottom ",
+        markers:1,
         scrub: true,
       },
     });

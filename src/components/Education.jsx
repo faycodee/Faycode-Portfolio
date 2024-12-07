@@ -199,7 +199,8 @@ const Education = () => {
           <text
             x="720"
             y="60"
-            className="date-label font-mova  border border-l-4 border-cyan-700 "
+            stroke="white"
+            className="date-label font-mova  border border-l-4"
           >
             Present
           </text>
