@@ -43,7 +43,9 @@ const Certificat = ({ obj, pos }) => {
   return (
     <div
       key={pos}
-      className="  card-shadow cursor-grab group relative flex flex-col my-6 ml-5 bg-jet shadow-sm scah rounded-lg w-96 hover:shadow-lg transition-shadow duration-300 min-h-[400px] max-h-[430px]"
+      className=" card-shadow cursor-grab group relative flex flex-col 
+      my-6 ml-5 bg-jet shadow-sm scah rounded-lg w-96 hover:shadow-lg
+       transition-shadow duration-300 min-h-[300px] max-h-[330px]"
     >
       <img
         src="./pin.png"
@@ -67,7 +69,7 @@ const Certificat = ({ obj, pos }) => {
         <h3 className="font-mova mb-1 mt-3">{obj.name}</h3>
         <p
           onClick={() => handleImageClick(obj.link)}
-          className="text-gray-500 sm:text-[14px] text-[12px] max-w-3xl sm:leading-[24px] leading-[18px] font-poppins tracking-[1px] mb-8"
+          className="text-gray-500 sm:text-[12px] text-[10px] max-w-3xl sm:leading-[24px] leading-[15px] font-poppins tracking-[1px] mb-8"
         >
           {obj.disc}
         </p>
@@ -90,7 +92,7 @@ const Certificat = ({ obj, pos }) => {
 
 const Certifications = () => {
   return (
-    <div className="-mt-[6rem]">
+    <div className="-mt-[4rem]">
       <motion.div variants={textVariant()}>
         <p className={`${styles.sectionSubText}`}>Case Studies</p>
         <h2 className={`${styles.sectionHeadTextLight}`}>Certifications.</h2>
@@ -98,7 +100,7 @@ const Certifications = () => {
       <div className="w-full flex">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-4 text-taupe text-[18px] max-w-3xl leading-[30px]"
+          className="mt-4 text-taupe text-[13px] max-w-3xl leading-[30px]"
         >
           Highlighting key certifications that validate my expertise and
           commitment to professional development. Each certification reflects

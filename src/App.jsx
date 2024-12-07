@@ -71,7 +71,7 @@ const App = () => {
         <div className="panel h-[100vh] backdrop-blur-lg" >
           <Projects />
         </div>
-        <div className="panel">
+        <div className="panel h-[100vh] bg-black" >
           <Certifications />
         </div>
         <div className="panel">
