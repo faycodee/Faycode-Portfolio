@@ -16,7 +16,7 @@ import { ScrollTrigger } from "gsap/all";
 
 const Education = () => {
   return (
-    <div className="-mt-[6rem]">
+    <div className="-mt-[4rem]">
       <motion.div variants={textVariant()}>
         <p className={`${styles.sectionSubText}`}>Case Studies</p>
         <h2 className={`${styles.sectionHeadTextLight}`}>Education.</h2>
@@ -24,7 +24,7 @@ const Education = () => {
       <div className="w-full flex">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-4 text-taupe text-[18px] max-w-3xl leading-[30px]"
+          className="mt-4 text-taupe text-[13px] max-w-3xl leading-[30px]"
         >
           Highlighting key Education that validate my expertise and
           commitment to professional development. Each certification reflects
