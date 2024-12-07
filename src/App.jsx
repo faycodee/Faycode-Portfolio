@@ -127,7 +127,7 @@ const App = () => {
           <Certifications />
         </div>
 
-        <div className="panel h-[140vh] backdrop-blur-2xl">
+        <div className="panel h-[170vh] backdrop-blur-2xl">
           <Education />
         </div>
 

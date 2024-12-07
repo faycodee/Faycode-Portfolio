@@ -284,7 +284,10 @@ body {
 }
 .tooltip {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.7);
+
+  box-shadow: 6px 1px 5px lightblue inset;
+
+  background-color: rgba(21, 22, 22, 0.623);
   color: white;
   padding: 5px 10px;
   border-radius: 4px;

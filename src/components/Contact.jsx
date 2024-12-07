@@ -25,7 +25,6 @@ const Contact = () => {
         trigger: "#vid0",
         start: "top 30%",
         end: "bottom ",
-        markers:1,
         scrub: true,
       },
     });
