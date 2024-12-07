@@ -265,10 +265,8 @@ body {
   background-color: rgb(0, 0, 0);
 }
 .cursor-outline {
-  
   /* background-color: white; */
   padding: 3px;
-  
 }
 .cursor-dot,
 .cursor-outline {
@@ -282,4 +280,13 @@ body {
 }
 .sx__date-grid-event--right-overflow {
   background-color: green;
+}
+.tooltip {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  z-index: 10;
+  pointer-events: none; /* Prevents mouse events on the tooltip */
 }
