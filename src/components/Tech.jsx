@@ -46,7 +46,7 @@ const Tech = () => {
           style={{ zIndex: -5 }}
           loop
           muted
-          className="absolute inset-0   w-full sm:block hidden  h-full object-cover"
+          className="absolute inset-0   w-[100vw] sm:block hidden   h-[100vh] object-cover"
         ></motion.video>
         <motion.div variants={textVariant()}>
           <p className={styles.sectionSubTextLight}>My skills</p>
