@@ -149,7 +149,7 @@ const Services = () => {
               gl={{ alpha: true }}
               id="canvas"
               className="rounded-3xl"
-              style={{ height: "50vh", scale: 5, backgroundColor: "black" }}
+              style={{ height: "55vh", scale: 5, backgroundColor: "black" }}
             >
               <ambientLight intensity={2} />
               <OrbitControls enableZoom />

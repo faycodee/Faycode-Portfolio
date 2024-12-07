@@ -57,7 +57,7 @@ const App = () => {
         <div id="p2" className="bg-about bg-cover bg-center bg-no-repeat h-[100vh] panel">
           <About />
         </div>
-        <div className="bg-about bg-black bg-cover bg-center bg-no-repeat panel h-[100vh] ">
+        <div className="bg-about bg-black bg-cover bg-center bg-no-repeat panel h-[140vh] ">
           <Service />
         </div>
 
@@ -68,7 +68,7 @@ const App = () => {
           <Tech />
         </div>
 
-        <div className="panel h-[120vh] backdrop-blur-lg" >
+        <div className="panel h-[100vh] backdrop-blur-lg" >
           <Projects />
         </div>
         <div className="panel h-[100vh] bg-black " >
