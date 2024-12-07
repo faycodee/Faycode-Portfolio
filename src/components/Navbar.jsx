@@ -108,7 +108,7 @@ const Navbar = () => {
         <div className="sm:hidden flex flex-1 w-screen justify-end items-center">
           {toggle ? (
             <div
-              className={`p-6 bg-flashWhite opacity-[0.98] absolute 
+              className={`p-6 flex flex-col items-center bg-flashWhite opacity-[0.98] absolute 
                 top-0 left-0 w-screen h-[100vh] z-10 menu ${
                   toggle ? "menu-open" : "menu-close"
                 }`}
@@ -129,16 +129,16 @@ const Navbar = () => {
                   <li
                     id={nav.id}
                     key={nav.id}
-                    className={`${
+                    className={`  ${
                       active === nav.title ? "text-french" : "text-eerieBlack"
-                    } text-[88px] font-bold font-arenq 
+                    } font-bold font-arenq 
                       uppercase tracking-[1px] cursor-pointer`}
                     onClick={() => {
                       setToggle(!toggle);
                       setActive(nav.title);
                     }}
                   >
-                    <a href={`#${nav.id}`}>{nav.title}</a>
+                    <a href={`#${nav.id}`} className="text-[18px] text-black">{nav.title}</a>
                   </li>
                 ))}
               </ul>

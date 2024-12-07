@@ -14,6 +14,7 @@ import {
   Tech,
   Projects,
   Cursor,
+  Education,
 } from "./components";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -37,14 +38,14 @@ const App = () => {
         
       }
     )
-    // gsap.utils.toArray(".panel").forEach((panel, i) => {
-    //   ScrollTrigger.create({
-    //     trigger: panel,
-    //     start: "top top",
-    //     pin: true,
-    //     pinSpacing: false,
-    //   });
-    // });
+    gsap.utils.toArray(".panel").forEach((panel, i) => {
+      ScrollTrigger.create({
+        trigger: panel,
+        start: "top top",
+        pin: true,
+        pinSpacing: false,
+      });
+    });
   }, []);
   return (
     <BrowserRouter>
@@ -65,6 +66,7 @@ const App = () => {
         <div
           className=" bg-cover bg-center bg-no-repeat panel bg-black"
           style={{ overflow: "none" }}
+        
         >
           <Tech />
         </div>
@@ -74,6 +76,9 @@ const App = () => {
         </div>
         <div className="panel">
           <Certifications />
+        </div>
+        <div className="panel">
+          <Education />
         </div>
 
         {/* <div
@@ -87,7 +92,7 @@ const App = () => {
             <Experience />
           </div>
         </div> */}
-        <div className="relative z-0 panel">
+        <div className="relative z-0 panel " >
           <Contact />
         </div>
       </div>

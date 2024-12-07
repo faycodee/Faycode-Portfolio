@@ -7,6 +7,7 @@ import Tech from "./Tech";
 import Experience from "./Experience";
 import Projects from "./Projects";
 import Certifications from "./Certifications";
+import Education from "./Education";
 import Contact from "./Contact";
 import Cursor from "./Cursor";
 
@@ -18,6 +19,7 @@ export {
   Tech,
   Experience,
   Certifications,
+  Education,
   Projects,
   Contact,
   Cursor,
