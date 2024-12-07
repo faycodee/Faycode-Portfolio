@@ -25,7 +25,7 @@ const ProjectCard = ({
       className={`relative ${
         active === id ? "lg:flex-[3.5] flex-[10] " : "lg:flex-[0.5] flex-[2]"
       } flex items-center justify-center min-w-[170px] 
-      h-[420px] cursor-pointer card-shadow`}
+      h-[350px] cursor-pointer card-shadow`}
       onClick={() => handleClick(id)}
     >
       <div
@@ -126,16 +126,16 @@ const Projects = () => {
   const [active, setActive] = useState("project-1");
 
   return (
-    <div className="-mt-[6rem]">
+    <div className="-mt-[10rem]">
       <motion.div variants={textVariant()}>
         <p className={`${styles.sectionSubText} `}>Case Studies</p>
         <h2 className={`${styles.sectionHeadTextLight}`}>Projects.</h2>
       </motion.div>
 
-      <div className="w-full flex">
+      <div className="w-full flex h-[40px]">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-4 text-taupe text-[18px] max-w-3xl leading-[30px]"
+          className=" text-taupe text-[13px] max-w-3xl leading-[30px]"
         >
           These projects highlight my experience through practical examples,
           including brief descriptions, repository links, and live demos. They
@@ -151,7 +151,7 @@ const Projects = () => {
         viewport={{ once: false, amount: 0.25 }}
         className={`${styles.innerWidth} mx-auto flex flex-col`}
       >
-        <div className="mt-[50px] flex lg:flex-row flex-col min-h-[70vh] gap-5">
+        <div className="mt-[60px] flex lg:flex-row flex-col min-h-[70vh] gap-5">
           {projects.map((project, index) => (
             <ProjectCard
               key={project.id}
