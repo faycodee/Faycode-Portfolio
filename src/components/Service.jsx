@@ -67,7 +67,7 @@ const Services = () => {
 
   return (
     <div>
-      <div style={{ overflow: "none" }} className=" conti mt-5">
+      <div style={{ overflow: "none" }} className="-mt-[3rem] ">
         <motion.div variants={textVariant()}>
           <p className={styles.sectionSubText}>Introduction</p>
           <h2 className={styles.sectionHeadText}>Services.</h2>
@@ -88,7 +88,7 @@ const Services = () => {
             <div
               id="para1"
               className="absolute font-beckman  text-zinc-200 text-[10px] flying-text z-20 text-center opacity-0 "
-              style={{ bottom: "60%", left: "14%" }}
+              style={{ bottom: "19%", left: "14%" }}
             >
               " I am here to assist you <br />
               in developing your{" "}
@@ -108,7 +108,7 @@ const Services = () => {
             <div
               id="para3"
               className="absolute font-beckman opacity-0  text-zinc-200 flying-text z-20 "
-              style={{ bottom: "60%", right: "14%" }}
+              style={{ bottom: "20%", right: "14%" }}
             >
               "I’ll assist you in building the{" "}
               <span className="font-mono font-extrabold text-center ">
@@ -129,7 +129,7 @@ const Services = () => {
           <div className=" flex justify-center">
             <div
               id="btn"
-              className="w-[35px] h-[64px] rounded-3xl border-4  rotate-[90deg] absolute mt-[30px] z-40
+              className="w-[25px] h-[45px] rounded-3xl border-2  rotate-[90deg] absolute mt-[30px] z-40
             border-frenc flex
             justify-center items-start p-2"
             >
@@ -149,7 +149,7 @@ const Services = () => {
               gl={{ alpha: true }}
               id="canvas"
               className="rounded-3xl"
-              style={{ height: "60vh", scale: 3, backgroundColor: "black" }}
+              style={{ height: "50vh", scale: 5, backgroundColor: "black" }}
             >
               <ambientLight intensity={2} />
               <OrbitControls enableZoom />

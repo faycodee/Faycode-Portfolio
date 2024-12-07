@@ -62,7 +62,7 @@ const App = () => {
         </div>
 
         <div
-          className=" bg-cover bg-center bg-no-repeat panel bg-black"
+          className=" bg-cover bg-center bg-no-repeat panel h-[100vh] bg-black"
           style={{ overflow: "none" }}
         >
           <Tech />
