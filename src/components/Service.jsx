@@ -67,7 +67,7 @@ const Services = () => {
 
   return (
     <div>
-      <div style={{ overflow: "none" }} className="-mt-[6rem] ">
+      <div style={{ overflow: "none" }} className=" conti mt-5">
         <motion.div variants={textVariant()}>
           <p className={styles.sectionSubText}>Introduction</p>
           <h2 className={styles.sectionHeadText}>Services.</h2>
@@ -149,7 +149,7 @@ const Services = () => {
               gl={{ alpha: true }}
               id="canvas"
               className="rounded-3xl"
-              style={{ height: "100vh", scale: 5, backgroundColor: "black" }}
+              style={{ height: "60vh", scale: 3, backgroundColor: "black" }}
             >
               <ambientLight intensity={2} />
               <OrbitControls enableZoom />

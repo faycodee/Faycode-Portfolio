@@ -26,8 +26,7 @@ const App = () => {
   gsap.registerPlugin(ScrollTrigger);
   const cursorr = useSelector((state) => state.cursor);
   useGSAP(() => {
-
-     gsap.fromTo(
+    gsap.fromTo(
       ".cursor-outline",
       { rotate: `${cursorr.rotate}` },
       {
@@ -35,9 +34,8 @@ const App = () => {
         repeat: -1,
         yoyo: 1,
         duration: 10,
-        
       }
-    )
+    );
     gsap.utils.toArray(".panel").forEach((panel, i) => {
       ScrollTrigger.create({
         trigger: panel,
@@ -56,17 +54,16 @@ const App = () => {
           <Hero />
         </div>
 
-        <div id="p2" className="bg-about bg-cover bg-center bg-no-repeat panel">
+        <div id="p2" className="bg-about bg-cover bg-center bg-no-repeat h-[100vh] panel">
           <About />
         </div>
-        <div className="bg-about bg-black bg-cover bg-center bg-no-repeat panel">
+        <div className="bg-about bg-black bg-cover bg-center bg-no-repeat panel h-[100vh] ">
           <Service />
         </div>
 
         <div
           className=" bg-cover bg-center bg-no-repeat panel bg-black"
           style={{ overflow: "none" }}
-        
         >
           <Tech />
         </div>
@@ -80,19 +77,7 @@ const App = () => {
         <div className="panel">
           <Education />
         </div>
-
-        {/* <div
-          className="bg-experience bg-cover bg-center bg-no-repeat 
-            rounded-tl-[150px] rounded-br-[150px] panel"
-        >
-          <div
-            className="bg-experienceLight bg-cover bg-center 
-            bg-no-repeat rounded-tl-[150px] rounded-br-[130px] panel"
-          >
-            <Experience />
-          </div>
-        </div> */}
-        <div className="relative z-0 panel " >
+        <div className="relative z-0 panel ">
           <Contact />
         </div>
       </div>
