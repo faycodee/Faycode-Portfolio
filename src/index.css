@@ -258,6 +258,7 @@ body {
 }
 body {
   cursor: none;
+  background-color: #000000;
 }
 .cursor-dot {
   width: 5px;
