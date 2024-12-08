@@ -106,6 +106,14 @@ const Contact = () => {
           </a>
         </div>
       </motion.div>
+      <p className=" text-center absolute bottom-[-60px] left-[40vw] font-mova">
+        " Mozilla Public License Version 2.0{" "}
+        <span className="font-sans">©</span> "
+        <br />{" "}
+        <span className="text-[12px] text-blue-100">
+          created by <span className="underline text-blue-500 underline-offset-3">faycal oumzil</span>{" "}
+        </span>
+      </p>
     </div>
   );
 };
