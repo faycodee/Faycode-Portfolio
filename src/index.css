@@ -285,17 +285,18 @@ body {
 .tooltip {
   position: absolute;
 
-  box-shadow: 6px 1px 5px lightblue inset;
-
+  box-shadow: 4px 1px 4px lightblue inset;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-size: 11px;
   background-color: rgba(21, 22, 22, 0.623);
   color: white;
   padding: 5px 10px;
   border-radius: 4px;
   z-index: 10;
-  pointer-events: none; /* Prevents mouse events on the tooltip */
+  pointer-events: none; 
 }
 .pin-spacer {
   background-color: rgba(21, 22, 22, 0.158);
-  width: 520px;
-  z-index: -5000; 
+  --tw-backdrop-blur: blur(150px);
+ 
 }
