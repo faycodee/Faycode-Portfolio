@@ -6,6 +6,7 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import { div } from "three/examples/jsm/nodes/Nodes.js";
 // import emailjs from '@emailjs/browser';
 // import { send, sendHover } from '../assets';
 
@@ -16,6 +17,7 @@ const Contact = () => {
     gsap.from("#vid0", {
       opacity: 0,
       duration: 4,
+      delay:1,
       // onUpdate: (self) => {
       //   requestAnimationFrame(() => {
       //     video.currentTime = video.duration * self.progress;
@@ -30,10 +32,11 @@ const Contact = () => {
     });
   }, []);
   return (
-    <div className="-mt-[8rem] xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
+    <div className="flex flex-col justify-center">
+      <div className="-mt-[8rem] xl:flex-row flex-col-reverse flex gap-10 overflow-hidden justify-center items-center">
       {" "}
       <motion.div
-        variants={slideIn("left", "tween", 0.2, 1)}
+        variants={slideIn("center", "tween", 0.2, 1)}
         className="flex-[0.75] bg-jet p-8 rounded-2xl"
       >
         {" "}
@@ -106,12 +109,14 @@ const Contact = () => {
           </a>
         </div>
       </motion.div>
-      <p className=" text-center absolute bottom-[-60px] left-[40vw] font-mova">
+     
+    </div>
+    <p className=" text-center font-mova mt-[70px]">
         " Mozilla Public License Version 2.0{" "}
         <span className="font-sans">©</span> "
         <br />{" "}
-        <span className="text-[12px] text-blue-100">
-          created by <span className="underline text-blue-500 underline-offset-3">faycal oumzil</span>{" "}
+        <span className="text-[10px] text-blue-100">
+          created by <span className="underline text-blue-300 underline-offset-3">faycal oumzil</span>{" "}
         </span>
       </p>
     </div>
