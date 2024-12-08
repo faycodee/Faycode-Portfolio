@@ -110,6 +110,7 @@ const Hero = () => {
           autoPlay
           style={{ zIndex: -5 }}
           loop
+          preload="auto"
           muted
           className="absolute inset-0   w-full sm:block hidden  h-full object-cover"
         ></motion.video>
