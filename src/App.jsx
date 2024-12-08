@@ -1,4 +1,3 @@
-
 import { BrowserRouter } from "react-router-dom";
 import {
   About,
@@ -13,10 +12,11 @@ import {
   Cursor,
   Education,
 } from "./components";
+import { IoArrowUpOutline } from "react-icons/io5";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 
 const App = () => {
@@ -43,7 +43,7 @@ const App = () => {
         { x: 0, y: 0 }, // Hero - no initial offset
         { x: 0, y: 0 }, // About - from right
         { x: "-100%", y: 0 }, // Service - from left
-        {  x: "100%", y: 0 }, // Tech - from bottom
+        { x: "100%", y: 0 }, // Tech - from bottom
         { x: 0, y: 0 }, // Service - from left
         { x: "100%", y: 0 }, // Tech - from bottom
         { x: 0, y: 0 }, // Service - from left
@@ -69,14 +69,14 @@ const App = () => {
             x: 0,
             y: 0,
             duration: 1.2,
-            ease: "power2.out"
+            ease: "power2.out",
           });
         },
         onLeaveBack: () => {
           gsap.to(panel, {
             ...initialStates[i],
             duration: 1.2,
-            ease: "power2.in"
+            ease: "power2.in",
           });
         },
         onEnterBack: () => {
@@ -84,54 +84,76 @@ const App = () => {
             x: 0,
             y: 0,
             duration: 1.2,
-            ease: "power2.out"
+            ease: "power2.out",
           });
         },
         onLeave: () => {
           gsap.to(panel, {
             ...initialStates[i],
             duration: 1.2,
-            ease: "power2.in"
+            ease: "power2.in",
           });
-        }
+        },
       });
     });
   }, []);
+  const refScrollUp = useRef();
+  const handleScrollUp = () => {
+    refScrollUp.current.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <BrowserRouter>
       <Cursor />
-      <div className="relative z-0 overflow-hidden bg-black">
+      <div ref={refScrollUp} className="relative z-0 overflow-hidden bg-black">
         <div id="p1" className="panel">
           <Navbar />
           <Hero />
         </div>
 
-        <div id="p2" className="bg-about bg-cover bg-center bg-no-repeat h-[100vh] panel">
+        <div
+          id="p2"
+          className="bg-about bg-cover bg-center bg-no-repeat h-[100vh] panel"
+        >
+          
+
           <About />
         </div>
 
         <div className="bg-about bg-black bg-cover bg-center bg-no-repeat panel h-[140vh]">
+       
           <Service />
         </div>
 
         <div className="bg-cover bg-center bg-no-repeat panel h-[100vh] bg-black">
+        
           <Tech />
         </div>
 
         <div className="panel h-[100vh] backdrop-blur-lg">
+        
           <Projects />
         </div>
 
         <div className="panel h-[100vh] bg-black">
+    
           <Certifications />
         </div>
 
         <div className="panel h-[170vh] backdrop-blur-2xl">
+        
           <Education />
         </div>
 
         <div className="relative z-0 panel h-[100vh] bg-black">
+        <div
+            className="absolute z-50 overflow-hidden bg-slate-700 rounded-full p-3 right-10 bottom-9 hover:bg-slate-400 "
+            onClick={() => {
+              handleScrollUp();
+            }}
+          >
+            <IoArrowUpOutline />
+          </div>
           <Contact />
         </div>
       </div>
@@ -140,4 +162,3 @@ const App = () => {
 };
 
 export default App;
-
