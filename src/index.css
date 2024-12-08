@@ -294,3 +294,8 @@ body {
   z-index: 10;
   pointer-events: none; /* Prevents mouse events on the tooltip */
 }
+.pin-spacer {
+  background-color: rgba(21, 22, 22, 0.158);
+  width: 520px;
+  z-index: -5000; 
+}
