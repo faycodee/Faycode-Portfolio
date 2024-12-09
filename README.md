@@ -2,7 +2,7 @@
 
 [my vid](https://github.com/user-attachments/assets/6cacb7a8-09e4-4e6f-885a-9fc762bd762e)
 
-deeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+Explore my Faycode portfolio to discover projects that showcase my expertise in front-end and back-end development, design, and problem-solving. See how I transform ideas into impactful solutions through technology. Let’s connect and create something amazing together!
 
 ## License and Attribution
 
@@ -60,13 +60,8 @@ npm run dev
 This will open up the project on a browser on `http://localhost:5173/`
 
 ```
-npm start
-or
-npx json-server --watch --port 8000 "data/data.json"
+
 ```
-
-This will start your local server json.
-
 ## Authors
 
 👤 **Faycodee**
