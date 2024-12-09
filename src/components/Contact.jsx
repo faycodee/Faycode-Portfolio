@@ -3,7 +3,7 @@ import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { useGSAP } from "@gsap/react";.\gitc.ps1 'Faycal: '
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { div } from "three/examples/jsm/nodes/Nodes.js";
