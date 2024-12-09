@@ -1,6 +1,6 @@
 # Portfolio Template
 
-[my vid](https://github.com/user-attachments/assets/6cacb7a8-09e4-4e6f-885a-9fc762bd762e)
+https://github.com/user-attachments/assets/3ac4a677-52e2-452e-99d4-ea35a6f6932c
 
 Explore my Faycode portfolio to discover projects that showcase my expertise in front-end and back-end development, design, and problem-solving. See how I transform ideas into impactful solutions through technology. Let’s connect and create something amazing together!
 
@@ -59,9 +59,7 @@ npm run dev
 
 This will open up the project on a browser on `http://localhost:5173/`
 
-```
 
-```
 ## Authors
 
 👤 **Faycodee**
