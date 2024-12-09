@@ -19,12 +19,13 @@ deeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 
 ## Live Demo
 
-- Click [here](https://employee-crude-api-axios-faycodes-projects.vercel.app/) to view the live demo.
+- Click [here](https://faycode.netlify.app/) to view the live demo.
 
 ## Video sources used
 
-- Click [here](https://pixabay.com/videos/particles-simulation-3d-shining-92266/) to go to the first video source used on the home page(particles-simulation).
-- Click [here](https://pixabay.com/videos/bear-doctor-health-cartoon-3d-130591/) to go to the second video source used on the employee page(bear doctor).
+- Click [here](https://pixabay.com/videos/globe-earth-map-planet-sphere-5925/) to go to the first video source used on the home page(black earth map).
+- Click [here](https://pixabay.com/videos/black-black-friday-background-loop-13495/) to go to the second video source used on the Tech page(black spider web).
+- Click [here](https://sketchfab.com/3d-models/spider-man-symbiote-spider-man-2-ps5-blend-04297927f69840aa9bded9ba39a45cea/) to go to the 3d model Spider-Man used on the service page(black spider man ).
 
 ## Getting Started
 
