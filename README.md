@@ -2,14 +2,11 @@
 
 [my vid](https://github.com/user-attachments/assets/6cacb7a8-09e4-4e6f-885a-9fc762bd762e)
 
-
-
 In this Employee Project, the application utilizes Axios to make API requests for retrieving and manipulating employee data. The data is served by a local JSON server, which acts as a mock backend for simulating CRUD operations (Create, Read, Update, Delete).
 
 ## License and Attribution
 
-The code in this repository is released under the [MIT] License, which grants you the freedom to use, modify, and distribute the Project as your own. However, if you choose to use the site's design largely unmodified, kindly credit me as the original designer of the site.
-
+#Mozilla Public License Version 2.0
 
 ## Built With
 
@@ -18,7 +15,6 @@ The code in this repository is released under the [MIT] License, which grants yo
 - TailwindCSS
 - Json Server
 - Axios
-
 
 ## Live Demo
 
@@ -29,10 +25,9 @@ The code in this repository is released under the [MIT] License, which grants yo
 - Click [here](https://pixabay.com/videos/particles-simulation-3d-shining-92266/) to go to the first video source used on the home page(particles-simulation).
 - Click [here](https://pixabay.com/videos/bear-doctor-health-cartoon-3d-130591/) to go to the second video source used on the employee page(bear doctor).
 
-
 ## Getting Started
 
-To get started with this  project, follow these simple steps:
+To get started with this project, follow these simple steps:
 
 ### Prerequisites
 
@@ -59,6 +54,7 @@ This will install all the packages and dependencies used in the project.
 ```
 npm run dev
 ```
+
 This will open up the project on a browser on `http://localhost:5173/`
 
 ```
@@ -66,10 +62,8 @@ npm start
 or
 npx json-server --watch --port 8000 "data/data.json"
 ```
+
 This will start your local server json.
-
-
-
 
 ## Authors
 
