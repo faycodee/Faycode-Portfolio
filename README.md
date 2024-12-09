@@ -13,8 +13,9 @@ In this Employee Project, the application utilizes Axios to make API requests fo
 - React.js
 - Framer Motion
 - TailwindCSS
-- Json Server
-- Axios
+- GSAP
+- Redux
+- Three fiber
 
 ## Live Demo
 
