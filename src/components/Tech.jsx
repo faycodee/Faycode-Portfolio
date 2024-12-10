@@ -46,7 +46,7 @@ const Tech = () => {
           style={{ zIndex: -5 }}
           loop
           muted
-          className="absolute inset-0   w-[100vw] sm:block hidden   h-[100vh] object-cover"
+          className="absolute inset-0   w-[100vw]    h-[100vh] object-cover"
         ></motion.video>
         <motion.div variants={textVariant()}>
           <p className={styles.sectionSubTextLight}>My skills</p>
@@ -55,7 +55,7 @@ const Tech = () => {
 
         <div className="flex flex-wrap justify-center gap-10 mt-14 conti2">
           {technologies.map((technology) => (
-            <div className="w-28 h-28 tech" key={technology.name}>
+            <div className="w-28 h-28 tech max-sm:w-[80px] max-sm:h-[80px]" key={technology.name}>
               <BallCanvas icon={technology.icon} />
             </div>
           ))}
