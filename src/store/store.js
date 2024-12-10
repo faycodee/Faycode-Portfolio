@@ -11,9 +11,14 @@ const mystate = {
    
     
   },
+  tele:false,
 };
 const Render = (state = mystate, action) => {
   switch (action.type) {
+    case "UPDATETELE":
+      return produce(state, (draftState) => {
+        draftState.tele = action.te;
+      });
     case "UPDATECURSORWIDTH":
       return produce(state, (draftState) => {
         draftState.cursor.width = action.wi;

@@ -24,6 +24,9 @@ import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 
 const App = () => {
+  useEffect(()=>{
+    
+  },[])
   gsap.registerPlugin(ScrollTrigger);
   const cursorr = useSelector((state) => state.cursor);
 
