@@ -71,7 +71,7 @@ const Services = () => {
     <div>
       <div
         style={{ overflow: "none" }}
-        className="-mt-[3rem]  max-sm:mt-[20px]"
+        className="-mt-[3rem]  max-sm:mt-[-20px]"
       >
         <motion.div variants={textVariant()}>
           <p className={styles.sectionSubText}>Introduction</p>
@@ -80,30 +80,29 @@ const Services = () => {
 
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-4 text-taupe text-[18px] max-w-3xl leading-[30px] mb-8"
+          className="mt-4 text-taupe text-[18px] max-w-3xl
+           leading-[30px] mb-8  max-sm:text-[12px] max-sm:leading-[20px]"
         >
           Hey ,I will assist you in the same way that{" "}
           <span className="font-mono font-extrabold ">Spider-Man</span> helps
-          others .
-          <br />
-          Let’s get creative and make something together ! 
+          others , Let’s get creative and make something together ! 
         {screensize.isMobile  && (
          <ul style={{listStyle:"circle"}} >
          <li className="text-[12px] font-mova ml-8">
            I am here to assist you 
            in developing your{" "}
-           <span className="font-mono font-extrabold">PORTFOLIO</span>
+           <span className="font-mono font-extrabold text-blue-300">PORTFOLIO</span>
          </li>
          <li className="text-[12px] font-mova ml-8">
            I’ll help you creatively design  a standout{" "}
-           <span className="font-mono font-extrabold text-center">
+           <span className="font-mono font-extrabold text-blue-300 text-center">
              PORTFOLIO
            </span>{" "}
            that shines.
          </li>
          <li className="text-[12px] font-mova ml-8">
            I’ll assist you in building the{" "}
-           <span className="font-mono font-extrabold text-center">
+           <span className="font-mono font-extrabold text-blue-300 text-center">
              WEBSITE
            </span>{" "}
            you need.
@@ -115,22 +114,22 @@ const Services = () => {
        
           )}
         {screensize.isTablet && (
-         <ul style={{listStyle:"circle"}} className="mt-4">
-         <li className="text-[12px] font-mova ml-8">
+         <ul style={{listStyle:"circle"}} className="mt-4 ">
+         <li className="text-[12px] font-mova ml-8 ">
            I am here to assist you 
            in developing your{" "}
-           <span className="font-mono font-extrabold">PORTFOLIO</span>
+           <span className="font-mono font-extrabold text-blue-300">PORTFOLIO</span>
          </li>
          <li className="text-[12px] font-mova ml-8">
            I’ll help you creatively design  a standout{" "}
-           <span className="font-mono font-extrabold text-center">
+           <span className="font-mono font-extrabold text-blue-300 text-center">
              PORTFOLIO
            </span>{" "}
            that shines.
          </li>
          <li className="text-[12px] font-mova ml-8">
            I’ll assist you in building the{" "}
-           <span className="font-mono font-extrabold text-center">
+           <span className="font-mono font-extrabold text-blue-300 text-center">
              WEBSITE
            </span>{" "}
            you need.
@@ -154,7 +153,7 @@ const Services = () => {
               >
                 " I am here to assist you <br />
                 in developing your{" "}
-                <span className="font-mono font-extrabold ">PORTFOLIO</span> "
+                <span className="font-mono font-extrabold text-blue-300 ">PORTFOLIO</span> "
               </div>
               <div
                 id="para2"
@@ -162,7 +161,7 @@ const Services = () => {
                 style={{ bottom: "36%", left: "10%" }}
               >
                 " I’ll help you creatively design <br /> a standout{" "}
-                <span className="font-mono font-extrabold text-center ">
+                <span className="font-mono font-extrabold text-blue-300 text-center ">
                   PORTFOLIO
                 </span>{" "}
                 that shines. "
@@ -173,7 +172,7 @@ const Services = () => {
                 style={{ bottom: "20%", right: "14%" }}
               >
                 "I’ll assist you in building the{" "}
-                <span className="font-mono font-extrabold text-center ">
+                <span className="font-mono font-extrabold text-blue-300 text-center ">
                   WEBSITE
                 </span>{" "}
                 you need. "

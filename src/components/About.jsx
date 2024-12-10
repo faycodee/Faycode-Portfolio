@@ -19,7 +19,7 @@ const ServiceCard = ({ index, title, icon }) => {
       variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
       className="xs:w-[200px] mb-[50px] h-[100px] w-full card-gradient 
        rounded-[20px] shadow-card my-[70px]
-       max-sm:h-[60px] max-sm:w-[160px] "
+       max-sm:h-[30px] max-sm:w-[70px] "
     >
       <div
         options={{
@@ -95,7 +95,7 @@ const About = () => {
           id="pAbout"
           variants={fadeIn("", "", 0.1, 1)}
           className=" text-taupe text-[13px] max-w-3xl leading-[30px] 
-          max-sm:leading-[20px]  max-sm:mt-[50px]  "
+          max-sm:leading-[20px]  max-sm:mt-[10px]  "
         >
           Hello! I’m Faycal, a web developer with a passion for problem-solving.
           My journey began as a fun challengeSolving issues felt like completing
@@ -106,7 +106,7 @@ const About = () => {
           ideas into functional, user-friendly experiences online!
         </motion.p>
 
-        <div className="mt-10 flex flex-wrap gap-10">
+        <div className="mt-10 flex flex-wrap gap-10 ">
           {services.map((service, index) => (
             <ServiceCard key={service.title} index={index} {...service} />
           ))}

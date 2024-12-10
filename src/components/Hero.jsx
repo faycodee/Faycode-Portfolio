@@ -153,12 +153,12 @@ const Hero = () => {
         >
           <div className="para">
             <h1
-              className={`${styles.heroHeadText} text-eerieBlack font-poppins uppercase max-sm:text-[70px] max-sm:mt-[50px]`}
+              className={`${styles.heroHeadText} text-eerieBlack font-poppins uppercase max-sm:text-[65px] max-sm:mt-[50px]`}
             >
               Hi, I'm{" "}
            
               <span
-                className="text-battleGray sm:text-[90px]  
+                className="text-battleGray sm:text-[73px]  
                 max-sm:text-[80px]   
                 text-[50px] font-mova
                 font-extrabold uppercase "
@@ -167,10 +167,11 @@ const Hero = () => {
               </span>
             </h1>
             <p
-              className={`${styles.heroSubText} mt-2 text-white font-mono text-[1px] para max-sm:text-[13px] max-sm:mt-[120px]`}
+              className={`${styles.heroSubText} mt-2 text-white w-[80vw] font-mono text-[1px] para max-sm:text-[13px] max-sm:mt-[120px]`}
             >
               <br className="sm:block hidden " />
-              My passion for web development grew from the thrill of solving
+              My passion for web development grew from the thrill 
+              of solving
               increasingly complex problems, which brings me great satisfaction
               .
             </p>
