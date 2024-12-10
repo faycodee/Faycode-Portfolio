@@ -13,8 +13,11 @@ import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const Certificat = ({ obj, pos }) => {
+
   gsap.registerPlugin(ScrollTrigger);
 
   useGSAP(() => {
@@ -91,8 +94,11 @@ const Certificat = ({ obj, pos }) => {
 };
 
 const Certifications = () => {
+  const dispatch = useDispatch();
+  const screensize = useSelector((state) => state.screensize);
+  const slidesPerVieww = screensize.isMobile ? 1 : 3;
   return (
-    <div className="-mt-[4rem]">
+    <div className="-mt-[4rem] max-sm:-mt-[1rem]">
       <motion.div variants={textVariant()}>
         <p className={`${styles.sectionSubText}`}>Case Studies</p>
         <h2 className={`${styles.sectionHeadTextLight}`}>Certifications.</h2>
@@ -112,16 +118,16 @@ const Certifications = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        className={`${styles.innerWidth} mx-auto flex flex-row `}
+        className={`${styles.innerWidth} mx-auto flex flex-row max-sm:mt-[60px] `}
       >
         <Swiper
           id="swiperr"
-          className="w-full   h-[510px]"
+          className="w-full   h-[510px] "
           effect={"coverflow"}
           grabCursor={true}
           centeredSlides={true}
           initialSlide={1}
-          slidesPerView={3}
+          slidesPerView={slidesPerVieww}
           pagination={{ el: ".swiper-pagination", clickable: true }}
           coverflowEffect={{ rotate: 0, stretch: 0, depth: 100, modifier: 2.5 }}
           modules={[EffectCoverflow, Pagination, Navigation]}
