@@ -17,7 +17,9 @@ const ServiceCard = ({ index, title, icon }) => {
   return (
     <motion.div
       variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
-      className="xs:w-[200px] mb-[50px] h-[100px] w-full card-gradient  rounded-[20px] shadow-card"
+      className="xs:w-[200px] mb-[50px] h-[100px] w-full card-gradient 
+       rounded-[20px] shadow-card my-[70px]
+       max-sm:h-[60px] max-sm:w-[160px] "
     >
       <div
         options={{
@@ -25,10 +27,12 @@ const ServiceCard = ({ index, title, icon }) => {
           scale: 1,
           speed: 450,
         }}
-        className="bg-jetLight rounded-[20px]   px-12 min-h-[200px] flex justify-evenly items-center flex-col"
+        className="bg-jetLight rounded-[20px]  px-12 min-h-[200px] 
+        flex justify-evenly items-center flex-col
+         max-sm:h-[40px] max-sm:px-0  "
       >
-        <img src={icon} alt={title} className="w-10 h-10 object-contain" />
-        <h3 className="text-taupe text-[15px] font-bold text-center">
+        <img src={icon} alt={title} className="w-10 h-10 object-contain " />
+        <h3 className="text-taupe text-[15px] max-sm:text-[10px]  font-bold text-center">
           {title}
         </h3>
       </div>
@@ -74,15 +78,15 @@ const About = () => {
       <div></div>
       <div className="-mt-[12rem] conti h-[100vh]">
         <motion.div variants={textVariant()}>
-          <p id="pAbout" className={styles.sectionSubText}>
+          <p id="pAbout" className={`${styles.sectionSubText} max-sm:mt-[40px]`} >
             <img
               src="./paper.png"
               id="paper"
-              className="w-[50px] translate-y-60"
+              className="w-[50px] translate-y-60 max-sm:hidden "
             />
             Introduction
           </p>
-          <h2 id="h2About" className={styles.sectionHeadText}>
+          <h2 id="h2About"  className={styles.sectionHeadText}>
             Overview.
           </h2>
         </motion.div>
@@ -90,7 +94,8 @@ const About = () => {
         <motion.p
           id="pAbout"
           variants={fadeIn("", "", 0.1, 1)}
-          className=" text-taupe text-[13px] max-w-3xl leading-[30px]"
+          className=" text-taupe text-[13px] max-w-3xl leading-[30px] 
+          max-sm:leading-[20px]  max-sm:mt-[50px]  "
         >
           Hello! I’m Faycal, a web developer with a passion for problem-solving.
           My journey began as a fun challengeSolving issues felt like completing
