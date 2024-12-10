@@ -123,9 +123,9 @@ const Education = () => {
           ,tailwindcss ...
         </motion.p>
       </div>
-       <div className="container">
-      <div className="svg-wrapper">
-        <svg viewBox="0 0 800 100">
+       <div className="container max-sm:rotate-[90deg] max-sm:mt-[170px]  ">
+      <div className="svg-wrapper w-[500px]">
+        <svg viewBox="0 0 800 100" >
           <path
             id="curve"
             d="M 100 50 Q 200 20, 300 50 T 500 50 T 700 50"
