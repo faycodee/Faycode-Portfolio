@@ -153,13 +153,14 @@ const Hero = () => {
         >
           <div className="para">
             <h1
-              className={`${styles.heroHeadText} text-eerieBlack font-poppins uppercase max-sm:text-[70px]`}
+              className={`${styles.heroHeadText} text-eerieBlack font-poppins uppercase max-sm:text-[70px] max-sm:mt-[50px]`}
             >
               Hi, I'm{" "}
            
               <span
-                className="sm:text-battleGray sm:text-[90px]  max-sm:text-[80px]  
-                text-eerieBlack text-[50px] font-mova
+                className="text-battleGray sm:text-[90px]  
+                max-sm:text-[80px]   
+                text-[50px] font-mova
                 font-extrabold uppercase "
               >
                 Faycode
