@@ -8,16 +8,20 @@ const mystate = {
     filter: "hue-rotate(100deg)",
     src: "./logo.png",
     rotate:360
-   
-    
   },
-  tele:false,
+  screensize:{
+    width: window.innerWidth,
+    isMobile: window.innerWidth < 768,
+    isTablet: window.innerWidth >= 768 && window.innerWidth < 1024,
+    isLaptop: window.innerWidth >= 1024 && window.innerWidth < 1440,
+    isDesktop: window.innerWidth >= 1440
+  }
 };
 const Render = (state = mystate, action) => {
   switch (action.type) {
-    case "UPDATETELE":
+    case "UPDATEscreensize":
       return produce(state, (draftState) => {
-        draftState.tele = action.te;
+        draftState.screensize = action.screen;
       });
     case "UPDATECURSORWIDTH":
       return produce(state, (draftState) => {

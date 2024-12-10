@@ -21,12 +21,27 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useEffect, useRef } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 const App = () => {
-  useEffect(()=>{
-    
-  },[])
+  const dispatch = useDispatch();
+  const screensize = useSelector((state) => state.screensize);
+  useEffect(() => {
+    const handleResize = () => {
+      let newObjSizes = {
+        width: window.innerWidth,
+        height: window.innerHeight,
+        isMobile: window.innerWidth < 768,
+        isTablet: window.innerWidth >= 768 && window.innerWidth < 1024,
+        isLaptop: window.innerWidth >= 1024 && window.innerWidth < 1440,
+        isDesktop: window.innerWidth >= 1440,
+      };
+      dispatch({ type: "UPDATEscreensize", screen: newObjSizes });
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   gsap.registerPlugin(ScrollTrigger);
   const cursorr = useSelector((state) => state.cursor);
 
@@ -125,32 +140,27 @@ const App = () => {
         </div>
 
         <div className="bg-about bg-black bg-cover bg-center bg-no-repeat panel h-[140vh]">
-       
           <Service />
         </div>
 
         <div className="bg-cover bg-center bg-no-repeat panel h-[100vh] bg-black">
-        
           <Tech />
         </div>
 
         <div className="panel h-[100vh] backdrop-blur-lg">
-        
           <Projects />
         </div>
 
         <div className="panel h-[100vh] bg-black">
-    
           <Certifications />
         </div>
 
         <div className="panel h-[170vh] backdrop-blur-2xl">
-        
           <Education />
         </div>
 
         <div className="relative z-0 panel h-[100vh] bg-black">
-        <div
+          <div
             className="absolute z-50 overflow-hidden bg-slate-700 rounded-full p-3 right-10 bottom-9 hover:bg-slate-400 "
             onClick={() => {
               handleScrollUp();

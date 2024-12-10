@@ -44,9 +44,29 @@ const Hero = () => {
       rotatE: -30,
       ease: "power2.in",
     });
-    gsap.to(".para", {
+    !screensize.isMobile && gsap.to(".para", {
       scale: 0,
 
+      ease: "power1.inOut",
+      opacity: 0,
+      duration: 1,
+      stagger: {
+        amount: "1",
+
+        ease: "circ.inOut",
+        from: "center",
+      },
+      scrollTrigger: {
+        trigger: ".para",
+        start: "top 18%",
+        end: "bottom 38%",
+        scrub: 7,
+        toggleActions: "restart pause reverse pause",
+      },
+      ease: "power2.in",
+    });
+    screensize.isMobile && gsap.to(".para", {
+      opacity:0,
       ease: "power1.inOut",
       opacity: 0,
       duration: 1,
@@ -93,8 +113,8 @@ const Hero = () => {
     );
   }, []);
   const cursor = useSelector((state) => state.cursor);
-
   const dispatch = useDispatch();
+  const screensize = useSelector((state) => state.screensize);
 
   return (
     <>
@@ -103,7 +123,7 @@ const Hero = () => {
         className="relative flex sm:flex-row flex-col w-full h-screen mx-auto 
         overflow-x-hidden"
       >
-        <motion.video
+       {!screensize.isMobile && <motion.video
           id="worldVid"
           src="./vid.mp4"
           alt="world map"
@@ -113,7 +133,18 @@ const Hero = () => {
           preload="auto"
           muted
           className="absolute inset-0   w-full sm:block hidden  h-full object-cover"
-        ></motion.video>
+        ></motion.video>}
+       {screensize.isMobile && <motion.video
+          id="worldVid"
+          src="./vidS.mp4"
+          alt="world map"
+          autoPlay
+          style={{ zIndex: -5 }}
+          loop
+          preload="auto"
+          muted
+          className="absolute inset-0   h-full "
+        ></motion.video>}
         <div
           className={`absolute inset-0 sm:top-[250px] top-[150px] 
           lg:top-[150px] xl:top-[250px] ${styles.paddingX} 
@@ -122,11 +153,12 @@ const Hero = () => {
         >
           <div className="para">
             <h1
-              className={`${styles.heroHeadText} text-eerieBlack font-poppins uppercase`}
+              className={`${styles.heroHeadText} text-eerieBlack font-poppins uppercase max-sm:text-[70px]`}
             >
               Hi, I'm{" "}
+           
               <span
-                className="sm:text-battleGray sm:text-[90px] 
+                className="sm:text-battleGray sm:text-[90px]  max-sm:text-[80px]  
                 text-eerieBlack text-[50px] font-mova
                 font-extrabold uppercase "
               >
@@ -134,7 +166,7 @@ const Hero = () => {
               </span>
             </h1>
             <p
-              className={`${styles.heroSubText} mt-2 text-white text-[1px] para`}
+              className={`${styles.heroSubText} mt-2 text-white font-mono text-[1px] para max-sm:text-[13px] max-sm:mt-[120px]`}
             >
               <br className="sm:block hidden " />
               My passion for web development grew from the thrill of solving
@@ -177,7 +209,7 @@ const Hero = () => {
         </div>
 
         <div style={{ width: "500px" }}>
-          <img
+          {!screensize.isMobile && !screensize.isTablet  &&<img
             id="me"
             // onMouseEnter={() => {
             //   dispatch({ type: "UPDATECURSORWIDTH", wi: "40" });
@@ -195,7 +227,7 @@ const Hero = () => {
             sm:h-[90vh] md:h-[80vh] xl:h-[80vh]"
             src="./pp.png"
             alt="Faycode"
-          />
+          />}
         </div>
       </section>
     </>
