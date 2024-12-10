@@ -2,8 +2,7 @@
 
 [vid](https://github.com/user-attachments/assets/1fe2119c-5765-4c7a-933c-a00dc684628d)
 
-![localhost_5173_(MY phone)](https://github.com/user-attachments/assets/71cc7d6c-38be-4f93-a2a2-3fb049d482a0)
-![localhost_5173_(MY ipad)](https://github.com/user-attachments/assets/fa9d41ab-dbb9-4e94-beb3-9399887d2fe1)
+![wallpaperflare](https://github.com/user-attachments/assets/91581c42-b6a1-417f-857e-554e8de3ec10)
 
 Explore my Faycode portfolio to discover projects that showcase my expertise in front-end and back-end development, design, and problem-solving. See how I transform ideas into impactful solutions through technology. Let’s connect and create something amazing together!
 
