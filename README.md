@@ -1,6 +1,6 @@
 # Portfolio Template
 
-[my vid](https://github.com/user-attachments/assets/6cacb7a8-09e4-4e6f-885a-9fc762bd762e)
+[vid](https://github.com/user-attachments/assets/1fe2119c-5765-4c7a-933c-a00dc684628d)
 
 Explore my Faycode portfolio to discover projects that showcase my expertise in front-end and back-end development, design, and problem-solving. See how I transform ideas into impactful solutions through technology. Let’s connect and create something amazing together!
 

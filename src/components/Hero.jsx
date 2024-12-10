@@ -151,9 +151,9 @@ const Hero = () => {
           max-w-7xl mx-auto flex flex-row items-start
           justify-between gap-3`}
         >
-          <div className="para">
+          <div className="para ">
             <h1
-              className={`${styles.heroHeadText} text-eerieBlack font-poppins uppercase max-sm:text-[65px] max-sm:mt-[50px]`}
+              className={`${styles.heroHeadText} text-eerieBlack  font-poppins uppercase max-sm:text-[65px] max-sm:mt-[50px]`}
             >
               Hi, I'm{" "}
            <br />
@@ -184,7 +184,7 @@ const Hero = () => {
         </div>
 
         <div
-          className="absolute xs:bottom-10 bottom-32 w-full 
+          className="absolute max-sm:bottom-3 xs:bottom-10 bottom-32 w-full 
           flex justify-center items-center"
         >
           <a href="#about">
