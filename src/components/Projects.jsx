@@ -135,7 +135,7 @@ const Projects = () => {
       <div className="w-full flex h-[40px]">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className=" text-taupe text-[13px] max-w-3xl leading-[30px]"
+          className=" text-taupe text-[13px] max-w-3xl leading-[30px] max-sm:leading-[20px] max-sm:text-[10px] "
         >
           These projects highlight my experience through practical examples,
           including brief descriptions, repository links, and live demos. They
