@@ -24,8 +24,8 @@ import { useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 const App = () => {
-  const dispatch = useDispatch();
-  const screensize = useSelector((state) => state.screensize);
+  // const dispatch = useDispatch();
+  // const screensize = useSelector((state) => state.screensize);
   useEffect(() => {
     const handleResize = () => {
       let newObjSizes = {

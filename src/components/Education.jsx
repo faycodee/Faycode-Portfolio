@@ -95,7 +95,7 @@ const Education = () => {
   };
 
   return (
-    <div className="-mt-[4rem] overflow-hidden">
+    <div className="-mt-[4rem] overflow-hidden max-sm:-mt-[1rem]">
       <motion.div variants={textVariant()}>
         <p className={`${styles.sectionSubText}`}>Case Studies</p>
         <h2 className={`${styles.sectionHeadTextLight}`}>Education.</h2>
@@ -103,7 +103,8 @@ const Education = () => {
       <div className="w-full flex">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-4 text-taupe text-[13px] max-w-3xl leading-[30px]"
+          className="mt-4 text-taupe text-[13px] max-w-3xl leading-[30px]
+          max-sm:leading-[22px]"
         >
           I am in my final year at{" "}
           <a
@@ -122,7 +123,8 @@ const Education = () => {
           ,tailwindcss ...
         </motion.p>
       </div>
-      <div className="container">
+       <div className="container">
+      <div className="svg-wrapper">
         <svg viewBox="0 0 800 100">
           <path
             id="curve"
@@ -138,6 +140,7 @@ const Education = () => {
             cy="50"
             r="25"
             fill="white"
+            className="dot"
             onMouseOver={() => handleMouseOver("2023/09")}
             onMouseOut={() => setTooltip("")}
           />
@@ -159,7 +162,7 @@ const Education = () => {
             cy="50"
             r="25"
             fill="white"
-            className="w-[500px]"
+            className="dot"
             onMouseOver={() => handleMouseOver("2024/07")}
             onMouseOut={() => setTooltip("")}
           />
@@ -181,6 +184,7 @@ const Education = () => {
             cy="50"
             r="25"
             fill="white"
+            className="dot"
             onMouseOver={() => handleMouseOver("2024/12")}
             onMouseOut={() => setTooltip("")}
           />
@@ -200,7 +204,7 @@ const Education = () => {
             x="720"
             y="60"
             stroke="white"
-            className="date-label font-mova  border border-l-4"
+            className="date-label font-mova border border-l-4"
           >
             Present
           </text>
@@ -215,6 +219,7 @@ const Education = () => {
         </svg>
         {tooltip && <div className="tooltip">{tooltip}</div>}
       </div>
+    </div>
     </div>
   );
 };
