@@ -71,9 +71,9 @@ const Navbar = () => {
       id="nav"
       style={{ backdropFilter: "blur(8px)", height: "8vh" }}
       className={`${styles.paddingX} w-full flex items-center py-2 fixed  
-      top-0 z-20 bg-transparent sm:opacity-[0.97] xxs:h-[6vh] rounded-se-3xl backNav`}
+      top-0 z-20 bg-transparent sm:opacity-[0.97] xxs:h-[6vh] rounded-se-3xl backNav max-md:bg-slate-50 `}
     >
-      <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
+      <div className="w-full flex justify-between items-center max-w-7xl mx-auto ">
         <Link
           to="/"
           className="flex items-center gap-2"
@@ -149,6 +149,7 @@ const Navbar = () => {
               alt="menu"
               className="w-[34px] h-[34px] object-contain cursor-pointer"
               onClick={() => setToggle(!toggle)}
+
             />
           )}
         </div>

@@ -39,7 +39,6 @@ const App = () => {
         duration: 10,
       }
     );
-
     // Panel animations with different directions
     gsap.utils.toArray(".panel").forEach((panel, i) => {
       // Initial states based on index
@@ -119,8 +118,6 @@ const App = () => {
           id="p2"
           className="bg-about bg-cover bg-center bg-no-repeat h-[100vh] panel"
         >
-          
-
           <About />
         </div>
 
