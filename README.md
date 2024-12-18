@@ -74,8 +74,8 @@ This will open up the project on a browser on `http://localhost:5173/`
 
 If you have any feedback, suggestions, or would like to contribute to this project, your involvement is highly valued. Feel free to open an [issue](../../issues/) or submit a pull request with your ideas and enhancements.
 
-Happy coding and showcasing!
+Happy coding and showcasing !
 
 ## Show your support
 
-Give a ⭐️ if you like this project!
+Give a ⭐️ if you like this project !
