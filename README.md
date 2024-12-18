@@ -62,9 +62,7 @@ npm run dev
 
 This will open up the project on a browser on `http://localhost:5173/`
 
-```
 
-```
 ## Authors
 
 👤 **Faycodee**
