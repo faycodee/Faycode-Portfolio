@@ -10,7 +10,6 @@ Explore my Faycode portfolio to discover projects that showcase my expertise in 
 
 #Mozilla Public License Version 2.0
 
-
 ## Built With
 
 - React.js
@@ -62,7 +61,6 @@ npm run dev
 
 This will open up the project on a browser on `http://localhost:5173/`
 
-
 ## Authors
 
 👤 **Faycodee**
@@ -76,46 +74,6 @@ If you have any feedback, suggestions, or would like to contribute to this proje
 
 Happy coding and showcasing !
 
-
-
 ## Show your support
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 Give a ⭐️ if you like this project !
