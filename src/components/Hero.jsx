@@ -6,18 +6,23 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import store from "../store/store";
 import { ScrollTrigger } from "gsap/all";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 const Hero = () => {
   gsap.registerPlugin(ScrollTrigger);
   // const scrollRef = useRef();
   const [isLoading, setIsLoading] = useState(true);
+  const [getOut, setIsGetOut] = useState(true);
 
   useGSAP(() => {
     document.body.style.overflow = "hidden";
     setTimeout(() => {
       document.body.style.overflow = "auto";
     }, 7000);
+    // gsap.set("#loader", {
+    //   clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+    // });
+
     gsap.to("#me", {
       scrollTrigger: {
         trigger: "#me",
@@ -29,10 +34,6 @@ const Hero = () => {
       },
       x: 500,
       duration: 5,
-      ease: "power1",
-    });
-    gsap.set("#loader", {
-      clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
       ease: "power1",
     });
 
@@ -120,7 +121,23 @@ const Hero = () => {
       }
     );
   }, []);
-
+  useEffect(() => {
+    const animateLoaderOut = () => {
+      gsap.to("#loader", {
+        clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)", // Final state
+        duration: 1, // Animation duration
+        ease: "power1.inOut", // Easing function
+        // scale: 3,
+        onComplete: () => {
+          // Optionally hide the loader or remove it from the DOM
+          document.getElementById("loader").style.display = "none"; // Hide the loader
+        },
+      });
+    };
+    if (!getOut) {
+      animateLoaderOut();
+    }
+  }, [getOut]);
   const cursor = useSelector((state) => state.cursor);
   const dispatch = useDispatch();
   const screensize = useSelector((state) => state.screensize);
@@ -129,8 +146,8 @@ const Hero = () => {
     <>
       {isLoading && (
         <div className="bg-black h-screen w-screen flex justify-center items-center">
-          <div id="isLoading">
-            <img src="./loader.gif" alt="" srcset="" />
+          <div>
+            <img id="loader" src="./loader.gif" alt="" srcset="" />
           </div>
         </div>
       )}
@@ -151,7 +168,7 @@ const Hero = () => {
             preload="auto"
             muted
             onLoadedData={() => {
-              setIsLoading(false);
+              setIsGetOut(false);
             }}
             className="absolute inset-0   w-full sm:block hidden  h-full object-cover"
           ></motion.video>
@@ -165,7 +182,7 @@ const Hero = () => {
             style={{ zIndex: -5 }}
             loop
             onLoadedData={() => {
-              setIsLoading((el) => el + 1);
+              setIsGetOut((el) => el + 1);
               alert("hello");
             }}
             preload="auto"
