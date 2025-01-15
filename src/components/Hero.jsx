@@ -130,126 +130,128 @@ const Hero = () => {
 
   return (
     <>
-      <section
-        style={{ overflow: "hidden" }}
-        className="relative flex sm:flex-row flex-col w-full h-screen mx-auto 
+      {!isLoading && (
+        <section
+          style={{ overflow: "hidden" }}
+          className="relative flex sm:flex-row flex-col w-full h-screen mx-auto 
         overflow-x-hidden"
-      >
-        {!screensize.isMobile && (
-          <motion.video
-            id="worldVid"
-            src="./vid.mp4"
-            alt="world map"
-            autoPlay
-            style={{ zIndex: -5 }}
-            loop
-            preload="auto"
-            muted
-            onLoadedData={handelVidLoad}
-            className="absolute inset-0   w-full sm:block hidden  h-full object-cover"
-          ></motion.video>
-        )}
-        {screensize.isMobile && (
-          <motion.video
-            id="worldVid"
-            src="./vidS.mp4"
-            alt="world map"
-            autoPlay
-            style={{ zIndex: -5 }}
-            loop
-            onLoadedData={handelVidLoad}
-            preload="auto"
-            muted
-            className="absolute inset-0   h-full "
-          ></motion.video>
-        )}
-        <div
-          className={`absolute inset-0 sm:top-[250px] top-[150px] 
+        >
+          {!screensize.isMobile && (
+            <motion.video
+              id="worldVid"
+              src="./vid.mp4"
+              alt="world map"
+              autoPlay
+              style={{ zIndex: -5 }}
+              loop
+              preload="auto"
+              muted
+              onLoadedData={handelVidLoad}
+              className="absolute inset-0   w-full sm:block hidden  h-full object-cover"
+            ></motion.video>
+          )}
+          {screensize.isMobile && (
+            <motion.video
+              id="worldVid"
+              src="./vidS.mp4"
+              alt="world map"
+              autoPlay
+              style={{ zIndex: -5 }}
+              loop
+              onLoadedData={handelVidLoad}
+              preload="auto"
+              muted
+              className="absolute inset-0   h-full "
+            ></motion.video>
+          )}
+          <div
+            className={`absolute inset-0 sm:top-[250px] top-[150px] 
           lg:top-[150px] xl:top-[250px] ${styles.paddingX} 
           max-w-7xl mx-auto flex flex-row items-start
           justify-between gap-3`}
-        >
-          <div className="para ">
-            <h1
-              className={`${styles.heroHeadText} text-eerieBlack  font-poppins uppercase max-sm:text-[65px] max-sm:mt-[50px]`}
-            >
-              Hi, I'm <br />
-              <span
-                className="text-battleGray sm:text-[73px]  
+          >
+            <div className="para ">
+              <h1
+                className={`${styles.heroHeadText} text-eerieBlack  font-poppins uppercase max-sm:text-[65px] max-sm:mt-[50px]`}
+              >
+                Hi, I'm <br />
+                <span
+                  className="text-battleGray sm:text-[73px]  
                 max-sm:text-[80px]   
                 text-[50px] font-mova
                 font-extrabold uppercase "
+                >
+                  Faycode
+                </span>
+              </h1>
+              <p
+                className={`${styles.heroSubText} mt-2 text-white w-[500px]   max-sm:w-[80vw] font-mono text-[1px] para max-sm:text-[13px] max-sm:mt-[120px]`}
               >
-                Faycode
-              </span>
-            </h1>
-            <p
-              className={`${styles.heroSubText} mt-2 text-white w-[500px]   max-sm:w-[80vw] font-mono text-[1px] para max-sm:text-[13px] max-sm:mt-[120px]`}
-            >
-              <br className="sm:block hidden " />
-              My passion for web development grew from the thrill of solving
-              increasingly complex problems, which brings me great satisfaction
-              .
-            </p>
-          </div>
-          <div
-            className="w-screen flex flex-col items-start 
-            justify-center sm:-ml-[3rem] xxs:mt-4"
-          ></div>
-
-          <div></div>
-        </div>
-
-        <div
-          className="absolute max-sm:bottom-3 xs:bottom-10 bottom-32 w-full 
-          flex justify-center items-center"
-        >
-          <a href="#about">
+                <br className="sm:block hidden " />
+                My passion for web development grew from the thrill of solving
+                increasingly complex problems, which brings me great
+                satisfaction .
+              </p>
+            </div>
             <div
-              id="btn"
-              className="w-[35px] h-[64px] rounded-3xl border-4 
+              className="w-screen flex flex-col items-start 
+            justify-center sm:-ml-[3rem] xxs:mt-4"
+            ></div>
+
+            <div></div>
+          </div>
+
+          <div
+            className="absolute max-sm:bottom-3 xs:bottom-10 bottom-32 w-full 
+          flex justify-center items-center"
+          >
+            <a href="#about">
+              <div
+                id="btn"
+                className="w-[35px] h-[64px] rounded-3xl border-4 
             border-frenc flex
             justify-center items-start p-2"
-            >
-              <motion.div
-                animate={{
-                  y: [0, 24, 0],
-                }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  repeatType: "loop",
-                }}
-                className="w-3 h-3 rounded-full bg-taupe mb-1"
-              />
-            </div>
-          </a>
-        </div>
+              >
+                <motion.div
+                  animate={{
+                    y: [0, 24, 0],
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                    repeatType: "loop",
+                  }}
+                  className="w-3 h-3 rounded-full bg-taupe mb-1"
+                />
+              </div>
+            </a>
+          </div>
 
-        <div style={{ width: "500px" }}>
-          {!screensize.isMobile && !screensize.isTablet && (
-            <img
-              id="me"
-              // onMouseEnter={() => {
-              //   dispatch({ type: "UPDATECURSORWIDTH", wi: "40" });
-              //   dispatch({ type: "UPDATECURSORHEIGTH", he: "200" });
+          <div style={{ width: "500px" }}>
+            {!screensize.isMobile && !screensize.isTablet && (
+              <img
+                id="me"
+                // onMouseEnter={() => {
+                //   dispatch({ type: "UPDATECURSORWIDTH", wi: "40" });
+                //   dispatch({ type: "UPDATECURSORHEIGTH", he: "200" });
 
-              // }}
-              // onMouseLeave={() => {
-              //   dispatch({ type: "UPDATECURSORWIDTH", wi: "30" });
-              //   dispatch({ type: "UPDATECURSORHEIGTH", he: "30" });
-              // }}
-              // ={}
-              style={{ filter: "grayscale(100%) " }}
-              className=" absolute bottom-[-20px]  right-[-150px]  ml-[50vw] 
+                // }}
+                // onMouseLeave={() => {
+                //   dispatch({ type: "UPDATECURSORWIDTH", wi: "30" });
+                //   dispatch({ type: "UPDATECURSORHEIGTH", he: "30" });
+                // }}
+                // ={}
+                style={{ filter: "grayscale(100%) " }}
+                className=" absolute bottom-[-20px]  right-[-150px]  ml-[50vw] 
             lg:ml-[75vw] md:ml-[60vw] xmd:ml-[60vw] 2xl:ml-[83vw]
             sm:h-[90vh] md:h-[80vh] xl:h-[80vh]"
-              src="./pp.png"
-              alt="Faycode"
-            />
-          )}
-        </div>
-      </section>
+                src="./pp.png"
+                alt="Faycode"
+              />
+            )}
+          </div>
+        </section>
+      )}
     </>
   );
 };
