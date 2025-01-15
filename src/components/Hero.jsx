@@ -31,6 +31,10 @@ const Hero = () => {
       duration: 5,
       ease: "power1",
     });
+    gsap.set("#loader", {
+      clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
+      ease: "power1",
+    });
 
     gsap.from("#me", {
       // opacity: 0,
@@ -125,7 +129,9 @@ const Hero = () => {
     <>
       {isLoading && (
         <div className="bg-black h-screen w-screen flex justify-center items-center">
-          <img src="./loader.gif" alt="" srcset="" />
+          <div id="isLoading">
+            <img src="./loader.gif" alt="" srcset="" />
+          </div>
         </div>
       )}
       (
