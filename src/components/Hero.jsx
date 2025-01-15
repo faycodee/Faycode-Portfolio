@@ -6,11 +6,21 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import store from "../store/store";
 import { ScrollTrigger } from "gsap/all";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 const Hero = () => {
   gsap.registerPlugin(ScrollTrigger);
   // const scrollRef = useRef();
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadedVideos, setLoadedVideos] = useState(0);
+  useEffect(() => {
+    if (loadedVideos == 2) {
+      setIsLoading(false);
+    }
+  }, [loadedVideos]);
+  const handelVidLoad = () => {
+    setLoadedVideos((prev) => prev + 1);
+  };
   useGSAP(() => {
     document.body.style.overflow = "hidden";
     setTimeout(() => {
@@ -44,47 +54,49 @@ const Hero = () => {
       rotatE: -30,
       ease: "power2.in",
     });
-    !screensize.isMobile && gsap.to(".para", {
-      scale: 0,
+    !screensize.isMobile &&
+      gsap.to(".para", {
+        scale: 0,
 
-      ease: "power1.inOut",
-      opacity: 0,
-      duration: 1,
-      stagger: {
-        amount: "1",
+        ease: "power1.inOut",
+        opacity: 0,
+        duration: 1,
+        stagger: {
+          amount: "1",
 
-        ease: "circ.inOut",
-        from: "center",
-      },
-      scrollTrigger: {
-        trigger: ".para",
-        start: "top 18%",
-        end: "bottom 38%",
-        scrub: 7,
-        toggleActions: "restart pause reverse pause",
-      },
-      ease: "power2.in",
-    });
-    screensize.isMobile && gsap.to(".para", {
-      opacity:0,
-      ease: "power1.inOut",
-      opacity: 0,
-      duration: 1,
-      stagger: {
-        amount: "1",
+          ease: "circ.inOut",
+          from: "center",
+        },
+        scrollTrigger: {
+          trigger: ".para",
+          start: "top 18%",
+          end: "bottom 38%",
+          scrub: 7,
+          toggleActions: "restart pause reverse pause",
+        },
+        ease: "power2.in",
+      });
+    screensize.isMobile &&
+      gsap.to(".para", {
+        opacity: 0,
+        ease: "power1.inOut",
+        opacity: 0,
+        duration: 1,
+        stagger: {
+          amount: "1",
 
-        ease: "circ.inOut",
-        from: "center",
-      },
-      scrollTrigger: {
-        trigger: ".para",
-        start: "top 18%",
-        end: "bottom 38%",
-        scrub: 7,
-        toggleActions: "restart pause reverse pause",
-      },
-      ease: "power2.in",
-    });
+          ease: "circ.inOut",
+          from: "center",
+        },
+        scrollTrigger: {
+          trigger: ".para",
+          start: "top 18%",
+          end: "bottom 38%",
+          scrub: 7,
+          toggleActions: "restart pause reverse pause",
+        },
+        ease: "power2.in",
+      });
     gsap.from("#btn", {
       opacity: 0,
       ease: "power1.in",
@@ -123,28 +135,34 @@ const Hero = () => {
         className="relative flex sm:flex-row flex-col w-full h-screen mx-auto 
         overflow-x-hidden"
       >
-       {!screensize.isMobile && <motion.video
-          id="worldVid"
-          src="./vid.mp4"
-          alt="world map"
-          autoPlay
-          style={{ zIndex: -5 }}
-          loop
-          preload="auto"
-          muted
-          className="absolute inset-0   w-full sm:block hidden  h-full object-cover"
-        ></motion.video>}
-       {screensize.isMobile && <motion.video
-          id="worldVid"
-          src="./vidS.mp4"
-          alt="world map"
-          autoPlay
-          style={{ zIndex: -5 }}
-          loop
-          preload="auto"
-          muted
-          className="absolute inset-0   h-full "
-        ></motion.video>}
+        {!screensize.isMobile && (
+          <motion.video
+            id="worldVid"
+            src="./vid.mp4"
+            alt="world map"
+            autoPlay
+            style={{ zIndex: -5 }}
+            loop
+            preload="auto"
+            muted
+            onLoadedData={handelVidLoad}
+            className="absolute inset-0   w-full sm:block hidden  h-full object-cover"
+          ></motion.video>
+        )}
+        {screensize.isMobile && (
+          <motion.video
+            id="worldVid"
+            src="./vidS.mp4"
+            alt="world map"
+            autoPlay
+            style={{ zIndex: -5 }}
+            loop
+            onLoadedData={handelVidLoad}
+            preload="auto"
+            muted
+            className="absolute inset-0   h-full "
+          ></motion.video>
+        )}
         <div
           className={`absolute inset-0 sm:top-[250px] top-[150px] 
           lg:top-[150px] xl:top-[250px] ${styles.paddingX} 
@@ -155,8 +173,7 @@ const Hero = () => {
             <h1
               className={`${styles.heroHeadText} text-eerieBlack  font-poppins uppercase max-sm:text-[65px] max-sm:mt-[50px]`}
             >
-              Hi, I'm{" "}
-           <br />
+              Hi, I'm <br />
               <span
                 className="text-battleGray sm:text-[73px]  
                 max-sm:text-[80px]   
@@ -170,7 +187,7 @@ const Hero = () => {
               className={`${styles.heroSubText} mt-2 text-white w-[500px]   max-sm:w-[80vw] font-mono text-[1px] para max-sm:text-[13px] max-sm:mt-[120px]`}
             >
               <br className="sm:block hidden " />
-              My passion for web development grew from the thrill  of solving
+              My passion for web development grew from the thrill of solving
               increasingly complex problems, which brings me great satisfaction
               .
             </p>
@@ -210,25 +227,27 @@ const Hero = () => {
         </div>
 
         <div style={{ width: "500px" }}>
-          {!screensize.isMobile && !screensize.isTablet  &&<img
-            id="me"
-            // onMouseEnter={() => {
-            //   dispatch({ type: "UPDATECURSORWIDTH", wi: "40" });
-            //   dispatch({ type: "UPDATECURSORHEIGTH", he: "200" });
+          {!screensize.isMobile && !screensize.isTablet && (
+            <img
+              id="me"
+              // onMouseEnter={() => {
+              //   dispatch({ type: "UPDATECURSORWIDTH", wi: "40" });
+              //   dispatch({ type: "UPDATECURSORHEIGTH", he: "200" });
 
-            // }}
-            // onMouseLeave={() => {
-            //   dispatch({ type: "UPDATECURSORWIDTH", wi: "30" });
-            //   dispatch({ type: "UPDATECURSORHEIGTH", he: "30" });
-            // }}
-            // ={}
-            style={{ filter: "grayscale(100%) " }}
-            className=" absolute bottom-[-20px]  right-[-150px]  ml-[50vw] 
+              // }}
+              // onMouseLeave={() => {
+              //   dispatch({ type: "UPDATECURSORWIDTH", wi: "30" });
+              //   dispatch({ type: "UPDATECURSORHEIGTH", he: "30" });
+              // }}
+              // ={}
+              style={{ filter: "grayscale(100%) " }}
+              className=" absolute bottom-[-20px]  right-[-150px]  ml-[50vw] 
             lg:ml-[75vw] md:ml-[60vw] xmd:ml-[60vw] 2xl:ml-[83vw]
             sm:h-[90vh] md:h-[80vh] xl:h-[80vh]"
-            src="./pp.png"
-            alt="Faycode"
-          />}
+              src="./pp.png"
+              alt="Faycode"
+            />
+          )}
         </div>
       </section>
     </>
