@@ -126,7 +126,7 @@ const Hero = () => {
       gsap.to("#loader", {
         // clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)", // Final state
         duration: 1.5, // Animation duration
-        ease: "back.in", // Easing function
+        ease: "circ.in", // Easing function
         scale: 3,
         onComplete: () => {
           setIsLoading(false);
