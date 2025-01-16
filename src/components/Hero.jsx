@@ -19,23 +19,21 @@ const Hero = () => {
     setTimeout(() => {
       document.body.style.overflow = "auto";
     }, 7000);
-    // gsap.set("#loader", {
-    //   clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-    // });
 
-    gsap.to("#me", {
-      scrollTrigger: {
-        trigger: "#me",
-        start: "top 15%",
-        end: "bottom 15%",
-        scrub: 4.2,
-        // markers: 1,
-        toggleActions: "restart pause reverse pause",
-      },
-      x: 500,
-      duration: 5,
-      ease: "power1",
-    });
+    !isLoading &&
+      gsap.to("#me", {
+        scrollTrigger: {
+          trigger: "#me",
+          start: "top 15%",
+          end: "bottom 15%",
+          scrub: 4.2,
+          // markers: 1,
+          toggleActions: "restart pause reverse pause",
+        },
+        x: 500,
+        duration: 5,
+        ease: "power1",
+      });
 
     gsap.from("#me", {
       // opacity: 0,
@@ -120,7 +118,7 @@ const Hero = () => {
         },
       }
     );
-  }, []);
+  }, [isLoading]);
   useEffect(() => {
     const animateLoaderOut = () => {
       gsap.to("#loader", {
