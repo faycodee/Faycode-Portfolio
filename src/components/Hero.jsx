@@ -130,6 +130,15 @@ const Hero = () => {
           setIsLoading(false);
         },
       });
+      gsap.to(".loaderText", {
+        // clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)", // Final state
+        duration: 3, // Animation duration
+        ease: "power2.inOut", // Easing function
+        opacity: 0,
+        onComplete: () => {
+          setIsLoading(false);
+        },
+      });
     };
     if (!getOut) {
       animateLoaderOut();
@@ -142,9 +151,15 @@ const Hero = () => {
   return (
     <>
       {isLoading && (
-        <div className="bg-black h-screen w-screen flex justify-center items-center">
+        <div className="bg-black h-screen w-screen flex justify-center items-end">
           <div>
+            <h1 className="text-white z-10 font-mova absolute top-20 left-20 text-[300px] loaderText">
+              BE{" "}
+            </h1>
             <img id="loader" src="./loader.gif" alt="" srcset="" />
+            <h1 className="text-white z-20 font-mova absolute top-40 left-50 text-[100px] loaderText">
+              PATIENT{" "}
+            </h1>
           </div>
         </div>
       )}
