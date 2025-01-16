@@ -8,20 +8,20 @@ import traslitionFR from "../public/locale/fr.json";
 const resources = {
   en: {
     translation: {
-        traslitionEN,
+      traslitionEN,
 
-    //   titel: "welcome",
+      //   titel: "welcome",
     },
   },
   de: {
     translation: {
-    //   traslitionDE,
+      //   traslitionDE,
       titel: " zu React und react-i18next",
     },
   },
   fr: {
     translation: {
-    //   traslitionFR,
+      //   traslitionFR,
       titel: "Bien zu React und react-i18next",
     },
   },
@@ -31,8 +31,22 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: "en",
-     fallbackLng:"en",
+    // lng: "en",
+    fallbackLng: "en",
+    detection: {
+      order: [
+        "cookie",
+        "htmlTag",
+        "querystring",
+        "localStorage",
+        "sessionStorage",
+        "navigator",
+        "path",
+        "subdomain",
+      ],
+      // bach katb9a f akhir logha derti
+      cache: ["cookie"],
+    },
     interpolation: {
       escapeValue: false,
     },
