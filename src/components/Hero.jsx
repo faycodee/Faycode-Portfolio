@@ -123,9 +123,9 @@ const Hero = () => {
     const animateLoaderOut = () => {
       gsap.to("#loader", {
         // clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)", // Final state
-        duration: 1.5, // Animation duration
-        ease: "circ.in", // Easing function
-        scale: 3,
+        duration: 3, // Animation duration
+        ease: "elastic.in", // Easing function
+        scale: 5,
         onComplete: () => {
           setIsLoading(false);
         },
@@ -179,8 +179,7 @@ const Hero = () => {
             style={{ zIndex: -5 }}
             loop
             onLoadedData={() => {
-              setIsGetOut((el) => el + 1);
-              alert("hello");
+              setIsGetOut(false);
             }}
             preload="auto"
             muted
