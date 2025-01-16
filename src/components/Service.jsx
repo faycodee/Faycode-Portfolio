@@ -10,7 +10,7 @@ import Model from "../../public/Spider";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { MotionPathPlugin, ScrollTrigger } from "gsap/all";
-import { useSelector ,useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
 
 const Services = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -85,64 +85,51 @@ const Services = () => {
         >
           Hey ,I will assist you in the same way that{" "}
           <span className="font-mono font-extrabold ">Spider-Man</span> helps
-          others , Let’s get creative and make something together ! 
-        {screensize.isMobile  && (
-         <ul style={{listStyle:"circle"}} >
-         <li className="text-[12px] font-mova ml-8">
-           I am here to assist you 
-           in developing your{" "}
-           <span className="font-mono font-extrabold text-blue-300">PORTFOLIO</span>
-         </li>
-         <li className="text-[12px] font-mova ml-8">
-           I’ll help you creatively design  a standout{" "}
-           <span className="font-mono font-extrabold text-blue-300 text-center">
-             PORTFOLIO
-           </span>{" "}
-           that shines.
-         </li>
-         <li className="text-[12px] font-mova ml-8">
-           I’ll assist you in building the{" "}
-           <span className="font-mono font-extrabold text-blue-300 text-center">
-             WEBSITE
-           </span>{" "}
-           you need.
-         </li>
-         <li className="text-[12px] font-mova ml-8">
-           I help you bring your visions  to life, whatever they are.
-         </li>
-       </ul>
-       
+          others , Let’s get creative and make something together !
+          {screensize.isMobile && (
+            <ul style={{ listStyle: "circle" }}>
+              <li className="text-[12px] font-mova ml-8">
+                I’ll assist you in building the{" "}
+                <span className="font-mono font-extrabold text-blue-300 text-center">
+                  WEBSITE
+                </span>{" "}
+                you need.
+              </li>
+              <li className="text-[12px] font-mova ml-8">
+                I help you bring your visions to life, whatever they are.
+              </li>
+            </ul>
           )}
-        {screensize.isTablet && (
-         <ul style={{listStyle:"circle"}} className="mt-4 ">
-         <li className="text-[12px] font-mova ml-8 ">
-           I am here to assist you 
-           in developing your{" "}
-           <span className="font-mono font-extrabold text-blue-300">PORTFOLIO</span>
-         </li>
-         <li className="text-[12px] font-mova ml-8">
-           I’ll help you creatively design  a standout{" "}
-           <span className="font-mono font-extrabold text-blue-300 text-center">
-             PORTFOLIO
-           </span>{" "}
-           that shines.
-         </li>
-         <li className="text-[12px] font-mova ml-8">
-           I’ll assist you in building the{" "}
-           <span className="font-mono font-extrabold text-blue-300 text-center">
-             WEBSITE
-           </span>{" "}
-           you need.
-         </li>
-         <li className="text-[12px] font-mova ml-8">
-           I help you bring your visions  to life, whatever they are.
-         </li>
-       </ul>
-       
+          {screensize.isTablet && (
+            <ul style={{ listStyle: "circle" }} className="mt-4 ">
+              <li className="text-[12px] font-mova ml-8 ">
+                I am here to assist you in developing your{" "}
+                <span className="font-mono font-extrabold text-blue-300">
+                  PORTFOLIO
+                </span>
+              </li>
+              <li className="text-[12px] font-mova ml-8">
+                I’ll help you creatively design a standout{" "}
+                <span className="font-mono font-extrabold text-blue-300 text-center">
+                  PORTFOLIO
+                </span>{" "}
+                that shines.
+              </li>
+              <li className="text-[12px] font-mova ml-8">
+                I’ll assist you in building the{" "}
+                <span className="font-mono font-extrabold text-blue-300 text-center">
+                  WEBSITE
+                </span>{" "}
+                you need.
+              </li>
+              <li className="text-[12px] font-mova ml-8">
+                I help you bring your visions to life, whatever they are.
+              </li>
+            </ul>
           )}
+          <p />
+        </motion.p>
 
-          <p/></motion.p>
-        
         <div className="text-black">
           {!screensize.isMobile && !screensize.isTablet && (
             <div id="para">
@@ -153,7 +140,10 @@ const Services = () => {
               >
                 " I am here to assist you <br />
                 in developing your{" "}
-                <span className="font-mono font-extrabold text-blue-300 ">PORTFOLIO</span> "
+                <span className="font-mono font-extrabold text-blue-300 ">
+                  PORTFOLIO
+                </span>{" "}
+                "
               </div>
               <div
                 id="para2"
