@@ -8,7 +8,10 @@ import store from "../store/store";
 import { ScrollTrigger } from "gsap/all";
 import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
+import { i18n } from 'i18next';
 const Hero = () => {
+  const [el,i18n]= useTranslation()
   gsap.registerPlugin(ScrollTrigger);
   // const scrollRef = useRef();
   const [isLoading, setIsLoading] = useState(true);
@@ -160,7 +163,7 @@ const Hero = () => {
         <div className="bg-black h-screen w-screen flex justify-center items-center">
           <div>
             <h1 className="text-white z-10 font-mova absolute top-10 left-10 text-[300px] loaderText max-lg:text-[100px]">
-              BE{" "}
+             {el('titel')}
             </h1>
             <img id="loader" src="./loader.gif" alt="" srcset="" />
             <h3
@@ -233,7 +236,7 @@ const Hero = () => {
             {/* <p
               className={`${styles.heroSubText} mt-2 text-white w-[500px]   max-sm:w-[80vw] font-mono text-[1px]  max-sm:text-[13px] max-sm:mt-[120px]`}
             > */}
-            <p className="para" >
+            <p className="para">
               {/* <br className="sm:block hidden " /> */}
               My passion for web development grew from the thrill of solving
               increasingly complex problems, which brings me great satisfaction
