@@ -124,13 +124,12 @@ const Hero = () => {
   useEffect(() => {
     const animateLoaderOut = () => {
       gsap.to("#loader", {
-        clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)", // Final state
-        duration: 1, // Animation duration
-        ease: "power1.inOut", // Easing function
-        // scale: 3,
+        // clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)", // Final state
+        duration: 1.5, // Animation duration
+        ease: "back.in", // Easing function
+        scale: 3,
         onComplete: () => {
-          // Optionally hide the loader or remove it from the DOM
-          document.getElementById("loader").style.display = "none"; // Hide the loader
+          setIsLoading(false);
         },
       });
     };
