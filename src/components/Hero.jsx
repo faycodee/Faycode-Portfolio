@@ -9,9 +9,9 @@ import { ScrollTrigger } from "gsap/all";
 import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-
+import "../../src/i18n";
 const Hero = () => {
-  const [t, i18n] = useTranslation();
+  const { t } = useTranslation();
   gsap.registerPlugin(ScrollTrigger);
   // const scrollRef = useRef();
   const [isLoading, setIsLoading] = useState(true);
@@ -163,7 +163,7 @@ const Hero = () => {
         <div className="bg-black h-screen w-screen flex justify-center items-center">
           <div>
             <h1 className="text-white z-10 font-mova absolute top-10 left-10 text-[300px] loaderText max-lg:text-[100px]">
-              {t('titel')}
+              {t("BE")}
             </h1>
             <img id="loader" src="./loader.gif" alt="" srcset="" />
             <h3
