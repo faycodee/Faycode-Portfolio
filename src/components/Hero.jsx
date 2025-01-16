@@ -125,7 +125,7 @@ const Hero = () => {
         // clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)", // Final state
         duration: 3, // Animation duration
         ease: "elastic.in", // Easing function
-        scale: 5,
+        scale: 6,
         onComplete: () => {
           setIsLoading(false);
         },
