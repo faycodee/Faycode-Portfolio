@@ -15,6 +15,12 @@ const Hero = () => {
   const [getOut, setIsGetOut] = useState(true);
 
   useGSAP(() => {
+    gsap.from(".loaderText", {
+      // clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)", // Final state
+      duration: 2, // Animation duration
+      ease: "sine.in", // Easing function
+      opacity: 0,
+    });
     document.body.style.overflow = "hidden";
     setTimeout(() => {
       document.body.style.overflow = "auto";
@@ -151,15 +157,18 @@ const Hero = () => {
   return (
     <>
       {isLoading && (
-        <div className="bg-black h-screen w-screen flex justify-center items-end">
+        <div className="bg-black h-screen w-screen flex justify-center items-center">
           <div>
-            <h1 className="text-white z-10 font-mova absolute top-20 left-20 text-[300px] loaderText">
+            <h1 className="text-white z-10 font-mova absolute top-10 left-10 text-[300px] loaderText max-lg:text-[100px]">
               BE{" "}
             </h1>
             <img id="loader" src="./loader.gif" alt="" srcset="" />
-            <h1 className="text-white z-20 font-mova absolute top-40 left-50 text-[100px] loaderText">
+            <h3
+              style={{ position: "absolute", top: "70vh" }}
+              className="text-white z-20 font-mova   right-10 text-[130px] loaderText max-lg:text-[80px]"
+            >
               PATIENT{" "}
-            </h1>
+            </h3>
           </div>
         </div>
       )}
