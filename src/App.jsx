@@ -127,23 +127,23 @@ const App = () => {
     <BrowserRouter>
       <Cursor />
       <div ref={refScrollUp} className="relative z-0 overflow-hidden bg-black">
-        <div id="p1" className="panel">
           <Navbar />
+        <div id="p1" className="panel">
           <Hero />
         </div>
 
         <div
           id="p2"
-          className="bg-about bg-cover bg-center bg-no-repeat h-[100vh] panel"
+          className="bg-about mt-10 bg-cover bg-center bg-no-repeat h-[100vh] panel"
         >
           <About />
         </div>
 
-        <div className="bg-about bg-black bg-cover bg-center bg-no-repeat panel h-[140vh]">
+        <div className="bg-about  bg-black bg-cover bg-center bg-no-repeat panel h-[140vh]">
           <Service />
         </div>
 
-        <div className="bg-cover bg-center bg-no-repeat panel h-[100vh] bg-black">
+        <div className="bg-cover mt-10 bg-center bg-no-repeat panel h-[100vh] bg-black">
           <Tech />
         </div>
 

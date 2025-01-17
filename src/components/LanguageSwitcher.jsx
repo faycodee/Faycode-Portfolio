@@ -35,13 +35,14 @@ const LanguageSwitcher = () => {
 
   return (
     <div className="relative inline-block text-left">
-      {/* Main Button */}
+    
       <button
         onClick={toggleDropdown}
-        className="flex items-center px-4 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition-all duration-200"
+        className="flex items-center px-4 py-2 bg-black
+         text-white rounded-full hover:bg-gray-800 transition-all duration-200"
       >
-        <FaGlobe className="mr-2 text-2xl" /> {/* Globe icon */}
-        <span>{selectedLanguage}</span>
+        <FaGlobe className="mr-2 text-[15px]" /> 
+        <span className="text-[10px]">{selectedLanguage}</span>
       </button>
 
       {/* Dropdown Menu */}
