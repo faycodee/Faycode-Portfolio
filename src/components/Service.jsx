@@ -11,8 +11,10 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { MotionPathPlugin, ScrollTrigger } from "gsap/all";
 import { useSelector, useDispatch } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 const Services = () => {
+  const [t, i18n] = useTranslation();
   gsap.registerPlugin(ScrollTrigger);
   useGSAP(() => {
     gsap.from("#canvas", {
@@ -74,8 +76,11 @@ const Services = () => {
         className="-mt-[3rem]  max-sm:mt-[-20px]"
       >
         <motion.div variants={textVariant()}>
-          <p className={styles.sectionSubText}>Introduction</p>
-          <h2 className={styles.sectionHeadText}>Services.</h2>
+          <p className={styles.sectionSubText}> {t("lng.Titles.services1")}</p>
+          <h2 className={styles.sectionHeadText}>
+            {" "}
+            {t("lng.Titles.services2")}
+          </h2>
         </motion.div>
 
         <motion.p
@@ -83,47 +88,30 @@ const Services = () => {
           className="mt-4 text-taupe text-[18px] max-w-3xl
            leading-[30px] mb-8  max-sm:text-[12px] max-sm:leading-[20px]"
         >
-          Hey ,I will assist you in the same way that{" "}
-          <span className="font-mono font-extrabold ">Spider-Man</span> helps
-          others , Let’s get creative and make something together !
+          {t("lng.Titles.services3")}
           {screensize.isMobile && (
             <ul style={{ listStyle: "circle" }}>
               <li className="text-[12px] font-mova ml-8">
-                I’ll assist you in building the{" "}
-                <span className="font-mono font-extrabold text-blue-300 text-center">
-                  WEBSITE
-                </span>{" "}
-                you need.
+                {t("lng.Titles.services4li1")}{" "}
               </li>
               <li className="text-[12px] font-mova ml-8">
-                I help you bring your visions to life, whatever they are.
+                {t("lng.Titles.services4li4")}{" "}
               </li>
             </ul>
           )}
           {screensize.isTablet && (
             <ul style={{ listStyle: "circle" }} className="mt-4 ">
               <li className="text-[12px] font-mova ml-8 ">
-                I am here to assist you in developing your{" "}
-                <span className="font-mono font-extrabold text-blue-300">
-                  PORTFOLIO
-                </span>
+                {t("lng.Titles.services4li1")}{" "}
               </li>
               <li className="text-[12px] font-mova ml-8">
-                I’ll help you creatively design a standout{" "}
-                <span className="font-mono font-extrabold text-blue-300 text-center">
-                  PORTFOLIO
-                </span>{" "}
-                that shines.
+                {t("lng.Titles.services4li2")}
               </li>
               <li className="text-[12px] font-mova ml-8">
-                I’ll assist you in building the{" "}
-                <span className="font-mono font-extrabold text-blue-300 text-center">
-                  WEBSITE
-                </span>{" "}
-                you need.
+                {t("lng.Titles.services4li3")}{" "}
               </li>
               <li className="text-[12px] font-mova ml-8">
-                I help you bring your visions to life, whatever they are.
+                {t("lng.Titles.services4li4")}{" "}
               </li>
             </ul>
           )}
@@ -138,34 +126,21 @@ const Services = () => {
                 className="absolute font-beckman  text-zinc-200 text-[10px] flying-text z-20 text-center opacity-0 "
                 style={{ bottom: "19%", left: "14%" }}
               >
-                " I am here to assist you <br />
-                in developing your{" "}
-                <span className="font-mono font-extrabold text-blue-300 ">
-                  PORTFOLIO
-                </span>{" "}
-                "
+                {t("lng.Titles.services4li1")}
               </div>
               <div
                 id="para2"
                 className="absolute font-beckman  text-zinc-200 flying-text z-20 opacity-0"
                 style={{ bottom: "36%", left: "10%" }}
               >
-                " I’ll help you creatively design <br /> a standout{" "}
-                <span className="font-mono font-extrabold text-blue-300 text-center ">
-                  PORTFOLIO
-                </span>{" "}
-                that shines. "
+                {t("lng.Titles.services4li2")}
               </div>
               <div
                 id="para3"
                 className="absolute font-beckman opacity-0  text-zinc-200 flying-text z-20 "
                 style={{ bottom: "20%", right: "14%" }}
               >
-                "I’ll assist you in building the{" "}
-                <span className="font-mono font-extrabold text-blue-300 text-center ">
-                  WEBSITE
-                </span>{" "}
-                you need. "
+                {t("lng.Titles.services4li3")}
               </div>
 
               <div
@@ -173,8 +148,7 @@ const Services = () => {
                 className="absolute  font-beckman opacity-0 text-[10px]  text-zinc-200 flying-text z-20 "
                 style={{ bottom: "45%", right: "20%" }}
               >
-                " I help you bring your visions <br /> to life, whatever they
-                are. "
+                {t("lng.Titles.services4li4")}
               </div>
             </div>
           )}
