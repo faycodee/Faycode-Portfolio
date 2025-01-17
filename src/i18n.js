@@ -16,7 +16,6 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    // lng:"de" ,
     fallbackLng: "en",
     detection: {
       cache: ["cookie"],

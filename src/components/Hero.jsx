@@ -163,14 +163,14 @@ const Hero = () => {
         <div className="bg-black h-screen w-screen flex justify-center items-center">
           <div>
             <h1 className="text-white z-10 font-mova absolute top-10 left-10 text-[300px] loaderText max-lg:text-[100px]">
-              {t("BE")}
+              {t("lng.Titles.loader1")}
             </h1>
             <img id="loader" src="./loader.gif" alt="" srcset="" />
             <h3
               style={{ position: "absolute", top: "70vh" }}
               className="text-white z-20 font-mova   right-10 text-[130px] loaderText max-lg:text-[80px]"
             >
-              PATIENT{" "}
+              {t("lng.Titles.loader2")}{" "}
             </h3>
           </div>
         </div>
@@ -223,7 +223,8 @@ const Hero = () => {
             <h1
               className={`${styles.heroHeadText} text-eerieBlack  font-poppins uppercase max-sm:text-[65px] max-sm:mt-[50px]`}
             >
-              Hi, I'm <br />
+              {t("lng.Titles.hi")}
+              <br />
               <span
                 className="text-battleGray sm:text-[73px]  
                 max-sm:text-[80px]   
@@ -237,10 +238,8 @@ const Hero = () => {
               className={`${styles.heroSubText} mt-2 text-white w-[500px]   max-sm:w-[80vw] font-mono text-[1px]  max-sm:text-[13px] max-sm:mt-[120px]`}
             > */}
             <p className="para">
-              {/* <br className="sm:block hidden " /> */}
-              My passion for web development grew from the thrill of solving
-              increasingly complex problems, which brings me great satisfaction
-              .
+              {t("lng.Paragraphs.herop")}
+              {/* <br className="sm:block hidden " /> */}.
             </p>
           </div>
           <div

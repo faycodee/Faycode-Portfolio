@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { styles } from "../styles";
-import { navLinks } from "../constants";
 import { close, menu, logo } from "../assets";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { xor } from "three/examples/jsm/nodes/Nodes.js";
-
+import { useTranslation } from "react-i18next";
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
-  
+  const [t, i18n] = useTranslation();
+  let navLinks = t("lng.Const.navLinks", { returnObjects: true });
+
   const timeline = gsap.timeline({
     repeat: -1,
     repeatDelay: 0.2,
@@ -25,7 +25,7 @@ const Navbar = () => {
       ease: "power1.in",
       duration: 2.5,
     });
-   
+
     timeline.to("#logo", {
       opacity: 0.5,
       x: 30,
@@ -94,6 +94,33 @@ const Navbar = () => {
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
+          <li>
+            <button
+              onClick={() => {
+                i18n.changeLanguage("en");
+              }}
+            >
+              en
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => {
+                i18n.changeLanguage("de");
+              }}
+            >
+              de
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => {
+                i18n.changeLanguage("fr");
+              }}
+            >
+              fr
+            </button>
+          </li>
         </ul>
 
         <div className="sm:hidden flex flex-1 justify-end items-center">

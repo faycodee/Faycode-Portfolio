@@ -7,6 +7,7 @@ const Cursor = () => {
   window.addEventListener("mousemove", (e) => {
     const posX = e.clientX;
     const posY = e.clientY;
+    
     cursorDot.current.style.left = `${posX}px`;
     cursorDot.current.style.top = `${posY}px`;
     // cursorOutline.current.style.left = `${posX}px`
