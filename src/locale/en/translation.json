@@ -21,7 +21,11 @@
       "certif1": "Case Studies",
       "certif2": "Certifications.",
       "certif3": " Highlighting key certifications that validate my expertise and  commitment to professional development. Each certification reflects skills gained and dedication to staying updated in my field.",
-
+      "edu2": "Education.",
+      "edu3/1": "    I am in my final year at",
+      "edu3/2": "   , Morocco's top vocational training institute, renowned globally for     its rigorous, hands-on curriculum. My training has equipped me with  technical expertise and problem-solving skills, preparing me to excel        in the tech industry.",
+      "edu3/3": "    Note: There Are skills I learned through self-learning like gsap  ,tailwindcss ...",
+      "edu4": " Present",
       "about3": " Hello! I’m Faycal, a web developer with a passion for problem-solving.  My journey began as a fun challengeSolving issues felt like completing         puzzles, and the more complex they were, the more rewarding the         solutions became. Now, I’m studying at OFPPT, where I’ve gained strong          skills in the MERN stack (MongoDB, Express, React, Node.js), allowing          me to create dynamic and efficient web applications. I love turning         ideas into functional, user-friendly experiences online!"
     },
     "Paragraphs": {

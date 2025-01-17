@@ -5,10 +5,54 @@ import { styles } from "../styles";
 import { fadeIn, textVariant } from "../utils/motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-
+import { useTranslation } from "react-i18next";
+import {
+  frontend,
+  backend,
+  ux,
+  datamanagement,
+  prototyping,
+  javascript,
+  typescript,
+  html,
+  css,
+  agile,
+  bootstrap,
+  framerm,
+  githubi,
+  // gsap,
+  mysql,
+  php,
+  python,
+  reactjs,
+  redux,
+  tailwind,
+  three,
+  nodejs,
+  git,
+  figma,
+  docker,
+  postgresql,
+  rubyrails,
+  graphql,
+  coverhunt,
+  dcc,
+  kelhel,
+  microverse,
+  employee,
+  fayshop,
+  getmat,
+  parallax,
+  porthtml,
+  timepro,
+  datacer,
+  gitcer,
+  jscer,
+  pythoncer,
+} from "../assets";
 const Education = () => {
   const [tooltip, setTooltip] = useState("");
-  
+  const [t, i18n] = useTranslation();
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.set("#curve", {
@@ -97,8 +141,14 @@ const Education = () => {
   return (
     <div className="-mt-[4rem] overflow-hidden max-sm:-mt-[1rem]">
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText}`}>Case Studies</p>
-        <h2 className={`${styles.sectionHeadTextLight}`}>Education.</h2>
+        <p className={`${styles.sectionSubText}`}>
+          {" "}
+          {t("lng.Titles.project1")}{" "}
+        </p>
+        <h2 className={`${styles.sectionHeadTextLight}`}>
+          {" "}
+          {t("lng.Titles.edu2")}{" "}
+        </h2>
       </motion.div>
       <div className="w-full flex">
         <motion.p
@@ -106,7 +156,7 @@ const Education = () => {
           className="mt-4 text-taupe text-[13px] max-w-3xl leading-[30px]
           max-sm:leading-[22px]"
         >
-          I am in my final year at{" "}
+          {t("lng.Titles.edu3/1")}
           <a
             href="https://www.ofppt.ma/"
             target="_blank"
@@ -114,112 +164,108 @@ const Education = () => {
           >
             OFPPT
           </a>{" "}
-          , Morocco's top vocational training institute, renowned globally for
-          its rigorous, hands-on curriculum. My training has equipped me with
-          technical expertise and problem-solving skills, preparing me to excel
-          in the tech industry.
+          {t("lng.Titles.edu3/2")}
           <br />
-          Note: There Are skills I learned through self-learning like gsap
-          ,tailwindcss ...
+          {t("lng.Titles.edu3/3")}
         </motion.p>
       </div>
-       <div className="container  max-sm:mt-[60px]  ">
-      <div className="svg-wrapper ">
-        <svg viewBox="0 0 800 100" >
-          <path
-            id="curve"
-            d="M 100 50 Q 200 20, 300 50 T 500 50 T 700 50"
-            fill="none"
-            stroke="white"
-            strokeWidth="3"
-            opacity="1"
-          />
-          <circle
-            id="dot1"
-            cx="100"
-            cy="50"
-            r="25"
-            fill="white"
-            className="dot"
-            onMouseOver={() => handleMouseOver("2023/09")}
-            onMouseOut={() => setTooltip("")}
-          />
-          <text
-            x="100"
-            y="55"
-            textAnchor="middle"
-            fill="black"
-            className="font-mono"
-            fontSize={10}
-            onMouseOver={() => handleMouseOver("2023/09")}
-            onMouseOut={() => setTooltip("")}
-          >
-            2023/09
-          </text>
-          <circle
-            id="dot2"
-            cx="300"
-            cy="50"
-            r="25"
-            fill="white"
-            className="dot"
-            onMouseOver={() => handleMouseOver("2024/07")}
-            onMouseOut={() => setTooltip("")}
-          />
-          <text
-            x="300"
-            y="55"
-            textAnchor="middle"
-            fill="black"
-            className="font-mono"
-            fontSize={10}
-            onMouseOver={() => handleMouseOver("2024/07")}
-            onMouseOut={() => setTooltip("")}
-          >
-            2024/07
-          </text>
-          <circle
-            id="dot3"
-            cx="500"
-            cy="50"
-            r="25"
-            fill="white"
-            className="dot"
-            onMouseOver={() => handleMouseOver("2024/12")}
-            onMouseOut={() => setTooltip("")}
-          />
-          <text
-            x="500"
-            y="55"
-            textAnchor="middle"
-            fill="black"
-            className="font-mono"
-            fontSize={10}
-            onMouseOver={() => handleMouseOver("2024/12")}
-            onMouseOut={() => setTooltip("")}
-          >
-            2024/12
-          </text>
-          <text
-            x="720"
-            y="60"
-            stroke="white"
-            className="date-label font-mova border border-l-4"
-          >
-            Present
-          </text>
-          <line
-            x1="700"
-            y1="30"
-            x2="700"
-            y2="70"
-            stroke="white"
-            strokeWidth="2"
-          />
-        </svg>
-        {tooltip && <div className="tooltip">{tooltip}</div>}
+      <div className="container  max-sm:mt-[60px]  ">
+        <div className="svg-wrapper ">
+          <svg viewBox="0 0 800 100">
+            <path
+              id="curve"
+              d="M 100 50 Q 200 20, 300 50 T 500 50 T 700 50"
+              fill="none"
+              stroke="white"
+              strokeWidth="3"
+              opacity="1"
+            />
+            <circle
+              id="dot1"
+              cx="100"
+              cy="50"
+              r="25"
+              fill="white"
+              className="dot"
+              onMouseOver={() => handleMouseOver("2023/09")}
+              onMouseOut={() => setTooltip("")}
+            />
+            <text
+              x="100"
+              y="55"
+              textAnchor="middle"
+              fill="black"
+              className="font-mono"
+              fontSize={10}
+              onMouseOver={() => handleMouseOver("2023/09")}
+              onMouseOut={() => setTooltip("")}
+            >
+              2023/09
+            </text>
+            <circle
+              id="dot2"
+              cx="300"
+              cy="50"
+              r="25"
+              fill="white"
+              className="dot"
+              onMouseOver={() => handleMouseOver("2024/07")}
+              onMouseOut={() => setTooltip("")}
+            />
+            <text
+              x="300"
+              y="55"
+              textAnchor="middle"
+              fill="black"
+              className="font-mono"
+              fontSize={10}
+              onMouseOver={() => handleMouseOver("2024/07")}
+              onMouseOut={() => setTooltip("")}
+            >
+              2024/07
+            </text>
+            <circle
+              id="dot3"
+              cx="500"
+              cy="50"
+              r="25"
+              fill="white"
+              className="dot"
+              onMouseOver={() => handleMouseOver("2024/12")}
+              onMouseOut={() => setTooltip("")}
+            />
+            <text
+              x="500"
+              y="55"
+              textAnchor="middle"
+              fill="black"
+              className="font-mono"
+              fontSize={10}
+              onMouseOver={() => handleMouseOver("2024/12")}
+              onMouseOut={() => setTooltip("")}
+            >
+              2024/12
+            </text>
+            <text
+              x="720"
+              y="60"
+              stroke="white"
+              className="date-label font-mova border border-l-4"
+            >
+              {t("lng.Titles.edu4")}
+            </text>
+            <line
+              x1="700"
+              y1="30"
+              x2="700"
+              y2="70"
+              stroke="white"
+              strokeWidth="2"
+            />
+          </svg>
+          {tooltip && <div className="tooltip">{tooltip}</div>}
+        </div>
       </div>
-    </div>
     </div>
   );
 };
