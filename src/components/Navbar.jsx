@@ -6,10 +6,12 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useSelector } from "react-redux";
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [t, i18n] = useTranslation();
+  const screensize = useSelector((state) => state.screensize);
   let navLinks = t("lng.Const.navLinks", { returnObjects: true });
 
   const timeline = gsap.timeline({
@@ -95,10 +97,8 @@ const Navbar = () => {
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
-         
-          <LanguageSwitcher />
         </ul>
-
+        {!screensize.isMobile && <LanguageSwitcher />}
         <div className="sm:hidden flex flex-1 justify-end items-center">
           {toggle ? (
             <div className="fixed top-0 left-0 w-full h-full bg-flashWhite z-50">

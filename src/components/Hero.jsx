@@ -226,7 +226,8 @@ const Hero = () => {
               {t("lng.Titles.hi")}
               <br />
               <span
-                className="text-battleGray sm:text-[73px]  
+                className="text-battleGray sm:text-[103px] 
+                mt-5 
                 max-sm:text-[80px]   
                 text-[50px] font-mova
                 font-extrabold uppercase "
@@ -235,9 +236,9 @@ const Hero = () => {
               </span>
             </h1>
             {/* <p
-              className={`${styles.heroSubText} mt-2 text-white w-[500px]   max-sm:w-[80vw] font-mono text-[1px]  max-sm:text-[13px] max-sm:mt-[120px]`}
+              className={` mt-2 text-white w-[500px]   max-sm:w-[80vw] font-mono text-[1px]  max-sm:text-[13px] max-sm:mt-[120px]`}
             > */}
-            <p className="para">
+            <p className={`para ${styles.heroSubText}`}>
               {t("lng.Paragraphs.herop")}
               {/* <br className="sm:block hidden " /> */}.
             </p>
