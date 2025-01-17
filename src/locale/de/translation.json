@@ -1,10 +1,42 @@
 {
   "lng": {
     "Titles": {
-      "loader1": "BE",
-      "loader2": "PATIENT",
-      "hi": "Hallo, ich bin"
+      "loader1": "SEI",
+      "loader2": "GEDULDIG",
+      "hi": "Hallo, ich bin",
+      "about1": "Einleitung",
+      "about2": "Überblick.",
+      "services1": "Einleitung",
+      "services2": "Dienstleistungen.",
+      "services3": "Hallo, ich werde dir helfen, so wie Spider-Man anderen hilft. Lass uns kreativ sein und gemeinsam etwas schaffen!",
+      "services4li1": "Ich bin hier, um dir zu helfen, dein PORTFOLIO zu entwickeln.",
+      "services4li2": "Ich helfe dir, ein herausragendes PORTFOLIO kreativ zu gestalten, das auffällt.",
+      "services4li3": "Ich unterstütze dich beim Aufbau der WEBSITE, die du benötigst.",
+      "services4li4": "Ich helfe dir, deine Visionen zum Leben zu erwecken, was auch immer sie sind.",
+      "tech1": "Meine Fähigkeiten",
+      "tech2": "Technologien.",
+      "project1": "Fallstudien.",
+      "project2": "Projekte.",
+      "project3": "Diese Projekte zeigen meine Erfahrung anhand praktischer Beispiele, einschließlich kurzer Beschreibungen, Repository-Links und Live-Demos. Sie demonstrieren meine Fähigkeit, komplexe Herausforderungen zu bewältigen, mich an verschiedene Technologien anzupassen und Projekte effizient zu managen.",
+      "certif1": "Fallstudien",
+      "certif2": "Zertifizierungen.",
+      "certif3": "Hervorhebung wichtiger Zertifizierungen, die meine Expertise und mein Engagement für die berufliche Weiterentwicklung bestätigen. Jede Zertifizierung spiegelt erworbene Fähigkeiten und den Willen wider, in meinem Bereich auf dem neuesten Stand zu bleiben.",
+      "edu2": "Ausbildung.",
+      "edu3/1": "Ich bin im letzten Jahr an",
+      "edu3/2": ", Marokkos führendem Institut für berufliche Bildung, das weltweit für sein strenges und praxisorientiertes Programm bekannt ist. Meine Ausbildung hat mich mit technischem Fachwissen und Problemlösungsfähigkeiten ausgestattet und mich darauf vorbereitet, in der Technologiebranche erfolgreich zu sein.",
+      "edu3/3": "Hinweis: Es gibt Fähigkeiten, die ich durch Selbstlernen erworben habe, wie z. B. gsap, tailwindcss usw.",
+      "edu4": "Gegenwart",
+      "edu5": "Zu dieser Zeit wusste ich nur ein wenig über Programmierung, wie z. B. HTML und CSS.",
+      "edu6": "Bis zu diesem Datum hatte ich ein Jahr lang studiert und viel gelernt, darunter: Algorithmus, PHP, Python, fortgeschrittenes HTML und CSS, Bootstrap, Ajax, MySQL ...",
+      "edu7": "Zu diesem Zeitpunkt, vier Monate nach Beginn meines zweiten Jahres, habe ich React, Mongo, Redux, fortgeschrittenes MySQL, agile Ansätze, TailwindCSS, GSAP und Framer Motion gelernt.",
+      "contact1": "Kontakt aufnehmen",
+      "contact2": "Kontakt.",
+      "contact3": "AV ORAN 27 RUE LAGOS ZOHOUR 1 FES MAROKKO.",
+      "contact5": "Telefonnummer:",
+      "contact6": "erstellt von",
+      "about3": "Hallo! Ich bin Faycal, ein Webentwickler mit einer Leidenschaft für Problemlösungen. Meine Reise begann als eine spaßige Herausforderung. Probleme zu lösen fühlte sich an wie das Zusammensetzen von Puzzleteilen, und je komplexer sie waren, desto lohnender wurden die Lösungen. Jetzt studiere ich am OFPPT, wo ich mir starke Fähigkeiten im MERN-Stack (MongoDB, Express, React, Node.js) angeeignet habe, die es mir ermöglichen, dynamische und effiziente Webanwendungen zu erstellen. Ich liebe es, Ideen in funktionale und benutzerfreundliche Erlebnisse im Internet zu verwandeln!"
     },
+
     "Paragraphs": {
       "herop": "Meine Leidenschaft für Webentwicklung entstand aus der Freude, immer komplexere Probleme zu lösen, was mir große Zufriedenheit bringt."
     },

@@ -5,7 +5,13 @@ import { useTranslation } from "react-i18next";
 const LanguageSwitcher = () => {
   const [t, i18n] = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState("English");
+  const [selectedLanguage, setSelectedLanguage] = useState(
+    i18n.language == "fr"
+      ? "French"
+      : i18n.language == "en"
+        ? "English"
+        : "German"
+  );
 
   const languages = ["English", "German", "French"];
 

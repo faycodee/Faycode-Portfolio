@@ -9,8 +9,9 @@ import { ScrollTrigger } from "gsap/all";
 import { div } from "three/examples/jsm/nodes/Nodes.js";
 // import emailjs from '@emailjs/browser';
 // import { send, sendHover } from '../assets';
-
+import { useTranslation } from "react-i18next";
 const Contact = () => {
+  const [t, i18n] = useTranslation();
   gsap.registerPlugin(ScrollTrigger);
   const video = document.getElementById("vid0");
   useGSAP(() => {
@@ -50,8 +51,8 @@ const Contact = () => {
             muted
             className="absolute inset-0   w-full sm:block hidden  h-full object-cover rounded-2xl"
           ></motion.video>
-          <p className={styles.sectionSubText}>Get in touch</p>
-          <h3 className={styles.sectionHeadTextLight}>Contact.</h3>
+          <p className={styles.sectionSubText}>   {t("lng.Titles.contact1")}</p>
+          <h3 className={styles.sectionHeadTextLight}> {t("lng.Titles.contact2")}</h3>
           <div className="mt-10">
             <p className="font-bold">Email:</p>
             <a
@@ -61,9 +62,9 @@ const Contact = () => {
               faysaloumzil1@gmail.com
             </a>
             <p className="text-blue-400 underline">
-              AV ORAN 27 RUE LAGOS ZOHOUR 1 FES MOROCCO
+            {t("lng.Titles.contact3")}
             </p>
-            <p className="font-bold mt-4">Phone Number:</p>
+            <p className="font-bold mt-4">{t("lng.Titles.contact5")}</p>
             <a
               href="https://wa.me/+212613487814"
               className="text-blue-400 underline"
@@ -115,7 +116,7 @@ const Contact = () => {
         <span className="font-sans">©</span> "
         <br />{" "}
         <span className="text-[10px] text-blue-100">
-          created by{" "}
+        {t("lng.Titles.contact6")}  {" "}
           <span className="underline text-blue-300 underline-offset-3">
             faycal oumzil
           </span>{" "}

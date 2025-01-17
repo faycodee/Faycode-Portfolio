@@ -1,9 +1,41 @@
 {
   "lng": {
     "Titles": {
-      "loader1": "BE",
+      "loader1": "SOYEZ",
       "loader2": "PATIENT",
-      "hi": "Salut, je suis"
+      "hi": "Salut, je suis",
+      "about1": "Introduction",
+      "about2": "Aperçu.",
+      "services1": "Introduction",
+      "services2": "Services.",
+      "services3": "Salut, je vais vous aider de la même manière que Spider-Man aide les autres. Soyons créatifs et réalisons quelque chose ensemble !",
+      "services4li1": "Je suis ici pour vous aider à développer votre PORTFOLIO.",
+      "services4li2": "Je vais vous aider à concevoir de manière créative un PORTFOLIO remarquable qui se démarque.",
+      "services4li3": "Je vais vous aider à créer le SITE WEB dont vous avez besoin.",
+      "services4li4": "Je vous aide à donner vie à vos visions, quelles qu'elles soient.",
+      "tech1": "Mes compétences",
+      "tech2": "Technologies.",
+      "project1": "Études de cas.",
+      "project2": "Projets.",
+      "project3": "Ces projets mettent en valeur mon expérience à travers des exemples pratiques, comprenant des descriptions brèves, des liens vers les dépôts et des démos en direct. Ils démontrent ma capacité à relever des défis complexes, à m’adapter à diverses technologies et à gérer efficacement des projets.",
+      "certif1": "Études de cas",
+      "certif2": "Certifications.",
+      "certif3": "Mettant en avant des certifications clés qui valident mon expertise et mon engagement envers le développement professionnel. Chaque certification reflète des compétences acquises et une volonté de rester à jour dans mon domaine.",
+      "edu2": "Éducation.",
+      "edu3/1": "Je suis en dernière année à",
+      "edu3/2": ", le principal institut de formation professionnelle du Maroc, réputé mondialement pour son programme rigoureux et pratique. Ma formation m'a doté d'une expertise technique et de compétences en résolution de problèmes, me préparant à exceller dans l'industrie technologique.",
+      "edu3/3": "Note : Il y a des compétences que j'ai acquises par auto-apprentissage, comme gsap, tailwindcss, etc.",
+      "edu4": "Présent",
+      "edu5": "À ce moment-là, je connaissais seulement un peu de programmation, comme HTML et CSS.",
+      "edu6": "À cette date, j'avais passé un an à étudier et appris beaucoup de choses, notamment : algorithme, PHP, Python, HTML et CSS avancés, Bootstrap, Ajax, MySQL ...",
+      "edu7": "À cette date, quatre mois après le début de ma deuxième année, j'avais appris React, Mongo, Redux, MySQL avancé, approche agile, TailwindCSS, GSAP et Framer Motion.",
+
+      "contact1": "Prenez contact",
+      "contact2": "Contact.",
+      "contact3": "AV ORAN 27 RUE LAGOS ZOHOUR 1 FES MAROC.",
+      "contact5": "Numéro de téléphone :",
+      "contact6": "créé par",
+      "about3": "Bonjour ! Je suis Faycal, développeur web passionné par la résolution de problèmes. Mon parcours a commencé comme un défi amusant. Résoudre des problèmes me donnait l’impression de compléter des puzzles, et plus ils étaient complexes, plus les solutions étaient gratifiantes. Maintenant, j'étudie à l’OFPPT, où j'ai acquis de solides compétences dans la pile MERN (MongoDB, Express, React, Node.js), me permettant de créer des applications web dynamiques et efficaces. J'adore transformer des idées en expériences fonctionnelles et conviviales en ligne !"
     },
     "Paragraphs": {
       "herop": "Ma passion pour le développement web est née de l'excitation de résoudre des problèmes de plus en plus complexes, ce qui me procure une grande satisfaction."

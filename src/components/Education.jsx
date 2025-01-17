@@ -119,19 +119,13 @@ const Education = () => {
   const handleMouseOver = (year) => {
     switch (year) {
       case "2023/09":
-        setTooltip(
-          "At that time, I only knew a little bit of programming, such as html,css"
-        );
+        setTooltip(t("lng.Titles.edu5"));
         break;
       case "2024/07":
-        setTooltip(
-          "By this date, I had spent a year studying and learned a lot, including: algorithm , php , python , advanced html css  , bootstrap , ajax , mysql ... "
-        );
+        setTooltip(t("lng.Titles.edu6"));
         break;
       case "2024/12":
-        setTooltip(
-          "On this date, four months into my second year, I learned react , mongo , redux , advanced mysql , approch agile , tailwindcss , gsap , framermotion  "
-        );
+        setTooltip(t("lng.Titles.edu7"));
         break;
       default:
         setTooltip("");
