@@ -3,9 +3,53 @@ import { motion } from "framer-motion";
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { github, pineapple, pineappleHover } from "../assets";
-import { projects } from "../constants";
+// import { projects } from "../constants";
 import { fadeIn, textVariant, staggerContainer } from "../utils/motion";
-
+import { useTranslation } from "react-i18next";
+import {
+  frontend,
+  backend,
+  ux,
+  datamanagement,
+  prototyping,
+  javascript,
+  typescript,
+  html,
+  css,
+  agile,
+  bootstrap,
+  framerm,
+  githubi,
+  gsap,
+  mysql,
+  php,
+  python,
+  reactjs,
+  redux,
+  tailwind,
+  three,
+  nodejs,
+  git,
+  figma,
+  docker,
+  postgresql,
+  rubyrails,
+  graphql,
+  coverhunt,
+  dcc,
+  kelhel,
+  microverse,
+  employee,
+  fayshop,
+  getmat,
+  parallax,
+  porthtml,
+  timepro,
+  datacer,
+  gitcer,
+  jscer,
+  pythoncer,
+} from "../assets";
 const ProjectCard = ({
   id,
   name,
@@ -18,7 +62,6 @@ const ProjectCard = ({
   active,
   handleClick,
 }) => {
-  
   return (
     <motion.div
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
@@ -34,7 +77,7 @@ const ProjectCard = ({
       ></div>
 
       <img
-        src={image}
+        src={eval(image)}
         alt={name}
         className={`absolute w-full h-full object-cover rounded-[24px] ${
           active === id ? "" : "filter grayscale "
@@ -124,12 +167,17 @@ const ProjectCard = ({
 
 const Projects = () => {
   const [active, setActive] = useState("project-1");
-
+  const [t, i18n] = useTranslation();
+  let projects = t("lng.Const.projects", { returnObjects: true });
   return (
     <div className="-mt-[10rem]">
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} `}>Case Studies</p>
-        <h2 className={`${styles.sectionHeadTextLight}`}>Projects.</h2>
+        <p className={`${styles.sectionSubText} `}>
+          {t("lng.Titles.project1")}
+        </p>
+        <h2 className={`${styles.sectionHeadTextLight}`}>
+          {t("lng.Titles.project2")}
+        </h2>
       </motion.div>
 
       <div className="w-full flex h-[40px]">
@@ -137,10 +185,7 @@ const Projects = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className=" text-taupe text-[13px] max-w-3xl leading-[30px] max-sm:leading-[20px] max-sm:text-[10px] "
         >
-          These projects highlight my experience through practical examples,
-          including brief descriptions, repository links, and live demos. They
-          demonstrate my ability to tackle complex challenges, adapt to various
-          technologies, and manage projects efficiently.
+          {t("lng.Titles.project3")}
         </motion.p>
       </div>
 

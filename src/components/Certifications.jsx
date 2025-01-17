@@ -15,7 +15,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-
+import { useTranslation } from "react-i18next";
 const Certificat = ({ obj, pos }) => {
 
   gsap.registerPlugin(ScrollTrigger);
@@ -94,23 +94,22 @@ const Certificat = ({ obj, pos }) => {
 };
 
 const Certifications = () => {
+  const [t,i18n]=useTranslation()
   const dispatch = useDispatch();
   const screensize = useSelector((state) => state.screensize);
   const slidesPerVieww = screensize.isMobile ? 1 : 3;
   return (
     <div className="-mt-[4rem] max-sm:-mt-[1rem]">
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText}`}>Case Studies</p>
-        <h2 className={`${styles.sectionHeadTextLight}`}>Certifications.</h2>
+        <p className={`${styles.sectionSubText}`}></p>
+        <h2 className={`${styles.sectionHeadTextLight}`}></h2>
       </motion.div>
       <div className="w-full flex">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
           className="mt-4 text-taupe text-[13px] max-w-3xl leading-[30px]"
         >
-          Highlighting key certifications that validate my expertise and
-          commitment to professional development. Each certification reflects
-          skills gained and dedication to staying updated in my field.
+         
         </motion.p>
       </div>
       <motion.div

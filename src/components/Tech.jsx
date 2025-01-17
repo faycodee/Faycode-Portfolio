@@ -7,6 +7,7 @@ import { textVariant } from "../utils/motion";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import { useTranslation } from "react-i18next";
 
 const Tech = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -35,6 +36,7 @@ const Tech = () => {
     //   ease: "power1.inOut",
     // });
   }, []);
+  const [t, i18n] = useTranslation();
   return (
     <>
       <div style={{ overflow: "none" }}>
@@ -49,13 +51,18 @@ const Tech = () => {
           className="absolute inset-0   w-[100vw]    h-[100vh] object-cover"
         ></motion.video>
         <motion.div variants={textVariant()}>
-          <p className={styles.sectionSubTextLight}>My skills</p>
-          <h2 className={styles.sectionHeadTextLight}>Technologies.</h2>
+          <p className={styles.sectionSubTextLight}>{t("lng.Titles.tech1")}</p>
+          <h2 className={styles.sectionHeadTextLight}>
+            {t("lng.Titles.tech2")}
+          </h2>
         </motion.div>
 
         <div className="flex flex-wrap justify-center gap-10 mt-14 conti2">
           {technologies.map((technology) => (
-            <div className="w-28 h-28 tech max-sm:w-[45px] max-sm:h-[60px]" key={technology.name}>
+            <div
+              className="w-28 h-28 tech max-sm:w-[45px] max-sm:h-[60px]"
+              key={technology.name}
+            >
               <BallCanvas icon={technology.icon} />
             </div>
           ))}

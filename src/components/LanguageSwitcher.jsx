@@ -25,10 +25,13 @@ const LanguageSwitcher = () => {
     setSelectedLanguage(language);
     if (language === "English") {
       i18n.changeLanguage("en");
+      localStorage.setItem("en", "en");
     } else if (language === "German") {
+      localStorage.setItem("de", "de");
       i18n.changeLanguage("de");
     } else {
       i18n.changeLanguage("fr");
+      localStorage.setItem("fr", "fr");
     }
     toggleDropdown();
   };

@@ -13,6 +13,15 @@
       "services4li2": "I’ll help you creatively design a standout PORTFOLIO             that shines.",
       "services4li3": "I’ll assist you in building the WEBSITE you need.",
       "services4li4": "I help you bring your visions to life, whatever they are.",
+      "tech1": "My skills",
+      "tech2": "Technologies.",
+      "project1": "Case Studies.",
+      "project2": "Projects.",
+      "project3": "These projects highlight my experience through practical examples,        including brief descriptions, repository links, and live demos. They        demonstrate my ability to tackle complex challenges, adapt to various       technologies, and manage projects efficiently.",
+      "certif1": "Case Studies",
+      "certif2": "Certifications.",
+      "certif3": " Highlighting key certifications that validate my expertise and  commitment to professional development. Each certification reflects skills gained and dedication to staying updated in my field.",
+
       "about3": " Hello! I’m Faycal, a web developer with a passion for problem-solving.  My journey began as a fun challengeSolving issues felt like completing         puzzles, and the more complex they were, the more rewarding the         solutions became. Now, I’m studying at OFPPT, where I’ve gained strong          skills in the MERN stack (MongoDB, Express, React, Node.js), allowing          me to create dynamic and efficient web applications. I love turning         ideas into functional, user-friendly experiences online!"
     },
     "Paragraphs": {
@@ -76,6 +85,7 @@
           "date": "Sep 2022 - Present"
         }
       ],
+
       "projects": [
         {
           "id": "project-1",
