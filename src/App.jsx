@@ -127,7 +127,7 @@ const App = () => {
     <BrowserRouter>
       <Cursor />
       <div ref={refScrollUp} className="relative z-0 overflow-hidden bg-black">
-          <Navbar />
+        <Navbar />
         <div id="p1" className="panel">
           <Hero />
         </div>

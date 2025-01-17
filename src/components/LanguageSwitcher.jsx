@@ -35,17 +35,15 @@ const LanguageSwitcher = () => {
 
   return (
     <div className="relative inline-block text-left">
-    
       <button
         onClick={toggleDropdown}
         className="flex items-center px-4 py-2 bg-black
          text-white rounded-full hover:bg-gray-800 transition-all duration-200"
       >
-        <FaGlobe className="mr-2 text-[15px]" /> 
+        <FaGlobe className="mr-2 text-[15px]" />
         <span className="text-[10px]">{selectedLanguage}</span>
       </button>
 
-      {/* Dropdown Menu */}
       <div
         className={`dropdown absolute right-0 mt-2 w-40 bg-white text-black shadow-lg rounded-md overflow-hidden transform transition-all duration-300 ${
           isOpen ? "block opacity-100" : "hidden opacity-0"
@@ -55,7 +53,7 @@ const LanguageSwitcher = () => {
           <button
             key={index}
             onClick={() => changeLanguage(language)}
-            className="w-full text-left px-4 py-2 text-sm hover:bg-gray-200 transition-colors duration-150"
+            className="w-full text-left text-sm hover:bg-gray-200 transition-colors duration-150"
           >
             {language}
           </button>

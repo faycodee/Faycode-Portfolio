@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
-import { services } from "../constants";
+// import { services } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
 import { Suspense } from "react";
@@ -12,6 +12,8 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { MotionPathPlugin, ScrollTrigger } from "gsap/all";
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
+import { frontend, backend, datamanagement } from "../assets";
 
 const ServiceCard = ({ index, title, icon }) => {
   return (
@@ -31,7 +33,11 @@ const ServiceCard = ({ index, title, icon }) => {
         flex justify-evenly items-center flex-col
          max-sm:h-[40px] max-sm:px-0  "
       >
-        <img src={icon} alt={title} className="w-10 h-10 object-contain " />
+        <img
+          src={eval(icon)}
+          alt={title}
+          className="w-10 h-10 object-contain "
+        />
         <h3 className="text-taupe text-[15px] max-sm:text-[10px]  font-bold text-center">
           {title}
         </h3>
@@ -41,6 +47,9 @@ const ServiceCard = ({ index, title, icon }) => {
 };
 
 const About = () => {
+  const [t, i18n] = useTranslation();
+  let services = t("lng.Const.services", { returnObjects: true });
+
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(MotionPathPlugin);
 
@@ -78,16 +87,19 @@ const About = () => {
       <div></div>
       <div className="-mt-[12rem] conti h-[100vh]">
         <motion.div variants={textVariant()}>
-          <p id="pAbout" className={`${styles.sectionSubText} max-sm:mt-[40px]`} >
+          <p
+            id="pAbout"
+            className={`${styles.sectionSubText} max-sm:mt-[40px]`}
+          >
             <img
               src="./paper.png"
               id="paper"
               className="w-[50px] translate-y-60 max-sm:hidden "
             />
-            Introduction
+            {t("lng.Titles.about1")}{" "}
           </p>
-          <h2 id="h2About"  className={styles.sectionHeadText}>
-            Overview.
+          <h2 id="h2About" className={styles.sectionHeadText}>
+            {t("lng.Titles.about2")}{" "}
           </h2>
         </motion.div>
 
@@ -97,15 +109,8 @@ const About = () => {
           className=" text-taupe text-[13px] max-w-3xl leading-[30px] 
           max-sm:leading-[20px]  max-sm:mt-[10px]  "
         >
-          Hello! I’m Faycal, a web developer with a passion for problem-solving.
-          My journey began as a fun challengeSolving issues felt like completing
-          puzzles, and the more complex they were, the more rewarding the
-          solutions became. Now, I’m studying at OFPPT, where I’ve gained strong
-          skills in the MERN stack (MongoDB, Express, React, Node.js), allowing
-          me to create dynamic and efficient web applications. I love turning
-          ideas into functional, user-friendly experiences online!
+          {t("lng.Titles.about3")}{" "}
         </motion.p>
-
         <div className="mt-10 flex flex-wrap gap-10 ">
           {services.map((service, index) => (
             <ServiceCard key={service.title} index={index} {...service} />

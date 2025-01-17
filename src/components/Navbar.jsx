@@ -69,7 +69,7 @@ const Navbar = () => {
       className={`${styles.paddingX} w-full flex items-center justify-center py-2 h-[30px]
         fixed top-0 z-20 bg-transparent sm:opacity-[0.97] backNav max-md:bg-slate-50`}
     >
-      <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
+      <div className="w-full flex justify-between items-center max-w-7xl mx-auto my-[50px]">
         <Link
           to="/"
           className="flex items-center gap-2"
@@ -82,7 +82,7 @@ const Navbar = () => {
             src={logo}
             alt="logo"
             id="logo"
-            className="rounded-3xl w-[35px] h-[35px] sm:w-[40px] sm:h-[40px] object-contain"
+            className="rounded-3xl w-[20px] h-[20px] sm:w-[25px] sm:h-[25px] object-contain"
           />
         </Link>
 
@@ -99,7 +99,11 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        {!screensize.isMobile && <LanguageSwitcher />}
+        {!screensize.isMobile && (
+          <div className="">
+            <LanguageSwitcher />
+          </div>
+        )}
         <div className="sm:hidden flex flex-1 justify-end items-center">
           {toggle ? (
             <div className="fixed top-0 left-0 w-full h-full bg-flashWhite z-50">

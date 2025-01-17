@@ -3,7 +3,10 @@
     "Titles": {
       "loader1": "BE",
       "loader2": "PATIENT",
-      "hi": "Hi, I am"
+      "hi": "Hi, I am",
+      "about1": "Introduction",
+      "about2": "Overview.",
+      "about3": " Hello! I’m Faycal, a web developer with a passion for problem-solving.  My journey began as a fun challengeSolving issues felt like completing         puzzles, and the more complex they were, the more rewarding the         solutions became. Now, I’m studying at OFPPT, where I’ve gained strong          skills in the MERN stack (MongoDB, Express, React, Node.js), allowing          me to create dynamic and efficient web applications. I love turning         ideas into functional, user-friendly experiences online!"
     },
     "Paragraphs": {
       "herop": "My passion for web development grew from the thrill of solving  increasingly complex problems, which brings me great satisfaction"
