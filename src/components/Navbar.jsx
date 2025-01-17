@@ -5,6 +5,7 @@ import { close, menu, logo } from "../assets";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
@@ -94,33 +95,8 @@ const Navbar = () => {
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
-          <li>
-            <button
-              onClick={() => {
-                i18n.changeLanguage("en");
-              }}
-            >
-              en
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => {
-                i18n.changeLanguage("de");
-              }}
-            >
-              de
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => {
-                i18n.changeLanguage("fr");
-              }}
-            >
-              fr
-            </button>
-          </li>
+         
+          <LanguageSwitcher />
         </ul>
 
         <div className="sm:hidden flex flex-1 justify-end items-center">
