@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
-import { certifications } from "../constants";
+// import { certifications } from "../constants";
 import { fadeIn, textVariant, staggerContainer } from "../utils/motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -13,11 +13,54 @@ import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
+import {
+  frontend,
+  backend,
+  ux,
+  datamanagement,
+  prototyping,
+  javascript,
+  typescript,
+  html,
+  css,
+  agile,
+  bootstrap,
+  framerm,
+  githubi,
+  // gsap,
+  mysql,
+  php,
+  python,
+  reactjs,
+  redux,
+  tailwind,
+  three,
+  nodejs,
+  git,
+  figma,
+  docker,
+  postgresql,
+  rubyrails,
+  graphql,
+  coverhunt,
+  dcc,
+  kelhel,
+  microverse,
+  employee,
+  fayshop,
+  getmat,
+  parallax,
+  porthtml,
+  timepro,
+  datacer,
+  gitcer,
+  jscer,
+  pythoncer,
+} from "../assets";
 const Certificat = ({ obj, pos }) => {
-
   gsap.registerPlugin(ScrollTrigger);
 
   useGSAP(() => {
@@ -58,7 +101,7 @@ const Certificat = ({ obj, pos }) => {
       <div className="relative m-2.5 overflow-hidden text-white rounded-md flex justify-start items-start">
         <img
           className="transition-transform duration-500 rotate-2 transform-gpu m-1 group-hover:scale-40"
-          src={obj.image}
+          src={eval(obj.image)}
           alt={obj.name}
           onClick={() => handleImageClick(obj.link)}
         />
@@ -94,22 +137,25 @@ const Certificat = ({ obj, pos }) => {
 };
 
 const Certifications = () => {
-  const [t,i18n]=useTranslation()
+  const [t, i18n] = useTranslation();
   const dispatch = useDispatch();
   const screensize = useSelector((state) => state.screensize);
+  let certifications = t("lng.Const.certifications", { returnObjects: true });
   const slidesPerVieww = screensize.isMobile ? 1 : 3;
   return (
     <div className="-mt-[4rem] max-sm:-mt-[1rem]">
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText}`}></p>
-        <h2 className={`${styles.sectionHeadTextLight}`}></h2>
+        <p className={`${styles.sectionSubText}`}>{t("lng.Titles.certif1")}</p>
+        <h2 className={`${styles.sectionHeadTextLight}`}>
+          {t("lng.Titles.certif2")}
+        </h2>
       </motion.div>
       <div className="w-full flex">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
           className="mt-4 text-taupe text-[13px] max-w-3xl leading-[30px]"
         >
-         
+          {t("lng.Titles.certif3")}
         </motion.p>
       </div>
       <motion.div
