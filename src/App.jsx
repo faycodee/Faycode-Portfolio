@@ -127,12 +127,12 @@ const App = () => {
     <BrowserRouter>
       <Cursor />
       <div ref={refScrollUp} className="relative z-0 overflow-hidden bg-black">
-        <Navbar /> 
+        <Navbar />
         <div id="p1" className="panel">
           <Hero />
         </div>
 
-       <div
+        <div
           id="p2"
           className="bg-about mt-10 bg-cover bg-center bg-no-repeat h-[100vh] panel"
         >
@@ -158,7 +158,7 @@ const App = () => {
         <div className="panel h-[170vh] backdrop-blur-2xl">
           <Education />
         </div>
-  
+
         <div className="relative z-0 panel h-[100vh] bg-black">
           <div
             className="absolute z-50 overflow-hidden bg-slate-700 rounded-full p-3 right-10 bottom-9 hover:bg-slate-400 "

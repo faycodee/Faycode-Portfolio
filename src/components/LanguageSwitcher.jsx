@@ -54,14 +54,13 @@ const LanguageSwitcher = () => {
       </button>
 
       <div
-        className={`dropdown absolute right-0 mt-2 w-40 bg-white text-black shadow-lg rounded-md overflow-hidden transform transition-all duration-300 ${
+        className={`dropdown absolute right-0 mt-2 w-40 bg-white text-black shadow-lg rounded-md overflow-hidden transform transition-all duration-300 max-md:left-[-40px] ${
           isOpen ? "block opacity-100" : "hidden opacity-0"
         }`}
       >
         {languages.map((language, index) => (
           <button
             key={index}
-            
             onClick={() => changeLanguage(language)}
             className="w-full pl-4 py-2  text-left text-sm hover:bg-gray-200 transition-colors duration-150"
           >
