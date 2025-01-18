@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import "../../src/i18n";
 const Hero = () => {
-  const { t } = useTranslation();
+  const [t, i18n] = useTranslation();
   gsap.registerPlugin(ScrollTrigger);
   // const scrollRef = useRef();
   const [isLoading, setIsLoading] = useState(true);
@@ -153,6 +153,8 @@ const Hero = () => {
       animateLoaderOut();
     }
   }, [getOut]);
+
+
   const cursor = useSelector((state) => state.cursor);
   const dispatch = useDispatch();
   const screensize = useSelector((state) => state.screensize);
