@@ -9,14 +9,14 @@ i18n
   .use(HttpApi)
   .use(initReactI18next)
   .init({
-    // debug: true,
-    // fallbackLng: "en",
-    // detection: {
-    //   cache: ["cookie"],
-    // },
-    // interpolation: {
-    //   escapeValue: false,
-    // },
+    debug: true,
+    fallbackLng: "en",
+    detection: {
+      cache: ["cookie"],
+    },
+    interpolation: {
+      escapeValue: false,
+    },
  
     backend: {
       // Path to translation files in `public/locale`

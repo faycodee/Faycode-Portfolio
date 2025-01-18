@@ -132,7 +132,7 @@ const App = () => {
           <Hero />
         </div>
 
-        <div
+        {/* <div
           id="p2"
           className="bg-about mt-10 bg-cover bg-center bg-no-repeat h-[100vh] panel"
         >
@@ -169,7 +169,7 @@ const App = () => {
             <IoArrowUpOutline />
           </div>
           <Contact />
-        </div>
+        </div> */}
       </div>
     </BrowserRouter>
   );
