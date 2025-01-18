@@ -1,0 +1,205 @@
+{
+  "lng": {
+    "Titles": {
+      "loader1": "SOYEZ",
+      "loader2": "PATIENT",
+      "hi": "Salut, je suis",
+      "about1": "Introduction",
+      "about2": "Aperçu.",
+      "services1": "Introduction",
+      "services2": "Services.",
+      "services3": "Salut, je vais vous aider de la même manière que Spider-Man aide les autres. Soyons créatifs et réalisons quelque chose ensemble !",
+      "services4li1": "Je suis ici pour vous aider à développer votre PORTFOLIO.",
+      "services4li2": "Je vais vous aider à concevoir de manière créative un PORTFOLIO remarquable qui se démarque.",
+      "services4li3": "Je vais vous aider à créer le SITE WEB dont vous avez besoin.",
+      "services4li4": "Je vous aide à donner vie à vos visions, quelles qu'elles soient.",
+      "tech1": "Mes compétences",
+      "tech2": "Technologies.",
+      "project1": "Études de cas.",
+      "project2": "Projets.",
+      "project3": "Ces projets mettent en valeur mon expérience à travers des exemples pratiques, comprenant des descriptions brèves, des liens vers les dépôts et des démos en direct. Ils démontrent ma capacité à relever des défis complexes, à m’adapter à diverses technologies et à gérer efficacement des projets.",
+      "certif1": "Études de cas",
+      "certif2": "Certifications.",
+      "certif3": "Mettant en avant des certifications clés qui valident mon expertise et mon engagement envers le développement professionnel. Chaque certification reflète des compétences acquises et une volonté de rester à jour dans mon domaine.",
+      "edu2": "Éducation.",
+      "edu3/1": "Je suis en dernière année à",
+      "edu3/2": ", le principal institut de formation professionnelle du Maroc, réputé mondialement pour son programme rigoureux et pratique. Ma formation m'a doté d'une expertise technique et de compétences en résolution de problèmes, me préparant à exceller dans l'industrie technologique.",
+      "edu3/3": "Note : Il y a des compétences que j'ai acquises par auto-apprentissage, comme gsap, tailwindcss, etc.",
+      "edu4": "Présent",
+      "edu5": "À ce moment-là, je connaissais seulement un peu de programmation, comme HTML et CSS.",
+      "edu6": "À cette date, j'avais passé un an à étudier et appris beaucoup de choses, notamment : algorithme, PHP, Python, HTML et CSS avancés, Bootstrap, Ajax, MySQL ...",
+      "edu7": "À cette date, quatre mois après le début de ma deuxième année, j'avais appris React, Mongo, Redux, MySQL avancé, approche agile, TailwindCSS, GSAP et Framer Motion.",
+
+      "contact1": "Prenez contact",
+      "contact2": "Contact.",
+      "contact3": "AV ORAN 27 RUE LAGOS ZOHOUR 1 FES MAROC.",
+      "contact5": "Numéro de téléphone :",
+      "contact6": "créé par",
+      "about3": "Bonjour ! Je suis Faycal, développeur web passionné par la résolution de problèmes. Mon parcours a commencé comme un défi amusant. Résoudre des problèmes me donnait l’impression de compléter des puzzles, et plus ils étaient complexes, plus les solutions étaient gratifiantes. Maintenant, j'étudie à l’OFPPT, où j'ai acquis de solides compétences dans la pile MERN (MongoDB, Express, React, Node.js), me permettant de créer des applications web dynamiques et efficaces. J'adore transformer des idées en expériences fonctionnelles et conviviales en ligne !"
+    },
+    "Paragraphs": {
+      "herop": "Ma passion pour le développement web est née de l'excitation de résoudre des problèmes de plus en plus complexes, ce qui me procure une grande satisfaction."
+    },
+
+    "Const": {
+      "navLinks": [
+        { "id": "about", "title": "À propos" },
+        { "id": "projects", "title": "Projets" },
+        { "id": "Education", "title": "Éducation" },
+        { "id": "contact", "title": "Contact" }
+      ],
+      "services": [
+        { "title": "Développeur Front-End", "icon": "frontend" },
+        { "title": "Développeur Back-End", "icon": "backend" },
+        { "title": "Gestion des données", "icon": "datamanagement" }
+      ],
+      "technologies": [
+        { "name": "HTML 5", "icon": "html" },
+        { "name": "CSS 3", "icon": "css" },
+        { "name": "JavaScript", "icon": "javascript" },
+        { "name": "React JS", "icon": "reactjs" },
+        { "name": "Redux Toolkit", "icon": "redux" },
+        { "name": "Tailwind CSS", "icon": "tailwind" },
+        { "name": "Bootstrap", "icon": "bootstrap" },
+        { "name": "PHP", "icon": "php" },
+        { "name": "GSAP", "icon": "gsap" },
+        { "name": "Three Fiber", "icon": "three" },
+        { "name": "My SQL", "icon": "mysql" },
+        { "name": "Agile", "icon": "agile" },
+        { "name": "Python", "icon": "python" },
+        { "name": "Framer", "icon": "framerm" }
+      ],
+      "experiences": [
+        {
+          "title": "Développeur Front-End",
+          "company_name": "Cover Hunt",
+          "icon": "coverhunt",
+          "iconBg": "#333333",
+          "date": "Août 2021 - Fév 2022"
+        },
+        {
+          "title": "Mentor (Bénévole)",
+          "company_name": "Microverse",
+          "icon": "microverse",
+          "iconBg": "#333333",
+          "date": "Mar 2022 - Mai 2022"
+        },
+        {
+          "title": "Ingénieur Logiciel Junior",
+          "company_name": "Kelhel",
+          "icon": "kelhel",
+          "iconBg": "#333333",
+          "date": "Mai 2022 - Oct 2022"
+        },
+        {
+          "title": "Développeur Full Stack",
+          "company_name": "Diversity Cyber Council",
+          "icon": "dcc",
+          "iconBg": "#333333",
+          "date": "Sep 2022 - Présent"
+        }
+      ],
+      "projects": [
+        {
+          "id": "project-1",
+          "name": "TimePro",
+          "vidpro": "",
+          "description": "TimePro résout le problème de l'organisation du temps et des tâches.",
+          "tags": [
+            { "name": "react", "color": "blue-text-gradient" },
+            { "name": "redux", "color": "purple-text-gradient" },
+            { "name": "tailwind", "color": "pink-text-gradient" }
+          ],
+          "image": "timepro",
+          "repo": "https://github.com/faycodee/TimePro-todoList-Redux",
+          "demo": "https://timepro.netlify.app/"
+        },
+        {
+          "id": "project-2",
+          "name": "employee",
+          "vidpro": "",
+          "description": "Dans l'application, Axios est utilisé pour effectuer des requêtes API pour récupérer et manipuler les données des employés.",
+          "tags": [
+            { "name": "react", "color": "blue-text-gradient" },
+            { "name": "axios", "color": "purple-text-gradient" },
+            { "name": "tailwind", "color": "pink-text-gradient" },
+            { "name": "framermotion", "color": "green-text-gradient" }
+          ],
+          "image": "employee",
+          "repo": "https://github.com/faycodee/Employee-crude-api-axios",
+          "demo": "https://employee-sage.vercel.app/"
+        },
+        {
+          "id": "project-3",
+          "name": "fayshop",
+          "vidpro": "",
+          "description": "Il s'agit d'un projet e-commerce de T-shirts construit uniquement en JavaScript pour améliorer mes compétences dans ce langage.",
+          "tags": [{ "name": "javascript", "color": "yellow-text-gradient" }],
+          "image": "fayshop",
+          "repo": "https://github.com/faycodee/Ecommerce-T-shirts-website-Fayshop-JS",
+          "demo": "https://ecommerc-fayshop.netlify.app/"
+        },
+        {
+          "id": "project-4",
+          "name": "Faycss Portfolio",
+          "vidpro": "./porthtml.mp4",
+          "description": "C'est mon premier site créé après avoir appris CSS et HTML.",
+          "tags": [
+            { "name": "html", "color": "pink-text-gradient" },
+            { "name": "css", "color": "pink-text-gradient" }
+          ],
+          "image": "porthtml",
+          "repo": "https://github.com/faycodee/Portfolio-Faycss",
+          "demo": "https://faycodee.github.io/Portfolio-Faycss/"
+        },
+        {
+          "id": "project-6",
+          "name": "GetMat",
+          "vidpro": "",
+          "description": "Une plateforme d'apprentissage en ligne utilisant CRUD en JavaScript.",
+          "tags": [
+            { "name": "html", "color": "pink-text-gradient" },
+            { "name": "css", "color": "pink-text-gradient" }
+          ],
+          "image": "getmat",
+          "repo": "https://github.com/faycodee/CRUD-cssAnimation-slider-getMatierr",
+          "demo": "https://faycodee.github.io/CRUD-cssAnimation-slider-getMatierr/"
+        }
+      ],
+      "certifications": [
+        {
+          "id": 1,
+          "name": "Intro to Data and Data Science",
+          "image": "datacer",
+          "company": "learn.365datascience.com",
+          "disc": "Certifié en Data Science de base : Analyse de données, visualisation et techniques fondamentales.",
+          "link": "https://learn.365datascience.com/c/1f5681348f/"
+        },
+        {
+          "id": 2,
+          "name": "Git et GitHub",
+          "image": "gitcer",
+          "company": "learn.365datascience.com",
+          "disc": "Compétent en Git et GitHub : Contrôle de version et collaboration.",
+          "link": "https://learn.365datascience.com/certificates/CC-848F5C8F60/"
+        },
+        {
+          "id": 3,
+          "name": "Python Essentials",
+          "image": "pythoncer",
+          "company": "credly.com",
+          "disc": "Certifié en Python Essentials : Compétences de base en programmation et résolution de problèmes.",
+          "link": "https://www.credly.com/badges/6438ea77-9d04-4747-8f40-3ff32d9f9b59/linked_in?t=smdukb"
+        },
+        {
+          "id": 4,
+          "name": "Programmation avec JavaScript",
+          "image": "jscer",
+          "company": "coursera.org",
+          "disc": "Compétent en JavaScript : Fondamentaux de la programmation et développement web.",
+          "link": "https://www.coursera.org/account/accomplishments/verify/RPKT4P8MLE8M?utm_source=ln&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course"
+        }
+      ]
+    }
+  }
+}

@@ -17,9 +17,9 @@ i18n
   .init({
     resources,
     fallbackLng: "en",
-    // detection: {
-    //   cache: ["cookie"],
-    // },
+    detection: {
+      cache: ["cookie"],
+    },
     interpolation: {
       escapeValue: false,
     },
