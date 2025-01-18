@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
@@ -60,6 +60,12 @@ import {
   jscer,
   pythoncer,
 } from "../assets";
+const iconMap = {
+  datacer: datacer,
+  gitcer: gitcer,
+  pythoncer: pythoncer,
+  jscer: jscer,
+};
 const Certificat = ({ obj, pos }) => {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -101,7 +107,7 @@ const Certificat = ({ obj, pos }) => {
       <div className="relative m-2.5 overflow-hidden text-white rounded-md flex justify-start items-start">
         <img
           className="transition-transform duration-500 rotate-2 transform-gpu m-1 group-hover:scale-40"
-          src={eval(obj.image)}
+          src={iconMap[obj.image]}
           alt={obj.name}
           onClick={() => handleImageClick(obj.link)}
         />
@@ -140,7 +146,19 @@ const Certifications = () => {
   const [t, i18n] = useTranslation();
   const dispatch = useDispatch();
   const screensize = useSelector((state) => state.screensize);
-  let certifications = t("lng.Const.certifications", { returnObjects: true });
+  let [certifications, setCertifications] = useState([]);
+  useEffect(() => {
+    const fetched = t("lng.Const.certifications", {
+      returnObjects: true,
+    });
+    if (Array.isArray(fetched)) {
+      setCertifications(fetched);
+      console.log(fetched);
+    } else {
+      console.error("Services data missing or invalid:", fetched);
+      setCertifications([]);
+    }
+  }, [i18n.language, t]);
   const slidesPerVieww = screensize.isMobile ? 1 : 3;
   return (
     <div className="-mt-[4rem] max-sm:-mt-[1rem]">
@@ -179,7 +197,7 @@ const Certifications = () => {
         >
           {certifications.map((e, i) => (
             <SwiperSlide key={i}>
-              <Certificat obj={e} pos={i} />
+              <Certificat obj={e} pos={i} key={i} />
             </SwiperSlide>
           ))}
           <div

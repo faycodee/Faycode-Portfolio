@@ -138,7 +138,7 @@ const App = () => {
         >
           <About />
         </div>
-  {/*
+
         <div className="bg-about  bg-black bg-cover bg-center bg-no-repeat panel h-[140vh]">
           <Service />
         </div>
@@ -146,7 +146,7 @@ const App = () => {
         <div className="bg-cover mt-10 bg-center bg-no-repeat panel h-[100vh] bg-black">
           <Tech />
         </div>
-
+  {/*
         <div className="panel h-[100vh] backdrop-blur-lg">
           <Projects />
         </div>
