@@ -50,6 +50,14 @@ import {
   jscer,
   pythoncer,
 } from "../assets";
+const iconMap = {
+  getmat: getmat,
+  porthtml: porthtml,
+  fayshop: fayshop,
+  employee: employee,
+  timepro: timepro,
+};
+
 const ProjectCard = ({
   id,
   name,
@@ -77,7 +85,7 @@ const ProjectCard = ({
       ></div>
 
       <img
-        src={eval(image)}
+        src={iconMap[image]}
         alt={name}
         className={`absolute w-full h-full object-cover rounded-[24px] ${
           active === id ? "" : "filter grayscale "
@@ -199,7 +207,7 @@ const Projects = () => {
         <div className="mt-[60px] flex lg:flex-row flex-col min-h-[70vh] gap-5">
           {projects.map((project, index) => (
             <ProjectCard
-              key={project.id}
+              key={index}
               index={index}
               {...project}
               active={active}
