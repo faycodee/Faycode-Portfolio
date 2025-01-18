@@ -62,7 +62,7 @@ const LanguageSwitcher = () => {
           <button
             key={index}
             onClick={() => changeLanguage(language)}
-            className="w-full text-left text-sm hover:bg-gray-200 transition-colors duration-150"
+            className="w-full pl-4 py-2  text-left text-sm hover:bg-gray-200 transition-colors duration-150"
           >
             {language}
           </button>
