@@ -146,19 +146,10 @@ const Certifications = () => {
   const [t, i18n] = useTranslation();
   const dispatch = useDispatch();
   const screensize = useSelector((state) => state.screensize);
-  let [certifications, setCertifications] = useState([]);
-  useEffect(() => {
-    const fetched = t("lng.Const.certifications", {
-      returnObjects: true,
-    });
-    if (Array.isArray(fetched)) {
-      setCertifications(fetched);
-      console.log(fetched);
-    } else {
-      console.error("Services data missing or invalid:", fetched);
-      setCertifications([]);
-    }
-  }, [i18n.language, t]);
+  let certifications = t("lng.Const.certifications", {
+    returnObjects: true,
+  });
+
   const slidesPerVieww = screensize.isMobile ? 1 : 3;
   return (
     <div className="-mt-[4rem] max-sm:-mt-[1rem]">

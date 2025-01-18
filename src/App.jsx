@@ -150,7 +150,7 @@ const App = () => {
         <div className="panel h-[100vh] backdrop-blur-lg">
           <Projects />
         </div>
-  {/*
+
         <div className="panel h-[100vh] bg-black">
           <Certifications />
         </div>
@@ -158,7 +158,7 @@ const App = () => {
         <div className="panel h-[170vh] backdrop-blur-2xl">
           <Education />
         </div>
-
+  
         <div className="relative z-0 panel h-[100vh] bg-black">
           <div
             className="absolute z-50 overflow-hidden bg-slate-700 rounded-full p-3 right-10 bottom-9 hover:bg-slate-400 "
@@ -169,7 +169,7 @@ const App = () => {
             <IoArrowUpOutline />
           </div>
           <Contact />
-        </div> */}
+        </div>
       </div>
     </BrowserRouter>
   );
