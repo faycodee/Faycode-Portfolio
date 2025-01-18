@@ -7,7 +7,7 @@ import { SectionWrapper } from "../hoc";
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import Model from "../../public/Spider";
+import Model from "../../public/Spider"; // Ensure this is a valid React component or a properly exported model
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { MotionPathPlugin, ScrollTrigger } from "gsap/all";
@@ -15,13 +15,20 @@ import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { frontend, backend, datamanagement } from "../assets";
 
+// Create a mapping of icons to their respective imports
+const iconMap = {
+  frontend: frontend,
+  backend: backend,
+  datamanagement: datamanagement,
+};
+
 const ServiceCard = ({ index, title, icon }) => {
   return (
     <motion.div
       variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
       className="xs:w-[200px] mb-[50px] h-[100px] w-full card-gradient 
        rounded-[20px] shadow-card my-[70px]
-       max-sm:h-[30px] max-sm:w-[70px] "
+       max-sm:h-[30px] max-sm:w-[70px]"
     >
       <div
         options={{
@@ -29,16 +36,16 @@ const ServiceCard = ({ index, title, icon }) => {
           scale: 1,
           speed: 450,
         }}
-        className="bg-jetLight rounded-[20px]  px-12 min-h-[200px] 
+        className="bg-jetLight rounded-[20px] px-12 min-h-[200px] 
         flex justify-evenly items-center flex-col
-         max-sm:h-[40px] max-sm:px-0  "
+         max-sm:h-[40px] max-sm:px-0"
       >
         <img
-          src={eval(icon)}
+          src={iconMap[icon]} // Use the iconMap to safely get the icon
           alt={title}
-          className="w-10 h-10 object-contain "
+          className="w-10 h-10 object-contain"
         />
-        <h3 className="text-taupe text-[15px] max-sm:text-[10px]  font-bold text-center">
+        <h3 className="text-taupe text-[15px] max-sm:text-[10px] font-bold text-center">
           {title}
         </h3>
       </div>
@@ -49,10 +56,9 @@ const ServiceCard = ({ index, title, icon }) => {
 const About = () => {
   const [t, i18n] = useTranslation();
   let services = t("lng.Const.services", { returnObjects: true });
-
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(MotionPathPlugin);
-
+  
   useGSAP(() => {
     gsap.fromTo(
       "#paper",
@@ -73,7 +79,6 @@ const About = () => {
           start: "top 80%",
           end: "bottom 30%",
           scrub: 4,
-
           toggleActions: "restart pause reverse pause",
         },
         rotation: "150deg",
@@ -82,6 +87,7 @@ const About = () => {
       }
     );
   }, []);
+
   return (
     <div>
       <div></div>
@@ -94,7 +100,7 @@ const About = () => {
             <img
               src="./paper.png"
               id="paper"
-              className="w-[50px] translate-y-60 max-sm:hidden "
+              className="w-[50px] translate-y-60 max-sm:hidden"
             />
             {t("lng.Titles.about1")}{" "}
           </p>
@@ -102,12 +108,11 @@ const About = () => {
             {t("lng.Titles.about2")}{" "}
           </h2>
         </motion.div>
-
         <motion.p
           id="pAbout"
           variants={fadeIn("", "", 0.1, 1)}
-          className=" text-taupe text-[13px] max-w-3xl leading-[30px] 
-          max-sm:leading-[20px]  max-sm:mt-[10px]  "
+          className="text-taupe text-[13px] max-w-3xl leading-[30px] 
+          max-sm:leading-[20px] max-sm:mt-[10px]"
         >
           {t("lng.Titles.about3")}{" "}
         </motion.p>
