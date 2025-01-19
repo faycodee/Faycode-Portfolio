@@ -19,7 +19,7 @@ const styles = {
 
   heroHeadText:
     "font-black text-eerieBlack lg:text-[30px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[90px] mt-2",
-  heroSubText: "font-medium lg:text-[14px] ",
+  heroSubText: "font-medium lg:text-[14px] max-md:text-[12px] ",
 
   sectionHeadText:
     "text-eerieBlack font-black md:text-[60px] sm:text-[48px] xs:text-[40px] text-[30px] font-poppins",

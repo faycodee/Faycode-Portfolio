@@ -154,7 +154,6 @@ const Hero = () => {
     }
   }, [getOut]);
 
-
   const cursor = useSelector((state) => state.cursor);
   const dispatch = useDispatch();
   const screensize = useSelector((state) => state.screensize);
@@ -223,15 +222,18 @@ const Hero = () => {
         >
           <div className="para ">
             <h1
-              className={`${styles.heroHeadText} text-eerieBlack  font-poppins uppercase max-sm:text-[65px] max-sm:mt-[50px]`}
+              className={`${styles.heroHeadText} text-eerieBlack  font-poppins 
+                uppercase max-sm:text-[30px] max-md:mt-[30px] max-md:w-[80vw] max-md:ml-1`}
             >
               {t("lng.Titles.hi")}
               <br />
               <span
                 className="text-battleGray sm:text-[103px] 
                 mt-5 
-                max-sm:text-[80px]   
-                text-[50px] font-mova
+                max-md:text-[70px]
+                max-md:ml-1
+                max-md:w-[80vw]
+                text-[50px] font-mova 
                 font-extrabold uppercase "
               >
                 Faycode
@@ -240,7 +242,7 @@ const Hero = () => {
             {/* <p
               className={` mt-2 text-white w-[500px]   max-sm:w-[80vw] font-mono text-[1px]  max-sm:text-[13px] max-sm:mt-[120px]`}
             > */}
-            <p className={`para ${styles.heroSubText}`}>
+            <p className={`para ${styles.heroSubText} max-md:mt-8`}>
               {t("lng.Paragraphs.herop")}
               {/* <br className="sm:block hidden " /> */}.
             </p>
@@ -262,7 +264,9 @@ const Hero = () => {
               id="btn"
               className="w-[35px] h-[64px] rounded-3xl border-4 
             border-frenc flex
-            justify-center items-start p-2"
+            justify-center items-start p-2
+              max-md:mb-10
+            "
             >
               <motion.div
                 animate={{
