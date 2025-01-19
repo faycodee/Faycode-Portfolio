@@ -243,7 +243,7 @@ const Hero = () => {
             {/* <p
               className={` mt-2 text-white w-[500px]   max-sm:w-[80vw] font-mono text-[1px]  max-sm:text-[13px] max-sm:mt-[120px]`}
             > */}
-            <p className={`para ${styles.heroSubText} max-md:mt-8`}>
+            <p className={`para ${styles.heroSubText} max-md:mt-8 max-md:w-[80vw]`}>
               {t("lng.Paragraphs.herop")}
               {/* <br className="sm:block hidden " /> */}.
             </p>
