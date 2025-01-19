@@ -150,12 +150,14 @@ body {
     158deg,
     rgba(153, 153, 161, 1) 25%,
     rgba(153, 153, 161, 1) 100%
+  
   );
 }
 
 /* canvas- styles */
 .canvas-loader {
   font-size: 10px;
+  /* color: ; */
   width: 1em;
   height: 1em;
   border-radius: 50%;

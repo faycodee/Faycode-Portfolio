@@ -97,7 +97,10 @@ const Certificat = ({ obj, pos }) => {
       key={pos}
       className=" card-shadow cursor-grab group relative flex flex-col 
       my-6 ml-5 bg-jet shadow-sm scah rounded-lg w-96 hover:shadow-lg
-       transition-shadow duration-300 min-h-[300px] max-h-[330px]"
+       transition-shadow duration-300 min-h-[300px] max-h-[330px] 
+       max-md:w-[240px] 
+   
+       "
     >
       <img
         src="./pin.png"
@@ -176,7 +179,7 @@ const Certifications = () => {
       >
         <Swiper
           id="swiperr"
-          className="w-full   h-[510px] "
+          className="w-full  h-[510px] max-md:h-[410px]  "
           effect={"coverflow"}
           grabCursor={true}
           centeredSlides={true}
@@ -193,7 +196,17 @@ const Certifications = () => {
           ))}
           <div
             className="swiper-pagination"
-            style={{ position: "absolute", bottom: "-8" }}
+             style={
+              screensize.isMobile
+                ? {
+                    position: "absolute",
+                    left: "35%",
+                    top: "1",
+                    backgroundColor: "rgba(255, 255, 255, 0.542)",
+                    width: "100px",
+                  }
+                : { position: "absolute", bottom: "-8" }
+            }
           ></div>
         </Swiper>
       </motion.div>

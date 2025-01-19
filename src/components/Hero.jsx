@@ -180,7 +180,7 @@ const Hero = () => {
       (
       <section
         style={{ overflow: "hidden" }}
-        className="relative flex sm:flex-row flex-col w-full h-screen mx-auto 
+        className="relative flex sm:flex-row flex-col w-full h-screen max-md:h-[100vh] mx-auto 
         overflow-x-hidden"
       >
         {!screensize.isMobile && (

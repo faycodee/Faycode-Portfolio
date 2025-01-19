@@ -24,6 +24,7 @@ import { useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 const App = () => {
+  const screensize = useSelector((state) => state.screensize);
   // const dispatch = useDispatch();
   // const screensize = useSelector((state) => state.screensize);
   useEffect(() => {
@@ -45,7 +46,7 @@ const App = () => {
   gsap.registerPlugin(ScrollTrigger);
   const cursorr = useSelector((state) => state.cursor);
 
-  useGSAP(() => {
+  !screensize.isMobile && (useGSAP(() => {
     // Cursor animation
     gsap.fromTo(
       ".cursor-outline",
@@ -117,7 +118,7 @@ const App = () => {
         },
       });
     });
-  }, []);
+  }, []))
   const refScrollUp = useRef();
   const handleScrollUp = () => {
     refScrollUp.current.scrollIntoView({ behavior: "smooth" });
@@ -139,7 +140,7 @@ const App = () => {
           <About />
         </div>
 
-        <div className="bg-about  bg-black bg-cover bg-center bg-no-repeat panel h-[140vh]">
+        <div className="bg-about  bg-black bg-cover bg-center bg-no-repeat panel h-[140vh] max-md:h-[100vh]">
           <Service />
         </div>
 

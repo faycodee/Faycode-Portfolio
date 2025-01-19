@@ -202,9 +202,9 @@ const Projects = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        className={`${styles.innerWidth} mx-auto flex flex-col`}
+        className={`${styles.innerWidth} mx-auto flex max-md:mb-[500px] flex-col`}
       >
-        <div className="mt-[60px] flex lg:flex-row flex-col min-h-[70vh] gap-5">
+        <div className="mt-[60px] flex lg:flex-row flex-col min-h-[70vh] gap-5  ">
           {projects.map((project, index) => (
             <ProjectCard
               key={index}
@@ -215,7 +215,9 @@ const Projects = () => {
             />
           ))}
         </div>
+  
       </motion.div>
+
     </div>
   );
 };
