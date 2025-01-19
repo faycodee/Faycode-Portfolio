@@ -16,7 +16,8 @@ const ServiceCard = ({ index, title, icon }) => {
   return (
     <motion.div
       variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
-      className="xs:w-[200px] mb-[50px] h-[100px] w-full card-gradient rounded-[20px] shadow-card my-[70px] max-sm:h-[30px] max-sm:w-[70px]"
+      className="xs:w-[200px] mb-[50px] h-[100px] w-full card-gradient rounded-[20px]
+       shadow-card my-[70px] max-md:h-[30px]  max-md:mt-[100px] max-md:mx-[10px]  max-md:w-[25%] "
     >
       <div className="bg-jetLight rounded-[20px] px-12 min-h-[200px] flex justify-evenly items-center flex-col max-sm:h-[40px] max-sm:px-0">
         <img
@@ -24,7 +25,7 @@ const ServiceCard = ({ index, title, icon }) => {
           alt={title}
           className="w-10 h-10 object-contain"
         />
-        <h3 className="text-taupe text-[15px] max-sm:text-[10px] font-bold text-center">
+        <h3 className="text-taupe text-[15px] max-sm:w-[70%] max-sm:text-[10px] font-bold text-center">
           {title}
         </h3>
       </div>
@@ -59,7 +60,16 @@ const About = () => {
         <motion.p className="text-taupe text-[13px] max-w-3xl leading-[30px] max-sm:leading-[20px] max-sm:mt-[10px]">
           {t("lng.Titles.about3")}
         </motion.p>
-        <div className="mt-10 flex flex-wrap gap-10 ">
+        <div
+          className="mt-10 flex flex-wrap gap-10 
+        max-md:w-[100vw]
+        max-md:gap-0 
+        max-md:flex-row
+
+        
+        
+        "
+        >
           {services.map((service, index) => (
             <ServiceCard key={index} index={index} {...service} />
           ))}
