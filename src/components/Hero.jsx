@@ -168,8 +168,9 @@ const Hero = () => {
             </h1>
             <img id="loader" src="./loader.gif" alt="" srcset="" />
             <h3
-              style={{ position: "absolute", top: "70vh" }}
-              className="text-white z-20 font-mova   right-10 text-[130px] loaderText max-lg:text-[80px]"
+              style={{ position: "absolute" }}
+              className="text-white z-20 font-mova top-[70vh]  right-10 text-[130px] 
+              loaderText max-lg:text-[80px] max-md:text-[67px]   max-md:top-[76vh]   "
             >
               {t("lng.Titles.loader2")}{" "}
             </h3>
@@ -266,6 +267,9 @@ const Hero = () => {
             border-frenc flex
             justify-center items-start p-2
               max-md:mb-10
+              max-md:border-2
+              max-md:h-12
+              max-md:w-6
             "
             >
               <motion.div
@@ -277,7 +281,7 @@ const Hero = () => {
                   repeat: Infinity,
                   repeatType: "loop",
                 }}
-                className="w-3 h-3 rounded-full bg-taupe mb-1"
+                className="w-3 h-3  max-md:h-2 max-md:w-2 rounded-full bg-taupe mb-1"
               />
             </div>
           </a>
