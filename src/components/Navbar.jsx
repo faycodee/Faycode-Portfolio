@@ -67,7 +67,7 @@ const Navbar = () => {
       id="nav"
       style={{ backdropFilter: "blur(8px)" }}
       className={`${styles.paddingX} w-full flex items-center justify-center  py-2 h-[50px]
-        fixed top-0 z-20 bg-transparent sm:opacity-[0.97] backNav max-md:bg-eerieBlack rounded-2xl`}
+        fixed top-0 z-20 bg-transparent sm:opacity-[0.97] backNav max-md:bg-eerieBlack rounded-3xl mt-4`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto my-[50px]">
         <Link
