@@ -15,16 +15,26 @@ import { useTranslation } from "react-i18next";
 
 const Services = () => {
   const [t, i18n] = useTranslation();
+  const screensize = useSelector((state) => state.screensize);
   gsap.registerPlugin(ScrollTrigger);
   useGSAP(() => {
-    gsap.from("#canvas", {
-      opacity: 0,
-      ease: "expo",
-      duration: 9,
-      scrollTrigger: {
-        trigger: "#canvas",
-      },
-    });
+    !screensize.isMobile
+      ? gsap.from("#canvas", {
+          opacity: 0,
+          ease: "expo",
+          duration: 9,
+          scrollTrigger: {
+            trigger: "#canvas",
+          },
+        })
+      : gsap.from("#canvas", {
+          opacity: 0,
+          ease: "expo",
+          duration: 3,
+          scrollTrigger: {
+            trigger: "#canvas",
+          },
+        });
     window.addEventListener("mousemove", (e) => {
       const posX = e.clientX;
       const posY = e.clientY;
@@ -68,7 +78,7 @@ const Services = () => {
     });
   }, []);
   const dispatch = useDispatch();
-  const screensize = useSelector((state) => state.screensize);
+
   return (
     <div>
       <div
