@@ -70,22 +70,23 @@ const Certificat = ({ obj, pos }) => {
   gsap.registerPlugin(ScrollTrigger);
 
   useGSAP(() => {
-    gsap.fromTo(
-      "#swiperr",
-      { opacity: 0 },
-      {
-        opacity: 1,
-        scrollTrigger: {
-          trigger: "#swiperr",
-          start: "top 500px",
-          end: " center +500px",
-          scrub: 4.2,
-          markers: 1,
-          // toggleActions: "restart pause reverse pause",
-        },
-        duration: 8, // Added duration for clarity
-      }
-    );
+    !screensize.isMobile &&
+      gsap.fromTo(
+        "#swiperr",
+        { opacity: 0 },
+        {
+          opacity: 1,
+          scrollTrigger: {
+            trigger: "#swiperr",
+            start: "top 500px",
+            end: " center +500px",
+            scrub: 4.2,
+            // markers: 1,
+            // toggleActions: "restart pause reverse pause",
+          },
+          duration: 8, // Added duration for clarity
+        }
+      );
   }, []);
 
   const handleImageClick = (link) => {
@@ -148,6 +149,7 @@ const Certificat = ({ obj, pos }) => {
 const Certifications = () => {
   const [t, i18n] = useTranslation();
   const dispatch = useDispatch();
+
   const screensize = useSelector((state) => state.screensize);
   let certifications = t("lng.Const.certifications", {
     returnObjects: true,
@@ -196,7 +198,7 @@ const Certifications = () => {
           ))}
           <div
             className="swiper-pagination"
-             style={
+            style={
               screensize.isMobile
                 ? {
                     position: "absolute",
