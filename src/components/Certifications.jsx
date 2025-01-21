@@ -77,10 +77,10 @@ const Certificat = ({ obj, pos }) => {
         opacity: 1,
         scrollTrigger: {
           trigger: "#swiperr",
-          start: "top 80%",
-          end: "center 15%",
+          start: "top 500px",
+          end: " center +500px",
           scrub: 4.2,
-          // markers: 1,
+          markers: 1,
           // toggleActions: "restart pause reverse pause",
         },
         duration: 8, // Added duration for clarity
