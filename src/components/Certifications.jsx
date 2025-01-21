@@ -66,44 +66,25 @@ const iconMap = {
   pythoncer: pythoncer,
   jscer: jscer,
 };
-
 const Certificat = ({ obj, pos }) => {
   gsap.registerPlugin(ScrollTrigger);
-  const screensize = useSelector((state) => state.screensize);
+
   useGSAP(() => {
-gsap.fromTo(
+    gsap.fromTo(
       "#swiperr",
       { opacity: 0 },
-      screensize.isMobile ? (
-        {
-          opacity: 1,
-          scrollTrigger: {
-            trigger: "#swiperr",
-            start: "top 90%",
-          
-            end: "center 50%",
-            scrub: 4.2,
-            // markers: 1,
-            // toggleActions: "restart pause reverse pause",
-          },
-          duration: 8, // Added duration for clarity
-        }
-      ):(
-        {
-          opacity: 1,
-          scrollTrigger: {
-            trigger: "#swiperr",
-          
-            start: "top 80%",
-            end: "center 15%",
-            scrub: 4.2,
-            // markers: 1,
-            // toggleActions: "restart pause reverse pause",
-          },
-          duration: 8, // Added duration for clarity
-        }
-      ) 
-    
+      {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: "#swiperr",
+          start: "top 80%",
+          end: "center 15%",
+          scrub: 4.2,
+          // markers: 1,
+          // toggleActions: "restart pause reverse pause",
+        },
+        duration: 8, // Added duration for clarity
+      }
     );
   }, []);
 
@@ -215,7 +196,7 @@ const Certifications = () => {
           ))}
           <div
             className="swiper-pagination"
-            style={
+             style={
               screensize.isMobile
                 ? {
                     position: "absolute",
