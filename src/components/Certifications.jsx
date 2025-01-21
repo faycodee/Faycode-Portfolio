@@ -69,6 +69,7 @@ const iconMap = {
 const Certificat = ({ obj, pos }) => {
   gsap.registerPlugin(ScrollTrigger);
 
+  const screensize = useSelector((state) => state.screensize);
   !screensize.isMobile &&
     useGSAP(() => {
       gsap.fromTo(
