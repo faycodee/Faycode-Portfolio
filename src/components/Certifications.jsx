@@ -69,8 +69,8 @@ const iconMap = {
 const Certificat = ({ obj, pos }) => {
   gsap.registerPlugin(ScrollTrigger);
 
-  useGSAP(() => {
-    !screensize.isMobile &&
+  !screensize.isMobile &&
+    useGSAP(() => {
       gsap.fromTo(
         "#swiperr",
         { opacity: 0 },
@@ -87,7 +87,7 @@ const Certificat = ({ obj, pos }) => {
           duration: 8, // Added duration for clarity
         }
       );
-  }, []);
+    }, []);
 
   const handleImageClick = (link) => {
     window.open(link, "_blank");
