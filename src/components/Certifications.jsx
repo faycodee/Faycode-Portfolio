@@ -89,21 +89,7 @@ const Certificat = ({ obj, pos }) => {
           }
         );
       }, [])
-    : useGSAP(() => {
-        gsap.fromTo(
-          "#swiperr",
-          { opacity: 0 },
-          {
-            opacity: 1,
-            scrollTrigger: {
-              trigger: "#swiperr",
-              // markers: 1,
-              // toggleActions: "restart pause reverse pause",
-            },
-            duration: 8, // Added duration for clarity
-          }
-        );
-      }, []);
+    :"" 
 
   const handleImageClick = (link) => {
     window.open(link, "_blank");

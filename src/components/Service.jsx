@@ -17,66 +17,59 @@ const Services = () => {
   const [t, i18n] = useTranslation();
   const screensize = useSelector((state) => state.screensize);
   gsap.registerPlugin(ScrollTrigger);
-  useGSAP(() => {
-    !screensize.isMobile
-      ? gsap.from("#canvas", {
-          opacity: 0,
-          ease: "expo",
-          duration: 9,
-          scrollTrigger: {
-            trigger: "#canvas",
-          },
-        })
-      : gsap.from("#canvas", {
-          opacity: 0,
-          ease: "expo",
-          duration: 3,
-          scrollTrigger: {
-            trigger: "#canvas",
-          },
-        });
-    window.addEventListener("mousemove", (e) => {
-      const posX = e.clientX;
-      const posY = e.clientY;
-      // alert(posX)
-      // cursorDot.current.style.left = `${posX}px`;
-      // cursorDot.current.style.top = `${posY}px`;
-      posX > 0 && posX < 600
-        ? (gsap.to("#para1", {
-            opacity: 0.5,
-            duration: 9,
-          }),
-          gsap.to("#para2", {
-            opacity: 1,
-            duration: 7,
-          }))
-        : (gsap.to("#para1", {
-            opacity: 0,
-            duration: 3,
-          }),
-          gsap.to("#para2", {
-            opacity: 0,
-            duration: 2,
-          }));
-      posX > 700 && posX < 1100
-        ? (gsap.to("#para3", {
-            opacity: 1,
-            duration: 7,
-          }),
-          gsap.to("#para4", {
-            opacity: 0.5,
-            duration: 9,
-          }))
-        : (gsap.to("#para3", {
-            opacity: 0,
-            duration: 3,
-          }),
-          gsap.to("#para4", {
-            opacity: 0,
-            duration: 2,
-          }));
-    });
-  }, []);
+  !screensize.isMobile &&
+    useGSAP(() => {
+      gsap.from("#canvas", {
+        opacity: 0,
+        ease: "expo",
+        duration: 9,
+        scrollTrigger: {
+          trigger: "#canvas",
+        },
+      });
+
+      window.addEventListener("mousemove", (e) => {
+        const posX = e.clientX;
+        const posY = e.clientY;
+        // alert(posX)
+        // cursorDot.current.style.left = `${posX}px`;
+        // cursorDot.current.style.top = `${posY}px`;
+        posX > 0 && posX < 600
+          ? (gsap.to("#para1", {
+              opacity: 0.5,
+              duration: 9,
+            }),
+            gsap.to("#para2", {
+              opacity: 1,
+              duration: 7,
+            }))
+          : (gsap.to("#para1", {
+              opacity: 0,
+              duration: 3,
+            }),
+            gsap.to("#para2", {
+              opacity: 0,
+              duration: 2,
+            }));
+        posX > 700 && posX < 1100
+          ? (gsap.to("#para3", {
+              opacity: 1,
+              duration: 7,
+            }),
+            gsap.to("#para4", {
+              opacity: 0.5,
+              duration: 9,
+            }))
+          : (gsap.to("#para3", {
+              opacity: 0,
+              duration: 3,
+            }),
+            gsap.to("#para4", {
+              opacity: 0,
+              duration: 2,
+            }));
+      });
+    }, []);
   const dispatch = useDispatch();
 
   return (
