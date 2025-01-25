@@ -52,9 +52,11 @@ import {
   pythoncer,
 } from "../assets";
 const Education = () => {
+  const screensize = useSelector((state) => state.screensize);
+
   const [tooltip, setTooltip] = useState("");
   const [t, i18n] = useTranslation();
-  useEffect(() => {
+  !screensize.isMobile && useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.set("#curve", {
       strokeDasharray: 1000,
@@ -132,7 +134,6 @@ const Education = () => {
         setTooltip("");
     }
   };
-  const screensize = useSelector((state) => state.screensize);
   return (
     <div className="-mt-[4rem] overflow-hidden max-sm:-mt-[1rem]">
       <motion.div variants={textVariant()}>
