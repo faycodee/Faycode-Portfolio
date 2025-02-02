@@ -132,7 +132,6 @@ const Education = () => {
         setTooltip(t("lng.Titles.edu7"));
         break;
       default:
-        
         setTooltip("");
     }
   };

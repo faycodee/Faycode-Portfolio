@@ -46,79 +46,80 @@ const App = () => {
   gsap.registerPlugin(ScrollTrigger);
   const cursorr = useSelector((state) => state.cursor);
 
-  !screensize.isMobile && (useGSAP(() => {
-    // Cursor animation
-    gsap.fromTo(
-      ".cursor-outline",
-      { rotate: `${cursorr.rotate}` },
-      {
-        rotate: `-${cursorr.rotate}deg`,
-        repeat: -1,
-        yoyo: 1,
-        duration: 10,
-      }
-    );
-    // Panel animations with different directions
-    gsap.utils.toArray(".panel").forEach((panel, i) => {
-      // Initial states based on index
-      const initialStates = [
-        { x: 0, y: 0 }, // Hero - no initial offset
-        { x: 0, y: 0 }, // About - from right
-        { x: "-100%", y: 0 }, // Service - from left
-        { x: "100%", y: 0 }, // Tech - from bottom
-        { x: 0, y: 0 }, // Service - from left
-        { x: "100%", y: 0 }, // Tech - from bottom
-        { x: 0, y: 0 }, // Service - from left
-        { x: 0, y: 0 }, // Tech - from bottom
-        // { x: 0, y: "-100%" }, // Projects - from top
-        // { x: "100%", y: 0 }, // Certifications - from right
-        // { x: "-100%", y: 0 }, // Education - from left
-        // { x: 0, y: "100%" }, // Contact - from bottom
-      ];
+  !screensize.isMobile &&
+    useGSAP(() => {
+      // Cursor animation
+      gsap.fromTo(
+        ".cursor-outline",
+        { rotate: `${cursorr.rotate}` },
+        {
+          rotate: `-${cursorr.rotate}deg`,
+          repeat: -1,
+          yoyo: 1,
+          duration: 10,
+        }
+      );
+      // Panel animations with different directions
+      gsap.utils.toArray(".panel").forEach((panel, i) => {
+        // Initial states based on index
+        const initialStates = [
+          { x: 0, y: 0 }, // Hero - no initial offset
+          { x: 0, y: 0 }, // About - from right
+          { x: "-100%", y: 0 }, // Service - from left
+          { x: "100%", y: 0 }, // Tech - from bottom
+          { x: 0, y: 0 }, // Service - from left
+          { x: "100%", y: 0 }, // Tech - from bottom
+          { x: 0, y: 0 }, // Service - from left
+          { x: 0, y: 0 }, // Tech - from bottom
+          // { x: 0, y: "-100%" }, // Projects - from top
+          // { x: "100%", y: 0 }, // Certifications - from right
+          // { x: "-100%", y: 0 }, // Education - from left
+          // { x: 0, y: "100%" }, // Contact - from bottom
+        ];
 
-      // Set initial position
-      gsap.set(panel, initialStates[i]);
+        // Set initial position
+        gsap.set(panel, initialStates[i]);
 
-      // Create scroll trigger for each panel
-      ScrollTrigger.create({
-        trigger: panel,
-        start: "top top",
-        end: "bottom top",
-        pin: true,
-        pinSpacing: false,
-        onEnter: () => {
-          gsap.to(panel, {
-            x: 0,
-            y: 0,
-            duration: 1.2,
-            ease: "power2.out",
-          });
-        },
-        onLeaveBack: () => {
-          gsap.to(panel, {
-            ...initialStates[i],
-            duration: 1.2,
-            ease: "power2.in",
-          });
-        },
-        onEnterBack: () => {
-          gsap.to(panel, {
-            x: 0,
-            y: 0,
-            duration: 1.2,
-            ease: "power2.out",
-          });
-        },
-        onLeave: () => {
-          gsap.to(panel, {
-            ...initialStates[i],
-            duration: 1.2,
-            ease: "power2.in",
-          });
-        },
+        // Create scroll trigger for each panel
+        ScrollTrigger.create({
+          trigger: panel,
+          start: "top top",
+          end: "bottom top",
+          pin: true,
+          pinSpacing: false,
+          onEnter: () => {
+            gsap.to(panel, {
+              x: 0,
+              y: 0,
+              duration: 1.2,
+              ease: "power2.out",
+            });
+          },
+          onLeaveBack: () => {
+            gsap.to(panel, {
+              ...initialStates[i],
+              duration: 1.2,
+              ease: "power2.in",
+            });
+          },
+          onEnterBack: () => {
+            gsap.to(panel, {
+              x: 0,
+              y: 0,
+              duration: 1.2,
+              ease: "power2.out",
+            });
+          },
+          onLeave: () => {
+            gsap.to(panel, {
+              ...initialStates[i],
+              duration: 1.2,
+              ease: "power2.in",
+            });
+          },
+        });
       });
-    });
-  }, []))
+    }, []);
   const refScrollUp = useRef();
   const handleScrollUp = () => {
     refScrollUp.current.scrollIntoView({ behavior: "smooth" });
@@ -127,6 +128,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Cursor />
+
       <div ref={refScrollUp} className="relative z-0 overflow-hidden bg-black">
         <Navbar />
         <div id="p1" className="panel">
@@ -175,5 +177,12 @@ const App = () => {
     </BrowserRouter>
   );
 };
+function SchnellContact() {
+  return (
+    <>
+      <div className="bg-white  h-4  w-2  absolute  t-[70%]">X</div>
+    </>
+  );
+}
 
 export default App;
