@@ -22,6 +22,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import SchnellContact from "./components/SchnellContact";
 
 const App = () => {
   const screensize = useSelector((state) => state.screensize);
@@ -42,10 +43,8 @@ const App = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
   gsap.registerPlugin(ScrollTrigger);
   const cursorr = useSelector((state) => state.cursor);
-
   !screensize.isMobile &&
     useGSAP(() => {
       // Cursor animation
@@ -130,6 +129,7 @@ const App = () => {
       <Cursor />
 
       <div ref={refScrollUp} className="relative z-0 overflow-hidden bg-black">
+        <SchnellContact />
         <Navbar />
         <div id="p1" className="panel">
           <Hero />
@@ -177,12 +177,6 @@ const App = () => {
     </BrowserRouter>
   );
 };
-function SchnellContact() {
-  return (
-    <>
-      <div className="bg-white  h-4  w-2  absolute  t-[70%]">X</div>
-    </>
-  );
-}
+
 
 export default App;
