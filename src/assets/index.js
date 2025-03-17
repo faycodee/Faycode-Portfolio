@@ -38,6 +38,8 @@ import framerm from "./tech/framerm.png";
 import githubi from "./tech/github.png";
 import gsap from "./tech/GSAP0.png";
 import mysql from "./tech/mysql.png";
+import laravel from "./tech/laravel.png";
+import mongodb from "./tech/mongodb.png";
 import php from "./tech/php.png";
 import python from "./tech/python.png";
 import three from "./tech/three.png";
@@ -88,6 +90,8 @@ export {
   php,
   python,
   three,
+  laravel,
+  mongodb,
   docker,
   figma,
   git,

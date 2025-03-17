@@ -19,6 +19,8 @@ import {
   reactjs,
   redux,
   tailwind,
+  laravel,
+  mongodb,
   three,
   nodejs,
   git,
@@ -121,8 +123,8 @@ const technologies = [
     icon: gsap,
   },
   {
-    name: "Three Fiber",
-    icon: three,
+    name: "Mongo Db",
+    icon: mongodb,
   },
   {
     name: "My SQL",
@@ -139,8 +141,8 @@ const technologies = [
     icon: python,
   },
   {
-    name: "Framer",
-    icon: framerm,
+    name: "Laravel",
+    icon: laravel,
   },
   // {
   //   name: 'TypeScript',
