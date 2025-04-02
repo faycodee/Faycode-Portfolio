@@ -288,10 +288,10 @@ const projects = [
   // },
   {
     id: "project-4",
-    name: "Faycss Portfolio",
+    name: "Reservation Management Platform",
     vidpro: "./porthtml.mp4",
     description:
-      "This is MY first site I created after learning CSS and HTML .",
+      "A web application for managing reservations and users in a shared workspace. It features secure authentication, role-based access, interactive dashboards, and a seamless booking system.",
     tags: [
       {
         name: "html",
@@ -303,8 +303,8 @@ const projects = [
       },
     ],
     image: porthtml,
-    repo: "https://github.com/faycodee/Portfolio-Faycss",
-    demo: "https://faycodee.github.io/Portfolio-Faycss/",
+    repo: "https://github.com/faycodee/",
+    demo: "https://restaurantloungelebureau.vercel.app/",
   },
   {
     id: "project-6",
@@ -326,6 +326,7 @@ const projects = [
     demo: "https://faycodee.github.io/CRUD-cssAnimation-slider-getMatierr/",
   },
 ];
+
 const certifications = [
   {
     id: 1,
