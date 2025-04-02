@@ -113,7 +113,7 @@
           "image": "timepro",
           "repo": "https://github.com/faycodee/TimePro-todoList-Redux",
           "demo": "https://timepro.netlify.app/",
-          "in": "https://www.linkedin.com/posts/faycal-oumzil-b97888250_redux-threefiber-react-activity-7267253709745668097-EFsu?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD4Q5KMBGVDTAgAEHLu7gnAkrp8M_H0kI1s"
+          "linkedin": "https://www.linkedin.com/posts/faycal-oumzil-b97888250_redux-threefiber-react-activity-7267253709745668097-EFsu?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD4Q5KMBGVDTAgAEHLu7gnAkrp8M_H0kI1s"
 
         },
         {
@@ -130,7 +130,7 @@
           "image": "employee",
           "repo": "https://github.com/faycodee/Employee-crude-api-axios",
           "demo": "https://employee-sage.vercel.app/",
-          "in": "https://www.linkedin.com/posts/faycal-oumzil-b97888250_react-framermotion-tailwindcss-activity-7260733744506900480-66E_?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD4Q5KMBGVDTAgAEHLu7gnAkrp8M_H0kI1s"
+          "linkedin": "https://www.linkedin.com/posts/faycal-oumzil-b97888250_react-framermotion-tailwindcss-activity-7260733744506900480-66E_?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD4Q5KMBGVDTAgAEHLu7gnAkrp8M_H0kI1s"
 
         },
         {
@@ -142,23 +142,23 @@
           "image": "fayshop",
           "repo": "https://github.com/faycodee/Ecommerce-T-shirts-website-Fayshop-JS",
           "demo": "https://ecommerc-fayshop.netlify.app/",
-          "in": "https://www.linkedin.com/posts/faycal-oumzil-b97888250_javascript-html-css-activity-7258971756562890752-xS5j?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD4Q5KMBGVDTAgAEHLu7gnAkrp8M_H0kI1s"
+          "linkedin": "https://www.linkedin.com/posts/faycal-oumzil-b97888250_javascript-html-css-activity-7258971756562890752-xS5j?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD4Q5KMBGVDTAgAEHLu7gnAkrp8M_H0kI1s"
 
 
         },
         {
           "id": "project-4",
-          "name": "Reservation Management Platform",
+          "name": "Restaurant",
           "vidpro": "./porthtml.mp4",
           "description": "Une application web pour gérer les réservations et les utilisateurs dans un espace de travail partagé. Elle propose une authentification sécurisée, un accès basé sur les rôles, des tableaux de bord interactifs et un système de réservation fluide.",
           "tags": [
             { "name": "html", "color": "pink-text-gradient" },
             { "name": "css", "color": "pink-text-gradient" }
           ],
-          "image": "porthtml",
+          "image": "rest",
           "repo": "https://github.com/faycodee/",
           "demo": "https://restaurantloungelebureau.vercel.app/",
-          "in": "https://www.linkedin.com/posts/faycal-oumzil-b97888250_webdevelopment-mern-react-activity-7307801527199383553-9qdW?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD4Q5KMBGVDTAgAEHLu7gnAkrp8M_H0kI1s"
+          "linkedin": "https://www.linkedin.com/posts/faycal-oumzil-b97888250_webdevelopment-mern-react-activity-7307801527199383553-9qdW?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD4Q5KMBGVDTAgAEHLu7gnAkrp8M_H0kI1s"
         }
         
       ],

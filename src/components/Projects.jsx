@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
-import { github, pineapple, pineappleHover } from "../assets";
+import { github, pineapple, pineappleHover ,linkedin as  linkedinn} from "../assets";
 // import { projects } from "../constants";
 import { fadeIn, textVariant, staggerContainer } from "../utils/motion";
 import { useTranslation } from "react-i18next";
@@ -45,6 +45,7 @@ import {
   parallax,
   porthtml,
   timepro,
+  rest ,
   datacer,
   gitcer,
   jscer,
@@ -52,7 +53,7 @@ import {
 } from "../assets";
 const iconMap = {
   getmat: getmat,
-  porthtml: porthtml,
+  rest: rest,
   fayshop: fayshop,
   employee: employee,
   timepro: timepro,
@@ -65,6 +66,7 @@ const ProjectCard = ({
   image,
   vidpro,
   repo,
+  linkedin,
   demo,
   index,
   active,
@@ -107,7 +109,7 @@ const ProjectCard = ({
         <>
           <div
             className="absolute bottom-0 p-8 justify-start w-full 
-            flex-col bg-[rgba(122,122,122,0.5)] rounded-b-[24px] z-20"
+            flex-row bg-[rgba(122,122,122,0.5)] rounded-b-[24px] z-20"
           >
             <div className="absolute inset-0 flex justify-end m-3">
               <div
@@ -118,6 +120,18 @@ const ProjectCard = ({
               >
                 <img
                   src={github}
+                  alt="source code"
+                  className="w-4/5 h-4/5 object-contain"
+                />
+              </div>
+              <div
+                onClick={() => window.open(linkedin, "_blank")}
+                className="bg-night sm:w-11 sm:h-11 w-10 h-10 rounded-full 
+                  flex justify-center items-center cursor-pointer
+                  sm:opacity-[0.9] opacity-[0.8]  ml-1"
+              >
+                <img
+                  src={linkedinn}
                   alt="source code"
                   className="w-4/5 h-4/5 object-contain"
                 />
@@ -174,7 +188,7 @@ const ProjectCard = ({
 };
 
 const Projects = () => {
-  const [active, setActive] = useState("project-1");
+  const [active, setActive] = useState("project-4");
   const [t, i18n] = useTranslation();
   let projects = t("lng.Const.projects", { returnObjects: true });
   return (
