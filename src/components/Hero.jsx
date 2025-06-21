@@ -26,7 +26,7 @@ const Hero = () => {
     document.body.style.overflow = "hidden";
     setTimeout(() => {
       document.body.style.overflow = "auto";
-    }, 7000);
+    }, 2000);
 
     if (!isLoading) {
       gsap.to("#me", {
@@ -45,16 +45,16 @@ const Hero = () => {
       gsap.from("#me", {
         x: 700,
         ease: "back.inOut",
-        delay: 6.3,
+        delay: 0.3,
         duration: 3,
       });
 
-      gsap.from("#worldVid", {
-        scale: 5,
-        duration: 6,
-        rotate: -30,
-        ease: "power2.in",
-      });
+      // gsap.from("#worldVid", {
+      //   scale: 5,
+      //   duration: 6,
+      //   rotate: -30,
+      //   ease: "power2.in",
+      // });
 
       gsap.to(".para", {
         scale: 0,
@@ -79,7 +79,7 @@ const Hero = () => {
       gsap.from("#btn", {
         opacity: 0,
         ease: "power1.in",
-        delay: 4.5,
+        delay: 0.2,
         duration: 1,
       });
 
@@ -90,7 +90,7 @@ const Hero = () => {
           ease: "power1.inOut",
           opacity: 1,
           y: 0,
-          delay: 5.8,
+          delay: 0.5,
           duration: 3,
           stagger: {
             amount: "6ms",

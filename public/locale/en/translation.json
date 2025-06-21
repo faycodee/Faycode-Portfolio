@@ -97,13 +97,18 @@
           "date": "Sep 2022 - Present"
         }
       ],
-
+      "prj": {
+        "1":"show Rapport",
+        "2":"show Video"
+      },
       "projects": [
         {
           "id": "project-1",
           "name": "TimePro",
           "vidpro": "",
           "description": "TimePro solves the problem of organizing time and tasks.",
+          "rapport":"not exist",
+          "vidExist":"true",
           "tags": [
             { "name": "react", "color": "blue-text-gradient" },
             { "name": "redux", "color": "purple-text-gradient" },
@@ -119,6 +124,8 @@
           "name": "employee",
           "vidpro": "",
           "description": "In the application, Axios is used to make API requests for retrieving and manipulating employee data.",
+          "rapport":"not exist",
+          "vidExist":"true",
           "tags": [
             { "name": "react", "color": "blue-text-gradient" },
             { "name": "axios", "color": "purple-text-gradient" },
@@ -135,6 +142,8 @@
           "name": "fayshop",
           "vidpro": "",
           "description": "This is an e-commerce T-shirt project built using JavaScript to improve skills in the language.",
+          "rapport":"not exist",
+          "vidExist":"true",
           "tags": [{ "name": "javascript", "color": "yellow-text-gradient" }],
           "image": "fayshop",
           "repo": "https://github.com/faycodee/Ecommerce-T-shirts-website-Fayshop-JS",
@@ -143,20 +152,36 @@
         },
         {
           "id": "project-4",
-          "name": "Restaurant",
+          "name": "Smart Restaurant",
           "vidpro": "./porthtml.mp4",
           "description": "A web application for managing reservations and users in a shared workspace. It features secure authentication, role-based access, interactive dashboards, and a seamless booking system.",
+          "rapport":"./pdfs/rapres.pdf",
+          "vidExist":"true",
           "tags": [
             { "name": "html", "color": "pink-text-gradient" },
             { "name": "css", "color": "pink-text-gradient" }
           ],
           "image": "rest",
-          "repo": "https://github.com/faycodee/",
+          "repo": "https://github.com/faycodee/Restaurant-Lounge-Le-Bureau",
           "demo": "https://restaurantloungelebureau.vercel.app/",
           "linkedin": "https://www.linkedin.com/posts/faycal-oumzil-b97888250_webdevelopment-mern-react-activity-7307801527199383553-9qdW?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD4Q5KMBGVDTAgAEHLu7gnAkrp8M_H0kI1s"
-        }
-        
-       
+        },
+        {
+          "id": "project-5",
+          "name": "advanced Ecommerce",
+          "vidpro": "",
+          "vidExist":"false",
+          "description": "fully customized e-commerce platform as an alternative to WordPress or Shopify. The goal was to create a flexible, modular, and scalable solution ",
+          "rapport":"./pdfs/rapeco.pdf",
+          "tags": [
+            { "name": "html", "color": "pink-text-gradient" },
+            { "name": "css", "color": "pink-text-gradient" }
+          ],
+          "image": "ecoad",
+          "repo": "https://github.com/faycodee/Gestion-E-Commerce",
+          "demo": "",
+          "linkedin": "https://www.linkedin.com/posts/faycal-oumzil-b97888250_one-month-of-intense-full-stack-internship-activity-7333546390335229953-vZJk?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD4Q5KMBGVDTAgAEHLu7gnAkrp8M_H0kI1s"
+        } 
       ],
       "certifications": [
         {
@@ -191,6 +216,7 @@
           "disc": "Skilled in JavaScript: Programming fundamentals and web development.",
           "link": "https://www.coursera.org/account/accomplishments/verify/RPKT4P8MLE8M?utm_source=ln&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course"
         }
+       
       ]
     }
   }

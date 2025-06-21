@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
-import { github, pineapple, pineappleHover ,linkedin as  linkedinn} from "../assets";
+import {
+  github,
+  pineapple,
+  pineappleHover,
+  linkedin as linkedinn,
+} from "../assets";
 // import { projects } from "../constants";
 import { fadeIn, textVariant, staggerContainer } from "../utils/motion";
 import { useTranslation } from "react-i18next";
@@ -45,7 +50,8 @@ import {
   parallax,
   porthtml,
   timepro,
-  rest ,
+  rest,
+  ecoad,
   datacer,
   gitcer,
   jscer,
@@ -54,6 +60,7 @@ import {
 const iconMap = {
   getmat: getmat,
   rest: rest,
+  ecoad: ecoad,
   fayshop: fayshop,
   employee: employee,
   timepro: timepro,
@@ -68,10 +75,13 @@ const ProjectCard = ({
   repo,
   linkedin,
   demo,
+  rapport,
   index,
+  vidExist ,
   active,
   handleClick,
 }) => {
+  const [t, i18n] = useTranslation();
   return (
     <motion.div
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
@@ -151,35 +161,63 @@ const ProjectCard = ({
             >
               {description}
             </p>
-            <button
-              className="live-demo flex justify-between 
-              sm:text-[16px] text-[14px] text-timberWolf 
-              font-bold font-beckman items-center py-5 pl-2 pr-3 
-              whitespace-nowrap gap-1 sm:w-[138px] sm:h-[50px] 
-              w-[125px] h-[46px] rounded-[10px] glassmorphism 
-              sm:mt-[22px] mt-[16px] hover:bg-battleGray 
-              hover:text-eerieBlack transition duration-[0.2s] 
-              ease-in-out"
-              onClick={() => window.open(demo, "_blank")}
-              onMouseOver={() => {
-                document
-                  .querySelector(".btn-icon")
-                  .setAttribute("src", pineappleHover);
-              }}
-              onMouseOut={() => {
-                document
-                  .querySelector(".btn-icon")
-                  .setAttribute("src", pineapple);
-              }}
-            >
-              <img
-                src={pineapple}
-                alt="pineapple"
-                className="btn-icon sm:w-[34px] sm:h-[34px] 
-                  w-[30px] h-[30px] object-contain"
-              />
-              LIVE DEMO
-            </button>
+            <div className="flex">
+             {demo &&
+               <button
+               className="live-demo flex justify-between 
+             sm:text-[16px] text-[14px] text-timberWolf 
+             font-bold font-beckman items-center py-5 pl-2 pr-3 
+             whitespace-nowrap gap-1 sm:w-[138px] sm:h-[50px] 
+             w-[125px] h-[46px] rounded-[10px] glassmorphism 
+             sm:mt-[22px] mt-[16px] hover:bg-battleGray 
+             hover:text-eerieBlack transition duration-[0.2s] 
+             ease-in-out "
+               onClick={() => window.open(demo, "_blank")}
+               onMouseOver={() => {
+                 document
+                   .querySelector(".btn-icon")
+                   .setAttribute("src", pineappleHover);
+               }}
+               onMouseOut={() => {
+                 document
+                   .querySelector(".btn-icon")
+                   .setAttribute("src", pineapple);
+               }}
+             >
+               <img
+                 src={pineapple}
+                 alt="pineapple"
+                 className="btn-icon sm:w-[34px] sm:h-[34px] 
+                 w-[30px] h-[30px] object-contain"
+               />
+               LIVE DEMO
+             </button>
+             }
+              {rapport !== "not exist" && (
+                <>
+                  <button
+                    onClick={() => window.open(rapport, "_blank")}
+                    className="flex z-50 items-center justify-center live-demo 
+                sm:text-[9px] text-[2px] text-black
+                p-[5px] py-2 bg-slate-200 h-10 mt-7 ml-4 rounded-lg hover:bg-black
+                hover:text-white "
+                  >
+                    {t("lng.Const.prj.1")}
+                  </button>{" "}
+                </>
+              )}
+              {vidExist=="true" && (
+                <button
+                  onClick={() => window.open(linkedin, "_blank")}
+                  className="font-mono flex z-50 items-center justify-center live-demo 
+            sm:text-[9px] text-[2px] text-black
+            p-[5px] py-2 bg-slate-200 h-10 mt-7 ml-1 rounded-lg hover:bg-black
+            hover:text-white"
+                >
+                  {t("lng.Const.prj.2")}
+                </button>
+              )}{" "}
+            </div>
           </div>
         </>
       )}
@@ -226,12 +264,12 @@ const Projects = () => {
               {...project}
               active={active}
               handleClick={setActive}
+              rapport={project.rapport}
+              vidExist={project.vidExist}
             />
           ))}
         </div>
-  
       </motion.div>
-
     </div>
   );
 };

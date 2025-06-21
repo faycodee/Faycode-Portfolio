@@ -99,69 +99,94 @@
           "date": "Sep 2022 - Gegenwart"
         }
       ],
-      "projects": [
-        {
-          "id": "project-1",
-          "name": "TimePro",
-          "vidpro": "",
-          "description": "TimePro löst das Problem der Zeit- und Aufgabenorganisation.",
-          "tags": [
-            { "name": "react", "color": "blue-text-gradient" },
-            { "name": "redux", "color": "purple-text-gradient" },
-            { "name": "tailwind", "color": "pink-text-gradient" }
-          ],
-          "image": "timepro",
-          "repo": "https://github.com/faycodee/TimePro-todoList-Redux",
-          "demo": "https://timepro.netlify.app/",
-          "linkedin": "https://www.linkedin.com/posts/faycal-oumzil-b97888250_redux-threefiber-react-activity-7267253709745668097-EFsu?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD4Q5KMBGVDTAgAEHLu7gnAkrp8M_H0kI1s"
-
-        },
-        {
-          "id": "project-2",
-          "name": "employee",
-          "vidpro": "",
-          "description": "In der Anwendung wird Axios verwendet, um API-Anfragen zum Abrufen und Bearbeiten von Mitarbeiterdaten zu stellen.",
-          "tags": [
-            { "name": "react", "color": "blue-text-gradient" },
-            { "name": "axios", "color": "purple-text-gradient" },
-            { "name": "tailwind", "color": "pink-text-gradient" },
-            { "name": "framermotion", "color": "green-text-gradient" }
-          ],
-          "image": "employee",
-          "repo": "https://github.com/faycodee/Employee-crude-api-axios",
-          "demo": "https://employee-sage.vercel.app/",
-          "linkedin": "https://www.linkedin.com/posts/faycal-oumzil-b97888250_react-framermotion-tailwindcss-activity-7260733744506900480-66E_?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD4Q5KMBGVDTAgAEHLu7gnAkrp8M_H0kI1s"
-
-
-        },
-        {
-          "id": "project-3",
-          "name": "fayshop",
-          "vidpro": "",
-          "description": "Dies ist ein E-Commerce-Projekt für T-Shirts, das nur mit JavaScript erstellt wurde, um meine Fähigkeiten in diesem großartigen Sprach zu entwickeln.",
-          "tags": [{ "name": "javascript", "color": "yellow-text-gradient" }],
-          "image": "fayshop",
-          "repo": "https://github.com/faycodee/Ecommerce-T-shirts-website-Fayshop-JS",
-          "demo": "https://ecommerc-fayshop.netlify.app/",
-          "linkedin": "https://www.linkedin.com/posts/faycal-oumzil-b97888250_javascript-html-css-activity-7258971756562890752-xS5j?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD4Q5KMBGVDTAgAEHLu7gnAkrp8M_H0kI1s"
-
-        },
-        {
-          "id": "project-4",
-          "name": "Restaurant",
-          "vidpro": "./porthtml.mp4",
-          "description": "Eine Webanwendung zur Verwaltung von Reservierungen und Benutzern in einem gemeinsam genutzten Arbeitsbereich. Sie bietet eine sichere Authentifizierung, rollenbasierten Zugriff, interaktive Dashboards und ein nahtloses Buchungssystem.",
-          "tags": [
-            { "name": "html", "color": "pink-text-gradient" },
-            { "name": "css", "color": "pink-text-gradient" }
-          ],
-          "image": "rest",
-          "repo": "https://github.com/faycodee/",
-          "demo": "https://restaurantloungelebureau.vercel.app/",
-          "linkedin": "https://www.linkedin.com/posts/faycal-oumzil-b97888250_webdevelopment-mern-react-activity-7307801527199383553-9qdW?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD4Q5KMBGVDTAgAEHLu7gnAkrp8M_H0kI1s"
-        }
-        
-      ],
+     "projects": [
+          {
+            "id": "project-1",
+            "name": "TimePro",
+            "vidpro": "",
+            "description": "TimePro löst das Problem der Organisation von Zeit und Aufgaben.",
+            "rapport": "not exist",
+            "vidExist": "true",
+            "tags": [
+              { "name": "react", "color": "blue-text-gradient" },
+              { "name": "redux", "color": "purple-text-gradient" },
+              { "name": "tailwind", "color": "pink-text-gradient" }
+            ],
+            "image": "timepro",
+            "repo": "https://github.com/faycodee/TimePro-todoList-Redux",
+            "demo": "https://timepro.netlify.app/",
+            "linkedin": "https://www.linkedin.com/posts/faycal-oumzil-b97888250_redux-threefiber-react-activity-7267253709745668097-EFsu?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD4Q5KMBGVDTAgAEHLu7gnAkrp8M_H0kI1s"
+          },
+          {
+            "id": "project-2",
+            "name": "employee",
+            "vidpro": "",
+            "description": "In dieser Anwendung wird Axios verwendet, um API-Anfragen zum Abrufen und Verwalten von Mitarbeiterdaten zu stellen.",
+            "rapport": "not exist",
+            "vidExist": "true",
+            "tags": [
+              { "name": "react", "color": "blue-text-gradient" },
+              { "name": "axios", "color": "purple-text-gradient" },
+              { "name": "tailwind", "color": "pink-text-gradient" },
+              { "name": "framermotion", "color": "green-text-gradient" }
+            ],
+            "image": "employee",
+            "repo": "https://github.com/faycodee/Employee-crude-api-axios",
+            "demo": "https://employee-sage.vercel.app/",
+            "linkedin": "https://www.linkedin.com/posts/faycal-oumzil-b97888250_react-framermotion-tailwindcss-activity-7260733744506900480-66E_?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD4Q5KMBGVDTAgAEHLu7gnAkrp8M_H0kI1s"
+          },
+          {
+            "id": "project-3",
+            "name": "fayshop",
+            "vidpro": "",
+            "description": "Dies ist ein E-Commerce-T-Shirt-Projekt, das mit JavaScript erstellt wurde, um die Fähigkeiten in dieser Sprache zu verbessern.",
+            "rapport": "not exist",
+            "vidExist": "true",
+            "tags": [{ "name": "javascript", "color": "yellow-text-gradient" }],
+            "image": "fayshop",
+            "repo": "https://github.com/faycodee/Ecommerce-T-shirts-website-Fayshop-JS",
+            "demo": "https://ecommerc-fayshop.netlify.app/",
+            "linkedin": "https://www.linkedin.com/posts/faycal-oumzil-b97888250_javascript-html-css-activity-7258971756562890752-xS5j?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD4Q5KMBGVDTAgAEHLu7gnAkrp8M_H0kI1s"
+          },
+          {
+            "id": "project-4",
+            "name": "Smart Restaurant",
+            "vidpro": "./porthtml.mp4",
+            "description": "Eine Webanwendung zur Verwaltung von Reservierungen und Benutzern in einem gemeinsamen Arbeitsbereich. Sie bietet sichere Authentifizierung, rollenbasierte Zugriffsrechte, interaktive Dashboards und ein nahtloses Buchungssystem.",
+            "rapport": "./pdfs/rapres.pdf",
+            "vidExist": "true",
+            "tags": [
+              { "name": "html", "color": "pink-text-gradient" },
+              { "name": "css", "color": "pink-text-gradient" }
+            ],
+            "image": "rest",
+            "repo": "https://github.com/faycodee/Restaurant-Lounge-Le-Bureau",
+            "demo": "https://restaurantloungelebureau.vercel.app/",
+            "linkedin": "https://www.linkedin.com/posts/faycal-oumzil-b97888250_webdevelopment-mern-react-activity-7307801527199383553-9qdW?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD4Q5KMBGVDTAgAEHLu7gnAkrp8M_H0kI1s"
+          },
+          {
+            "id": "project-5",
+            "name": "advanced Ecommerce",
+            "vidpro": "",
+            "vidExist": "false",
+            "description": "Vollständig angepasste E-Commerce-Plattform als Alternative zu WordPress oder Shopify. Ziel war es, eine flexible, modulare und skalierbare Lösung zu schaffen.",
+            "rapport": "./pdfs/rapeco.pdf",
+            "tags": [
+              { "name": "html", "color": "pink-text-gradient" },
+              { "name": "css", "color": "pink-text-gradient" }
+            ],
+            "image": "ecoad",
+            "repo": "https://github.com/faycodee/Gestion-E-Commerce",
+            "demo": "",
+            "linkedin": "https://www.linkedin.com/posts/faycal-oumzil-b97888250_one-month-of-intense-full-stack-internship-activity-7333546390335229953-vZJk?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD4Q5KMBGVDTAgAEHLu7gnAkrp8M_H0kI1s"
+          }
+        ]
+ 
+      ,
+      "prj": {
+"1":"Bericht anzeigen",
+"2":"Video anzeigen"
+},
       "certifications": [
         {
           "id": 1,

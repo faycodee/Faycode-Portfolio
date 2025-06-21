@@ -50,6 +50,7 @@ import getmat from "./projects/getmat.png";
 import parallax from "./projects/paralax.png";
 import porthtml from "./projects/porthtml.png";
 import rest from "./projects/rest.jpg";
+import ecoad from "./projects/S.png";
 import timepro from "./projects/timepro.jpg";
 import coverhunt from "./company/coverhunt.png";
 import dcc from "./company/dcc.png";
@@ -62,6 +63,7 @@ import pythoncer from "./certifications/pythoncer.png";
 export {
   bwmap,
   rest,
+  ecoad,
   nairobi,
   whiteabstract,
   logo,
