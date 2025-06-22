@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
@@ -59,12 +59,24 @@ import {
   gitcer,
   jscer,
   pythoncer,
+  aiintro,
+  algo,
+  py2,
+  hacker,
+  english,
+  cyber,
 } from "../assets";
 const iconMap = {
   datacer: datacer,
   gitcer: gitcer,
   pythoncer: pythoncer,
   jscer: jscer,
+  aiintro: aiintro,
+  algo: algo,
+  py2: py2,
+  hacker: hacker,
+  english: english,
+  cyber: cyber,
 };
 const Certificat = ({ obj, pos }) => {
   gsap.registerPlugin(ScrollTrigger);
@@ -89,7 +101,7 @@ const Certificat = ({ obj, pos }) => {
           }
         );
       }, [])
-    :"" 
+    : "";
 
   const handleImageClick = (link) => {
     window.open(link, "_blank");
@@ -148,16 +160,35 @@ const Certificat = ({ obj, pos }) => {
   );
 };
 
+const filterOptions = [
+  { label: "All", value: "" },
+  { label: "Digital Development", value: "web" },
+  { label: "Cyber Security", value: "cyber" },
+  { label: "Data Science", value: "data" },
+  { label: "Artificial Intelligence", value: "ai" },
+];
+
 const Certifications = () => {
   const [t, i18n] = useTranslation();
   const dispatch = useDispatch();
-
   const screensize = useSelector((state) => state.screensize);
-  let certifications = t("lng.Const.certifications", {
-    returnObjects: true,
-  });
 
+  // Only load certifications once
+  const certifications = useMemo(
+    () => t("lng.Const.certifications", { returnObjects: true }),
+    [t]
+  );
+
+  const [selectedFilter, setSelectedFilter] = useState("");
   const slidesPerVieww = screensize.isMobile ? 1 : 3;
+
+  // Filter certifications based on selected type
+  const filteredCertifications = selectedFilter
+    ? certifications.filter(
+        (c) => c.type && c.type.split(",").includes(selectedFilter)
+      )
+    : certifications;
+
   return (
     <div className="-mt-[4rem] max-sm:-mt-[1rem]">
       <motion.div variants={textVariant()}>
@@ -173,6 +204,22 @@ const Certifications = () => {
         >
           {t("lng.Titles.certif3")}
         </motion.p>
+      </div>
+      {/* Filter Buttons */}
+      <div className="flex gap-2 my-4 flex-wrap">
+        {filterOptions.map((opt) => (
+          <button
+            key={opt.value}
+            className={`px-3 py-1 rounded-full border ${
+              selectedFilter === opt.value
+                ? "bg-blue-500 text-white"
+                : "bg-gray-200 text-gray-700"
+            } transition`}
+            onClick={() => setSelectedFilter(opt.value)}
+          >
+            {opt.label}
+          </button>
+        ))}
       </div>
       <motion.div
         variants={staggerContainer}
@@ -193,7 +240,7 @@ const Certifications = () => {
           coverflowEffect={{ rotate: 0, stretch: 0, depth: 100, modifier: 2.5 }}
           modules={[EffectCoverflow, Pagination, Navigation]}
         >
-          {certifications.map((e, i) => (
+          {filteredCertifications.map((e, i) => (
             <SwiperSlide key={i}>
               <Certificat obj={e} pos={i} key={i} />
             </SwiperSlide>

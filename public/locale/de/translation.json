@@ -187,40 +187,90 @@
 "1":"Bericht anzeigen",
 "2":"Video anzeigen"
 },
-      "certifications": [
-        {
-          "id": 1,
-          "name": "Intro to Data and Data Science",
-          "image": "datacer",
-          "company": "learn.365datascience.com",
-          "disc": "Zertifizierung in den Grundlagen der Datenwissenschaft: Datenanalyse, Visualisierung und grundlegende Techniken.",
-          "link": "https://learn.365datascience.com/c/1f5681348f/"
-        },
-        {
-          "id": 2,
-          "name": "Git und GitHub",
-          "image": "gitcer",
-          "company": "learn.365datascience.com",
-          "disc": "Kompetent in Git und GitHub: Versionskontrolle und Zusammenarbeit.",
-          "link": "https://learn.365datascience.com/certificates/CC-848F5C8F60/"
-        },
-        {
-          "id": 3,
-          "name": "Python Essentials",
-          "image": "pythoncer",
-          "company": "credly.com",
-          "disc": "Zertifiziert in Python Essentials: Grundlegende Programmier- und Problemlösungsfähigkeiten.",
-          "link": "https://www.credly.com/badges/6438ea77-9d04-4747-8f40-3ff32d9f9b59/linked_in?t=smdukb"
-        },
-        {
-          "id": 4,
-          "name": "Programmieren mit JavaScript",
-          "image": "jscer",
-          "company": "coursera.org",
-          "disc": "Kompetent in JavaScript: Programmiergrundlagen und Webentwicklung.",
-          "link": "https://www.coursera.org/account/accomplishments/verify/RPKT4P8MLE8M?utm_source=ln&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course"
-        }
-      ]
+"certifications": [
+  {
+    "id": 1,
+    "name": "Einführung in Daten und Data Science",
+    "image": "datacer",
+    "company": "learn.365datascience.com",
+    "disc": "Zertifiziert in den Grundlagen der Data Science: Datenanalyse, Visualisierung und grundlegende Techniken.",
+    "link": "https://learn.365datascience.com/c/1f5681348f/"
+  },
+  {
+    "id": 2,
+    "name": "Git und GitHub",
+    "image": "gitcer",
+    "company": "learn.365datascience.com",
+    "disc": "Kompetent in Git und GitHub: Versionskontrolle und Zusammenarbeit.",
+    "link": "https://learn.365datascience.com/certificates/CC-848F5C8F60/"
+  },
+  {
+    "id": 3,
+    "name": "Python Essentials",
+    "image": "pythoncer",
+    "company": "cisco.com",
+    "disc": "Zertifiziert in Python-Grundlagen: Programmierkenntnisse und Problemlösung.",
+    "link": "https://www.credly.com/badges/6438ea77-9d04-4747-8f40-3ff32d9f9b59/linked_in?t=smdukb"
+  },
+  {
+    "id": 4,
+    "name": "Programmieren mit JavaScript",
+    "image": "jscer",
+    "company": "coursera.org",
+    "disc": "Erfahren in JavaScript: Programmiergrundlagen und Webentwicklung.",
+    "link": "https://www.coursera.org/account/accomplishments/verify/RPKT4P8MLE8M?utm_source=ln&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course"
+  },
+  {
+    "id": 5,
+    "name": "Ethical Hacker",
+    "image": "hacker",
+    "company": "cisco.com",
+    "disc": "Kompetent im Ethical Hacking: Cybersicherheitsprinzipien und Penetrationstest-Techniken.",
+    "link": "https://www.credly.com/badges/d39b802c-8d5e-4d2e-b500-1015a6c6f517"
+  },
+  {
+    "id": 6,
+    "name": "Englisch für IT 1",
+    "image": "english",
+    "company": "cisco.com",
+    "disc": "Verbesserte technische Englischkenntnisse für Softwareentwicklung und Informatik.",
+    "link": "https://www.credly.com/badges/e595f056-5065-4670-831c-58a46bb7168f"
+  },
+  {
+    "id": 7,
+    "name": "Einführung in die Cybersicherheit",
+    "image": "cyber",
+    "company": "cisco.com",
+    "disc": "Grundlegendes Wissen über Cybersicherheitsbedrohungen, Prinzipien und Abwehrmaßnahmen.",
+    "link": "https://www.credly.com/badges/50c434fb-c057-4519-a6c4-74bfa376dbce"
+  },
+  {
+    "id": 8,
+    "name": "Python Essentials 2",
+    "image": "py2",
+    "company": "cisco.com",
+    "disc": "Fokus auf fortgeschrittene Python-Konzepte wie OOP, Dateiverwaltung und Fehlerbehandlung.",
+    "link": "https://www.credly.com/badges/589283a9-3c86-4703-9138-90685a25be3e"
+  },
+  {
+    "id": 9,
+    "name": "Einführung in die KI",
+    "image": "aiintro",
+    "company": "ki-campus.org",
+    "disc": "Erlernte Kernkonzepte der Künstlichen Intelligenz, einschließlich Machine Learning, neuronale Netze und KI-Ethik.",
+    "link": "https://moodle.ki-campus.org/mod/customcert/verify_certificate.php?code=iBd9aq1j0p"
+  },
+  {
+    "id": 10,
+    "name": "Daten- und Algorithmenethik",
+    "image": "algo",
+    "company": "ki-campus.org",
+    "disc": "Kenntnisse in effizienter Problemlösung mit Arrays, verketteten Listen, Bäumen, Sortier- und Suchalgorithmen.",
+    "link": "https://moodle.ki-campus.org/mod/customcert/verify_certificate.php?code=YUAGFvsP0V"
+  }
+]
+
+     
     }
   }
 }

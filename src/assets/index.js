@@ -60,7 +60,19 @@ import datacer from "./certifications/datacer.png";
 import gitcer from "./certifications/gitcer.png";
 import jscer from "./certifications/jscer.png";
 import pythoncer from "./certifications/pythoncer.png";
+import aiintro from "./certifications/ai intro.png";
+import algo from "./certifications/algo.png";
+import english from "./certifications/english.png";
+import cyber from "./certifications/cyber.png";
+import hacker from "./certifications/hacker.png";
+import py2 from "./certifications/py2.png";
 export {
+  aiintro,
+  algo ,
+  py2 ,
+  hacker ,
+  english ,
+  cyber ,
   bwmap,
   rest,
   ecoad,

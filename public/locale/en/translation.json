@@ -183,41 +183,99 @@
           "linkedin": "https://www.linkedin.com/posts/faycal-oumzil-b97888250_one-month-of-intense-full-stack-internship-activity-7333546390335229953-vZJk?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD4Q5KMBGVDTAgAEHLu7gnAkrp8M_H0kI1s"
         } 
       ],
-      "certifications": [
-        {
-          "id": 1,
-          "name": "Intro to Data and Data Science",
-          "image": "datacer",
-          "company": "learn.365datascience.com",
-          "disc": "Certified in Data Science basics: Data analysis, visualization, and foundational techniques.",
-          "link": "https://learn.365datascience.com/c/1f5681348f/"
-        },
-        {
-          "id": 2,
-          "name": "Git and GitHub",
-          "image": "gitcer",
-          "company": "learn.365datascience.com",
-          "disc": "Proficient in Git and GitHub: Version control and collaboration.",
-          "link": "https://learn.365datascience.com/certificates/CC-848F5C8F60/"
-        },
-        {
-          "id": 3,
-          "name": "Python Essentials",
-          "image": "pythoncer",
-          "company": "credly.com",
-          "disc": "Certified in Python Essentials: Core programming and problem-solving skills.",
-          "link": "https://www.credly.com/badges/6438ea77-9d04-4747-8f40-3ff32d9f9b59/linked_in?t=smdukb"
-        },
-        {
-          "id": 4,
-          "name": "Programming with JavaScript",
-          "image": "jscer",
-          "company": "coursera.org",
-          "disc": "Skilled in JavaScript: Programming fundamentals and web development.",
-          "link": "https://www.coursera.org/account/accomplishments/verify/RPKT4P8MLE8M?utm_source=ln&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course"
-        }
-       
-      ]
+  "certifications": [
+  {
+    "id": 1,
+    "name": "Intro to Data and Data Science",
+    "image": "datacer",
+    "type":"data",
+    "company": "learn.365datascience.com",
+    "disc": "Certified in foundational Data Science: data analysis, visualization, and essential techniques.",
+    "link": "https://learn.365datascience.com/c/1f5681348f/"
+  },
+  {
+    "id": 2,
+    "name": "Git and GitHub",
+    "image": "gitcer",
+    "type":"web",
+    "company": "learn.365datascience.com",
+    "disc": "Proficient in Git and GitHub: version control and collaborative development workflows.",
+    "link": "https://learn.365datascience.com/certificates/CC-848F5C8F60/"
+  },
+  {
+    "id": 3,
+    "name": "Python Essentials",
+    "image": "pythoncer",
+    "type":"web,data,cyber,ai",
+    "company": "cisco.com",
+    "disc": "Certified in Python programming: core concepts, syntax, and problem-solving techniques.",
+    "link": "https://www.credly.com/badges/6438ea77-9d04-4747-8f40-3ff32d9f9b59/linked_in?t=smdukb"
+  },
+  {
+    "id": 4,
+    "name": "Programming with JavaScript",
+    "image": "jscer",
+    "type":"web",
+    "company": "coursera.org",
+    "disc": "Skilled in JavaScript: programming fundamentals and web development practices.",
+    "link": "https://www.coursera.org/account/accomplishments/verify/RPKT4P8MLE8M?utm_source=ln&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course"
+  },
+  {
+    "id": 5,
+    "name": "Ethical Hacker",
+    "image": "hacker",
+    "type":"cyber",
+    "company": "cisco.com",
+    "disc": "Skilled in Ethical Hacking: cybersecurity fundamentals and penetration testing techniques.",
+    "link": "https://www.credly.com/badges/d39b802c-8d5e-4d2e-b500-1015a6c6f517"
+  },
+  {
+    "id": 6,
+    "name": "English for IT 1",
+    "image": "english",
+    "type":"web,data,cyber,ai",
+    "company": "cisco.com",
+    "disc": "Enhanced technical English communication skills for IT and software development.",
+    "link": "https://www.credly.com/badges/e595f056-5065-4670-831c-58a46bb7168f"
+  },
+  {
+    "id": 7,
+    "name": "Introduction to Cybersecurity",
+    "image": "cyber",
+    "type":"cyber",
+    "company": "cisco.com",
+    "disc": "Gained fundamental knowledge of cybersecurity threats, concepts, and defensive strategies.",
+    "link": "https://www.credly.com/badges/50c434fb-c057-4519-a6c4-74bfa376dbce"
+  },
+  {
+    "id": 8,
+    "name": "Python Essentials 2",
+    "image": "py2",
+    "type":"web,data,cyber,ai",
+    "company": "cisco.com",
+    "disc": "Focused on advanced Python concepts: object-oriented programming, file handling, and error management.",
+    "link": "https://www.credly.com/badges/589283a9-3c86-4703-9138-90685a25be3e"
+  },
+  {
+    "id": 9,
+    "name": "Introduction to Artificial Intelligence",
+    "image": "aiintro",
+    "type":"ai",
+    "company": "ki-campus.org",
+    "disc": "Learned key AI concepts including machine learning, neural networks, and ethical considerations in AI.",
+    "link": "https://moodle.ki-campus.org/mod/customcert/verify_certificate.php?code=iBd9aq1j0p"
+  },
+  {
+    "id": 10,
+    "name": "Data and Algorithm Ethics",
+    "image": "algo",
+    "type":"data,ai",
+    "company": "ki-campus.org",
+    "disc": "Developed skills in efficient problem-solving using arrays, linked lists, trees, sorting, and search algorithms.",
+    "link": "https://moodle.ki-campus.org/mod/customcert/verify_certificate.php?code=YUAGFvsP0V"
+  }
+]
+
     }
   }
 }
