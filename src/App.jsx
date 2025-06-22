@@ -164,7 +164,7 @@ const App = () => {
 
         <div className="relative z-0 panel h-[100vh] bg-black">
           <div
-            className="absolute z-50 overflow-hidden bg-slate-700 rounded-full p-3 right-10 bottom-9 hover:bg-slate-400 "
+            className="absolute z-50 overflow-hidden bg-slate-700 rounded-full p-3 right-20 bottom-9 hover:bg-slate-400 "
             onClick={() => {
               handleScrollUp();
             }}
