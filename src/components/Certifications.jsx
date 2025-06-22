@@ -200,7 +200,7 @@ const Certifications = () => {
       <div className="w-full flex">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-4 text-taupe text-[13px] max-w-3xl leading-[30px]"
+          className="mt-4 text-taupe text-[10px] max-w-3xl leading-[30px]"
         >
           {t("lng.Titles.certif3")}
         </motion.p>
@@ -210,7 +210,7 @@ const Certifications = () => {
         {filterOptions.map((opt) => (
           <button
             key={opt.value}
-            className={`px-3 py-1 rounded-full border ${
+            className={`px-[4px] py-[2px] rounded-full border ${
               selectedFilter === opt.value
                 ? "bg-blue-500 text-white"
                 : "bg-gray-200 text-gray-700"

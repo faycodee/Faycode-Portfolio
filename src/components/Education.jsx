@@ -182,7 +182,7 @@ const Education = () => {
                 id="dot1"
                 cx="100"
                 cy="50"
-                r="25"
+                r="37"
                 fill="white"
                 className="dot"
                 onMouseOver={() => handleMouseOver("2023/09")}
@@ -198,13 +198,13 @@ const Education = () => {
                 onMouseOver={() => handleMouseOver("2023/09")}
                 onMouseOut={() => setTooltip("")}
               >
-                2023/09
+               Bac 2023/06
               </text>
               <circle
                 id="dot2"
                 cx="300"
                 cy="50"
-                r="25"
+                r="37"
                 fill="white"
                 className="dot"
                 onMouseOver={() => handleMouseOver("2024/07")}
@@ -226,7 +226,7 @@ const Education = () => {
                 id="dot3"
                 cx="500"
                 cy="50"
-                r="25"
+                r="37"
                 fill="white"
                 className="dot"
                 onMouseOver={() => handleMouseOver("2024/12")}
@@ -242,7 +242,7 @@ const Education = () => {
                 onMouseOver={() => handleMouseOver("2024/12")}
                 onMouseOut={() => setTooltip("")}
               >
-                2024/12
+                Diplom 2025/6
               </text>
               <text
                 x="720"
