@@ -227,7 +227,7 @@ const Hero = () => {
           </a>
         </div>
 
-        <div style={{ width: "500px" }}>
+      {/*   <div style={{ width: "500px" }}>
           {!screensize.isMobile && !screensize.isTablet && (
             <img
               id="me"
@@ -237,7 +237,7 @@ const Hero = () => {
               alt="Faycode"
             />
           )}
-        </div>
+        </div> */}
       </section>
     </>
   );
