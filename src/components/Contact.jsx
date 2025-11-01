@@ -61,9 +61,7 @@ const Contact = () => {
             >
               faysaloumzil1@gmail.com
             </a>
-            <p className="text-blue-400 underline">
-            {t("lng.Titles.contact3")}
-            </p>
+            
             <p className="font-bold mt-4">{t("lng.Titles.contact5")}</p>
             <a
               href="https://wa.me/+212613487814"
