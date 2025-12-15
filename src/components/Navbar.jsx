@@ -88,8 +88,8 @@ const Navbar = () => {
           <img
             src={logo}
             alt="logo"
-            id="logo"
-            className="rounded-3xl w-[20px] h-[20px] sm:w-[25px] sm:h-[25px] object-contain"
+      
+            className=" w-[40px] h-[40px] rounded-lg sm:w-[35px]  sm:h-[35px] object-contain"
           />
         </Link>
 

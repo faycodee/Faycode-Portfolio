@@ -1,7 +1,3 @@
-// This Source Code Form is subject to the terms of the Mozilla Public
-// License, v. 2.0. If a copy of the MPL was not distributed with this
-// file, You can obtain one at https://mozilla.org/MPL/2.0/.
-
 import { BrowserRouter } from "react-router-dom";
 import {
   About,
@@ -26,8 +22,8 @@ import SchnellContact from "./components/SchnellContact";
 
 const App = () => {
   const screensize = useSelector((state) => state.screensize);
-  // const dispatch = useDispatch();
-  // const screensize = useSelector((state) => state.screensize);
+  const dispatch = useDispatch();
+  
   useEffect(() => {
     const handleResize = () => {
       let newObjSizes = {
@@ -41,10 +37,15 @@ const App = () => {
       dispatch({ type: "UPDATEscreensize", screen: newObjSizes });
     };
     window.addEventListener("resize", handleResize);
+    // Call once on mount to ensure state is correct immediately
+    handleResize(); 
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [dispatch]);
+
   gsap.registerPlugin(ScrollTrigger);
   const cursorr = useSelector((state) => state.cursor);
+
+  // Panel Animations
   !screensize.isMobile &&
     useGSAP(() => {
       // Cursor animation
@@ -58,28 +59,25 @@ const App = () => {
           duration: 10,
         }
       );
-      // Panel animations with different directions
+      
+      // Panel animations
       gsap.utils.toArray(".panel").forEach((panel, i) => {
-        // Initial states based on index
         const initialStates = [
-          { x: 0, y: 0 }, // Hero - no initial offset
-          { x: 0, y: 0 }, // About - from right
-          { x: "-100%", y: 0 }, // Service - from left
-          { x: "100%", y: 0 }, // Tech - from bottom
-          { x: 0, y: 0 }, // Service - from left
-          { x: "100%", y: 0 }, // Tech - from bottom
-          { x: 0, y: 0 }, // Service - from left
-          { x: 0, y: 0 }, // Tech - from bottom
-          // { x: 0, y: "-100%" }, // Projects - from top
-          // { x: "100%", y: 0 }, // Certifications - from right
-          // { x: "-100%", y: 0 }, // Education - from left
-          // { x: 0, y: "100%" }, // Contact - from bottom
+          { x: 0, y: 0 }, // Hero
+          { x: 0, y: 0 }, // About
+          { x: "-100%", y: 0 }, // Service
+          { x: "100%", y: 0 }, // Tech
+          { x: 0, y: 0 }, // Projects (placeholder index)
+          { x: "100%", y: 0 }, // Certifications
+          { x: 0, y: 0 }, // Education
+          { x: 0, y: 0 }, // Contact
         ];
 
-        // Set initial position
-        gsap.set(panel, initialStates[i]);
+        // Ensure we don't go out of bounds if panels change
+        const state = initialStates[i] || { x: 0, y: 0 };
 
-        // Create scroll trigger for each panel
+        gsap.set(panel, state);
+
         ScrollTrigger.create({
           trigger: panel,
           start: "top top",
@@ -96,7 +94,7 @@ const App = () => {
           },
           onLeaveBack: () => {
             gsap.to(panel, {
-              ...initialStates[i],
+              ...state,
               duration: 1.2,
               ease: "power2.in",
             });
@@ -111,14 +109,15 @@ const App = () => {
           },
           onLeave: () => {
             gsap.to(panel, {
-              ...initialStates[i],
+              ...state,
               duration: 1.2,
               ease: "power2.in",
             });
           },
         });
       });
-    }, []);
+    }, [screensize.isMobile]);
+
   const refScrollUp = useRef();
   const handleScrollUp = () => {
     refScrollUp.current.scrollIntoView({ behavior: "smooth" });
@@ -128,9 +127,10 @@ const App = () => {
     <BrowserRouter>
       <Cursor />
 
-      <div ref={refScrollUp} className="relative z-0 overflow-hidden bg-black">
+      <div ref={refScrollUp} className="relative z-0 bg-black">
         <SchnellContact />
         <Navbar />
+        
         <div id="p1" className="panel">
           <Hero />
         </div>
@@ -142,7 +142,7 @@ const App = () => {
           <About />
         </div>
 
-        <div className="bg-about  bg-black bg-cover bg-center bg-no-repeat panel h-[140vh] max-md:h-[100vh]">
+        <div className="bg-about bg-black bg-cover bg-center bg-no-repeat panel h-[140vh] max-md:h-[100vh]">
           <Service />
         </div>
 
@@ -164,12 +164,12 @@ const App = () => {
 
         <div className="relative z-0 panel h-[100vh] bg-black">
           <div
-            className="absolute z-50 overflow-hidden bg-slate-700 rounded-full p-3 right-20 bottom-9 hover:bg-slate-400 "
+            className="absolute z-50 overflow-hidden bg-slate-700 rounded-full p-3 right-20 bottom-9 hover:bg-slate-400 cursor-pointer"
             onClick={() => {
               handleScrollUp();
             }}
           >
-            <IoArrowUpOutline />
+            <IoArrowUpOutline className="text-white w-6 h-6" />
           </div>
           <Contact />
         </div>

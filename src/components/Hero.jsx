@@ -11,10 +11,28 @@ import "../../src/i18n";
 const Hero = () => {
   const [t] = useTranslation();
   gsap.registerPlugin(ScrollTrigger);
+  
+  // State
   const [isLoading, setIsLoading] = useState(true);
   const [getOut, setIsGetOut] = useState(true);
-  const containerRef = useRef(); // Scope ref
+  
+  const containerRef = useRef(); 
   const screensize = useSelector((state) => state.screensize);
+
+  // --- NEW: Scroll Locking Logic ---
+  useEffect(() => {
+    if (isLoading) {
+      // Disable scroll on HTML and Body
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.height = "100vh"; // Prevent elastic scrolling on iOS
+    } else {
+      // Re-enable scroll
+      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
+      document.body.style.height = "auto";
+    }
+  }, [isLoading]);
 
   // Animation Logic
   useGSAP(
@@ -26,14 +44,11 @@ const Hero = () => {
         opacity: 0,
       });
 
-      // Body Lock
-      document.body.style.overflow = "hidden";
-      const unlockTimer = setTimeout(() => {
-        document.body.style.overflow = "auto";
-      }, 2000);
+      // NOTE: Removed the setTimeout that forced scroll unlock here.
+      // Scroll is now controlled by the useEffect above based on isLoading state.
 
       if (!isLoading) {
-        // Safe check for #me in case it is commented out in DOM
+        // Safe check for #me
         if (document.querySelector("#me")) {
           gsap.to("#me", {
             scrollTrigger: {
@@ -93,15 +108,13 @@ const Hero = () => {
             delay: 0.5,
             duration: 3,
             stagger: {
-              amount: 0.5, // slightly faster stagger
+              amount: 0.5,
               ease: "circ.inOut",
               from: "center",
             },
           }
         );
       }
-      
-      return () => clearTimeout(unlockTimer);
     },
     { scope: containerRef, dependencies: [isLoading] }
   );
@@ -109,14 +122,14 @@ const Hero = () => {
   // Loader Exit Logic
   useEffect(() => {
     const animateLoaderOut = () => {
-      // Use context safe animation or direct selection
       gsap.to("#loader", {
-        duration: 1.5, // Faster exit
+        duration: 1.5,
         ease: "elastic.in(1, 0.75)",
         scale: 6,
         opacity: 0,
         onComplete: () => {
-          setIsLoading(false);
+          // This triggers the scroll unlock in the first useEffect
+          setIsLoading(false); 
         },
       });
       gsap.to(".loaderText", {
@@ -134,9 +147,9 @@ const Hero = () => {
   return (
     <div ref={containerRef}>
       {isLoading && (
-        <div className="fixed inset-0 z-50 bg-black flex justify-center items-center overflow-hidden">
+        // Added z-[999] to ensure it covers Navbar and everything else
+        <div className="fixed inset-0 z-[999] bg-black flex justify-center items-center overflow-hidden touch-none">
           <div className="relative w-full h-full flex items-center justify-center">
-            {/* Responsive Text Sizes: using 'vw' instead of 'px' */}
             <h1 className="text-white z-10 font-mova absolute top-[5%] left-[5%] text-[20vw] lg:text-[15vw] leading-none loaderText">
               {t("lng.Titles.loader1")}
             </h1>
@@ -156,7 +169,6 @@ const Hero = () => {
         style={{ overflow: "hidden" }}
         className="relative flex sm:flex-row flex-col w-full h-screen mx-auto overflow-x-hidden"
       >
-        {/* Optimized Video Background */}
         <motion.video
           id="worldVid"
           src={screensize.isMobile ? "./vidS.mp4" : "./vid.mp4"}
@@ -164,7 +176,7 @@ const Hero = () => {
           autoPlay
           loop
           muted
-          playsInline // Crucial for iOS autoplay
+          playsInline
           preload="auto"
           onLoadedData={() => setIsGetOut(false)}
           className="absolute inset-0 w-full h-full object-cover -z-10"
@@ -211,19 +223,6 @@ const Hero = () => {
             </div>
           </a>
         </div>
-
-        {/* Keeping existing structure for #me, but ensure it doesn't break layout if empty */}
-        {/* <div className="absolute right-0 bottom-0 h-[80vh] w-[50vw] pointer-events-none">
-            {!screensize.isMobile && !screensize.isTablet && (
-              <img
-                id="me"
-                style={{ filter: "grayscale(100%)" }}
-                className="w-full h-full object-contain object-bottom"
-                src="./pp.png"
-                alt="Faycode"
-              />
-            )}
-        </div> */}
       </section>
     </div>
   );
