@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
+
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
