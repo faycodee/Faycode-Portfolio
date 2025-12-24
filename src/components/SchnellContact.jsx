@@ -30,8 +30,8 @@ const SchnellContact = () => {
       style={{
         display: "flex",
         flexDirection: "column",
-        height: "80px",
-        width: "30px",
+        height: "140px",
+        width: "50px",
         position: "fixed",
         right: "20px",
         top: "84vh",
@@ -59,7 +59,7 @@ const SchnellContact = () => {
             e.currentTarget.style.transform = "scale(0.8)";
           }}
         >
-          <Icon size={22} />
+          <Icon size={32} />
         </a>
       ))}
     </div>

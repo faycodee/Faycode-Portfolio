@@ -39,8 +39,9 @@ const Hero = () => {
     () => {
       // Loader Text In
       gsap.from(".loaderText", {
-        duration: 2,
-        ease: "sine.in",
+      
+        duration: 3,
+        ease: "power2.in",
         opacity: 0,
       });
 
@@ -73,15 +74,11 @@ const Hero = () => {
 
         // Paragraph Animations
         gsap.to(".para", {
-          scale: 0,
           ease: "power1.inOut",
           opacity: 0,
-          duration: 1,
-          stagger: {
-            amount: 1,
-            ease: "circ.inOut",
-            from: "center",
-          },
+          y: 0,
+          delay: 0.1,
+          duration: 3,
           scrollTrigger: {
             trigger: ".para",
             start: "top 18%",
@@ -134,7 +131,7 @@ const Hero = () => {
       });
       gsap.to(".loaderText", {
         duration: 1.5,
-        ease: "power2.inOut",
+        ease: "power2.out",
         opacity: 0,
       });
     };
@@ -146,18 +143,18 @@ const Hero = () => {
 
   return (
     <div ref={containerRef}>
-      {isLoading && (
+      { isLoading &&  (
         // Added z-[999] to ensure it covers Navbar and everything else
         <div className="fixed inset-0 z-[999] bg-black flex justify-center items-center overflow-hidden touch-none">
           <div className="relative w-full h-full flex items-center justify-center">
-            <h1 className="text-white z-10 font-mova absolute top-[5%] left-[5%] text-[20vw] lg:text-[15vw] leading-none loaderText">
+            <h1 className="text-white z-10 font-mova absolute top-[15%] left-[5%] text-[20vw] lg:text-[15vw] leading-none loaderText">
               {t("lng.Titles.loader1")}
             </h1>
             
             <img id="loader" src="./loader.gif" alt="loading" className="relative z-0 max-w-[50vw]" />
             
             <h3
-              className="text-white z-20 font-mova absolute bottom-[5%] right-[5%] text-[10vw] lg:text-[8vw] leading-none loaderText"
+              className="text-white z-20 font-mova absolute bottom-[15%] right-[5%] text-[10vw] lg:text-[8vw] leading-none loaderText"
             >
               {t("lng.Titles.loader2")}
             </h3>
