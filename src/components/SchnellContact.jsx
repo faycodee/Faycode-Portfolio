@@ -30,7 +30,7 @@ const SchnellContact = () => {
       style={{
         display: "flex",
         flexDirection: "column",
-        height: "140px",
+        height: "190px",
         width: "50px",
         position: "fixed",
         right: "20px",
