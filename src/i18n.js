@@ -1,8 +1,7 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
-
-import HttpApi from "i18next-http-backend"; // Import the backend
+import HttpApi from "i18next-http-backend";
 
 i18n
   .use(LanguageDetector)
@@ -10,16 +9,21 @@ i18n
   .use(initReactI18next)
   .init({
     debug: true,
-    fallbackLng: "gr",
+
+    // ✅ German as default & fallback
+    fallbackLng: "de",
+
     detection: {
-      cache: ["cookie"],
+      // Order matters
+      order: ["localStorage", "cookie", "navigator", "htmlTag"],
+      caches: ["localStorage", "cookie"],
     },
+
     interpolation: {
       escapeValue: false,
     },
- 
+
     backend: {
-      // Path to translation files in `public/locale`
       loadPath: "/locale/{{lng}}/translation.json",
     },
   });
