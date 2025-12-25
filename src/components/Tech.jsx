@@ -1,46 +1,118 @@
-import { motion } from "framer-motion";
+import { useRef, useEffect } from "react";
 import { BallCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { technologies } from "../constants";
 import { styles } from "../styles";
-import { textVariant } from "../utils/motion";
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useTranslation } from "react-i18next";
 
 const Tech = () => {
+  const [t] = useTranslation();
+  
+  // Refs for GSAP animations
+  const videoRef = useRef(null);
+  const sectionSubTextRef = useRef(null);
+  const sectionHeadTextRef = useRef(null);
+  const techItemsRef = useRef([]);
+
   gsap.registerPlugin(ScrollTrigger);
-  useGSAP(() => {
-    // gsap.to("#techvid", {
-    //   opacity:.1,
-    //   duration: 7,
-    //   yoyo: true,
-    //   repeat: -1,
-    //   ScrollTrigger: "#techvid",
-    //   ease: "power1.inOut",
-    // });
-    // gsap.from(".tech", {
-    //   opacity: 0.5,
-    //   scale: 0.6,
-    //   duration: 20,
-    //   ScrollTrigger: ".tech",
-    //   stagger: {
-    //     amount: 1,
-    //     // tartib bach atmchi bjoj wla whda whda fhal step schrittemuster
-    //     // grid:[4,3]  ,
-    //     // axis:"y",
-    //     ease: "circ.inOut",
-    //     from: "start",
-    //   },
-    //   ease: "power1.inOut",
-    // });
+
+  useEffect(() => {
+    // Animate video background
+    gsap.fromTo(
+      videoRef.current,
+      { opacity: 0, scale: 1.1 },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: videoRef.current,
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+
+    // Animate subtitle
+    gsap.fromTo(
+      sectionSubTextRef.current,
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionSubTextRef.current,
+          start: "top 85%",
+          toggleActions: "play none none reverse",
+        },
+        delay: 0.3,
+      }
+    );
+
+    // Animate heading
+    gsap.fromTo(
+      sectionHeadTextRef.current,
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionHeadTextRef.current,
+          start: "top 85%",
+          toggleActions: "play none none reverse",
+        },
+        delay: 0.5,
+      }
+    );
+
+    // Animate tech items with stagger
+    if (techItemsRef.current.length > 0) {
+      gsap.fromTo(
+        techItemsRef.current,
+        { 
+          opacity: 0, 
+          y: 50,
+          scale: 0.8,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.7,
+          ease: "back.out(1.4)",
+          stagger: {
+            amount: 1.2,
+            from: "start",
+            ease: "power2.inOut",
+          },
+          scrollTrigger: {
+            trigger: techItemsRef.current[0],
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+          delay: 0.7,
+        }
+      );
+    }
+
+    // Cleanup
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
-  const [t, i18n] = useTranslation();
+
   return (
     <>
       <div style={{ overflow: "none" }}>
-        <motion.video
+        <video
+          ref={videoRef}
           id="techvid"
           src="./vid2.mp4"
           alt="Tech Video"
@@ -48,18 +120,22 @@ const Tech = () => {
           style={{ zIndex: -5 }}
           loop
           muted
-          className="absolute inset-0   w-[100vw]    h-[100vh] object-cover"
-        ></motion.video>
-        <motion.div variants={textVariant()}>
-          <p className={styles.sectionSubTextLight}>{t("lng.Titles.tech1")}</p>
-          <h2 className={styles.sectionHeadTextLight}>
+          className="absolute inset-0 w-[100vw] h-[100vh] object-cover"
+        />
+        
+        <div>
+          <p ref={sectionSubTextRef} className={styles.sectionSubTextLight}>
+            {t("lng.Titles.tech1")}
+          </p>
+          <h2 ref={sectionHeadTextRef} className={styles.sectionHeadTextLight}>
             {t("lng.Titles.tech2")}
           </h2>
-        </motion.div>
+        </div>
 
         <div className="flex flex-wrap justify-center gap-10 mt-14 conti2">
-          {technologies.map((technology) => (
+          {technologies.map((technology, index) => (
             <div
+              ref={(el) => (techItemsRef.current[index] = el)}
               className="w-28 h-28 tech max-sm:w-[45px] max-sm:h-[60px]"
               key={technology.name}
             >
