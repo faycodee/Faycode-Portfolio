@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useRef, useEffect } from "react";
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import {
@@ -8,55 +7,18 @@ import {
   pineappleHover,
   linkedin as linkedinn,
 } from "../assets";
-// import { projects } from "../constants";
-import { fadeIn, textVariant, staggerContainer } from "../utils/motion";
 import { useTranslation } from "react-i18next";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 import {
-  frontend,
-  backend,
-  ux,
-  datamanagement,
-  prototyping,
-  javascript,
-  typescript,
-  html,
-  css,
-  agile,
-  bootstrap,
-  framerm,
-  githubi,
-  gsap,
-  mysql,
-  php,
-  python,
-  reactjs,
-  redux,
-  tailwind,
-  three,
-  nodejs,
-  git,
-  figma,
-  docker,
-  postgresql,
-  rubyrails,
-  graphql,
-  coverhunt,
-  dcc,
-  kelhel,
-  microverse,
-  employee,
-  fayshop,
   getmat,
-  parallax,
-  porthtml,
-  timepro,
   rest,
   ecoad,
-  datacer,
-  gitcer,
-  jscer,
-  pythoncer,
+  fayshop,
+  employee,
+  timepro,
 } from "../assets";
+
 const iconMap = {
   getmat: getmat,
   rest: rest,
@@ -66,30 +28,33 @@ const iconMap = {
   timepro: timepro,
 };
 
+gsap.registerPlugin(ScrollTrigger);
+
 const ProjectCard = ({
   id,
   name,
   description,
   image,
-  vidpro,
   repo,
   linkedin,
   demo,
   rapport,
   index,
-  vidExist ,
+  vidExist,
   active,
   handleClick,
+  cardRef,
 }) => {
-  const [t, i18n] = useTranslation();
+  const [t] = useTranslation();
+
   return (
-    <motion.div
-      variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+    <div
+      ref={cardRef}
       className={`relative ${
-        active === id ? "lg:flex-[3.5] flex-[10] " : "lg:flex-[0.5] flex-[2]"
+        active === id ? "lg:flex-[3.5] flex-[10]" : "lg:flex-[0.5] flex-[2]"
       } flex items-center justify-center min-w-[170px] 
-      h-[350px] cursor-pointer card-shadow`}
-      onClick={() => handleClick(id)}
+      h-[350px] cursor-pointer card-shadow transition-all duration-500 ease-out`}
+      onClick={() => active !== id && handleClick(id)}
     >
       <div
         className="absolute top-0 left-0 z-10 bg-jetLight 
@@ -100,17 +65,17 @@ const ProjectCard = ({
         src={iconMap[image]}
         alt={name}
         className={`absolute w-full h-full object-cover rounded-[24px] ${
-          active === id ? "" : "filter grayscale "
+          active === id ? "" : "filter grayscale"
         }`}
       />
 
       {active !== id ? (
-        <div className="flex items-center justify-start pr-[4.5rem] ">
+        <div className="flex items-center justify-start pr-[4.5rem]">
           <h3
             className="font-extrabold font-beckman uppercase w-[200px] h-[30px] 
         whitespace-nowrap sm:text-[27px] text-[18px] text-timberWolf tracking-[1px]
-        absolute  lg:bottom-[7rem] lg:rotate-[-90deg] lg:origin-[0,0]
-        leading-none z-20 "
+        absolute lg:bottom-[7rem] lg:rotate-[-90deg] lg:origin-[0,0]
+        leading-none z-20"
           >
             {name}
           </h3>
@@ -118,15 +83,18 @@ const ProjectCard = ({
       ) : (
         <>
           <div
-            className="absolute bottom-0 p-8 justify-start w-full 
-            flex-row bg-[rgba(122,122,122,0.5)] rounded-b-[24px] z-20"
+            className="absolute bottom-0 p-4 sm:p-6 lg:p-8 justify-start w-full 
+            flex-col bg-[rgba(122,122,122,0.5)] rounded-b-[24px] z-20"
           >
-            <div className="absolute inset-0 flex justify-end m-3">
+            <div className="absolute inset-0 flex justify-end m-2 sm:m-3">
               <div
-                onClick={() => window.open(repo, "_blank")}
-                className="bg-night sm:w-11 sm:h-11 w-10 h-10 rounded-full 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open(repo, "_blank");
+                }}
+                className="bg-night w-8 h-8 sm:w-10 sm:h-10 lg:w-11 lg:h-11 rounded-full 
                   flex justify-center items-center cursor-pointer
-                  sm:opacity-[0.9] opacity-[0.8] "
+                  opacity-[0.9] hover:opacity-[1] transition-opacity"
               >
                 <img
                   src={github}
@@ -135,10 +103,13 @@ const ProjectCard = ({
                 />
               </div>
               <div
-                onClick={() => window.open(linkedin, "_blank")}
-                className="bg-night sm:w-11 sm:h-11 w-10 h-10 rounded-full 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open(linkedin, "_blank");
+                }}
+                className="bg-night w-8 h-8 sm:w-10 sm:h-10 lg:w-11 lg:h-11 rounded-full 
                   flex justify-center items-center cursor-pointer
-                  sm:opacity-[0.9] opacity-[0.8]  ml-1"
+                  opacity-[0.9] hover:opacity-[1] transition-opacity ml-2"
               >
                 <img
                   src={linkedinn}
@@ -149,114 +120,216 @@ const ProjectCard = ({
             </div>
 
             <h2
-              className="font-bold sm:text-[32px] text-[24px] 
-              text-timberWolf uppercase font-beckman sm:mt-0 -mt-[1rem]"
+              className="font-bold text-[18px] sm:text-[24px] lg:text-[32px] 
+              text-timberWolf uppercase font-beckman mt-0 mb-2"
             >
               {name}
             </h2>
             <p
-              className="text-silver sm:text-[14px] text-[12px] 
-              max-w-3xl sm:leading-[24px] leading-[18px]
-              font-poppins tracking-[1px]"
+              className="text-silver text-[10px] sm:text-[12px] lg:text-[14px] 
+              max-w-3xl leading-[16px] sm:leading-[18px] lg:leading-[24px]
+              font-poppins tracking-[0.5px] mb-3"
             >
               {description}
             </p>
-            <div className="flex">
-             {demo &&
-               <button
-               className="live-demo flex justify-between 
-             sm:text-[16px] text-[14px] text-timberWolf 
-             font-bold font-beckman items-center py-5 pl-2 pr-3 
-             whitespace-nowrap gap-1 sm:w-[138px] sm:h-[50px] 
-             w-[125px] h-[46px] rounded-[10px] glassmorphism 
-             sm:mt-[22px] mt-[16px] hover:bg-battleGray 
-             hover:text-eerieBlack transition duration-[0.2s] 
-             ease-in-out "
-               onClick={() => window.open(demo, "_blank")}
-               onMouseOver={() => {
-                 document
-                   .querySelector(".btn-icon")
-                   .setAttribute("src", pineappleHover);
-               }}
-               onMouseOut={() => {
-                 document
-                   .querySelector(".btn-icon")
-                   .setAttribute("src", pineapple);
-               }}
-             >
-               <img
-                 src={pineapple}
-                 alt="pineapple"
-                 className="btn-icon sm:w-[34px] sm:h-[34px] 
-                 w-[30px] h-[30px] object-contain"
-               />
-               LIVE DEMO
-             </button>
-             }
-              {rapport !== "not exist" && (
-                <>
-                  <button
-                    onClick={() => window.open(rapport, "_blank")}
-                    className="flex z-50 items-center justify-center live-demo 
-                sm:text-[9px] text-[2px] text-black
-                p-[5px] py-2 bg-slate-200 h-10 mt-7 ml-4 rounded-lg hover:bg-black
-                hover:text-white "
-                  >
-                    {t("lng.Const.prj.1")}
-                  </button>{" "}
-                </>
-              )}
-              {vidExist=="true" && (
+            <div className="flex flex-wrap gap-2 items-center">
+              {demo && (
                 <button
-                  onClick={() => window.open(linkedin, "_blank")}
-                  className="font-mono flex z-50 items-center justify-center live-demo 
-            sm:text-[9px] text-[2px] text-black
-            p-[5px] py-2 bg-slate-200 h-10 mt-7 ml-1 rounded-lg hover:bg-black
-            hover:text-white"
+                  className="live-demo flex justify-center items-center
+             text-[11px] sm:text-[14px] lg:text-[16px] text-timberWolf 
+             font-bold font-beckman px-3 py-2 sm:px-4 sm:py-3
+             rounded-[10px] glassmorphism 
+             hover:bg-battleGray hover:text-eerieBlack 
+             transition duration-[0.2s] ease-in-out
+             min-w-[100px] sm:min-w-[120px] lg:min-w-[138px]"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    window.open(demo, "_blank");
+                  }}
+                  onMouseOver={() => {
+                    document
+                      .querySelector(".btn-icon")
+                      ?.setAttribute("src", pineappleHover);
+                  }}
+                  onMouseOut={() => {
+                    document
+                      .querySelector(".btn-icon")
+                      ?.setAttribute("src", pineapple);
+                  }}
+                >
+                  <img
+                    src={pineapple}
+                    alt="pineapple"
+                    className="btn-icon w-[20px] h-[20px] sm:w-[26px] sm:h-[26px] lg:w-[34px] lg:h-[34px] 
+                    object-contain mr-2"
+                  />
+                  <span className="whitespace-nowrap">LIVE DEMO</span>
+                </button>
+              )}
+
+            <div className="z-50 ">
+            {rapport !== "not exist" && (
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    window.open(rapport, "_blank");
+                  }}
+                  className="flex items-center z-50 mb-1 justify-center 
+                text-[10px] sm:text-[11px] lg:text-[12px] text-black
+                px-3 py-2 sm:px-4 sm:py-2.5 bg-slate-200 rounded-lg 
+                hover:bg-black hover:text-white transition-colors
+                font-medium whitespace-nowrap"
+                >
+                  {t("lng.Const.prj.1")}
+                </button>
+              )}
+              {vidExist === "true" && (
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    window.open(linkedin, "_blank");
+                  }}
+                  className="flex items-center z-50  justify-center 
+                text-[10px] sm:text-[11px] lg:text-[12px] text-black
+                px-3 py-2 sm:px-4 sm:py-2.5 bg-slate-200 rounded-lg 
+                hover:bg-black hover:text-white transition-colors
+                font-medium whitespace-nowrap"
                 >
                   {t("lng.Const.prj.2")}
                 </button>
-              )}{" "}
+              )}
+            </div>
             </div>
           </div>
         </>
       )}
-    </motion.div>
+    </div>
   );
 };
 
 const Projects = () => {
   const [active, setActive] = useState("project-4");
   const [t, i18n] = useTranslation();
-  let projects = t("lng.Const.projects", { returnObjects: true });
+  
+  // Refs for animations
+  const sectionSubTextRef = useRef(null);
+  const sectionHeadTextRef = useRef(null);
+  const descriptionRef = useRef(null);
+  const projectCardsRef = useRef([]);
+
+  useEffect(() => {
+    // Animate subtitle
+    gsap.fromTo(
+      sectionSubTextRef.current,
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionSubTextRef.current,
+          start: "top 85%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+
+    // Animate heading
+    gsap.fromTo(
+      sectionHeadTextRef.current,
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionHeadTextRef.current,
+          start: "top 85%",
+          toggleActions: "play none none reverse",
+        },
+        delay: 0.2,
+      }
+    );
+
+    // Animate description
+    gsap.fromTo(
+      descriptionRef.current,
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: descriptionRef.current,
+          start: "top 85%",
+          toggleActions: "play none none reverse",
+        },
+        delay: 0.4,
+      }
+    );
+
+    // Animate project cards with stagger
+    if (projectCardsRef.current.length > 0) {
+      gsap.fromTo(
+        projectCardsRef.current,
+        {
+          opacity: 0,
+          y: 60,
+          scale: 0.95,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          ease: "power3.out",
+          stagger: {
+            amount: 0.6,
+            from: "start",
+            ease: "power2.out",
+          },
+          scrollTrigger: {
+            trigger: projectCardsRef.current[0],
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+          delay: 0.6,
+        }
+      );
+    }
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, [i18n.language]);
+
+  const projects = t("lng.Const.projects", { returnObjects: true });
+
   return (
     <div className="-mt-[10rem]">
-      <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} `}>
+      <div>
+        <p ref={sectionSubTextRef} className={`${styles.sectionSubText}`}>
           {t("lng.Titles.project1")}
         </p>
-        <h2 className={`${styles.sectionHeadTextLight}`}>
+        <h2 ref={sectionHeadTextRef} className={`${styles.sectionHeadTextLight}`}>
           {t("lng.Titles.project2")}
         </h2>
-      </motion.div>
-
-      <div className="w-full flex h-[40px]">
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className=" text-taupe text-[13px] max-w-3xl leading-[30px] max-sm:leading-[20px] max-sm:text-[10px] "
-        >
-          {t("lng.Titles.project3")}
-        </motion.p>
       </div>
 
-      <motion.div
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
-        className={`${styles.innerWidth} mx-auto flex max-md:mb-[500px] flex-col`}
-      >
-        <div className="mt-[60px] flex lg:flex-row flex-col min-h-[70vh] gap-5  ">
+      <div className="w-full flex h-[40px]">
+        <p
+          ref={descriptionRef}
+          className="text-taupe text-[13px] max-w-3xl leading-[30px] max-sm:leading-[20px] max-sm:text-[10px]"
+        >
+          {t("lng.Titles.project3")}
+        </p>
+      </div>
+
+      <div className={`${styles.innerWidth} mx-auto flex max-md:mb-[500px] flex-col`}>
+        <div className="mt-[60px] flex lg:flex-row flex-col min-h-[70vh] gap-5">
           {projects.map((project, index) => (
             <ProjectCard
               key={index}
@@ -266,10 +339,11 @@ const Projects = () => {
               handleClick={setActive}
               rapport={project.rapport}
               vidExist={project.vidExist}
+              cardRef={(el) => (projectCardsRef.current[index] = el)}
             />
           ))}
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };

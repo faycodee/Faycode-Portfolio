@@ -157,7 +157,7 @@
             "id": "project-4",
             "name": "Smart Restaurant",
             "vidpro": "./porthtml.mp4",
-            "description": "Une application web pour gérer les réservations et les utilisateurs dans un espace de travail partagé. Elle propose une authentification sécurisée, un accès basé sur les rôles, des tableaux de bord interactifs et un système de réservation fluide.",
+            "description": "Une application web pour gérer les réservations dans un espace de travail. Elle propose une authentification sécurisée, un accès basé sur les rôles, des tableaux de bord interactifs et un calendrier de réservation...",
             "rapport": "./pdfs/rapres.pdf",
             "vidExist": "true",
             "tags": [
