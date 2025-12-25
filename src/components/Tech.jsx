@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { BallCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { technologies } from "../constants";
@@ -9,6 +9,7 @@ import { useTranslation } from "react-i18next";
 
 const Tech = () => {
   const [t] = useTranslation();
+  const [isMobile, setIsMobile] = useState(false);
   
   // Refs for GSAP animations
   const videoRef = useRef(null);
@@ -17,6 +18,18 @@ const Tech = () => {
   const techItemsRef = useRef([]);
 
   gsap.registerPlugin(ScrollTrigger);
+
+  // Detect mobile device
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useEffect(() => {
     // Animate video background
@@ -120,6 +133,7 @@ const Tech = () => {
           style={{ zIndex: -5 }}
           loop
           muted
+          playsInline
           className="absolute inset-0 w-[100vw] h-[100vh] object-cover"
         />
         
@@ -132,14 +146,31 @@ const Tech = () => {
           </h2>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-10 mt-14 conti2">
+        <div className="flex flex-wrap justify-center gap-10 mt-14 conti2 max-sm:gap-4">
           {technologies.map((technology, index) => (
             <div
               ref={(el) => (techItemsRef.current[index] = el)}
-              className="w-28 h-28 tech max-sm:w-[45px] max-sm:h-[60px]"
+              className="w-28 h-28 tech max-sm:w-[60px] max-sm:h-[60px]"
               key={technology.name}
             >
-              <BallCanvas icon={technology.icon} />
+              {isMobile ? (
+                // Mobile: Show 2D image with nice styling
+                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#1a1a2e] to-[#16213e] rounded-2xl shadow-lg p-3 hover:scale-105 transition-transform duration-300">
+                  <img
+                    src={technology.icon}
+                    alt={technology.name}
+                    className="w-full h-full object-contain filter drop-shadow-lg"
+                    onError={(e) => {
+                      // Fallback if image fails to load
+                      e.target.style.display = 'none';
+                      e.target.parentElement.innerHTML = `<div class="text-white text-xs text-center font-bold">${technology.name}</div>`;
+                    }}
+                  />
+                </div>
+              ) : (
+                // Desktop: Show 3D BallCanvas
+                <BallCanvas icon={technology.icon} />
+              )}
             </div>
           ))}
         </div>
