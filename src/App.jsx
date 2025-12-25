@@ -151,17 +151,17 @@ const App = () => {
           <Tech />
         </div>
 
-        <div className="backdrop-blur-lg">
+        <div className="panel h-[100vh] backdrop-blur-lg">
           <Projects />
         </div>
- 
-        <div className="panel h-[100vh] bg-black">
+
+      <div className="panel h-[100vh] bg-black">
           <Certifications />
-        </div>
+        </div> 
 
         <div className="panel h-[170vh] backdrop-blur-2xl">
           <Education />
-        </div>
+        </div> 
   
         <div className="relative z-0 panel h-[100vh] bg-black">
           <div
