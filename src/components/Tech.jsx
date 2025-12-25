@@ -1,3 +1,4 @@
+
 import { useRef, useEffect, useState } from "react";
 import { BallCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
@@ -123,7 +124,7 @@ const Tech = () => {
 
   return (
     <>
-      <div style={{ overflow: "none" }}>
+      <div className="w-full " style={{ overflow: "hidden" }}>
         <video
           ref={videoRef}
           id="techvid"
@@ -134,7 +135,7 @@ const Tech = () => {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-[100vw] h-[100vh] object-cover"
+          className="absolute inset-0 w-full h-[100vh] object-cover"
         />
         
         <div>

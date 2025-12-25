@@ -23,7 +23,7 @@ import SchnellContact from "./components/SchnellContact";
 const App = () => {
   const screensize = useSelector((state) => state.screensize);
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
     const handleResize = () => {
       let newObjSizes = {
@@ -38,7 +38,7 @@ const App = () => {
     };
     window.addEventListener("resize", handleResize);
     // Call once on mount to ensure state is correct immediately
-    handleResize(); 
+    handleResize();
     return () => window.removeEventListener("resize", handleResize);
   }, [dispatch]);
 
@@ -59,7 +59,7 @@ const App = () => {
           duration: 10,
         }
       );
-      
+
       // Panel animations
       gsap.utils.toArray(".panel").forEach((panel, i) => {
         const initialStates = [
@@ -130,7 +130,7 @@ const App = () => {
       <div ref={refScrollUp} className="relative z-0 bg-black">
         <SchnellContact />
         <Navbar />
-        
+
         <div id="p1" className="panel">
           <Hero />
         </div>
@@ -139,6 +139,7 @@ const App = () => {
           id="p2"
           className="bg-about mt-10 bg-cover bg-center bg-no-repeat h-[100vh] panel"
         >
+          {" "}
           <About />
         </div>
 
@@ -150,10 +151,10 @@ const App = () => {
           <Tech />
         </div>
 
-        <div className="panel h-[100vh] backdrop-blur-lg">
+        <div className="backdrop-blur-lg">
           <Projects />
         </div>
-
+ 
         <div className="panel h-[100vh] bg-black">
           <Certifications />
         </div>
@@ -161,7 +162,7 @@ const App = () => {
         <div className="panel h-[170vh] backdrop-blur-2xl">
           <Education />
         </div>
-
+  
         <div className="relative z-0 panel h-[100vh] bg-black">
           <div
             className="absolute z-50 overflow-hidden bg-slate-700 rounded-full p-3 right-20 bottom-9 hover:bg-slate-400 cursor-pointer"
@@ -172,7 +173,7 @@ const App = () => {
             <IoArrowUpOutline className="text-white w-6 h-6" />
           </div>
           <Contact />
-        </div>
+        </div> 
       </div>
     </BrowserRouter>
   );

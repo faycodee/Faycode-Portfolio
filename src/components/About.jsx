@@ -49,7 +49,7 @@ const ServiceCard = ({ index, title, icon }) => {
       className="xs:w-[200px] mb-[50px] h-[100px] w-full card-gradient rounded-[20px]
        shadow-card my-[70px] max-md:h-[30px] max-md:mt-[100px] max-md:mx-[10px] max-md:w-[25%]"
     >
-      <div className="bg-jetLight rounded-[20px] px-12 min-h-[200px] flex justify-evenly items-center flex-col max-sm:h-[40px] max-sm:px-0">
+      <div className="bg-jetLight rounded-[20px] px-15 w-100 min-h-[200px] flex justify-evenly items-center flex-col max-sm:h-[40px] max-sm:px-0">
         <img
           src={iconMap[icon]}
           alt={title}
@@ -152,7 +152,7 @@ const About = () => {
 
   return (
     <div>
-      <div className="-mt-[12rem] conti h-[100vh]">
+      <div className="-mt-[12rem] w-full conti h-[100vh]">
         <div>
           <p
             ref={sectionSubTextRef}
@@ -170,7 +170,7 @@ const About = () => {
         >
           {t("lng.Titles.about3")}
         </p>
-        <div className="mt-10 flex flex-wrap gap-10 max-md:w-[100vw] max-md:gap-0 max-md:flex-row">
+        <div className="mt-10 flex flex-wrap gap-10 w-full max-md:gap-0 max-md:flex-row">
           {services.map((service, index) => (
             <ServiceCard key={index} index={index} {...service} />
           ))}

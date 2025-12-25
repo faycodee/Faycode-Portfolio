@@ -22,9 +22,9 @@
       "certif2": "Certifications.",
       "certif3": "Mettant en avant des certifications clés qui valident mon expertise et mon engagement envers le développement professionnel. Chaque certification reflète des compétences acquises et une volonté de rester à jour dans mon domaine.",
       "edu2": "Éducation.",
-      "edu3/1": "Je suis en dernière année à",
-      "edu3/2": ", le principal institut de formation professionnelle du Maroc, réputé mondialement pour son programme rigoureux et pratique. Ma formation m'a doté d'une expertise technique et de compétences en résolution de problèmes, me préparant à exceller dans l'industrie technologique.",
-      "edu3/3": "Note : Il y a des compétences que j'ai acquises par auto-apprentissage, comme gsap, tailwindcss, etc.",
+      "edu3/1": "J’ai étudié pendant deux ans à",
+      "edu3/2": ", l’institut de formation professionnelle de référence au Maroc, reconnu pour son programme de formation rigoureux et fortement orienté vers la pratique. Au cours de ma formation, j’ai acquis des connaissances techniques générales solides dans plusieurs domaines de l’informatique, notamment les algorithmes, la gestion des données, la sécurité, les soft skills, le Scrum et en particulier le développement full stack. J’ai également développé de fortes compétences en résolution de problèmes, ce qui a renforcé ma passion pour le secteur technologique.",
+      "edu3/3": "Bien entendu, je ne me suis pas limité à la formation dispensée par l’institut ; grâce à un apprentissage autonome, j’ai acquis d’autres compétences pertinentes, notamment des technologies et outils modernes tels que GSAP, Tailwind CSS et d’autres technologies web actuelles.",
       "edu4": "Présent",
       "edu5": "À ce moment-là, je connaissais seulement un peu de programmation, comme HTML et CSS.",
       "edu6": "À cette date, j'avais passé un an à étudier et appris beaucoup de choses, notamment : algorithme, PHP, Python, HTML et CSS avancés, Bootstrap, Ajax, MySQL ...",
@@ -192,6 +192,7 @@
     "id": 1,
     "name": "Introduction aux données et à la science des données",
     "image": "datacer",
+    "type":"data",
     "company": "learn.365datascience.com",
     "disc": "Certifié en bases de la science des données : analyse, visualisation et techniques fondamentales.",
     "link": "https://learn.365datascience.com/c/1f5681348f/"
@@ -200,6 +201,7 @@
     "id": 2,
     "name": "Git et GitHub",
     "image": "gitcer",
+    "type":"web",
     "company": "learn.365datascience.com",
     "disc": "Maîtrise de Git et GitHub : gestion de versions et collaboration.",
     "link": "https://learn.365datascience.com/certificates/CC-848F5C8F60/"
@@ -208,7 +210,9 @@
     "id": 3,
     "name": "Python Essentials",
     "image": "pythoncer",
+ 
     "company": "cisco.com",
+    "type":"web,data,cyber,ai",
     "disc": "Certifié en Python Essentials : bases de la programmation et résolution de problèmes.",
     "link": "https://www.credly.com/badges/6438ea77-9d04-4747-8f40-3ff32d9f9b59/linked_in?t=smdukb"
   },
@@ -216,6 +220,7 @@
     "id": 4,
     "name": "Programmation avec JavaScript",
     "image": "jscer",
+    "type":"web",
     "company": "coursera.org",
     "disc": "Compétent en JavaScript : fondamentaux de la programmation et développement web.",
     "link": "https://www.coursera.org/account/accomplishments/verify/RPKT4P8MLE8M?utm_source=ln&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course"
@@ -224,6 +229,7 @@
     "id": 5,
     "name": "Hacker Éthique",
     "image": "hacker",
+    "type":"cyber",
     "company": "cisco.com",
     "disc": "Compétences en hacking éthique : principes de cybersécurité et techniques de test d'intrusion.",
     "link": "https://www.credly.com/badges/d39b802c-8d5e-4d2e-b500-1015a6c6f517"
@@ -232,6 +238,7 @@
     "id": 6,
     "name": "Anglais pour l'informatique 1",
     "image": "english",
+    "type":"web,data,cyber,ai",
     "company": "cisco.com",
     "disc": "Amélioration des compétences en anglais technique pour le développement logiciel et l'informatique.",
     "link": "https://www.credly.com/badges/e595f056-5065-4670-831c-58a46bb7168f"
@@ -240,6 +247,7 @@
     "id": 7,
     "name": "Introduction à la cybersécurité",
     "image": "cyber",
+    "type":"cyber",
     "company": "cisco.com",
     "disc": "Connaissances de base en menaces, principes et défenses en cybersécurité.",
     "link": "https://www.credly.com/badges/50c434fb-c057-4519-a6c4-74bfa376dbce"
@@ -248,6 +256,7 @@
     "id": 8,
     "name": "Python Essentials 2",
     "image": "py2",
+    "type":"web,data,cyber,ai",
     "company": "cisco.com",
     "disc": "Approfondissement en Python : POO, gestion de fichiers et traitement des erreurs.",
     "link": "https://www.credly.com/badges/589283a9-3c86-4703-9138-90685a25be3e"
@@ -256,6 +265,8 @@
     "id": 9,
     "name": "Introduction à l’intelligence artificielle",
     "image": "aiintro",
+ 
+    "type":"ai",
     "company": "ki-campus.org",
     "disc": "Apprentissage des concepts fondamentaux de l’IA : apprentissage automatique, réseaux neuronaux, éthique de l’IA.",
     "link": "https://moodle.ki-campus.org/mod/customcert/verify_certificate.php?code=iBd9aq1j0p"
@@ -264,6 +275,7 @@
     "id": 10,
     "name": "Éthique des données et des algorithmes",
     "image": "algo",
+    "type":"data,ai",
     "company": "ki-campus.org",
     "disc": "Compétences en résolution efficace de problèmes avec tableaux, listes chaînées, arbres, tri et recherche.",
     "link": "https://moodle.ki-campus.org/mod/customcert/verify_certificate.php?code=YUAGFvsP0V"
