@@ -147,19 +147,19 @@ const App = () => {
           <Service />
         </div>
 
-        <div className="bg-cover mt-10 bg-center bg-no-repeat panel h-[100vh] bg-black">
+        <div className="bg-cover mt-10 bg-center bg-no-repeat panel h-[150vh] max-md:h-[100vh]  bg-black">
           <Tech />
         </div>
 
-        <div className="panel h-[100vh] backdrop-blur-lg">
+        <div className="panel h-[170vh] max-md:h-[100vh]  backdrop-blur-lg">
           <Projects />
         </div>
 
-      <div className="panel h-[100vh] bg-black">
+      <div className="panel h-[180vh] max-md:h-[100vh]  bg-black">
           <Certifications />
         </div> 
 
-        <div className="panel h-[170vh] backdrop-blur-2xl">
+        <div className="panel h-[220vh] max-md:h-[170vh] backdrop-blur-2xl">
           <Education />
         </div> 
   

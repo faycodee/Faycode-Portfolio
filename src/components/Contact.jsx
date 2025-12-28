@@ -160,7 +160,7 @@ const Contact = () => {
     <div className="flex flex-col justify-center">
       <div className="-mt-[8rem] xl:flex-row flex-col-reverse flex gap-10 overflow-hidden justify-center items-center">
         <div className="flex-[0.75] bg-jet p-6 sm:p-8 rounded-2xl relative">
-          <video
+          {/* <video
             ref={videoRef}
             src="./vid0.mp4"
             alt="Background video"
@@ -170,7 +170,7 @@ const Contact = () => {
             muted
             className="absolute inset-0 w-full sm:block hidden h-full object-cover rounded-2xl"
           />
-          
+           */}
           <div className="relative z-10">
             <p ref={sectionSubTextRef} className={styles.sectionSubText}>
               {t("lng.Titles.contact1")}

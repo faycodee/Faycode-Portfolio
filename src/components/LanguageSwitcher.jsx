@@ -12,6 +12,7 @@ const LanguageSwitcher = () => {
         ? "English"
         : "German"
   );
+console.log( '***********************************************************'+i18n.language);
 
   const languages = ["English", "German", "French"];
 

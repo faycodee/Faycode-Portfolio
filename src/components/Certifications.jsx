@@ -204,7 +204,7 @@ const Certifications = () => {
       <div className="w-full flex">
         <p
           ref={descriptionRef}
-          className="mt-4 text-taupe text-[10px] sm:text-[12px] max-w-3xl 
+          className=" text-taupe text-[10px] sm:text-[12px] max-w-3xl 
           leading-[20px] sm:leading-[30px]"
         >
           {t("lng.Titles.certif3")}
