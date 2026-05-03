@@ -3,7 +3,6 @@ import {
   About,
   Service,
   Contact,
-  Experience,
   Hero,
   Navbar,
   Certifications,
@@ -16,107 +15,117 @@ import { IoArrowUpOutline } from "react-icons/io5";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useCallback, lazy, Suspense } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import SchnellContact from "./components/SchnellContact";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
   const screensize = useSelector((state) => state.screensize);
   const dispatch = useDispatch();
 
+  // Debounced resize handler
   useEffect(() => {
+    let timeoutId;
     const handleResize = () => {
-      let newObjSizes = {
-        width: window.innerWidth,
-        height: window.innerHeight,
-        isMobile: window.innerWidth < 768,
-        isTablet: window.innerWidth >= 768 && window.innerWidth < 1024,
-        isLaptop: window.innerWidth >= 1024 && window.innerWidth < 1440,
-        isDesktop: window.innerWidth >= 1440,
-      };
-      dispatch({ type: "UPDATEscreensize", screen: newObjSizes });
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        let newObjSizes = {
+          width: window.innerWidth,
+          height: window.innerHeight,
+          isMobile: window.innerWidth < 768,
+          isTablet: window.innerWidth >= 768 && window.innerWidth < 1024,
+          isLaptop: window.innerWidth >= 1024 && window.innerWidth < 1440,
+          isDesktop: window.innerWidth >= 1440,
+        };
+        dispatch({ type: "UPDATEscreensize", screen: newObjSizes });
+      }, 150);
     };
     window.addEventListener("resize", handleResize);
     // Call once on mount to ensure state is correct immediately
     handleResize();
-    return () => window.removeEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      clearTimeout(timeoutId);
+    };
   }, [dispatch]);
 
-  gsap.registerPlugin(ScrollTrigger);
   const cursorr = useSelector((state) => state.cursor);
 
-  // Panel Animations
-  !screensize.isMobile &&
-    useGSAP(() => {
-      // Cursor animation
-      gsap.fromTo(
-        ".cursor-outline",
-        { rotate: `${cursorr.rotate}` },
-        {
-          rotate: `-${cursorr.rotate}deg`,
-          repeat: -1,
-          yoyo: 1,
-          duration: 10,
-        }
-      );
+  // Panel Animations — always call the hook, but conditionally run logic inside
+  useGSAP(() => {
+    if (screensize.isMobile) return;
 
-      // Panel animations
-      gsap.utils.toArray(".panel").forEach((panel, i) => {
-        const initialStates = [
-          { x: 0, y: 0 }, // Hero
-          { x: 0, y: 0 }, // About
-          { x: "-100%", y: 0 }, // Service
-          { x: "100%", y: 0 }, // Tech
-          { x: 0, y: 0 }, // Projects (placeholder index)
-          { x: "100%", y: 0 }, // Certifications
-          { x: 0, y: 0 }, // Education
-          { x: 0, y: 0 }, // Contact
-        ];
+    // Cursor animation
+    gsap.fromTo(
+      ".cursor-outline",
+      { rotate: `${cursorr.rotate}` },
+      {
+        rotate: `-${cursorr.rotate}deg`,
+        repeat: -1,
+        yoyo: 1,
+        duration: 10,
+      }
+    );
 
-        // Ensure we don't go out of bounds if panels change
-        const state = initialStates[i] || { x: 0, y: 0 };
+    // Panel animations
+    gsap.utils.toArray(".panel").forEach((panel, i) => {
+      const initialStates = [
+        { x: 0, y: 0 }, // Hero
+        { x: 0, y: 0 }, // About
+        { x: "-100%", y: 0 }, // Service
+        { x: "100%", y: 0 }, // Tech
+        { x: 0, y: 0 }, // Projects (placeholder index)
+        { x: "100%", y: 0 }, // Certifications
+        { x: 0, y: 0 }, // Education
+        { x: 0, y: 0 }, // Contact
+      ];
 
-        gsap.set(panel, state);
+      // Ensure we don't go out of bounds if panels change
+      const state = initialStates[i] || { x: 0, y: 0 };
 
-        ScrollTrigger.create({
-          trigger: panel,
-          start: "top top",
-          end: "bottom top",
-          pin: true,
-          pinSpacing: false,
-          onEnter: () => {
-            gsap.to(panel, {
-              x: 0,
-              y: 0,
-              duration: 1.2,
-              ease: "power2.out",
-            });
-          },
-          onLeaveBack: () => {
-            gsap.to(panel, {
-              ...state,
-              duration: 1.2,
-              ease: "power2.in",
-            });
-          },
-          onEnterBack: () => {
-            gsap.to(panel, {
-              x: 0,
-              y: 0,
-              duration: 1.2,
-              ease: "power2.out",
-            });
-          },
-          onLeave: () => {
-            gsap.to(panel, {
-              ...state,
-              duration: 1.2,
-              ease: "power2.in",
-            });
-          },
-        });
+      gsap.set(panel, state);
+
+      ScrollTrigger.create({
+        trigger: panel,
+        start: "top top",
+        end: "bottom top",
+        pin: true,
+        pinSpacing: false,
+        onEnter: () => {
+          gsap.to(panel, {
+            x: 0,
+            y: 0,
+            duration: 1.2,
+            ease: "power2.out",
+          });
+        },
+        onLeaveBack: () => {
+          gsap.to(panel, {
+            ...state,
+            duration: 1.2,
+            ease: "power2.in",
+          });
+        },
+        onEnterBack: () => {
+          gsap.to(panel, {
+            x: 0,
+            y: 0,
+            duration: 1.2,
+            ease: "power2.out",
+          });
+        },
+        onLeave: () => {
+          gsap.to(panel, {
+            ...state,
+            duration: 1.2,
+            ease: "power2.in",
+          });
+        },
       });
-    }, [screensize.isMobile]);
+    });
+  }, [screensize.isMobile]);
 
   const refScrollUp = useRef();
   const handleScrollUp = () => {

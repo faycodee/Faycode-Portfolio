@@ -3,8 +3,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body {
-  cursor: none;
+
+/* Only hide cursor on devices with a fine pointer (mouse) */
+@media (pointer: fine) {
+  body {
+    cursor: none;
+  }
 }
 
 ::-webkit-scrollbar {
@@ -24,6 +28,7 @@ body {
 @font-face {
   font-family: "Arenq";
   src: url("./fonts/arenq.otf");
+  font-display: swap;
 }
 .backNav {
   background-color: #00000021;
@@ -31,21 +36,25 @@ body {
 @font-face {
   font-family: "Mova";
   src: url("./fonts/mova.otf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Beckman";
   src: url("./fonts/beckman.otf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Overcame Bold";
   src: url("./fonts/overcame-bold.woff");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Overcame Outline";
   src: url("./fonts/overcame-outline.woff");
+  font-display: swap;
 }
 
 * {
@@ -54,6 +63,7 @@ body {
   box-sizing: border-box;
   scroll-behavior: smooth;
   color-scheme: dark;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .nav-links::after {
@@ -73,6 +83,22 @@ body {
 #about {
   margin-left: -24px;
   font-size: 100px;
+}
+
+@media (max-width: 768px) {
+  #about {
+    margin-left: -12px;
+    font-size: 50px;
+  }
+  #projects {
+    margin-left: 0;
+    font-size: 50px;
+  }
+  #contact {
+    margin-left: -10px;
+    font-size: 48px;
+    letter-spacing: -1px;
+  }
 }
 
 #projects {
@@ -258,10 +284,33 @@ body {
       -1.8em -1.8em 0 0em #ffffff;
   }
 }
-body {
-  cursor: none;
-  background-color: #000000;
+
+/* Only hide cursor on desktop pointer devices */
+@media (pointer: fine) {
+  body {
+    cursor: none;
+    background-color: #000000;
+  }
 }
+
+/* Show normal cursor on touch devices */
+@media (pointer: coarse) {
+  body {
+    cursor: auto !important;
+    background-color: #000000;
+  }
+  .cursor-dot,
+  .cursor-outline {
+    display: none !important;
+  }
+}
+
+body {
+  background-color: #000000;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: none;
+}
+
 .cursor-dot {
   width: 5px;
   height: 5px;
@@ -301,4 +350,23 @@ font-size: 11px;
   background-color: rgba(21, 22, 22, 0.158);
   --tw-backdrop-blur: blur(150px);
  
+}
+
+/* Mobile-specific performance optimizations */
+@media (max-width: 768px) {
+  .panel {
+    will-change: auto !important;
+    transform: none !important;
+  }
+  
+  /* Reduce heavy blur effects on mobile */
+  .backdrop-blur-lg {
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+  }
+  
+  .backdrop-blur-2xl {
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+  }
 }

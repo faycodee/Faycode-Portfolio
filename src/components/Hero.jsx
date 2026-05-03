@@ -3,31 +3,31 @@ import { styles } from "../styles";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import "../../src/i18n";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Hero = () => {
   const [t] = useTranslation();
-  gsap.registerPlugin(ScrollTrigger);
   
   // State
   const [isLoading, setIsLoading] = useState(true);
   const [getOut, setIsGetOut] = useState(true);
   
-  const containerRef = useRef(); 
+  const containerRef = useRef();
+  const scrollTriggersRef = useRef([]);
   const screensize = useSelector((state) => state.screensize);
 
-  // --- NEW: Scroll Locking Logic ---
+  // --- Scroll Locking Logic ---
   useEffect(() => {
     if (isLoading) {
-      // Disable scroll on HTML and Body
       document.body.style.overflow = "hidden";
       document.documentElement.style.overflow = "hidden";
-      document.body.style.height = "100vh"; // Prevent elastic scrolling on iOS
+      document.body.style.height = "100vh";
     } else {
-      // Re-enable scroll
       document.body.style.overflow = "auto";
       document.documentElement.style.overflow = "auto";
       document.body.style.height = "auto";
@@ -39,30 +39,27 @@ const Hero = () => {
     () => {
       // Loader Text In
       gsap.from(".loaderText", {
-      
         duration: 3,
         ease: "power2.in",
         opacity: 0,
       });
 
-      // NOTE: Removed the setTimeout that forced scroll unlock here.
-      // Scroll is now controlled by the useEffect above based on isLoading state.
-
       if (!isLoading) {
         // Safe check for #me
         if (document.querySelector("#me")) {
-          gsap.to("#me", {
-            scrollTrigger: {
-              trigger: "#me",
-              start: "top 15%",
-              end: "bottom 15%",
-              scrub: 4.2,
-              toggleActions: "restart pause reverse pause",
-            },
-            x: 500,
-            duration: 5,
-            ease: "power1",
+          const st1 = ScrollTrigger.create({
+            trigger: "#me",
+            start: "top 15%",
+            end: "bottom 15%",
+            scrub: 4.2,
+            toggleActions: "restart pause reverse pause",
+            animation: gsap.to("#me", {
+              x: 500,
+              duration: 5,
+              ease: "power1",
+            }),
           });
+          scrollTriggersRef.current.push(st1);
 
           gsap.from("#me", {
             x: 700,
@@ -73,20 +70,21 @@ const Hero = () => {
         }
 
         // Paragraph Animations
-        gsap.to(".para", {
-          ease: "power1.inOut",
-          opacity: 0,
-          y: 0,
-          delay: 0.1,
-          duration: 3,
-          scrollTrigger: {
-            trigger: ".para",
-            start: "top 18%",
-            end: "bottom 38%",
-            scrub: 7,
-            toggleActions: "restart pause reverse pause",
-          },
+        const st2 = ScrollTrigger.create({
+          trigger: ".para",
+          start: "top 18%",
+          end: "bottom 38%",
+          scrub: 7,
+          toggleActions: "restart pause reverse pause",
+          animation: gsap.to(".para", {
+            ease: "power1.inOut",
+            opacity: 0,
+            y: 0,
+            delay: 0.1,
+            duration: 3,
+          }),
         });
+        scrollTriggersRef.current.push(st2);
 
         gsap.from("#btn", {
           opacity: 0,
@@ -116,6 +114,14 @@ const Hero = () => {
     { scope: containerRef, dependencies: [isLoading] }
   );
 
+  // Cleanup only own ScrollTriggers
+  useEffect(() => {
+    return () => {
+      scrollTriggersRef.current.forEach((st) => st.kill());
+      scrollTriggersRef.current = [];
+    };
+  }, []);
+
   // Loader Exit Logic
   useEffect(() => {
     const animateLoaderOut = () => {
@@ -125,7 +131,6 @@ const Hero = () => {
         scale: 6,
         opacity: 0,
         onComplete: () => {
-          // This triggers the scroll unlock in the first useEffect
           setIsLoading(false); 
         },
       });
@@ -141,17 +146,37 @@ const Hero = () => {
     }
   }, [getOut]);
 
+  // Fallback: if video takes too long, dismiss loader after 4s
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (isLoading) {
+        setIsGetOut(false);
+      }
+    }, 4000);
+    return () => clearTimeout(timeout);
+  }, [isLoading]);
+
+  // Pick the RIGHT video: mobile gets the SMALLER file
+  const videoSrc = screensize.isMobile ? "./vid.mp4" : "./vidS.mp4";
+
   return (
     <div ref={containerRef}>
       { isLoading &&  (
-        // Added z-[999] to ensure it covers Navbar and everything else
         <div className="fixed inset-0 z-[999] bg-black flex justify-center items-center overflow-hidden touch-none">
           <div className="relative w-full h-full flex items-center justify-center">
             <h1 className="text-white z-10 font-mova absolute top-[15%] left-[5%] text-[20vw] lg:text-[15vw] leading-none loaderText">
               {t("lng.Titles.loader1")}
             </h1>
             
-            <img id="loader" src="./loader.gif" alt="loading" className="relative z-0 max-w-[50vw]" />
+            {/* Replaced 1.7MB GIF with CSS spinner for fast loading */}
+            <div id="loader" className="relative z-0 flex items-center justify-center">
+              <div className="w-[120px] h-[120px] sm:w-[180px] sm:h-[180px] rounded-full border-[3px] border-transparent border-t-white border-r-white/50 animate-spin" />
+              <img 
+                src="./logo.png" 
+                alt="Faycode" 
+                className="absolute w-[50px] h-[50px] sm:w-[70px] sm:h-[70px] rounded-full object-contain"
+              />
+            </div>
             
             <h3
               className="text-white z-20 font-mova absolute bottom-[15%] right-[5%] text-[10vw] lg:text-[8vw] leading-none loaderText"
@@ -168,13 +193,13 @@ const Hero = () => {
       >
         <motion.video
           id="worldVid"
-          src={screensize.isMobile ? "./vidS.mp4" : "./vid.mp4"}
+          src={videoSrc}
           alt="world map"
           autoPlay
           loop
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
           onLoadedData={() => setIsGetOut(false)}
           className="absolute inset-0 w-full h-full object-cover -z-10"
         ></motion.video>
